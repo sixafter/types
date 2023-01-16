@@ -22,10 +22,6 @@ jobs:
         run: echo '${{ toJSON(steps) }}'
       - name: Display Runner Context
         run: echo '${{ toJSON(runner) }}'
-      - name: Display Strategy Context
-        run: echo '${{ toJSON(strategy) }}'
-      - name: Display Matrix Context
-        run: echo '${{ toJSON(matrix) }}'
 
       - name: Preamble
         run: |
