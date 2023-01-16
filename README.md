@@ -6,7 +6,7 @@ represented as [Google Protocol Buffers](https://developers.google.com/protocol-
 ---
 ## Status
 
-[![ci](https://github.com/go-scriptures/platform/actions/workflows/ci.yml/badge.svg)](https://github.com/sixafter/types/actions/workflows/ci.yml)
+[![ci](https://github.com/sixafter/types/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/sixafter/types/actions/workflows/ci.yaml)
 [![license](https://img.shields.io/badge/license-apache2-brightgreen.svg)](https://choosealicense.com/licenses/apache-2.0/)
 
 ---
