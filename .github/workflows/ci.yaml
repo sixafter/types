@@ -1,0 +1,58 @@
+# Ref: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+name: ci
+
+env:
+  # GitHub Actions: Deprecating save-state and set-output commands
+  # Ref: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+  # Ref: https://github.blog/changelog/2020-10-01-github-actions-deprecating-set-env-and-add-path-commands/
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
+on: [pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display GitHub Context
+        id: github_context_step
+        run: echo '${{ toJSON(github) }}'
+      - name: Display Job Context
+        run: echo '${{ toJSON(job) }}'
+      - name: Display Steps Context
+        run: echo '${{ toJSON(steps) }}'
+      - name: Display Runner Context
+        run: echo '${{ toJSON(runner) }}'
+      - name: Display Strategy Context
+        run: echo '${{ toJSON(strategy) }}'
+      - name: Display Matrix Context
+        run: echo '${{ toJSON(matrix) }}'
+
+      - name: Preamble
+        run: |
+          whoami
+          echo github ref $GITHUB_REF
+          echo workflow $GITHUB_WORKFLOW
+          echo home $HOME
+          echo event name $GITHUB_EVENT_NAME
+          echo workspace $GITHUB_WORKSPACE
+
+          df -h
+
+          sudo DEBIAN_FRONTEND=noninteractive apt-get update
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common ca-certificates gnupg-agent curl build-essential make python3-pip golang-goprotobuf-dev protobuf-compiler parallel
+
+      # Ref: https://github.com/actions/setup-go
+      - name: Install Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: ">= 1.19"
+
+      # Ref: https://github.com/actions/checkout
+      - name: Checkout Source
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Build
+        run: |
+          make build

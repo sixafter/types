@@ -1,0 +1,57 @@
+// Copyright 2020 SIX AFTER, LLC (SIX AFTER)
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax="proto3";
+
+package types;
+option go_package="github.com/sixafter/types;types";
+
+option cc_enable_arenas = true;
+option java_package = "com.sixafter.types";
+option java_multiple_files = true;
+option java_outer_classname = "GeospatialLocationProto";
+option objc_class_prefix = "TYP";
+
+import "google/protobuf/timestamp.proto";
+
+import "compass_heading.proto";
+import "geospatial_coordinate.proto";
+
+// Spatial or temporal scale refers to the extent of the area or the duration
+// of time.
+message GeospatialLocation {
+  // The geographical coordinate information.
+  GeospatialCoordinate coordinate = 1;
+
+  // The azimuth (orientation) of the user’s device, relative to true or
+  // magnetic north.
+  CompassHeading heading = 2;
+
+  // The direction in which the device is traveling, measured in degrees and
+  // relative to due north.
+  //
+  // Course information reflects the speed and direction in which a device is
+  // moving and is available only on devices with GPS hardware. Don’t confuse
+  // course information with heading information. Course direction reflects the
+  // direction in which the device is moving and is independent of the device’s
+  // physical orientation. The most common use of course information is in
+  // navigation apps.
+  double course = 3;
+
+  // The instantaneous speed of the device, measured in meters per second.
+  float speed = 4;
+
+  // The time at which this location was determined.
+  google.protobuf.Timestamp timestamp = 5;
+}

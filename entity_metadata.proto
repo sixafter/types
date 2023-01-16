@@ -1,0 +1,57 @@
+// Copyright 2020 SIX AFTER, LLC (SIX AFTER)
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax="proto3";
+
+package types;
+option go_package="github.com/sixafter/types;types";
+
+option cc_enable_arenas = true;
+option java_package = "com.sixafter.types";
+option java_multiple_files = true;
+option java_outer_classname = "EntityMetadataProto";
+option objc_class_prefix = "TYP";
+
+import "google/protobuf/timestamp.proto";
+import "version.proto";
+
+message EntityMetadata {
+  // The timestamp at which the related entity was created.
+  google.protobuf.Timestamp created_on = 1;
+
+  // The timestamp at which the related entity was last modified.
+  google.protobuf.Timestamp modified_on = 2;
+
+  // A Boolean value indicating whether the related entity is deleted.
+  bool deleted = 3;
+
+  // A Boolean value indicating the ephemeral nature of the entity.
+  bool ephemeral = 4;
+
+  // A Boolean value indicating if the entity can be synchronized with external sources.
+  bool replicable = 5;
+
+  // A Boolean value indicating if the entity is immutable.
+  bool immutable = 6;
+
+  // The Semantic Version v2.0 compliant version of the entity.
+  Version version = 7;
+
+  // A set of tags.
+  repeated string tags = 8;
+
+  // A Boolean value indicating if the entity was synthesized (or is synthetic).
+  bool synthesized = 9;
+}
+
