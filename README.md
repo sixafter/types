@@ -8,6 +8,7 @@ represented as [Google Protocol Buffers](https://developers.google.com/protocol-
 
 [![ci](https://github.com/sixafter/types/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/sixafter/types/actions/workflows/ci.yaml)
 [![license](https://img.shields.io/badge/license-apache2-brightgreen.svg)](https://choosealicense.com/licenses/apache-2.0/)
+[![GitHub issues](https://img.shields.io/github/issues/sixafter/types)](https://img.shields.io/github/issues/sixafter/types)
 ![GitHub last commit](https://img.shields.io/github/last-commit/sixafter/types)
 
 ---
