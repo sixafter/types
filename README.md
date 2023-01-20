@@ -4,7 +4,7 @@ This [Go module](https://golang.org/ref/mod#modules-overview) is a set of common
 represented as [Google Protocol Buffers](https://developers.google.com/protocol-buffers/).
 
 ---
-## Status
+### Status
 
 [![ci](https://github.com/sixafter/types/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/sixafter/types/actions/workflows/ci.yaml)
 ![GitHub](https://img.shields.io/github/license/sixafter/types)
@@ -12,7 +12,7 @@ represented as [Google Protocol Buffers](https://developers.google.com/protocol-
 ![GitHub last commit](https://img.shields.io/github/last-commit/sixafter/types)
 
 ---
-## Usage
+### Usage
 
 To use this module, execute the following command:
 
@@ -31,6 +31,14 @@ import (
 ```
 
 The use of Go [vendoring](https://golang.org/ref/mod#vendoring) is [RECOMMENDED].
+
+### Contributing
+
+This is an open source project run by volunteers, and contributions are welcome! Check out the [Issues](https://github.com/sixafter/types/issues) page to see if your idea has already been mentioned. Feel free to raise an issue or submit a pull request.
+
+### License
+
+The code is licensed under the permissive Apache v2.0 license. [Read this](https://choosealicense.com/licenses/apache-2.0/) for a summary.
 
 [MUST]: https://datatracker.ietf.org/doc/html/rfc2119
 [MUST NOT]: https://datatracker.ietf.org/doc/html/rfc2119
