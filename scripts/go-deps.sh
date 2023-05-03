@@ -24,6 +24,7 @@ if is_windows; then
 fi
 
 # Protobuf
+go get -u google.golang.org/protobuf
 go get -u google.golang.org/protobuf/proto
 go get -u google.golang.org/protobuf/cmd/protoc-gen-go
 go get -u google.golang.org/grpc/cmd/protoc-gen-go-grpc
