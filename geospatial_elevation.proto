@@ -38,5 +38,5 @@ message GeospatialElevation {
   GeodeticDatum datum = 1;
 
   // The positive or negative vertical elevation in relation to the datum.
-  float altitude = 2;
+  double altitude = 2;
 }

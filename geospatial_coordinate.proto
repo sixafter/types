@@ -25,16 +25,16 @@ option objc_class_prefix = "TYP";
 
 import "geospatial_elevation.proto";
 
-// Represents a geospatial, or global positioning satelite (GPS), coordinate.
+// Represents a geospatial, or global positioning satellite (GPS), coordinate.
 message GeospatialCoordinate {
   // Distance north or south of the equator measured in degrees up to 90
   // degrees.
-  float latitude = 1;
+  double latitude = 1;
 
   // Distance measured in degrees east or west from an imaginary line (called
   // the prime meridian) that is measured from the North Pole to the South Pole
   // and that passes through Greenwich, England.
-  float longitude = 2;
+  double longitude = 2;
 
   // The geospatial elevation.
   GeospatialElevation elevation = 3;
