@@ -79,6 +79,10 @@ vendor:
 tidy:
 	$(GO_MOD) tidy
 
+.PHONY: update
+update:
+	$(GO_GET) -u
+
 .PHONY: vuln
 vuln: ## Check for vulnerabilities
 	govulncheck ./...
