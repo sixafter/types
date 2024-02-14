@@ -1,6 +1,6 @@
 module github.com/sixafter/types
 
-go 1.21
+go 1.22
 
 require google.golang.org/protobuf v1.32.0
 
