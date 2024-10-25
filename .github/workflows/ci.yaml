@@ -31,13 +31,13 @@ jobs:
 
       # Ref: https://github.com/actions/setup-go
       - name: Install Go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v5
         with:
-          go-version: ">= 1.21"
+          go-version: ">= 1.23"
 
       # Ref: https://github.com/actions/checkout
       - name: Checkout Source
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
