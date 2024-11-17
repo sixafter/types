@@ -7,7 +7,9 @@ represented as [Google Protocol Buffers](https://developers.google.com/protocol-
 ### Status
 
 [![ci](https://github.com/sixafter/types/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/sixafter/types/actions/workflows/ci.yaml)
-![GitHub](https://img.shields.io/github/license/sixafter/types)
+[![Go](https://img.shields.io/github/go-mod/go-version/sixafter/types)](https://img.shields.io/github/go-mod/go-version/sixafter/types)
+[![Go Report Card](https://goreportcard.com/badge/github.com/sixafter/types)](https://goreportcard.com/report/github.com/sixafter/types)
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/sixafter/types)](https://img.shields.io/github/issues/sixafter/types)
 ![GitHub last commit](https://img.shields.io/github/last-commit/sixafter/types)
 
@@ -32,13 +34,13 @@ import (
 
 The use of Go [vendoring](https://golang.org/ref/mod#vendoring) is [RECOMMENDED].
 
-### Contributing
+## Contributing
 
-This is an open source project run by volunteers, and contributions are welcome! Check out the [Issues](https://github.com/sixafter/types/issues) page to see if your idea has already been mentioned. Feel free to raise an issue or submit a pull request.
+Contributions are welcome. See [CONTRIBUTING](CONTRIBUTING.md)
 
 ### License
 
-The code is licensed under the permissive Apache v2.0 license. [Read this](https://choosealicense.com/licenses/apache-2.0/) for a summary.
+This project is licensed under the [Apache 2.0 License](https://choosealicense.com/licenses/apache-2.0/). See [LICENSE](LICENSE) file.
 
 [MUST]: https://datatracker.ietf.org/doc/html/rfc2119
 [MUST NOT]: https://datatracker.ietf.org/doc/html/rfc2119
