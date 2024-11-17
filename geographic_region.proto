@@ -1,5 +1,8 @@
 // Copyright 2020-2024 SIX AFTER, INC (SIX AFTER)
-
+//
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-FileCopyrightText: SIX AFTER, INC (SIX AFTER)
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -14,32 +17,43 @@
 
 syntax="proto3";
 
-package types;
-option go_package="github.com/sixafter/types;types";
+package sixafter.types;
 
+option go_package="github.com/sixafter/types;types";
 option cc_enable_arenas = true;
 option java_package = "com.sixafter.types";
 option java_multiple_files = true;
 option java_outer_classname = "GeographicRegionProto";
-option objc_class_prefix = "TYP";
+option objc_class_prefix = "TPB";
+option csharp_namespace = "SixAfter.Types.WellKnownTypes";
 
-// ISO 3166-2 is part of the ISO 3166 standard published by the International
-// Organization for Standardization (ISO), and defines codes for identifying
-// the principal subdivisions (e.g., provinces or states) of all countries
-// coded in ISO 3166-1
+// The `GeographicRegion` message represents a region as defined by the ISO 3166-2 standard.
+// ISO 3166-2 defines codes for identifying the principal subdivisions (e.g., states or provinces)
+// of countries coded in ISO 3166-1. This message can be used in applications requiring
+// geographic or administrative classification.
 message GeographicRegion {
-  // The name of the region.
+
+  // The commonly used name of the region.
+  // Example: "Texas".
   string name = 1;
 
-  // The formal name of the region.
+  // The formal or official name of the region.
+  // Example: "State of Texas".
   string formal_name = 2;
 
-  // The numeric code for the region.
+  // The numeric code for the region as defined in the ISO 3166-2 standard.
+  // This code is often used in databases or systems where numeric identifiers
+  // are preferred for regional classification.
+  // Example: 48 (numeric code for Texas in the United States, if applicable).
   uint32 numeric_code = 3;
 
-  // The country for the region.
+  // The country to which the region belongs.
+  // This should use the ISO 3166-1 alpha-2 code of the country.
+  // Example: "US" for the United States.
   string country = 4;
 
-  // The country subdivision for the region.
+  // The country subdivision code for the region.
+  // This should use the ISO 3166-2 code for the specific subdivision.
+  // Example: "US-TX" for Texas in the United States.
   string country_subdivision = 5;
 }

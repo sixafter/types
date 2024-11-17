@@ -1,5 +1,8 @@
 // Copyright 2020-2024 SIX AFTER, INC (SIX AFTER)
 //
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-FileCopyrightText: SIX AFTER, INC (SIX AFTER)
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -14,26 +17,33 @@
 
 syntax="proto3";
 
-package types;
-option go_package="github.com/sixafter/types;types";
+package sixafter.types;
 
+option go_package="github.com/sixafter/types;types";
 option cc_enable_arenas = true;
 option java_package = "com.sixafter.types";
 option java_multiple_files = true;
 option java_outer_classname = "TemporalRangeProto";
-option objc_class_prefix = "TYP";
+option objc_class_prefix = "TPB";
+option csharp_namespace = "SixAfter.Types.WellKnownTypes";
 
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 
-// Spatial or temporal scale refers to the extent of the area or the duration
-// of time.
+// The `TemporalRange` message represents a time range defined by a starting
+// reference point (epoch) and a duration. It is commonly used in time-based
+// applications such as scheduling, analytics, and temporal data analysis.
 message TemporalRange {
-  // In chronology and periodization, an epoch or reference epoch is an instant
-  // in time chosen as the origin of a particular calendar era. The "epoch"
-  // serves as a reference point from which time is measured.
+
+  // The starting point of the temporal range, known as the epoch.
+  // This timestamp serves as the reference point from which the duration is
+  // measured.
+  // Example: "2024-11-17T00:00:00Z" for a midnight reference point in UTC.
   google.protobuf.Timestamp epoch = 1;
 
-  // A temporal duration.
+  // The duration of the temporal range, measured as the time span from the
+  // epoch. This represents the length of the time range.
+  // Example: A duration of `3600 seconds` (1 hour) indicates a range lasting
+  // one hour from the epoch.
   google.protobuf.Duration duration = 2;
 }

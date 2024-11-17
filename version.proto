@@ -1,5 +1,8 @@
 // Copyright 2020-2024 SIX AFTER, INC (SIX AFTER)
 //
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-FileCopyrightText: SIX AFTER, INC (SIX AFTER)
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -14,24 +17,28 @@
 
 syntax="proto3";
 
-package types;
-option go_package="github.com/sixafter/types;types";
+package sixafter.types;
 
+option go_package="github.com/sixafter/types;types";
 option cc_enable_arenas = true;
 option java_package = "com.sixafter.types";
 option java_multiple_files = true;
 option java_outer_classname = "VersionProto";
-option objc_class_prefix = "TYP";
+option objc_class_prefix = "TPB";
+option csharp_namespace = "SixAfter.Types.WellKnownTypes";
 
-// A Semantic Versioning 2.0.0 compliant version number.
-// See https://semver.org
-// See the Backus-Naur form at https://semver.org/#backusnaur-form-grammar-for-valid-semver-versions
+// The `Version` message represents a Semantic Versioning 2.0.0 compliant version number.
+// For details, see: https://semver.org
 message Version {
 
+  // The major version number.
+  //
   // Major version zero (0.y.z) is for initial development. Anything MAY change
   // at any time. The public API SHOULD NOT be considered stable.
   uint32 major = 1;
 
+  // Minor version number.
+  //
   // Minor version Y (x.Y.z | x > 0) MUST be incremented if new, backwards compatible
   // functionality is introduced to the public API. It MUST be incremented if any
   // public API functionality is marked as deprecated. It MAY be incremented if
@@ -40,11 +47,15 @@ message Version {
   // minor version is incremented.
   uint32 minor = 2;
 
+  // Patch version number.
+  //
   // Patch version Z (x.y.Z | x > 0) MUST be incremented if only backwards compatible
   // bug fixes are introduced. A bug fix is defined as an internal change that fixes
   // incorrect behavior.
   uint32 patch = 3;
 
+  // The pre-release version identifier.
+  //
   // A pre-release version MAY be denoted by appending a hyphen and a series of dot
   // separated identifiers immediately following the patch version. Identifiers MUST
   // comprise only ASCII alphanumerics and hyphens [0-9A-Za-z-]. Identifiers MUST NOT
@@ -57,6 +68,8 @@ message Version {
   // Examples: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92, 1.0.0-x-y-z.–.
   string prerelease = 4;
 
+  // The build metadata identifier.
+  //
   // Build metadata MAY be denoted by appending a plus sign and a series of dot separated
   // identifiers immediately following the patch or pre-release version. Identifiers MUST
   // comprise only ASCII alphanumerics and hyphens [0-9A-Za-z-]. Identifiers MUST NOT be

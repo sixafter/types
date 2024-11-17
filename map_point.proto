@@ -1,5 +1,8 @@
 // Copyright 2020-2024 SIX AFTER, INC (SIX AFTER)
 //
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-FileCopyrightText: SIX AFTER, INC (SIX AFTER)
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -14,29 +17,36 @@
 
 syntax="proto3";
 
-package types;
-option go_package="github.com/sixafter/types;types";
+package sixafter.types;
 
+option go_package="github.com/sixafter/types;types";
 option cc_enable_arenas = true;
 option java_package = "com.sixafter.types";
 option java_multiple_files = true;
 option java_outer_classname = "MapPointProto";
-option objc_class_prefix = "TYP";
+option objc_class_prefix = "TPB";
+option csharp_namespace = "SixAfter.Types.WellKnownTypes";
 
 import "geospatial_coordinate.proto";
 
-// If you project the curved surface of the globe onto a flat surface, what you
-// get is a two-dimensional version of a map where longitude lines appear to be
-// parallel. Such maps are often used to show the entire surface of the globe
-// all at once. A map_point data structure represents a point on this
-// two-dimensional map.
+// The `MapPoint` message represents a point on a two-dimensional map,
+// derived from projecting the curved surface of the globe onto a flat surface.
+// This structure is commonly used in mapping, GIS, and location-based applications.
 message MapPoint {
-  // The location of the point along the x-axis of the map.
+
+  // The x-coordinate of the map point.
+  // Represents the horizontal position on the two-dimensional map.
+  // Example: A value of 200.5 could represent a position on a Mercator projection.
   float x = 1;
 
-  // The location of the point along the y-axis of the map.
+  // The y-coordinate of the map point.
+  // Represents the vertical position on the two-dimensional map.
+  // Example: A value of 150.2 could represent a position on a Mercator projection.
   float y = 2;
 
-  // The geospatial coordinate that corresponds to the specified map point.
+  // The geospatial coordinate that corresponds to the map point.
+  // Provides the latitude, longitude, and elevation information for the point.
+  // Example: A map point with `x=200.5` and `y=150.2` could correspond to
+  // `latitude=32.9829` and `longitude=-97.1876` for Westlake, Texas.
   GeospatialCoordinate coordinate = 3;
 }

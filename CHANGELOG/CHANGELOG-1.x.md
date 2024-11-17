@@ -18,6 +18,22 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
+## [1.23.0] - 2024-11-17
+
+### Added
+- **FEATURE:** Added detailed documentation to all `.proto` files to describe the purpose and expected use of each message.
+- **FEATURE:** Added `csharp_namespace` option to the `protoc` command to specify the C# namespace for generated files.
+- **FEATURE:** Added `map<string, string> extensions` to the `entity_metadata.proto` file to allow for custom metadata to be added to entities.
+
+### Changed
+- **DEBT:** Changed `option objc_class_prefix` to `TPB` to match the project name.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
 ## [1.22.0] - 2024-11-17
 
 ### Added
@@ -29,7 +45,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/nanoid/compare/v1.22.0..HEAD
+[Unreleased]: https://github.com/sixafter/nanoid/compare/v1.23.0..HEAD
+[1.23.0]: https://github.com/sixafter/nanoid/compare/v1.22.0...v1.23.0
 [1.22.0]: https://github.com/sixafter/nanoid/compare/v1.0.1...v1.22.0
 
 [MUST]: https://datatracker.ietf.org/doc/html/rfc2119

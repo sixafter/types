@@ -1,5 +1,8 @@
 // Copyright 2020-2024 SIX AFTER, INC (SIX AFTER)
 //
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-FileCopyrightText: SIX AFTER, INC (SIX AFTER)
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -14,37 +17,54 @@
 
 syntax="proto3";
 
-package types;
-option go_package="github.com/sixafter/types;types";
+package sixafter.types;
 
+option go_package="github.com/sixafter/types;types";
 option cc_enable_arenas = true;
 option java_package = "com.sixafter.types";
 option java_multiple_files = true;
 option java_outer_classname = "UriProto";
-option objc_class_prefix = "TYP";
+option objc_class_prefix = "TPB";
+option csharp_namespace = "SixAfter.Types.WellKnownTypes";
 
-// Represents a Uniform Resource Identifier (URI) as defined by s defined by
+// The `Uri` message represents a Uniform Resource Identifier (URI) as defined by
 // [RFC 2396: Uniform Resource Identifiers (URI): Generic Syntax](http://www.ietf.org/rfc/rfc2396.txt),
 // amended by [RFC 2732: Format for Literal IPv6 Addresses in URLs](http://www.ietf.org/rfc/rfc2732.txt).
+// A URI is a compact string used to identify a resource in a generic syntax.
 message Uri {
-  // The scheme component of this URI.
+
+  // The scheme component of the URI.
+  // Example: "https", "ftp", or "mailto".
   string scheme = 1;
 
-  // The fragment component of this URI.
+  // The fragment component of the URI.
+  // This is the optional part of the URI that follows a "#" and provides an identifier
+  // to a secondary resource.
+  // Example: "section1" in "https://example.com/page#section1".
   string fragment = 2;
 
-  // The host component of this URI.
+  // The host component of the URI.
+  // This identifies the domain name or IP address of the resource.
+  // Example: "example.com" or "192.168.1.1".
   string host = 3;
 
-  // The port number of this URI.
+  // The port number of the URI.
+  // This is the optional number that specifies the communication port.
+  // Example: 443 for HTTPS.
   int32 port = 4;
 
-  // The query component of this URI.
+  // The query component of the URI.
+  // This contains optional parameters appended to the URI, following a "?".
+  // Example: "id=123&name=test" in "https://example.com/page?id=123&name=test".
   string query = 5;
 
-  // The authority component of this URI.
+  // The authority component of the URI.
+  // This typically includes the host and port, and optionally the user-information.
+  // Example: "user@example.com:8080" in "https://user@example.com:8080/resource".
   string authority = 6;
 
-  // The user-information component of this URI.
+  // The user-information component of the URI.
+  // This is the optional part before the host that provides user credentials.
+  // Example: "user:password" in "https://user:password@example.com".
   string user_info = 7;
 }

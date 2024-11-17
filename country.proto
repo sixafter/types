@@ -1,5 +1,8 @@
 // Copyright 2020-2024 SIX AFTER, INC (SIX AFTER)
 //
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-FileCopyrightText: SIX AFTER, INC (SIX AFTER)
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -14,30 +17,41 @@
 
 syntax="proto3";
 
-package types;
-option go_package="github.com/sixafter/types;types";
+package sixafter.types;
 
+option go_package="github.com/sixafter/types;types";
 option cc_enable_arenas = true;
 option java_package = "com.sixafter.types";
 option java_multiple_files = true;
 option java_outer_classname = "CountryProto";
-option objc_class_prefix = "TYP";
+option objc_class_prefix = "TPB";
+option csharp_namespace = "SixAfter.Types.WellKnownTypes";
 
-// A country as defined by the ISO-3166-1 standard.
+// The `Country` message represents a country as defined by the ISO-3166-1 standard.
+// It is commonly used for internationalization, geolocation, and regulatory purposes.
 message Country {
 
-  // The name of the country.
+  // The commonly used name of the country.
+  // Example: "United States".
   string name = 1;
 
-  // The formal name of the country.
+  // The formal or official name of the country.
+  // Example: "United States of America".
   string formal_name = 2;
 
-  // The alphabetic 2-code for the country.
+  // The ISO 3166-1 alpha-2 code for the country.
+  // This is a two-letter country code commonly used in international standards and systems.
+  // Example: "US" for the United States.
   string alphabetic_code_2 = 3;
 
-  // The alphabetic 3-code for the country.
+  // The ISO 3166-1 alpha-3 code for the country.
+  // This is a three-letter country code that offers more specificity than the alpha-2 code.
+  // Example: "USA" for the United States.
   string alphabetic_code_3 = 4;
 
-  // The numeric code for the country.
+  // The ISO 3166-1 numeric code for the country.
+  // This is a three-digit code that is language-neutral and often used in databases or systems
+  // where numeric identifiers are preferred.
+  // Example: 840 for the United States.
   uint32 numeric_code = 5;
 }

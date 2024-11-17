@@ -1,5 +1,8 @@
 // Copyright 2020-2024 SIX AFTER, INC (SIX AFTER)
 //
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-FileCopyrightText: SIX AFTER, INC (SIX AFTER)
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -14,20 +17,27 @@
 
 syntax="proto3";
 
-package types;
-option go_package="github.com/sixafter/types;types";
+package sixafter.types;
 
+option go_package="github.com/sixafter/types;types";
 option cc_enable_arenas = true;
 option java_package = "com.sixafter.types";
 option java_multiple_files = true;
 option java_outer_classname = "CountrySubdivisionProto";
-option objc_class_prefix = "TYP";
+option objc_class_prefix = "TPB";
+option csharp_namespace = "SixAfter.Types.WellKnownTypes";
 
-// A subdivision as defined by the ISO-3166-2 standard.
+// The `CountrySubdivision` message represents a subdivision of a country,
+// such as a state, province, or territory, as defined by the ISO-3166-2 standard.
+// This is commonly used for addressing, geolocation, and administrative purposes.
 message CountrySubdivision {
-  // The name of the country.
+
+  // The name of the subdivision.
+  // Example: "Texas".
   string name = 1;
 
-  // The formal name of the country.
+  // The ISO 3166-2 code for the subdivision.
+  // This is a code that uniquely identifies the subdivision within its country.
+  // Example: "US-TX" for Texas in the United States.
   string code = 2;
 }
