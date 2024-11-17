@@ -8,7 +8,6 @@ represented as [Google Protocol Buffers](https://developers.google.com/protocol-
 
 [![ci](https://github.com/sixafter/types/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/sixafter/types/actions/workflows/ci.yaml)
 [![Go](https://img.shields.io/github/go-mod/go-version/sixafter/types)](https://img.shields.io/github/go-mod/go-version/sixafter/types)
-[![Go Report Card](https://goreportcard.com/badge/github.com/sixafter/types)](https://goreportcard.com/report/github.com/sixafter/types)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/sixafter/types)](https://img.shields.io/github/issues/sixafter/types)
 ![GitHub last commit](https://img.shields.io/github/last-commit/sixafter/types)
