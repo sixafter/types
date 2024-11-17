@@ -1,5 +1,8 @@
 // Copyright 2020-2024 SIX AFTER, INC (SIX AFTER)
 //
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-FileCopyrightText: SIX AFTER, INC (SIX AFTER)
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -14,34 +17,47 @@
 
 syntax="proto3";
 
-package types;
-option go_package="github.com/sixafter/types;types";
+package sixafter.types;
 
+option go_package="github.com/sixafter/types;types";
 option cc_enable_arenas = true;
 option java_package = "com.sixafter.types";
 option java_multiple_files = true;
 option java_outer_classname = "TimeZoneProto";
-option objc_class_prefix = "TYP";
+option objc_class_prefix = "TPB";
+option csharp_namespace = "SixAfter.Types.WellKnownTypes";
 
-// A time zone is an area which observes a uniform standard time for legal,
-// commercial and social purposes.
+// The `TimeZone` message represents a time zone, which is an area
+// observing a uniform standard time for legal, commercial, and social purposes.
 message TimeZone {
 
+  // The `TimeOffset` message represents a time offset from Coordinated
+  // Universal Time (UTC) in terms of hours and minutes.
   message TimeOffset {
-    // The offset in hours.
+    // The offset from UTC in whole hours.
+    // Example: -5 for UTC-5 (Eastern Standard Time).
     int32 hours = 1;
 
-    // The offset in minutes.
+    // The additional offset from UTC in minutes.
+    // Example: 30 for UTC+5:30 (India Standard Time).
     int32 minutes = 2;
   }
 
+  // The name of the time zone.
+  // Example: "America/New_York".
   string name = 1;
 
+  // The common abbreviation for the time zone.
+  // Example: "EST" for Eastern Standard Time or "EDT" for Eastern Daylight Time.
   string abbreviation = 2;
 
-  // The Standard Time (STD) offset from UTC in hours and minutes.
+  // The Standard Time (STD) offset from UTC, in hours and minutes.
+  // This represents the time zone's offset when daylight saving time is not in effect.
+  // Example: For "America/New_York", the standard time offset is UTC-5.
   TimeOffset utc_offset_std = 3;
 
-  // The Daylight Saving Time (DST) offset from UTC in hours and minutes.
+  // The Daylight Saving Time (DST) offset from UTC, in hours and minutes.
+  // This represents the time zone's offset when daylight saving time is in effect.
+  // Example: For "America/New_York", the daylight saving time offset is UTC-4.
   TimeOffset utc_offset_dst = 4;
 }

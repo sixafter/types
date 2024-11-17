@@ -1,5 +1,8 @@
 // Copyright 2020-2024 SIX AFTER, INC (SIX AFTER)
 //
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-FileCopyrightText: SIX AFTER, INC (SIX AFTER)
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -14,29 +17,40 @@
 
 syntax = "proto3";
 
-package types;
-option go_package="github.com/sixafter/types;types";
+package sixafter.types;
 
+option go_package="github.com/sixafter/types;types";
 option cc_enable_arenas = true;
 option java_package = "com.sixafter.types";
 option java_multiple_files = true;
 option java_outer_classname = "GeospatialElevationProto";
-option objc_class_prefix = "TYP";
+option objc_class_prefix = "TPB";
+option csharp_namespace = "SixAfter.Types.WellKnownTypes";
 
-// The vertical direction, between a reference datum and a point or object.
+// The `GeospatialElevation` message represents the vertical direction
+// or height of a point relative to a specified reference datum. This
+// is commonly used in geolocation, mapping, and geographic information systems (GIS).
 message GeospatialElevation {
-  // A reference system or an approximation of the Earth's surface against
-  // which positional measurements are made for computing locations.
+
+  // The `GeodeticDatum` enum defines the reference system or surface
+  // against which the elevation is measured. These reference systems are
+  // approximations of the Earth's surface.
   enum GeodeticDatum {
-    // The altitude above mean sea level associated with a location, measured in meters.
+    // The altitude above mean sea level (MSL), measured in meters.
+    // This is a commonly used datum for everyday elevation measurements.
     SEA_LEVEL = 0;
-    // The altitude as a height above the World Geodetic System 1984 (WGS84) ellipsoid, measured in meters.
+
+    // The altitude as a height above the World Geodetic System 1984 (WGS84)
+    // ellipsoid, measured in meters. This is commonly used in GPS systems.
     WGS_84 = 1;
   }
 
-  // A reference point.
+  // The geodetic datum used as the reference point for the elevation measurement.
+  // Example: `SEA_LEVEL` for altitude above mean sea level.
   GeodeticDatum datum = 1;
 
-  // The positive or negative vertical elevation in relation to the datum.
+  // The altitude or vertical elevation of the point, measured in meters.
+  // This value can be positive (above the datum) or negative (below the datum).
+  // Example: An altitude of 212 meters above sea level for Westlake, Texas.
   double altitude = 2;
 }

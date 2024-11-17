@@ -1,5 +1,8 @@
 // Copyright 2020-2024 SIX AFTER, INC (SIX AFTER)
 //
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-FileCopyrightText: SIX AFTER, INC (SIX AFTER)
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -14,20 +17,29 @@
 
 syntax="proto3";
 
-package types;
-option go_package="github.com/sixafter/types;types";
+package sixafter.types;
 
+option go_package="github.com/sixafter/types;types";
 option cc_enable_arenas = true;
 option java_package = "com.sixafter.types";
 option java_multiple_files = true;
 option java_outer_classname = "EmailAddressProto";
-option objc_class_prefix = "TYP";
+option objc_class_prefix = "TPB";
+option csharp_namespace = "SixAfter.Types.WellKnownTypes";
 
-// An electronic mail (email) address as defined by RFC 5322.
+// The `EmailAddress` message represents an electronic mail (email) address
+// as defined by RFC 5322. It separates the email address into its two main
+// components: the local part and the domain part.
 message EmailAddress {
-  // The local part.
+
+  // The local part of the email address.
+  // This is the portion of the address before the "@" symbol.
+  // Example: "john.doe" in the email address "john.doe@example.com".
   string local_part = 1;
 
-  // The domain part.
+  // The domain part of the email address.
+  // This is the portion of the address after the "@" symbol.
+  // It identifies the mail server responsible for accepting emails for the address.
+  // Example: "example.com" in the email address "john.doe@example.com".
   string domain_part = 2;
 }
