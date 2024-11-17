@@ -23,17 +23,17 @@ option go_package="github.com/sixafter/types;types";
 option cc_enable_arenas = true;
 option java_package = "com.sixafter.types";
 option java_multiple_files = true;
-option java_outer_classname = "PolygonProto";
+option java_outer_classname = "MapPolygonProto";
 option objc_class_prefix = "TPB";
 option csharp_namespace = "SixAfter.Types.WellKnownTypes";
 
 import "map_point.proto";
 
-// The `Polygon` message represents a closed geometric shape on a map.
+// The `MapPolygonPolygon` message represents a closed geometric shape on a map.
 // The shape is defined by a series of points that are connected end-to-end,
 // with the first and last points also connected to form a closed shape.
 // This structure is commonly used in mapping applications, GIS, and geofencing.
-message Polygon {
+message MapPolygon {
 
   // The set of points that define the polygon.
   // Each point is represented by a `MapPoint` message, which specifies the

@@ -18,6 +18,27 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
+## [1.24.0] - 2024-11-17
+
+### Added
+- **FEATURE:* Added [geometry.proto](geometry.proto) for defining geometrical constructs, including:
+  - Scalar: Represents a scalar number using an unscaled integer value and a scale for fixed-point arithmetic. 
+  - CoordinateSystem: Defines the coordinate system used to interpret geometric entities (e.g., Cartesian, Polar), with optional parameters. 
+  - GeometryType: Specifies the type of geometry abstracting the mathematical space (e.g., Euclidean, Hyperbolic), with optional parameters. 
+  - Coordinate: Represents an n-dimensional coordinate within a specified geometry and coordinate system, using Scalar values for precision. 
+  - Point: Defines a point in a mathematical space, characterized by its Coordinate. 
+  - Line: Represents a line or geodesic in a mathematical space, defined by starting and ending Points. 
+  - Polygon: Describes a polygon in a mathematical space, defined by a series of Point vertices and an is_closed flag.
+
+### Changed
+- **DEBT:** Renamed `polygon.proto` to `map_polygon.proto` to better reflect the purpose of the file.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
 ## [1.23.0] - 2024-11-17
 
 ### Added
@@ -45,7 +66,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/nanoid/compare/v1.23.0..HEAD
+[Unreleased]: https://github.com/sixafter/nanoid/compare/v1.24.0..HEAD
+[1.24.0]: https://github.com/sixafter/nanoid/compare/v1.23.0...v1.24.0
 [1.23.0]: https://github.com/sixafter/nanoid/compare/v1.22.0...v1.23.0
 [1.22.0]: https://github.com/sixafter/nanoid/compare/v1.0.1...v1.22.0
 

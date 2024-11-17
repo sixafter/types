@@ -27,7 +27,7 @@ option java_outer_classname = "GeofenceProto";
 option objc_class_prefix = "TPB";
 option csharp_namespace = "SixAfter.Types.WellKnownTypes";
 
-import "polygon.proto";
+import "map_polygon.proto";
 
 // The `Geofence` message represents a virtual boundary around a geographic area.
 // Geofences are used in applications such as location-based services, navigation,
@@ -42,5 +42,5 @@ message Geofence {
   // A geofence may consist of one or more polygons, where each polygon represents
   // a distinct area. The polygons can define complex, multi-vertex boundaries.
   // Example: A campus geofence with multiple disconnected zones.
-  repeated Polygon polygon = 2;
+  repeated MapPolygon polygon = 2;
 }
