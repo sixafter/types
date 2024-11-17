@@ -18,7 +18,7 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
-## [1.21.0] - 2024-11-17
+## [1.22.0] - 2024-11-17
 
 ### Added
 - **FEATURE:** Added a [CHANGELOG](CHANGELOG.md) to track all notable changes to the project.
@@ -29,8 +29,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/nanoid/compare/v1.21.0..HEAD
-[1.21.0]: https://github.com/sixafter/nanoid/compare/v1.0.1...v1.21.0
+[Unreleased]: https://github.com/sixafter/nanoid/compare/v1.22.0..HEAD
+[1.22.0]: https://github.com/sixafter/nanoid/compare/v1.0.1...v1.22.0
 
 [MUST]: https://datatracker.ietf.org/doc/html/rfc2119
 [MUST NOT]: https://datatracker.ietf.org/doc/html/rfc2119
