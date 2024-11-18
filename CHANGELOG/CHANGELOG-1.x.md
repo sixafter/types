@@ -21,7 +21,7 @@ Date format: `YYYY-MM-DD`
 ## [1.24.0] - 2024-11-17
 
 ### Added
-- **FEATURE:* Added [geometry.proto](geometry.proto) for defining geometrical constructs, including:
+- **FEATURE:** Added [geometry.proto](geometry.proto) for defining geometrical constructs, including:
   - Scalar: Represents a scalar number using an unscaled integer value and a scale for fixed-point arithmetic. 
   - CoordinateSystem: Defines the coordinate system used to interpret geometric entities (e.g., Cartesian, Polar), with optional parameters. 
   - GeometryType: Specifies the type of geometry abstracting the mathematical space (e.g., Euclidean, Hyperbolic), with optional parameters. 
