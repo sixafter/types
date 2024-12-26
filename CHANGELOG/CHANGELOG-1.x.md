@@ -18,6 +18,18 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
+## [1.25.0] - 2024-12-26
+
+### Added
+### Changed
+- **debt:** Upgraded all dependencies to the latest versions to ensure compatibility and security.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
 ## [1.24.0] - 2024-11-17
 
 ### Added
@@ -66,7 +78,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/nanoid/compare/v1.24.0...HEAD
+[Unreleased]: https://github.com/sixafter/nanoid/compare/v1.25.0...HEAD
+[1.24.0]: https://github.com/sixafter/nanoid/compare/v1.24.0...v1.25.0
 [1.24.0]: https://github.com/sixafter/nanoid/compare/v1.23.0...v1.24.0
 [1.23.0]: https://github.com/sixafter/nanoid/compare/v1.22.0...v1.23.0
 [1.22.0]: https://github.com/sixafter/nanoid/compare/v1.0.1...v1.22.0
