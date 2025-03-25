@@ -24,4 +24,4 @@ if is_windows; then
 fi
 
 go clean
-rm ./*.pb.go
+rm -f ./*.pb.go
