@@ -18,6 +18,17 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
+## [1.35.0] - 2025-05-12
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+- **defect:** Fixed bug in 'CHANGELOG.md' where the path was incorrect.
+### Security
+
+---
 ## [1.34.0] - 2025-05-07
 
 ### Added
@@ -163,20 +174,21 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/nanoid/compare/v1.34.0...HEAD
-[1.34.0]: https://github.com/sixafter/nanoid/compare/v1.33.0...v1.34.0
-[1.33.0]: https://github.com/sixafter/nanoid/compare/v1.32.0...v1.33.0
-[1.32.0]: https://github.com/sixafter/nanoid/compare/v1.31.0...v1.32.0
-[1.31.0]: https://github.com/sixafter/nanoid/compare/v1.30.0...v1.31.0
-[1.30.0]: https://github.com/sixafter/nanoid/compare/v1.29.0...v1.30.0
-[1.29.0]: https://github.com/sixafter/nanoid/compare/v1.28.0...v1.29.0
-[1.28.0]: https://github.com/sixafter/nanoid/compare/v1.27.0...v1.28.0
-[1.27.0]: https://github.com/sixafter/nanoid/compare/v1.26.0...v1.27.0
-[1.26.0]: https://github.com/sixafter/nanoid/compare/v1.25.0...v1.26.0
-[1.25.0]: https://github.com/sixafter/nanoid/compare/v1.24.0...v1.25.0
-[1.24.0]: https://github.com/sixafter/nanoid/compare/v1.23.0...v1.24.0
-[1.23.0]: https://github.com/sixafter/nanoid/compare/v1.22.0...v1.23.0
-[1.22.0]: https://github.com/sixafter/nanoid/compare/v1.0.1...v1.22.0
+[Unreleased]: https://github.com/sixafter/types/compare/v1.35.0...HEAD
+[1.35.0]: https://github.com/sixafter/types/compare/v1.33.0...v1.35.0
+[1.34.0]: https://github.com/sixafter/types/compare/v1.33.0...v1.34.0
+[1.33.0]: https://github.com/sixafter/types/compare/v1.32.0...v1.33.0
+[1.32.0]: https://github.com/sixafter/types/compare/v1.31.0...v1.32.0
+[1.31.0]: https://github.com/sixafter/types/compare/v1.30.0...v1.31.0
+[1.30.0]: https://github.com/sixafter/types/compare/v1.29.0...v1.30.0
+[1.29.0]: https://github.com/sixafter/types/compare/v1.28.0...v1.29.0
+[1.28.0]: https://github.com/sixafter/types/compare/v1.27.0...v1.28.0
+[1.27.0]: https://github.com/sixafter/types/compare/v1.26.0...v1.27.0
+[1.26.0]: https://github.com/sixafter/types/compare/v1.25.0...v1.26.0
+[1.25.0]: https://github.com/sixafter/types/compare/v1.24.0...v1.25.0
+[1.24.0]: https://github.com/sixafter/types/compare/v1.23.0...v1.24.0
+[1.23.0]: https://github.com/sixafter/types/compare/v1.22.0...v1.23.0
+[1.22.0]: https://github.com/sixafter/types/compare/v1.0.1...v1.22.0
 
 [MUST]: https://datatracker.ietf.org/doc/html/rfc2119
 [MUST NOT]: https://datatracker.ietf.org/doc/html/rfc2119
