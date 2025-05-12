@@ -18,7 +18,7 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
-## [1.35.0] - 2025-05-12
+## [1.36.0] - 2025-05-12
 
 ### Added
 ### Changed
@@ -174,8 +174,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.35.0...HEAD
-[1.35.0]: https://github.com/sixafter/types/compare/v1.33.0...v1.35.0
+[Unreleased]: https://github.com/sixafter/types/compare/v1.36.0...HEAD
+[1.36.0]: https://github.com/sixafter/types/compare/v1.34.0...v1.36.0
 [1.34.0]: https://github.com/sixafter/types/compare/v1.33.0...v1.34.0
 [1.33.0]: https://github.com/sixafter/types/compare/v1.32.0...v1.33.0
 [1.32.0]: https://github.com/sixafter/types/compare/v1.31.0...v1.32.0
