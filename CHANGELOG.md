@@ -18,6 +18,22 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
+## [1.37.0] - 2025-06-19
+
+### Added
+- **feature:* Added 'country' to the `country_subdivision.proto` file to represent the country to which the subdivision belongs.
+- **feature:** Added `time_zone.central_coordinate` to the `time_zone.proto` file to represent the central coordinate of the time zone.
+
+### Changed
+- **debt:** The `help` make target now sorts the output.
+- **debt:** Renamed `entity_metadata.extensions` to `entity_metadata.attributes` to avoid confusion with protocol buffer extensions.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
 ## [1.36.0] - 2025-05-12
 
 ### Added
@@ -174,7 +190,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.36.0...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.37.0...HEAD
+[1.37.0]: https://github.com/sixafter/types/compare/v1.36.0...v1.37.0
 [1.36.0]: https://github.com/sixafter/types/compare/v1.34.0...v1.36.0
 [1.34.0]: https://github.com/sixafter/types/compare/v1.33.0...v1.34.0
 [1.33.0]: https://github.com/sixafter/types/compare/v1.32.0...v1.33.0

@@ -80,10 +80,10 @@ type EntityMetadata struct {
 	// - A pattern matching "^[a-zA-Z0-9_-]+$" (alphanumeric, underscores, and hyphens).
 	// Example: `["finance", "report2024"]` for an entity tagged as a 2024 finance report.
 	Tags []string `protobuf:"bytes,9,rep,name=tags,proto3" json:"tags,omitempty"`
-	// Custom extensions for additional metadata in key-value format.
+	// Custom attributes for additional metadata in key-value format.
 	// The keys and values are strings, allowing flexible metadata descriptions.
 	// Example: `{"source": "API", "priority": "high"}` for an entity from the API with high priority.
-	Extensions    map[string]string `protobuf:"bytes,10,rep,name=extensions,proto3" json:"extensions,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	Attributes    map[string]string `protobuf:"bytes,10,rep,name=attributes,proto3" json:"attributes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -181,9 +181,9 @@ func (x *EntityMetadata) GetTags() []string {
 	return nil
 }
 
-func (x *EntityMetadata) GetExtensions() map[string]string {
+func (x *EntityMetadata) GetAttributes() map[string]string {
 	if x != nil {
-		return x.Extensions
+		return x.Attributes
 	}
 	return nil
 }
@@ -207,10 +207,10 @@ const file_entity_metadata_proto_rawDesc = "" +
 	"\fis_synthetic\x18\b \x01(\bR\visSynthetic\x12\x12\n" +
 	"\x04tags\x18\t \x03(\tR\x04tags\x12N\n" +
 	"\n" +
-	"extensions\x18\n" +
-	" \x03(\v2..sixafter.types.EntityMetadata.ExtensionsEntryR\n" +
-	"extensions\x1a=\n" +
-	"\x0fExtensionsEntry\x12\x10\n" +
+	"attributes\x18\n" +
+	" \x03(\v2..sixafter.types.EntityMetadata.AttributesEntryR\n" +
+	"attributes\x1a=\n" +
+	"\x0fAttributesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01Bu\n" +
 	"\x12com.sixafter.typesB\x13EntityMetadataProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
@@ -230,7 +230,7 @@ func file_entity_metadata_proto_rawDescGZIP() []byte {
 var file_entity_metadata_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_entity_metadata_proto_goTypes = []any{
 	(*EntityMetadata)(nil),        // 0: sixafter.types.EntityMetadata
-	nil,                           // 1: sixafter.types.EntityMetadata.ExtensionsEntry
+	nil,                           // 1: sixafter.types.EntityMetadata.AttributesEntry
 	(*timestamppb.Timestamp)(nil), // 2: google.protobuf.Timestamp
 	(*Version)(nil),               // 3: sixafter.types.Version
 }
@@ -239,7 +239,7 @@ var file_entity_metadata_proto_depIdxs = []int32{
 	2, // 1: sixafter.types.EntityMetadata.modified_on:type_name -> google.protobuf.Timestamp
 	2, // 2: sixafter.types.EntityMetadata.deleted_on:type_name -> google.protobuf.Timestamp
 	3, // 3: sixafter.types.EntityMetadata.version:type_name -> sixafter.types.Version
-	1, // 4: sixafter.types.EntityMetadata.extensions:type_name -> sixafter.types.EntityMetadata.ExtensionsEntry
+	1, // 4: sixafter.types.EntityMetadata.attributes:type_name -> sixafter.types.EntityMetadata.AttributesEntry
 	5, // [5:5] is the sub-list for method output_type
 	5, // [5:5] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name

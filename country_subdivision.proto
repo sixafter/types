@@ -27,11 +27,12 @@ option java_outer_classname = "CountrySubdivisionProto";
 option objc_class_prefix = "TPB";
 option csharp_namespace = "SixAfter.Types.WellKnownTypes";
 
+import "country.proto";
+
 // The `CountrySubdivision` message represents a subdivision of a country,
 // such as a state, province, or territory, as defined by the ISO-3166-2 standard.
 // This is commonly used for addressing, geolocation, and administrative purposes.
 message CountrySubdivision {
-
   // The name of the subdivision.
   // Example: "Texas".
   string name = 1;
@@ -40,4 +41,7 @@ message CountrySubdivision {
   // This is a code that uniquely identifies the subdivision within its country.
   // Example: "US-TX" for Texas in the United States.
   string code = 2;
+
+  // The country to which this subdivision belongs.
+  Country country = 3;
 }

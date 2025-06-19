@@ -55,9 +55,12 @@ type TimeZone struct {
 	// The Daylight Saving Time (DST) offset from UTC, in hours and minutes.
 	// This represents the time zone's offset when daylight saving time is in effect.
 	// Example: For "America/New_York", the daylight saving time offset is UTC-4.
-	UtcOffsetDst  *TimeZone_TimeOffset `protobuf:"bytes,4,opt,name=utc_offset_dst,json=utcOffsetDst,proto3" json:"utc_offset_dst,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	UtcOffsetDst *TimeZone_TimeOffset `protobuf:"bytes,4,opt,name=utc_offset_dst,json=utcOffsetDst,proto3" json:"utc_offset_dst,omitempty"`
+	// The geographic coordinates of the time zone's central point.
+	// This is commonly used to determine the time zone based on location.
+	CentralCoordinate *GeospatialCoordinate `protobuf:"bytes,5,opt,name=central_coordinate,json=centralCoordinate,proto3" json:"central_coordinate,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
 }
 
 func (x *TimeZone) Reset() {
@@ -114,6 +117,13 @@ func (x *TimeZone) GetUtcOffsetStd() *TimeZone_TimeOffset {
 func (x *TimeZone) GetUtcOffsetDst() *TimeZone_TimeOffset {
 	if x != nil {
 		return x.UtcOffsetDst
+	}
+	return nil
+}
+
+func (x *TimeZone) GetCentralCoordinate() *GeospatialCoordinate {
+	if x != nil {
+		return x.CentralCoordinate
 	}
 	return nil
 }
@@ -180,12 +190,13 @@ var File_time_zone_proto protoreflect.FileDescriptor
 
 const file_time_zone_proto_rawDesc = "" +
 	"\n" +
-	"\x0ftime_zone.proto\x12\x0esixafter.types\"\x96\x02\n" +
+	"\x0ftime_zone.proto\x12\x0esixafter.types\x1a\x1bgeospatial_coordinate.proto\"\xeb\x02\n" +
 	"\bTimeZone\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\"\n" +
 	"\fabbreviation\x18\x02 \x01(\tR\fabbreviation\x12I\n" +
 	"\x0eutc_offset_std\x18\x03 \x01(\v2#.sixafter.types.TimeZone.TimeOffsetR\futcOffsetStd\x12I\n" +
-	"\x0eutc_offset_dst\x18\x04 \x01(\v2#.sixafter.types.TimeZone.TimeOffsetR\futcOffsetDst\x1a<\n" +
+	"\x0eutc_offset_dst\x18\x04 \x01(\v2#.sixafter.types.TimeZone.TimeOffsetR\futcOffsetDst\x12S\n" +
+	"\x12central_coordinate\x18\x05 \x01(\v2$.sixafter.types.GeospatialCoordinateR\x11centralCoordinate\x1a<\n" +
 	"\n" +
 	"TimeOffset\x12\x14\n" +
 	"\x05hours\x18\x01 \x01(\x05R\x05hours\x12\x18\n" +
@@ -206,17 +217,19 @@ func file_time_zone_proto_rawDescGZIP() []byte {
 
 var file_time_zone_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_time_zone_proto_goTypes = []any{
-	(*TimeZone)(nil),            // 0: sixafter.types.TimeZone
-	(*TimeZone_TimeOffset)(nil), // 1: sixafter.types.TimeZone.TimeOffset
+	(*TimeZone)(nil),             // 0: sixafter.types.TimeZone
+	(*TimeZone_TimeOffset)(nil),  // 1: sixafter.types.TimeZone.TimeOffset
+	(*GeospatialCoordinate)(nil), // 2: sixafter.types.GeospatialCoordinate
 }
 var file_time_zone_proto_depIdxs = []int32{
 	1, // 0: sixafter.types.TimeZone.utc_offset_std:type_name -> sixafter.types.TimeZone.TimeOffset
 	1, // 1: sixafter.types.TimeZone.utc_offset_dst:type_name -> sixafter.types.TimeZone.TimeOffset
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	2, // 2: sixafter.types.TimeZone.central_coordinate:type_name -> sixafter.types.GeospatialCoordinate
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_time_zone_proto_init() }
@@ -224,6 +237,7 @@ func file_time_zone_proto_init() {
 	if File_time_zone_proto != nil {
 		return
 	}
+	file_geospatial_coordinate_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

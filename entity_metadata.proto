@@ -80,8 +80,8 @@ message EntityMetadata {
   // Example: `["finance", "report2024"]` for an entity tagged as a 2024 finance report.
   repeated string tags = 9;
 
-  // Custom extensions for additional metadata in key-value format.
+  // Custom attributes for additional metadata in key-value format.
   // The keys and values are strings, allowing flexible metadata descriptions.
   // Example: `{"source": "API", "priority": "high"}` for an entity from the API with high priority.
-  map<string, string> extensions = 10;
+  map<string, string> attributes = 10;
 }

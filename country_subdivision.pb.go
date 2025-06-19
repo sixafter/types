@@ -49,7 +49,9 @@ type CountrySubdivision struct {
 	// The ISO 3166-2 code for the subdivision.
 	// This is a code that uniquely identifies the subdivision within its country.
 	// Example: "US-TX" for Texas in the United States.
-	Code          string `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty"`
+	Code string `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty"`
+	// The country to which this subdivision belongs.
+	Country       *Country `protobuf:"bytes,3,opt,name=country,proto3" json:"country,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -98,14 +100,22 @@ func (x *CountrySubdivision) GetCode() string {
 	return ""
 }
 
+func (x *CountrySubdivision) GetCountry() *Country {
+	if x != nil {
+		return x.Country
+	}
+	return nil
+}
+
 var File_country_subdivision_proto protoreflect.FileDescriptor
 
 const file_country_subdivision_proto_rawDesc = "" +
 	"\n" +
-	"\x19country_subdivision.proto\x12\x0esixafter.types\"<\n" +
+	"\x19country_subdivision.proto\x12\x0esixafter.types\x1a\rcountry.proto\"o\n" +
 	"\x12CountrySubdivision\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n" +
-	"\x04code\x18\x02 \x01(\tR\x04codeBy\n" +
+	"\x04code\x18\x02 \x01(\tR\x04code\x121\n" +
+	"\acountry\x18\x03 \x01(\v2\x17.sixafter.types.CountryR\acountryBy\n" +
 	"\x12com.sixafter.typesB\x17CountrySubdivisionProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
@@ -123,13 +133,15 @@ func file_country_subdivision_proto_rawDescGZIP() []byte {
 var file_country_subdivision_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_country_subdivision_proto_goTypes = []any{
 	(*CountrySubdivision)(nil), // 0: sixafter.types.CountrySubdivision
+	(*Country)(nil),            // 1: sixafter.types.Country
 }
 var file_country_subdivision_proto_depIdxs = []int32{
-	0, // [0:0] is the sub-list for method output_type
-	0, // [0:0] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	1, // 0: sixafter.types.CountrySubdivision.country:type_name -> sixafter.types.Country
+	1, // [1:1] is the sub-list for method output_type
+	1, // [1:1] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_country_subdivision_proto_init() }
@@ -137,6 +149,7 @@ func file_country_subdivision_proto_init() {
 	if File_country_subdivision_proto != nil {
 		return
 	}
+	file_country_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

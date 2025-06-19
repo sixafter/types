@@ -27,6 +27,8 @@ option java_outer_classname = "TimeZoneProto";
 option objc_class_prefix = "TPB";
 option csharp_namespace = "SixAfter.Types.WellKnownTypes";
 
+import "geospatial_coordinate.proto";
+
 // The `TimeZone` message represents a time zone, which is an area
 // observing a uniform standard time for legal, commercial, and social purposes.
 message TimeZone {
@@ -60,4 +62,8 @@ message TimeZone {
   // This represents the time zone's offset when daylight saving time is in effect.
   // Example: For "America/New_York", the daylight saving time offset is UTC-4.
   TimeOffset utc_offset_dst = 4;
+  
+  // The geographic coordinates of the time zone's central point.
+  // This is commonly used to determine the time zone based on location.
+  GeospatialCoordinate central_coordinate = 5;
 }
