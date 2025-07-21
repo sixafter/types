@@ -18,7 +18,7 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
-## [1.37.0] - 2025-07-21
+## [1.38.0] - 2025-07-21
 
 ### Added
 - **feature**: Added canonical UUID Protobuf message type (`sixafter.types.UUID`) with formal RFC 4122 documentation and 16-byte wire encoding. Provided Go helper functions for safe conversion, validation, and string handling, with full unit test coverage.
