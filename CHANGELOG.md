@@ -18,6 +18,18 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
+## [1.37.0] - 2025-07-21
+
+### Added
+- **feature**: Added canonical UUID Protobuf message type (sixafter.types.UUID) with formal RFC 4122 documentation and 16-byte wire encoding. Provided Go helper functions for safe conversion, validation, and string handling, with full unit test coverage.
+
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
 ## [1.37.0] - 2025-06-19
 
 ### Added
@@ -190,7 +202,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.37.0...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.38.0...HEAD
+[1.38.0]: https://github.com/sixafter/types/compare/v1.37.0...v1.38.0
 [1.37.0]: https://github.com/sixafter/types/compare/v1.36.0...v1.37.0
 [1.36.0]: https://github.com/sixafter/types/compare/v1.34.0...v1.36.0
 [1.34.0]: https://github.com/sixafter/types/compare/v1.33.0...v1.34.0

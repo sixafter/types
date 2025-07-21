@@ -23,7 +23,10 @@ GO_GET=$(GO_CMD) get
 GO_VET=$(GO_CMD) vet
 GO_FMT=$(GO_CMD) fmt
 GO_MOD=$(GO_CMD) mod
-GO_LINT_CMD=golint
+GO_LINT_CMD=golangci-lint run
+GO_WORK=$(GO_CMD) work
+GO_WORK_FILE := ./go.work
+FUZZTIME ?= 20s
 
 export BINARY_NAME=main.out
 
@@ -33,7 +36,7 @@ build: ## Build the binary file
 
 .PHONY: test
 test: ## Execute unit tests
-	scripts/go-test.sh
+	$(GO_TEST) -v ./...
 
 .PHONY: run
 run:
@@ -65,7 +68,7 @@ vet: ## Vet the files
 
 .PHONY: lint
 lint: ## Lint the files
-	$(GO_LINT_CMD) --skip-dirs-use-default  ./...
+	$(GO_LINT_CMD) --config .golangci.yaml --verbose ./...
 
 .PHONY: mod-download
 mod-download:
