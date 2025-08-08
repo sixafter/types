@@ -1,8 +1,6 @@
 # github.com/davecgh/go-spew v1.1.1
 ## explicit
 github.com/davecgh/go-spew/spew
-# github.com/google/go-cmp v0.6.0
-## explicit; go 1.13
 # github.com/google/uuid v1.6.0
 ## explicit
 github.com/google/uuid
@@ -15,7 +13,7 @@ github.com/stretchr/testify/assert
 github.com/stretchr/testify/assert/yaml
 # google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.5.1
 ## explicit; go 1.21
-# google.golang.org/protobuf v1.36.6
+# google.golang.org/protobuf v1.36.7
 ## explicit; go 1.22
 google.golang.org/protobuf/encoding/prototext
 google.golang.org/protobuf/encoding/protowire
