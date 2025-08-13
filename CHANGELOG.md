@@ -18,6 +18,18 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
+## [1.40.0] - 2025-08-13
+
+### Added
+### Changed
+- **debt:** Upgraded to Go 1.25 to take advantage of the latest features and improvements.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
 ## [1.39.0] - 2025-08-08
 
 ### Added
@@ -214,7 +226,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.39.0...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.40.0...HEAD
+[1.40.0]: https://github.com/sixafter/types/compare/v1.39.0...v1.40.0
 [1.39.0]: https://github.com/sixafter/types/compare/v1.38.0...v1.39.0
 [1.38.0]: https://github.com/sixafter/types/compare/v1.37.0...v1.38.0
 [1.37.0]: https://github.com/sixafter/types/compare/v1.36.0...v1.37.0
