@@ -35,7 +35,7 @@ build: ## Build the binary file
 	scripts/go-build.sh
 
 .PHONY: test
-test: ## Execute unit tests
+test: build ## Execute unit tests
 	$(GO_TEST) -v ./...
 
 .PHONY: run
