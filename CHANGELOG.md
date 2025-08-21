@@ -18,6 +18,20 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
+## [1.43.0] - 2025-08-21
+
+### Added
+**feature:** Added support for ISO 639 [Language](language.proto) message, which includes BCP 47 language tags.
+
+### Changed
+- **debt:** Upgraded dependencies to their latest stable versions; e.g. protoc-gen-go `v1.36.8`.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
 ## [1.42.0] - 2025-08-16
 
 ### Added
@@ -250,7 +264,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.42.0...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.43.0...HEAD
+[1.43.0]: https://github.com/sixafter/types/compare/v1.42.0...v1.43.0
 [1.42.0]: https://github.com/sixafter/types/compare/v1.41.0...v1.42.0
 [1.41.0]: https://github.com/sixafter/types/compare/v1.40.0...v1.41.0
 [1.40.0]: https://github.com/sixafter/types/compare/v1.39.0...v1.40.0
