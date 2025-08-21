@@ -1,0 +1,64 @@
+// Copyright 2020-2024 SIX AFTER, INC (SIX AFTER)
+//
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-FileCopyrightText: SIX AFTER, INC (SIX AFTER)
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+package sixafter.types;
+
+option go_package = "github.com/sixafter/types;types";
+option cc_enable_arenas = true;
+option java_package = "com.sixafter.types";
+option java_multiple_files = true;
+option java_outer_classname = "LanguageProto";
+option objc_class_prefix = "TPB";
+option csharp_namespace = "SixAfter.Types.WellKnownTypes";
+
+// Language defines a human language using ISO 639 identifiers,
+// with optional IETF BCP 47 tags for locale variants.
+//
+// Standards:
+//   - ISO 639-1: two-letter codes (e.g., "en")
+//   - ISO 639-3: three-letter codes (e.g., "eng")
+//   - IETF BCP 47: tags combining language and optional script/region (e.g., "en-US", "zh-Hant-TW")
+message Language {
+  // Bcp47Tag holds a single BCP 47 language tag.
+  message Bcp47Tag {
+    // Canonical BCP 47 tag string.
+    // Examples: "en", "en-US", "sr-Cyrl-RS", "zh-Hant-TW".
+    string tag = 1;
+
+    // Human-readable label for display purposes.
+    // Examples: "English (United States)", "Serbian (Cyrillic, Serbia)".
+    string display_name = 2;
+  }
+
+  // English name of the language.
+  // Examples: "English", "Serbian", "Chinese".
+  string name = 1;
+
+  // ISO 639-1 two-letter code (lowercase).
+  // Only set if the language has a 639-1 assignment.
+  // Examples: "en", "sr", "zh".
+  string alphabetic_code_2 = 2;
+
+  // ISO 639-3 three-letter code (lowercase).
+  // Examples: "eng" (English), "srp" (Serbian), "zho" (Chinese), "yue" (Cantonese).
+  string alphabetic_code_3 = 3;
+
+  // BCP 47 tags for locale-specific variants of the language.
+  repeated Bcp47Tag bcp47_tag = 4;
+}

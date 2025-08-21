@@ -1,7 +1,6 @@
 # types
 
-This [Go module](https://golang.org/ref/mod#modules-overview) is a set of common types 
-represented as [Google Protocol Buffers](https://developers.google.com/protocol-buffers/).
+This [Go module](https://golang.org/ref/mod#modules-overview) is a set of common types represented as [Google Protocol Buffers](https://developers.google.com/protocol-buffers/).
 
 ---
 ### Status
