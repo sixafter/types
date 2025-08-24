@@ -58,6 +58,12 @@ jobs:
         with:
           go-version-file: go.mod
 
-      - name: Build
+      # Ref: https://github.com/golangci/golangci-lint-action
+      - name: Lint
+        uses: golangci/golangci-lint-action@v8
+        with:
+          args: --config=.golangci.yaml --verbose
+  
+      - name: Test
         run: |
-          make build
+          make test

@@ -18,6 +18,18 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
+## [1.44.0] - 2025-08-24
+
+### Added
+- **risk:** Added linting to the CI pipeline.
+### Changed
+- **defect:** Fixed `entity_metadata.proto` to correctly use `google/protobuf/struct.proto`.
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
 ## [1.43.0] - 2025-08-21
 
 ### Added
@@ -264,7 +276,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.43.0...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.44.0...HEAD
+[1.44.0]: https://github.com/sixafter/types/compare/v1.43.0...v1.44.0
 [1.43.0]: https://github.com/sixafter/types/compare/v1.42.0...v1.43.0
 [1.42.0]: https://github.com/sixafter/types/compare/v1.41.0...v1.42.0
 [1.41.0]: https://github.com/sixafter/types/compare/v1.40.0...v1.41.0

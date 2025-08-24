@@ -31,7 +31,7 @@ option csharp_namespace = "SixAfter.Types.WellKnownTypes";
 // For details, see: https://semver.org
 message Version {
 
-  // The major version number.
+  // Major version number.
   //
   // Major version zero (0.y.z) is for initial development. Anything MAY change
   // at any time. The public API SHOULD NOT be considered stable.
