@@ -42,7 +42,7 @@ const (
 // For details, see: https://semver.org
 type Version struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// The major version number.
+	// Major version number.
 	//
 	// Major version zero (0.y.z) is for initial development. Anything MAY change
 	// at any time. The public API SHOULD NOT be considered stable.

@@ -32,31 +32,31 @@ export BINARY_NAME=main.out
 
 .PHONY: build
 build: ## Build the binary file
-	scripts/go-build.sh
+	@scripts/go-build.sh
 
 .PHONY: test
-test: build ## Execute unit tests
-	$(GO_TEST) -v ./...
+test: ## Execute unit tests
+	@scripts/go-test.sh
 
 .PHONY: run
 run:
-	scripts/go-run.sh
+	@scripts/go-run.sh
 
 .PHONY: clean
 clean: ## Remove previous build
-	scripts/go-clean.sh
+	@scripts/go-clean.sh
 
 .PHONY: cover
 cover: ## Generate global code coverage report
-	scripts/go-cover.sh
+	@scripts/go-cover.sh
 
 .PHONY: analyze
 analyze: ## Generate static analysis report
-	scripts/go-analyze.sh
+	@scripts/go-analyze.sh
 
 .PHONY: deps
 deps: ## Get the dependencies and vendor
-	scripts/go-deps.sh
+	@scripts/go-deps.sh
 
 .PHONY: fmt
 fmt: ## Format the files
