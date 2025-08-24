@@ -66,4 +66,5 @@ jobs:
   
       - name: Test
         run: |
+          go get github.com/golang/protobuf/proto
           make test
