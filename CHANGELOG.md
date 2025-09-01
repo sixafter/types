@@ -18,6 +18,20 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
+## [1.45.0] - 2025-09-01
+
+### Added
+- **feature:** Added GoReleaser support.
+
+### Changed
+- **debt:** Upgraded dependencies to latest stable versions.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
 ## [1.44.0] - 2025-08-24
 
 ### Added
@@ -276,7 +290,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.44.0...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.45.0...HEAD
+[1.45.0]: https://github.com/sixafter/types/compare/v1.44.0...v1.45.0
 [1.44.0]: https://github.com/sixafter/types/compare/v1.43.0...v1.44.0
 [1.43.0]: https://github.com/sixafter/types/compare/v1.42.0...v1.43.0
 [1.42.0]: https://github.com/sixafter/types/compare/v1.41.0...v1.42.0
