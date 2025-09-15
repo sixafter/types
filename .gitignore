@@ -27,3 +27,5 @@ out/
 
 # VSCode
 .vscode/
+
+dist/

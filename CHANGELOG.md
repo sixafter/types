@@ -18,6 +18,20 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
+## [1.47.0] - 2025-09-15
+
+### Added
+- **debt:** Added digitally signed Software Bill of Materials (SBOM) to the release artifacts for enhanced supply chain security and transparency.
+
+### Changed
+- **debt:** Upgraded dependencies to latest stable versions.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
 ## [1.46.0] - 2025-09-14
 
 ### Added
@@ -302,7 +316,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.46.0...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.47.0...HEAD
+[1.46.1]: https://github.com/sixafter/types/compare/v1.46.0...v1.47.0
 [1.46.0]: https://github.com/sixafter/types/compare/v1.45.0...v1.46.0
 [1.45.0]: https://github.com/sixafter/types/compare/v1.44.0...v1.45.0
 [1.44.0]: https://github.com/sixafter/types/compare/v1.43.0...v1.44.0
