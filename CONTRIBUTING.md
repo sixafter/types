@@ -37,13 +37,13 @@ Additional labels for pre-release and build metadata are available as extensions
 
 ## 🤝 How to Contribute
 
-There are several ways you can contribute to NanoID for Go:
+There are several ways you can contribute to this project:
 
 ### 🐛 Reporting Bugs
 
 If you encounter a bug or unexpected behavior:
 
-1. **Search Existing Issues**: Check if the issue has already been reported [here](https://github.com/sixafter/nanoid/issues).
+1. **Search Existing Issues**: Check if the issue has already been reported [here](https://github.com/sixafter/types/issues).
 2. **Open a New Issue**: If not, open a new issue describing the bug in detail.
     - **Provide a Clear Title**: Summarize the problem.
     - **Describe the Behavior**: Explain what you expected to happen versus what actually happened.
@@ -54,7 +54,7 @@ If you encounter a bug or unexpected behavior:
 
 To suggest new features or improvements:
 
-1. **Search Existing Features**: Ensure your idea hasn't been discussed [here](https://github.com/sixafter/nanoid/issues?q=is%3Aissue+is%3Aopen+label%3Afeature).
+1. **Search Existing Features**: Ensure your idea hasn't been discussed [here](https://github.com/sixafter/types/issues?q=is%3Aissue+is%3Aopen+label%3Afeature).
 2. **Open a New Feature Request**: Provide a detailed description of the feature.
     - **Describe the Feature**: Explain what the feature is and why it's needed.
     - **Use Cases**: Provide examples of how the feature would be used.
@@ -74,7 +74,7 @@ Clone the forked repository to your local machine:
 
 ```bash
 git clone https://github.com/sixafter/types.git
-cd nanoid
+cd types
 ```
 
 #### 3. Create a New Branch
@@ -157,10 +157,10 @@ Follow these steps to create a successful pull request (PR):
 * [Go Documentation](https://go.dev/doc/) 
 * [GolangCI-Lint Documentation](https://golangci-lint.run) 
 * [GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow) 
-* [Contributor Covenant Code of Conduct](https://github.com/sixafter/nanoid/blob/main/CODE_OF_CONDUCT.md)
+* [Contributor Covenant Code of Conduct](https://github.com/sixafter/types/blob/main/CODE_OF_CONDUCT.md)
 
 ## 🙏 Thank You!
 
-We appreciate your interest in contributing to NanoID for Go! Your efforts help improve the project and support the community. If you have any questions or need assistance, feel free to reach out by opening an issue or contacting the maintainers.
+We appreciate your interest in contributing to this project! Your efforts help improve the project and support the community. If you have any questions or need assistance, feel free to reach out by opening an issue or contacting the maintainers.
 
 Happy coding! 🎉

@@ -38,8 +38,8 @@ VERSION=${TAG#v}
 # Verify the release tarball
 cosign verify-blob \
   --key https://raw.githubusercontent.com/sixafter/types/main/cosign.pub \
-  --signature nanoid-${VERSION}.tar.gz.sig \
-  nanoid-${VERSION}.tar.gz
+  --signature types-${VERSION}.tar.gz.sig \
+  types-${VERSION}.tar.gz
 
 # Download checksums.txt and its signature from the latest release assets
 curl -LO https://github.com/sixafter/types/releases/download/${TAG}/checksums.txt
