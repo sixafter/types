@@ -35,7 +35,7 @@ build: ## Build the binary file
 	@scripts/go-build.sh
 
 .PHONY: test
-test: ## Execute unit tests
+test: build ## Execute unit tests
 	@scripts/go-test.sh
 
 .PHONY: run
@@ -89,6 +89,11 @@ update:
 .PHONY: vuln
 vuln: ## Check for vulnerabilities
 	govulncheck ./...
+
+.PHONY: release-verify
+release-verify: ## Verify the release
+	rm -fr dist
+	goreleaser --config .goreleaser.yaml release --snapshot
 
 .PHONY: help
 help: ## Display this help screen
