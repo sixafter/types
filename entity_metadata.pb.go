@@ -47,13 +47,13 @@ type EntityMetadata struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The timestamp at which the entity was created.
 	// Example: "2024-11-17T12:34:56Z" for an entity created on November 17, 2024.
-	CreatedOn *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=created_on,json=createdOn,proto3" json:"created_on,omitempty"`
+	CreatedAt *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	// The timestamp at which the entity was last modified.
 	// Example: "2024-11-18T08:20:45Z" for an entity last updated on November 18, 2024.
-	ModifiedOn *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=modified_on,json=modifiedOn,proto3" json:"modified_on,omitempty"`
+	ModifiedAt *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=modified_at,json=modifiedAt,proto3" json:"modified_at,omitempty"`
 	// The timestamp at which the entity was deleted, if applicable.
 	// Example: "2024-11-19T15:00:00Z" for an entity marked as deleted on November 19, 2024.
-	DeletedOn *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=deleted_on,json=deletedOn,proto3" json:"deleted_on,omitempty"`
+	DeletedAt *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=deleted_at,json=deletedAt,proto3" json:"deleted_at,omitempty"`
 	// Indicates whether the entity is ephemeral.
 	// An ephemeral entity is temporary and may not be persisted or stored long-term.
 	// Example: `true` for a session-based entity.
@@ -119,23 +119,23 @@ func (*EntityMetadata) Descriptor() ([]byte, []int) {
 	return file_entity_metadata_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *EntityMetadata) GetCreatedOn() *timestamppb.Timestamp {
+func (x *EntityMetadata) GetCreatedAt() *timestamppb.Timestamp {
 	if x != nil {
-		return x.CreatedOn
+		return x.CreatedAt
 	}
 	return nil
 }
 
-func (x *EntityMetadata) GetModifiedOn() *timestamppb.Timestamp {
+func (x *EntityMetadata) GetModifiedAt() *timestamppb.Timestamp {
 	if x != nil {
-		return x.ModifiedOn
+		return x.ModifiedAt
 	}
 	return nil
 }
 
-func (x *EntityMetadata) GetDeletedOn() *timestamppb.Timestamp {
+func (x *EntityMetadata) GetDeletedAt() *timestamppb.Timestamp {
 	if x != nil {
-		return x.DeletedOn
+		return x.DeletedAt
 	}
 	return nil
 }
@@ -196,11 +196,11 @@ const file_entity_metadata_proto_rawDesc = "" +
 	"\x15entity_metadata.proto\x12\x0esixafter.types\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\rversion.proto\"\xbd\x03\n" +
 	"\x0eEntityMetadata\x129\n" +
 	"\n" +
-	"created_on\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedOn\x12;\n" +
-	"\vmodified_on\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
-	"modifiedOn\x129\n" +
+	"created_at\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12;\n" +
+	"\vmodified_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
+	"modifiedAt\x129\n" +
 	"\n" +
-	"deleted_on\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedOn\x12\x1c\n" +
+	"deleted_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedAt\x12\x1c\n" +
 	"\tephemeral\x18\x04 \x01(\bR\tephemeral\x12\x1e\n" +
 	"\n" +
 	"replicable\x18\x05 \x01(\bR\n" +
@@ -235,9 +235,9 @@ var file_entity_metadata_proto_goTypes = []any{
 	(*structpb.Struct)(nil),       // 3: google.protobuf.Struct
 }
 var file_entity_metadata_proto_depIdxs = []int32{
-	1, // 0: sixafter.types.EntityMetadata.created_on:type_name -> google.protobuf.Timestamp
-	1, // 1: sixafter.types.EntityMetadata.modified_on:type_name -> google.protobuf.Timestamp
-	1, // 2: sixafter.types.EntityMetadata.deleted_on:type_name -> google.protobuf.Timestamp
+	1, // 0: sixafter.types.EntityMetadata.created_at:type_name -> google.protobuf.Timestamp
+	1, // 1: sixafter.types.EntityMetadata.modified_at:type_name -> google.protobuf.Timestamp
+	1, // 2: sixafter.types.EntityMetadata.deleted_at:type_name -> google.protobuf.Timestamp
 	2, // 3: sixafter.types.EntityMetadata.version:type_name -> sixafter.types.Version
 	3, // 4: sixafter.types.EntityMetadata.attributes:type_name -> google.protobuf.Struct
 	5, // [5:5] is the sub-list for method output_type
