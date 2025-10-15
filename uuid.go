@@ -1,4 +1,4 @@
-// Copyright 2020-2024 SIX AFTER, INC (SIX AFTER)
+// Copyright 2020-2025 SIX AFTER, INC (SIX AFTER)
 //
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-FileCopyrightText: SIX AFTER, INC (SIX AFTER)
@@ -66,6 +66,7 @@ These helpers perform validation and will return errors if the field is not vali
 package types
 
 import (
+	"encoding/json"
 	"fmt"
 
 	"github.com/google/uuid"
@@ -194,3 +195,42 @@ func ValidateUUID(msg *UUID) error {
 	}
 	return nil
 }
+
+// MarshalJSON implements the json.Marshaler interface for UUID.
+// It outputs the UUID as a canonical RFC 4122 string (e.g. "550e8400-e29b-41d4-a716-446655440000")
+// instead of the default base64 encoding that protojson uses for bytes fields.
+func (m *UUID) MarshalJSON() ([]byte, error) {
+	if m == nil || len(m.Value) != 16 {
+		return []byte(`""`), nil
+	}
+	u, err := ProtoToUUID(m)
+	if err != nil {
+		return nil, err
+	}
+	return json.Marshal(u.String())
+}
+
+// UnmarshalJSON implements the json.Unmarshaler interface for UUID.
+// It accepts a canonical RFC 4122 UUID string and converts it to binary form.
+func (m *UUID) UnmarshalJSON(data []byte) error {
+	var s string
+	if err := json.Unmarshal(data, &s); err != nil {
+		return fmt.Errorf("invalid JSON for UUID: %w", err)
+	}
+	if s == "" {
+		m.Value = nil
+		return nil
+	}
+	u, err := uuid.Parse(s)
+	if err != nil {
+		return fmt.Errorf("invalid UUID string: %w", err)
+	}
+	m.Value = u[:]
+	return nil
+}
+
+// Ensure interface conformance at compile time.
+var (
+	_ json.Marshaler   = (*UUID)(nil)
+	_ json.Unmarshaler = (*UUID)(nil)
+)

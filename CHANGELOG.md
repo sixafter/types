@@ -18,6 +18,18 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
+## [1.50.0] - 2025-10-15
+
+### Added
+- Add JSON `marshal/unmarshal` support for `UUID` with tests ensuring canonical string encoding, roundtrip accuracy, and error handling.
+
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
 ## [1.49.0] - 2025-10-14
 
 ### Added
@@ -340,7 +352,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.49.0...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.45.0...HEAD
+[1.50.0]: https://github.com/sixafter/types/compare/v1.49.0...v1.40.0
 [1.49.0]: https://github.com/sixafter/types/compare/v1.48.0...v1.49.0
 [1.48.0]: https://github.com/sixafter/types/compare/v1.47.0...v1.48.0
 [1.47.0]: https://github.com/sixafter/types/compare/v1.46.0...v1.47.0

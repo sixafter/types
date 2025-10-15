@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright 2020-2024 SIX AFTER, INC (SIX AFTER)
+# Copyright 2020-2025 SIX AFTER, INC (SIX AFTER)
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
