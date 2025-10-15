@@ -1,4 +1,4 @@
-// Copyright 2020-2024 SIX AFTER, INC (SIX AFTER)
+// Copyright 2020-2025 SIX AFTER, INC (SIX AFTER)
 //
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-FileCopyrightText: SIX AFTER, INC (SIX AFTER)
