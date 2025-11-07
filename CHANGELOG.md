@@ -18,6 +18,18 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
+## [1.51.0] - 2025-11-07
+
+### Added
+### Changed
+- **debt:** Upgraded dependencies to latest stable versions.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
 ## [1.50.0] - 2025-10-15
 
 ### Added
@@ -352,8 +364,9 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.45.0...HEAD
-[1.50.0]: https://github.com/sixafter/types/compare/v1.49.0...v1.40.0
+[Unreleased]: https://github.com/sixafter/types/compare/v1.51.0...HEAD
+[1.51.0]: https://github.com/sixafter/types/compare/v1.50.0...v1.51.0
+[1.50.0]: https://github.com/sixafter/types/compare/v1.49.0...v1.50.0
 [1.49.0]: https://github.com/sixafter/types/compare/v1.48.0...v1.49.0
 [1.48.0]: https://github.com/sixafter/types/compare/v1.47.0...v1.48.0
 [1.47.0]: https://github.com/sixafter/types/compare/v1.46.0...v1.47.0
