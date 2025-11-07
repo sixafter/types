@@ -107,6 +107,12 @@ checksum:
 
 # Ref: https://goreleaser.com/customization/sign/
 signs:
+  # ------------------------------------------------------------------
+  # COSIGN - Keyed (no Rekor, no Fulcio, no OIDC)
+  # ------------------------------------------------------------------
+  # ADDED: Ensure COSIGN_EXPERIMENTAL=false in environment to disable keyless.
+  # ADDED: This configuration signs using your long-term private key,
+  #        suitable for FIPS-140 and air-gapped verification.
   - id: source
     cmd: cosign
     stdin: '{{ .Env.COSIGN_PASSWORD }}'
@@ -115,10 +121,12 @@ signs:
     args:
       - sign-blob
       - --yes
-      - --bundle=cosign.bundle
-      - --use-signing-config=true
       - --key
       - env://COSIGN_PRIVATE_KEY
+      # ADDED: Produce a local JSON bundle for offline provenance.
+      #        This does NOT contact Rekor, only contains the signature envelope.
+      - '--bundle=${artifact}.bundle.json'
+      # ADDED: Output certificate and signature paths for reproducibility.
       - '--output-certificate=${certificate}'
       - '--output-signature=${signature}'
       - '${artifact}'
@@ -131,10 +139,9 @@ signs:
     args:
       - sign-blob
       - --yes
-      - --bundle=cosign.bundle
-      - --use-signing-config=true
       - --key
       - env://COSIGN_PRIVATE_KEY
+      - '--bundle=${artifact}.bundle.json'
       - '--output-certificate=${certificate}'
       - '--output-signature=${signature}'
       - '${artifact}'

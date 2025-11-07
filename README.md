@@ -29,27 +29,46 @@ This module is a set of common types expressed as [Google Protocol Buffers](http
 To verify the integrity of the `types` source, run the following commands:
 
 ```sh
-# Fetch the latest release tag from GitHub API (e.g., "v1.47.0")
+# Fetch the latest release tag from GitHub API (e.g., "v1.52.0")
 TAG=$(curl -s https://api.github.com/repos/sixafter/types/releases/latest | jq -r .tag_name)
 
-# Remove leading "v" for filenames (e.g., "v1.47.0" -> "1.47.0")
+# Remove leading "v" for filenames (e.g., "v1.52.0" -> "1.52.0")
 VERSION=${TAG#v}
 
-# Verify the release tarball
+# ---------------------------------------------------------------------
+# Verify the source archive using Sigstore bundles
+# ---------------------------------------------------------------------
+
+# Download the release tarball and its corresponding bundle
+curl -LO https://github.com/sixafter/types/releases/download/${TAG}/types-${VERSION}.tar.gz
+curl -LO https://github.com/sixafter/types/releases/download/${TAG}/types-${VERSION}.tar.gz.bundle.json
+
+# Verify the tarball with Cosign using your published public key
 cosign verify-blob \
   --key https://raw.githubusercontent.com/sixafter/types/main/cosign.pub \
-  --signature types-${VERSION}.tar.gz.sig \
+  --bundle types-${VERSION}.tar.gz.bundle.json \
   types-${VERSION}.tar.gz
 
-# Download checksums.txt and its signature from the latest release assets
-curl -LO https://github.com/sixafter/types/releases/download/${TAG}/checksums.txt
-curl -LO https://github.com/sixafter/types/releases/download/${TAG}/checksums.txt.sig
+# ---------------------------------------------------------------------
+# Verify the checksums manifest using Sigstore bundles
+# ---------------------------------------------------------------------
 
-# Verify checksums.txt with cosign
+# Download checksums.txt and its bundle
+curl -LO https://github.com/sixafter/types/releases/download/${TAG}/checksums.txt
+curl -LO https://github.com/sixafter/types/releases/download/${TAG}/checksums.txt.bundle.json
+
+# Verify checksums.txt with Cosign using your public key
 cosign verify-blob \
   --key https://raw.githubusercontent.com/sixafter/types/main/cosign.pub \
-  --signature checksums.txt.sig \
+  --bundle checksums.txt.bundle.json \
   checksums.txt
+
+# ---------------------------------------------------------------------
+# Confirm local artifact integrity
+# ---------------------------------------------------------------------
+
+# Compute and validate checksums locally
+shasum -a 256 -c checksums.txt
 ```
 
 If valid, Cosign will output:

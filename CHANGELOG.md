@@ -18,7 +18,7 @@ Date format: `YYYY-MM-DD`
 ### Security
 
 ---
-## [1.51.0] - 2025-11-07
+## [1.51.2] - 2025-11-07
 
 ### Added
 ### Changed
@@ -28,6 +28,7 @@ Date format: `YYYY-MM-DD`
 ### Removed
 ### Fixed
 ### Security
+- **risk:** Upgraded to the new GoReleaser Sigstore bundles verification method to enhance supply chain security.
 
 ---
 ## [1.50.0] - 2025-10-15
@@ -364,8 +365,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.51.0...HEAD
-[1.51.0]: https://github.com/sixafter/types/compare/v1.50.0...v1.51.0
+[Unreleased]: https://github.com/sixafter/types/compare/v1.51.2...HEAD
+[1.51.2]: https://github.com/sixafter/types/compare/v1.50.0...v1.51.2
 [1.50.0]: https://github.com/sixafter/types/compare/v1.49.0...v1.50.0
 [1.49.0]: https://github.com/sixafter/types/compare/v1.48.0...v1.49.0
 [1.48.0]: https://github.com/sixafter/types/compare/v1.47.0...v1.48.0
