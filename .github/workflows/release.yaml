@@ -74,4 +74,3 @@ jobs:
           COSIGN_PASSWORD: '${{ secrets.TYPES_COSIGN_PASSWORD }}'
           COSIGN_PRIVATE_KEY: '${{ secrets.TYPES_COSIGN_PRIVATE_KEY }}'
           COSIGN_PUBLIC_KEY: '${{ secrets.TYPES_COSIGN_PUBLIC_KEY }}'
-          COSIGN_EXPERIMENTAL: false
