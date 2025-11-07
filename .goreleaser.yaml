@@ -115,6 +115,7 @@ signs:
     args:
       - sign-blob
       - --yes
+      - --bundle
       - --key
       - env://COSIGN_PRIVATE_KEY
       - '--output-certificate=${certificate}'
@@ -129,6 +130,7 @@ signs:
     args:
       - sign-blob
       - --yes
+      - --bundle
       - --key
       - env://COSIGN_PRIVATE_KEY
       - '--output-certificate=${certificate}'
