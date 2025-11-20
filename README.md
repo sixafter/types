@@ -32,43 +32,42 @@ To verify the integrity of the `types` source, run the following commands:
 # Fetch the latest release tag from GitHub API (e.g., "v1.52.0")
 TAG=$(curl -s https://api.github.com/repos/sixafter/types/releases/latest | jq -r .tag_name)
 
-# Remove leading "v" for filenames (e.g., "v1.52.0" -> "1.52.0")
+# Remove the leading "v" for filenames (e.g., "v1.52.0" -> "1.52.0")
 VERSION=${TAG#v}
 
 # ---------------------------------------------------------------------
 # Verify the source archive using Sigstore bundles
 # ---------------------------------------------------------------------
 
-# Download the release tarball and its corresponding bundle
-curl -LO https://github.com/sixafter/types/releases/download/${TAG}/types-${VERSION}.tar.gz
-curl -LO https://github.com/sixafter/types/releases/download/${TAG}/types-${VERSION}.tar.gz.bundle.json
+# Download the release tarball and its signature bundle
+curl -LO "https://github.com/sixafter/types/releases/download/${TAG}/types-${VERSION}.tar.gz"
+curl -LO "https://github.com/sixafter/types/releases/download/${TAG}/types-${VERSION}.tar.gz.sigstore.json"
 
-# Verify the tarball with Cosign using your published public key
+# Verify the tarball with Cosign using the published public key
 cosign verify-blob \
-  --key https://raw.githubusercontent.com/sixafter/types/main/cosign.pub \
-  --bundle types-${VERSION}.tar.gz.bundle.json \
-  types-${VERSION}.tar.gz
+  --key "https://raw.githubusercontent.com/sixafter/types/main/cosign.pub" \
+  --bundle "types-${VERSION}.tar.gz.sigstore.json" \
+  "types-${VERSION}.tar.gz"
 
 # ---------------------------------------------------------------------
 # Verify the checksums manifest using Sigstore bundles
 # ---------------------------------------------------------------------
 
-# Download checksums.txt and its bundle
-curl -LO https://github.com/sixafter/types/releases/download/${TAG}/checksums.txt
-curl -LO https://github.com/sixafter/types/releases/download/${TAG}/checksums.txt.bundle.json
+curl -LO "https://github.com/sixafter/types/releases/download/${TAG}/checksums.txt"
+curl -LO "https://github.com/sixafter/types/releases/download/${TAG}/checksums.txt.sigstore.json"
 
-# Verify checksums.txt with Cosign using your public key
+# Verify checksums.txt with Cosign
 cosign verify-blob \
-  --key https://raw.githubusercontent.com/sixafter/types/main/cosign.pub \
-  --bundle checksums.txt.bundle.json \
-  checksums.txt
+  --key "https://raw.githubusercontent.com/sixafter/types/main/cosign.pub" \
+  --bundle "checksums.txt.sigstore.json" \
+  "checksums.txt"
 
 # ---------------------------------------------------------------------
 # Confirm local artifact integrity
 # ---------------------------------------------------------------------
 
-# Compute and validate checksums locally
-shasum -a 256 -c checksums.txt
+shasum -a 256 -c checksups.txt
+
 ```
 
 If valid, Cosign will output:
