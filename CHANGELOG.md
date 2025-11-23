@@ -19,6 +19,18 @@ Date format: `YYYY-MM-DD`
 
 ---
 
+## [1.53.0] - 2025-11-23
+
+### Added
+### Changed
+- **risk:** Restructured proto files to `sixafter/types` subdirectory to prevent naming collisions when vendored by consumers.
+
+### Deprecated
+### Removed
+### Fixed
+
+---
+
 ## [1.52.0] - 2025-11-20
 
 ### Added
@@ -140,7 +152,7 @@ Date format: `YYYY-MM-DD`
 ## [1.43.0] - 2025-08-21
 
 ### Added
-**feature:** Added support for ISO 639 [Language](language.proto) message, which includes BCP 47 language tags.
+**feature:** Added support for ISO 639 [Language](sixafter/types/language.proto) message, which includes BCP 47 language tags.
 
 ### Changed
 - **debt:** Upgraded dependencies to their latest stable versions; e.g. protoc-gen-go `v1.36.8`.
@@ -338,7 +350,7 @@ Date format: `YYYY-MM-DD`
 ## [1.24.0] - 2024-11-17
 
 ### Added
-- **FEATURE:** Added [geometry.proto](geometry.proto) for defining geometrical constructs, including:
+- **FEATURE:** Added [geometry.proto](sixafter/types/geometry.proto) for defining geometrical constructs, including:
   - Scalar: Represents a scalar number using an unscaled integer value and a scale for fixed-point arithmetic. 
   - CoordinateSystem: Defines the coordinate system used to interpret geometric entities (e.g., Cartesian, Polar), with optional parameters. 
   - GeometryType: Specifies the type of geometry abstracting the mathematical space (e.g., Euclidean, Hyperbolic), with optional parameters. 
@@ -383,7 +395,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.52.0...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.53.0...HEAD
+[1.53.0]: https://github.com/sixafter/types/compare/v1.52.0...v1.53.0
 [1.52.0]: https://github.com/sixafter/types/compare/v1.51.3...v1.52.0
 [1.51.3]: https://github.com/sixafter/types/compare/v1.50.0...v1.51.3
 [1.50.0]: https://github.com/sixafter/types/compare/v1.49.0...v1.50.0

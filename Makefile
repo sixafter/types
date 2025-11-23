@@ -32,31 +32,31 @@ export BINARY_NAME=main.out
 
 .PHONY: build
 build: ## Build the binary file
-	@scripts/go-build.sh
+	@sbin/go-build.sh
 
 .PHONY: test
 test: ## Execute unit tests
-	@scripts/go-test.sh
+	@sbin/go-test.sh
 
 .PHONY: run
 run:
-	@scripts/go-run.sh
+	@sbin/go-run.sh
 
 .PHONY: clean
 clean: ## Remove previous build
-	@scripts/go-clean.sh
+	@sbin/go-clean.sh
 
 .PHONY: cover
 cover: ## Generate global code coverage report
-	@scripts/go-cover.sh
+	@sbin/go-cover.sh
 
 .PHONY: analyze
 analyze: ## Generate static analysis report
-	@scripts/go-analyze.sh
+	@sbin/go-analyze.sh
 
 .PHONY: deps
 deps: ## Get the dependencies and vendor
-	@scripts/go-deps.sh
+	@sbin/go-deps.sh
 
 .PHONY: fmt
 fmt: ## Format the files
@@ -84,7 +84,7 @@ tidy:
 
 .PHONY: update
 update:
-	$(GO_GET) -u
+	$(GO_GET) -u ./...
 
 .PHONY: vuln
 vuln: ## Check for vulnerabilities
@@ -92,15 +92,15 @@ vuln: ## Check for vulnerabilities
 
 .PHONY: release-verify
 release-verify: ## Verify the release
-	@scripts/verify-release.sh
+	@sbin/verify-release.sh
 
 .PHONY: module-verify
 mod-verify: ## Verify Go module integrity
-	@scripts/verify-mod.sh
+	@sbin/verify-mod.sh
 
 .PHONY: signature-verify
 signature-verify: ## Verify latest release's digital signatures
-	@scripts/verify-sig.sh
+	@sbin/verify-sig.sh
 
 .PHONY: help
 help: ## Display this help screen
