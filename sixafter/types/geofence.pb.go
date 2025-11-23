@@ -106,8 +106,8 @@ const file_sixafter_types_geofence_proto_rawDesc = "" +
 	"\x1dsixafter/types/geofence.proto\x12\x0esixafter.types\x1a sixafter/types/map_polygon.proto\"T\n" +
 	"\bGeofence\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x124\n" +
-	"\apolygon\x18\x02 \x03(\v2\x1a.sixafter.types.MapPolygonR\apolygonBo\n" +
-	"\x12com.sixafter.typesB\rGeofenceProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"\apolygon\x18\x02 \x03(\v2\x1a.sixafter.types.MapPolygonR\apolygonB~\n" +
+	"\x12com.sixafter.typesB\rGeofenceProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_geofence_proto_rawDescOnce sync.Once

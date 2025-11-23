@@ -103,8 +103,8 @@ const file_sixafter_types_map_polygon_proto_rawDesc = "" +
 	" sixafter/types/map_polygon.proto\x12\x0esixafter.types\x1a\x1esixafter/types/map_point.proto\">\n" +
 	"\n" +
 	"MapPolygon\x120\n" +
-	"\x06points\x18\x01 \x03(\v2\x18.sixafter.types.MapPointR\x06pointsBq\n" +
-	"\x12com.sixafter.typesB\x0fMapPolygonProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"\x06points\x18\x01 \x03(\v2\x18.sixafter.types.MapPointR\x06pointsB\x80\x01\n" +
+	"\x12com.sixafter.typesB\x0fMapPolygonProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_map_polygon_proto_rawDescOnce sync.Once

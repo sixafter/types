@@ -497,8 +497,8 @@ const file_sixafter_types_geometry_proto_rawDesc = "" +
 	"\x03end\x18\x02 \x01(\v2\x15.sixafter.types.PointR\x03end\"Y\n" +
 	"\aPolygon\x121\n" +
 	"\bvertices\x18\x01 \x03(\v2\x15.sixafter.types.PointR\bvertices\x12\x1b\n" +
-	"\tis_closed\x18\x02 \x01(\bR\bisClosedBo\n" +
-	"\x12com.sixafter.typesB\rGeometryProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"\tis_closed\x18\x02 \x01(\bR\bisClosedB~\n" +
+	"\x12com.sixafter.typesB\rGeometryProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_geometry_proto_rawDescOnce sync.Once

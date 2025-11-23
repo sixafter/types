@@ -166,8 +166,8 @@ const file_sixafter_types_compass_heading_proto_rawDesc = "" +
 	"\ttimestamp\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12\f\n" +
 	"\x01x\x18\x05 \x01(\x02R\x01x\x12\f\n" +
 	"\x01y\x18\x06 \x01(\x02R\x01y\x12\f\n" +
-	"\x01z\x18\a \x01(\x02R\x01zBu\n" +
-	"\x12com.sixafter.typesB\x13CompassHeadingProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"\x01z\x18\a \x01(\x02R\x01zB\x84\x01\n" +
+	"\x12com.sixafter.typesB\x13CompassHeadingProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_compass_heading_proto_rawDescOnce sync.Once

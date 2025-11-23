@@ -102,8 +102,8 @@ const file_sixafter_types_uuid_proto_rawDesc = "" +
 	"\n" +
 	"\x19sixafter/types/uuid.proto\x12\x0esixafter.types\"\x1c\n" +
 	"\x04UUID\x12\x14\n" +
-	"\x05value\x18\x01 \x01(\fR\x05valueBk\n" +
-	"\x12com.sixafter.typesB\tUuidProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"\x05value\x18\x01 \x01(\fR\x05valueBz\n" +
+	"\x12com.sixafter.typesB\tUuidProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_uuid_proto_rawDescOnce sync.Once

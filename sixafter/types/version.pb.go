@@ -169,8 +169,8 @@ const file_sixafter_types_version_proto_rawDesc = "" +
 	"\n" +
 	"prerelease\x18\x04 \x01(\tR\n" +
 	"prerelease\x12%\n" +
-	"\x0ebuild_metadata\x18\x05 \x01(\tR\rbuildMetadataBn\n" +
-	"\x12com.sixafter.typesB\fVersionProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"\x0ebuild_metadata\x18\x05 \x01(\tR\rbuildMetadataB}\n" +
+	"\x12com.sixafter.typesB\fVersionProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_version_proto_rawDescOnce sync.Once

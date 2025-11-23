@@ -109,8 +109,8 @@ const file_sixafter_types_email_address_proto_rawDesc = "" +
 	"\n" +
 	"local_part\x18\x01 \x01(\tR\tlocalPart\x12\x1f\n" +
 	"\vdomain_part\x18\x02 \x01(\tR\n" +
-	"domainPartBs\n" +
-	"\x12com.sixafter.typesB\x11EmailAddressProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"domainPartB\x82\x01\n" +
+	"\x12com.sixafter.typesB\x11EmailAddressProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_email_address_proto_rawDescOnce sync.Once

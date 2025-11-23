@@ -115,8 +115,8 @@ const file_sixafter_types_country_subdivision_proto_rawDesc = "" +
 	"\x12CountrySubdivision\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n" +
 	"\x04code\x18\x02 \x01(\tR\x04code\x121\n" +
-	"\acountry\x18\x03 \x01(\v2\x17.sixafter.types.CountryR\acountryBy\n" +
-	"\x12com.sixafter.typesB\x17CountrySubdivisionProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"\acountry\x18\x03 \x01(\v2\x17.sixafter.types.CountryR\acountryB\x88\x01\n" +
+	"\x12com.sixafter.typesB\x17CountrySubdivisionProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_country_subdivision_proto_rawDescOnce sync.Once

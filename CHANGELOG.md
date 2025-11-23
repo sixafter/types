@@ -19,6 +19,18 @@ Date format: `YYYY-MM-DD`
 
 ---
 
+## [1.54.0] - 2025-11-23
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+- **defect:** Corrected `go_package` option in all proto files to use full import path `github.com/sixafter/types/sixafter/types;types`, eliminating import cycles and undefined type errors in generated code. This fix removes the requirement for consumers to specify manual import path mappings (`M` flags) in their `buf.gen.yaml` or protoc configurations.
+### Security
+
+---
+
 ## [1.53.0] - 2025-11-23
 
 ### Added
@@ -28,6 +40,7 @@ Date format: `YYYY-MM-DD`
 ### Deprecated
 ### Removed
 ### Fixed
+### Security
 
 ---
 
@@ -395,7 +408,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.53.0...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.54.0...HEAD
+[1.54.0]: https://github.com/sixafter/types/compare/v1.53.0...v1.54.0
 [1.53.0]: https://github.com/sixafter/types/compare/v1.52.0...v1.53.0
 [1.52.0]: https://github.com/sixafter/types/compare/v1.51.3...v1.52.0
 [1.51.3]: https://github.com/sixafter/types/compare/v1.50.0...v1.51.3

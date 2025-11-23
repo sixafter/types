@@ -121,8 +121,8 @@ const file_sixafter_types_map_point_proto_rawDesc = "" +
 	"\x01y\x18\x02 \x01(\x02R\x01y\x12D\n" +
 	"\n" +
 	"coordinate\x18\x03 \x01(\v2$.sixafter.types.GeospatialCoordinateR\n" +
-	"coordinateBo\n" +
-	"\x12com.sixafter.typesB\rMapPointProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"coordinateB~\n" +
+	"\x12com.sixafter.typesB\rMapPointProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_map_point_proto_rawDescOnce sync.Once

@@ -143,8 +143,8 @@ const file_sixafter_types_geographic_region_proto_rawDesc = "" +
 	"formalName\x12!\n" +
 	"\fnumeric_code\x18\x03 \x01(\rR\vnumericCode\x12\x18\n" +
 	"\acountry\x18\x04 \x01(\tR\acountry\x12/\n" +
-	"\x13country_subdivision\x18\x05 \x01(\tR\x12countrySubdivisionBw\n" +
-	"\x12com.sixafter.typesB\x15GeographicRegionProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"\x13country_subdivision\x18\x05 \x01(\tR\x12countrySubdivisionB\x86\x01\n" +
+	"\x12com.sixafter.typesB\x15GeographicRegionProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_geographic_region_proto_rawDescOnce sync.Once

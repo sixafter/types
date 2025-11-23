@@ -189,8 +189,8 @@ const file_sixafter_types_url_proto_rawDesc = "" +
 	"\x05query\x18\x06 \x01(\tR\x05query\x12\x1c\n" +
 	"\tauthority\x18\a \x01(\tR\tauthority\x12\x1b\n" +
 	"\tuser_info\x18\b \x01(\tR\buserInfo\x12\x10\n" +
-	"\x03ref\x18\t \x01(\tR\x03refBj\n" +
-	"\x12com.sixafter.typesB\bUrlProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"\x03ref\x18\t \x01(\tR\x03refBy\n" +
+	"\x12com.sixafter.typesB\bUrlProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_url_proto_rawDescOnce sync.Once

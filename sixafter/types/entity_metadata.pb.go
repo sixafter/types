@@ -212,8 +212,8 @@ const file_sixafter_types_entity_metadata_proto_rawDesc = "" +
 	"\n" +
 	"attributes\x18\n" +
 	" \x01(\v2\x17.google.protobuf.StructR\n" +
-	"attributesBu\n" +
-	"\x12com.sixafter.typesB\x13EntityMetadataProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"attributesB\x84\x01\n" +
+	"\x12com.sixafter.typesB\x13EntityMetadataProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_entity_metadata_proto_rawDescOnce sync.Once

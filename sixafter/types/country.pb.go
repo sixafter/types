@@ -141,8 +141,8 @@ const file_sixafter_types_country_proto_rawDesc = "" +
 	"formalName\x12*\n" +
 	"\x11alphabetic_code_2\x18\x03 \x01(\tR\x0falphabeticCode2\x12*\n" +
 	"\x11alphabetic_code_3\x18\x04 \x01(\tR\x0falphabeticCode3\x12!\n" +
-	"\fnumeric_code\x18\x05 \x01(\rR\vnumericCodeBn\n" +
-	"\x12com.sixafter.typesB\fCountryProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"\fnumeric_code\x18\x05 \x01(\rR\vnumericCodeB}\n" +
+	"\x12com.sixafter.typesB\fCountryProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_country_proto_rawDescOnce sync.Once

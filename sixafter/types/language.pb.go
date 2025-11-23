@@ -190,8 +190,8 @@ const file_sixafter_types_language_proto_rawDesc = "" +
 	"\tbcp47_tag\x18\x04 \x03(\v2!.sixafter.types.Language.Bcp47TagR\bbcp47Tag\x1a?\n" +
 	"\bBcp47Tag\x12\x10\n" +
 	"\x03tag\x18\x01 \x01(\tR\x03tag\x12!\n" +
-	"\fdisplay_name\x18\x02 \x01(\tR\vdisplayNameBo\n" +
-	"\x12com.sixafter.typesB\rLanguageProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"\fdisplay_name\x18\x02 \x01(\tR\vdisplayNameB~\n" +
+	"\x12com.sixafter.typesB\rLanguageProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_language_proto_rawDescOnce sync.Once

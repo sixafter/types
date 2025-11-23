@@ -200,8 +200,8 @@ const file_sixafter_types_time_zone_proto_rawDesc = "" +
 	"\n" +
 	"TimeOffset\x12\x14\n" +
 	"\x05hours\x18\x01 \x01(\x05R\x05hours\x12\x18\n" +
-	"\aminutes\x18\x02 \x01(\x05R\aminutesBo\n" +
-	"\x12com.sixafter.typesB\rTimeZoneProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"\aminutes\x18\x02 \x01(\x05R\aminutesB~\n" +
+	"\x12com.sixafter.typesB\rTimeZoneProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_time_zone_proto_rawDescOnce sync.Once

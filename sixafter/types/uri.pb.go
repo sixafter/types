@@ -167,8 +167,8 @@ const file_sixafter_types_uri_proto_rawDesc = "" +
 	"\x04port\x18\x04 \x01(\x05R\x04port\x12\x14\n" +
 	"\x05query\x18\x05 \x01(\tR\x05query\x12\x1c\n" +
 	"\tauthority\x18\x06 \x01(\tR\tauthority\x12\x1b\n" +
-	"\tuser_info\x18\a \x01(\tR\buserInfoBj\n" +
-	"\x12com.sixafter.typesB\bUriProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"\tuser_info\x18\a \x01(\tR\buserInfoBy\n" +
+	"\x12com.sixafter.typesB\bUriProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_uri_proto_rawDescOnce sync.Once

@@ -19,7 +19,8 @@ syntax = "proto3";
 
 package sixafter.types;
 
-option go_package = "github.com/sixafter/types;types";
+option go_package="github.com/sixafter/types/sixafter/types;types";
+
 option cc_enable_arenas = true;
 option java_package = "com.sixafter.types";
 option java_multiple_files = true;

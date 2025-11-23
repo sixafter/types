@@ -120,8 +120,8 @@ const file_sixafter_types_geospatial_coordinate_proto_rawDesc = "" +
 	"\x14GeospatialCoordinate\x12\x1a\n" +
 	"\blatitude\x18\x01 \x01(\x01R\blatitude\x12\x1c\n" +
 	"\tlongitude\x18\x02 \x01(\x01R\tlongitude\x12A\n" +
-	"\televation\x18\x03 \x01(\v2#.sixafter.types.GeospatialElevationR\televationB{\n" +
-	"\x12com.sixafter.typesB\x19GeospatialCoordinateProtoP\x01Z\x1fgithub.com/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
+	"\televation\x18\x03 \x01(\v2#.sixafter.types.GeospatialElevationR\televationB\x8a\x01\n" +
+	"\x12com.sixafter.typesB\x19GeospatialCoordinateProtoP\x01Z.github.com/sixafter/types/sixafter/types;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02\x1dSixAfter.Types.WellKnownTypesb\x06proto3"
 
 var (
 	file_sixafter_types_geospatial_coordinate_proto_rawDescOnce sync.Once
