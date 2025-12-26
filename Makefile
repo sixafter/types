@@ -30,6 +30,9 @@ FUZZTIME ?= 20s
 
 export BINARY_NAME=main.out
 
+.PHONY: all
+all: deps tidy vendor clean build test fmt ## Run all the targets
+
 .PHONY: build
 build: ## Build the binary file
 	@sbin/go-build.sh
@@ -60,11 +63,11 @@ deps: ## Get the dependencies and vendor
 
 .PHONY: fmt
 fmt: ## Format the files
-	$(GO_FMT) ./..
+	$(GO_FMT) ./sixafter/...
 
 .PHONY: vet
 vet: ## Vet the files
-	$(GO_VET) -v ./...
+	$(GO_VET) -v ./sixafter/...
 
 .PHONY: lint
 lint: ## Lint the files
