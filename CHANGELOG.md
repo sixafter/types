@@ -17,6 +17,20 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
+
+---
+
+## [1.57.0] - 2025-12-29
+
+### Added
+### Changed
+- **defect:** Added missing Go file to proto folder so `get get` works as expected.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ---
 
 ## [1.56.0] - 2025-12-29
@@ -435,7 +449,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.56.0...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.57.0...HEAD
+[1.57.0]: https://github.com/sixafter/types/compare/v1.56.0...v1.57.0
 [1.56.0]: https://github.com/sixafter/types/compare/v1.55.0...v1.56.0
 [1.55.0]: https://github.com/sixafter/types/compare/v1.54.0...v1.55.0
 [1.54.0]: https://github.com/sixafter/types/compare/v1.53.0...v1.54.0
