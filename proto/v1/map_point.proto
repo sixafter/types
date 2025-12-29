@@ -1,0 +1,51 @@
+// Copyright 2020-2025 SIX AFTER, INC (SIX AFTER)
+//
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-FileCopyrightText: SIX AFTER, INC (SIX AFTER)
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+package proto.v1;
+
+import "geospatial_coordinate.proto";
+
+option cc_enable_arenas = true;
+option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
+option go_package = "github.com/sixafter/types/proto/v1/pb;types";
+option java_multiple_files = true;
+option java_outer_classname = "MapPointProto";
+option java_package = "com.sixafter.types.v1";
+option objc_class_prefix = "TPB";
+
+// The `MapPoint` message represents a point on a two-dimensional map,
+// derived from projecting the curved surface of the globe onto a flat surface.
+// This structure is commonly used in mapping, GIS, and location-based applications.
+message MapPoint {
+  // The x-coordinate of the map point.
+  // Represents the horizontal position on the two-dimensional map.
+  // Example: A value of 200.5 could represent a position on a Mercator projection.
+  float x = 1;
+
+  // The y-coordinate of the map point.
+  // Represents the vertical position on the two-dimensional map.
+  // Example: A value of 150.2 could represent a position on a Mercator projection.
+  float y = 2;
+
+  // The geospatial coordinate that corresponds to the map point.
+  // Provides the latitude, longitude, and elevation information for the point.
+  // Example: A map point with `x=200.5` and `y=150.2` could correspond to
+  // `latitude=32.9829` and `longitude=-97.1876` for Westlake, Texas.
+  proto.v1.GeospatialCoordinate coordinate = 3;
+}

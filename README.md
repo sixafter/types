@@ -29,10 +29,10 @@ This module is a set of common types expressed as [Google Protocol Buffers](http
 To verify the integrity of the `types` source, run the following commands:
 
 ```sh
-# Fetch the latest release tag from GitHub API (e.g., "v1.52.0")
+# Fetch the latest release tag from GitHub API (e.g., "v1.56.0")
 TAG=$(curl -s https://api.github.com/repos/sixafter/types/releases/latest | jq -r .tag_name)
 
-# Remove the leading "v" for filenames (e.g., "v1.52.0" -> "1.52.0")
+# Remove the leading "v" for filenames (e.g., "v1.56.0" -> "1.56.0")
 VERSION=${TAG#v}
 
 # ---------------------------------------------------------------------
@@ -82,7 +82,7 @@ Verified OK
 To use this module, execute the following command:
 
 ```shell
-go get -u github.com/sixafter/types
+go get -u github.com/sixafter/types/sixafter/types
 ```
 
 In your Go code, you can import the module as follows.
@@ -91,7 +91,7 @@ In your Go code, you can import the module as follows.
 package main
 
 import (
-    "github.com/sixafter/types"
+    pb "github.com/sixafter/types/proto/v1/pb"
 )
 ```
 
