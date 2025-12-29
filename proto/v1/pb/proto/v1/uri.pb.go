@@ -159,7 +159,7 @@ var File_proto_v1_uri_proto protoreflect.FileDescriptor
 
 const file_proto_v1_uri_proto_rawDesc = "" +
 	"\n" +
-	"\x12proto/v1/uri.proto\x12\bproto.v1\"\xb2\x01\n" +
+	"\x12proto/v1/uri.proto\x12\x17sixafter.types.proto.v1\"\xb2\x01\n" +
 	"\x03Uri\x12\x16\n" +
 	"\x06scheme\x18\x01 \x01(\tR\x06scheme\x12\x1a\n" +
 	"\bfragment\x18\x02 \x01(\tR\bfragment\x12\x12\n" +
@@ -184,7 +184,7 @@ func file_proto_v1_uri_proto_rawDescGZIP() []byte {
 
 var file_proto_v1_uri_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proto_v1_uri_proto_goTypes = []any{
-	(*Uri)(nil), // 0: proto.v1.Uri
+	(*Uri)(nil), // 0: sixafter.types.proto.v1.Uri
 }
 var file_proto_v1_uri_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

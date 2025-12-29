@@ -190,13 +190,13 @@ var File_proto_v1_time_zone_proto protoreflect.FileDescriptor
 
 const file_proto_v1_time_zone_proto_rawDesc = "" +
 	"\n" +
-	"\x18proto/v1/time_zone.proto\x12\bproto.v1\x1a$proto/v1/geospatial_coordinate.proto\"\xd9\x02\n" +
+	"\x18proto/v1/time_zone.proto\x12\x17sixafter.types.proto.v1\x1a$proto/v1/geospatial_coordinate.proto\"\x86\x03\n" +
 	"\bTimeZone\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\"\n" +
-	"\fabbreviation\x18\x02 \x01(\tR\fabbreviation\x12C\n" +
-	"\x0eutc_offset_std\x18\x03 \x01(\v2\x1d.proto.v1.TimeZone.TimeOffsetR\futcOffsetStd\x12C\n" +
-	"\x0eutc_offset_dst\x18\x04 \x01(\v2\x1d.proto.v1.TimeZone.TimeOffsetR\futcOffsetDst\x12M\n" +
-	"\x12central_coordinate\x18\x05 \x01(\v2\x1e.proto.v1.GeospatialCoordinateR\x11centralCoordinate\x1a<\n" +
+	"\fabbreviation\x18\x02 \x01(\tR\fabbreviation\x12R\n" +
+	"\x0eutc_offset_std\x18\x03 \x01(\v2,.sixafter.types.proto.v1.TimeZone.TimeOffsetR\futcOffsetStd\x12R\n" +
+	"\x0eutc_offset_dst\x18\x04 \x01(\v2,.sixafter.types.proto.v1.TimeZone.TimeOffsetR\futcOffsetDst\x12\\\n" +
+	"\x12central_coordinate\x18\x05 \x01(\v2-.sixafter.types.proto.v1.GeospatialCoordinateR\x11centralCoordinate\x1a<\n" +
 	"\n" +
 	"TimeOffset\x12\x14\n" +
 	"\x05hours\x18\x01 \x01(\x05R\x05hours\x12\x18\n" +
@@ -217,14 +217,14 @@ func file_proto_v1_time_zone_proto_rawDescGZIP() []byte {
 
 var file_proto_v1_time_zone_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_proto_v1_time_zone_proto_goTypes = []any{
-	(*TimeZone)(nil),             // 0: proto.v1.TimeZone
-	(*TimeZone_TimeOffset)(nil),  // 1: proto.v1.TimeZone.TimeOffset
-	(*GeospatialCoordinate)(nil), // 2: proto.v1.GeospatialCoordinate
+	(*TimeZone)(nil),             // 0: sixafter.types.proto.v1.TimeZone
+	(*TimeZone_TimeOffset)(nil),  // 1: sixafter.types.proto.v1.TimeZone.TimeOffset
+	(*GeospatialCoordinate)(nil), // 2: sixafter.types.proto.v1.GeospatialCoordinate
 }
 var file_proto_v1_time_zone_proto_depIdxs = []int32{
-	1, // 0: proto.v1.TimeZone.utc_offset_std:type_name -> proto.v1.TimeZone.TimeOffset
-	1, // 1: proto.v1.TimeZone.utc_offset_dst:type_name -> proto.v1.TimeZone.TimeOffset
-	2, // 2: proto.v1.TimeZone.central_coordinate:type_name -> proto.v1.GeospatialCoordinate
+	1, // 0: sixafter.types.proto.v1.TimeZone.utc_offset_std:type_name -> sixafter.types.proto.v1.TimeZone.TimeOffset
+	1, // 1: sixafter.types.proto.v1.TimeZone.utc_offset_dst:type_name -> sixafter.types.proto.v1.TimeZone.TimeOffset
+	2, // 2: sixafter.types.proto.v1.TimeZone.central_coordinate:type_name -> sixafter.types.proto.v1.GeospatialCoordinate
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name

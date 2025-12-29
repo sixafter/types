@@ -107,7 +107,7 @@ var File_proto_v1_temporal_range_proto protoreflect.FileDescriptor
 
 const file_proto_v1_temporal_range_proto_rawDesc = "" +
 	"\n" +
-	"\x1dproto/v1/temporal_range.proto\x12\bproto.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"x\n" +
+	"\x1dproto/v1/temporal_range.proto\x12\x17sixafter.types.proto.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"x\n" +
 	"\rTemporalRange\x120\n" +
 	"\x05epoch\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\x05epoch\x125\n" +
 	"\bduration\x18\x02 \x01(\v2\x19.google.protobuf.DurationR\bdurationB\x86\x01\n" +
@@ -127,13 +127,13 @@ func file_proto_v1_temporal_range_proto_rawDescGZIP() []byte {
 
 var file_proto_v1_temporal_range_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proto_v1_temporal_range_proto_goTypes = []any{
-	(*TemporalRange)(nil),         // 0: proto.v1.TemporalRange
+	(*TemporalRange)(nil),         // 0: sixafter.types.proto.v1.TemporalRange
 	(*timestamppb.Timestamp)(nil), // 1: google.protobuf.Timestamp
 	(*durationpb.Duration)(nil),   // 2: google.protobuf.Duration
 }
 var file_proto_v1_temporal_range_proto_depIdxs = []int32{
-	1, // 0: proto.v1.TemporalRange.epoch:type_name -> google.protobuf.Timestamp
-	2, // 1: proto.v1.TemporalRange.duration:type_name -> google.protobuf.Duration
+	1, // 0: sixafter.types.proto.v1.TemporalRange.epoch:type_name -> google.protobuf.Timestamp
+	2, // 1: sixafter.types.proto.v1.TemporalRange.duration:type_name -> google.protobuf.Duration
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

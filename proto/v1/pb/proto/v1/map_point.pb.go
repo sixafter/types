@@ -115,12 +115,12 @@ var File_proto_v1_map_point_proto protoreflect.FileDescriptor
 
 const file_proto_v1_map_point_proto_rawDesc = "" +
 	"\n" +
-	"\x18proto/v1/map_point.proto\x12\bproto.v1\x1a$proto/v1/geospatial_coordinate.proto\"f\n" +
+	"\x18proto/v1/map_point.proto\x12\x17sixafter.types.proto.v1\x1a$proto/v1/geospatial_coordinate.proto\"u\n" +
 	"\bMapPoint\x12\f\n" +
 	"\x01x\x18\x01 \x01(\x02R\x01x\x12\f\n" +
-	"\x01y\x18\x02 \x01(\x02R\x01y\x12>\n" +
+	"\x01y\x18\x02 \x01(\x02R\x01y\x12M\n" +
 	"\n" +
-	"coordinate\x18\x03 \x01(\v2\x1e.proto.v1.GeospatialCoordinateR\n" +
+	"coordinate\x18\x03 \x01(\v2-.sixafter.types.proto.v1.GeospatialCoordinateR\n" +
 	"coordinateB\x81\x01\n" +
 	"\x15com.sixafter.types.v1B\rMapPointProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
@@ -138,11 +138,11 @@ func file_proto_v1_map_point_proto_rawDescGZIP() []byte {
 
 var file_proto_v1_map_point_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proto_v1_map_point_proto_goTypes = []any{
-	(*MapPoint)(nil),             // 0: proto.v1.MapPoint
-	(*GeospatialCoordinate)(nil), // 1: proto.v1.GeospatialCoordinate
+	(*MapPoint)(nil),             // 0: sixafter.types.proto.v1.MapPoint
+	(*GeospatialCoordinate)(nil), // 1: sixafter.types.proto.v1.GeospatialCoordinate
 }
 var file_proto_v1_map_point_proto_depIdxs = []int32{
-	1, // 0: proto.v1.MapPoint.coordinate:type_name -> proto.v1.GeospatialCoordinate
+	1, // 0: sixafter.types.proto.v1.MapPoint.coordinate:type_name -> sixafter.types.proto.v1.GeospatialCoordinate
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

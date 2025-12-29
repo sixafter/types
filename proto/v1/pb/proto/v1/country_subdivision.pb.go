@@ -111,11 +111,11 @@ var File_proto_v1_country_subdivision_proto protoreflect.FileDescriptor
 
 const file_proto_v1_country_subdivision_proto_rawDesc = "" +
 	"\n" +
-	"\"proto/v1/country_subdivision.proto\x12\bproto.v1\x1a\x16proto/v1/country.proto\"i\n" +
+	"\"proto/v1/country_subdivision.proto\x12\x17sixafter.types.proto.v1\x1a\x16proto/v1/country.proto\"x\n" +
 	"\x12CountrySubdivision\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n" +
-	"\x04code\x18\x02 \x01(\tR\x04code\x12+\n" +
-	"\acountry\x18\x03 \x01(\v2\x11.proto.v1.CountryR\acountryB\x8b\x01\n" +
+	"\x04code\x18\x02 \x01(\tR\x04code\x12:\n" +
+	"\acountry\x18\x03 \x01(\v2 .sixafter.types.proto.v1.CountryR\acountryB\x8b\x01\n" +
 	"\x15com.sixafter.types.v1B\x17CountrySubdivisionProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
 var (
@@ -132,11 +132,11 @@ func file_proto_v1_country_subdivision_proto_rawDescGZIP() []byte {
 
 var file_proto_v1_country_subdivision_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proto_v1_country_subdivision_proto_goTypes = []any{
-	(*CountrySubdivision)(nil), // 0: proto.v1.CountrySubdivision
-	(*Country)(nil),            // 1: proto.v1.Country
+	(*CountrySubdivision)(nil), // 0: sixafter.types.proto.v1.CountrySubdivision
+	(*Country)(nil),            // 1: sixafter.types.proto.v1.Country
 }
 var file_proto_v1_country_subdivision_proto_depIdxs = []int32{
-	1, // 0: proto.v1.CountrySubdivision.country:type_name -> proto.v1.Country
+	1, // 0: sixafter.types.proto.v1.CountrySubdivision.country:type_name -> sixafter.types.proto.v1.Country
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

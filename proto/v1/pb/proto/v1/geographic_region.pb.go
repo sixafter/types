@@ -136,7 +136,7 @@ var File_proto_v1_geographic_region_proto protoreflect.FileDescriptor
 
 const file_proto_v1_geographic_region_proto_rawDesc = "" +
 	"\n" +
-	" proto/v1/geographic_region.proto\x12\bproto.v1\"\xb5\x01\n" +
+	" proto/v1/geographic_region.proto\x12\x17sixafter.types.proto.v1\"\xb5\x01\n" +
 	"\x10GeographicRegion\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x1f\n" +
 	"\vformal_name\x18\x02 \x01(\tR\n" +
@@ -160,7 +160,7 @@ func file_proto_v1_geographic_region_proto_rawDescGZIP() []byte {
 
 var file_proto_v1_geographic_region_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proto_v1_geographic_region_proto_goTypes = []any{
-	(*GeographicRegion)(nil), // 0: proto.v1.GeographicRegion
+	(*GeographicRegion)(nil), // 0: sixafter.types.proto.v1.GeographicRegion
 }
 var file_proto_v1_geographic_region_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

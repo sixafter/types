@@ -116,11 +116,11 @@ var File_proto_v1_geospatial_coordinate_proto protoreflect.FileDescriptor
 
 const file_proto_v1_geospatial_coordinate_proto_rawDesc = "" +
 	"\n" +
-	"$proto/v1/geospatial_coordinate.proto\x12\bproto.v1\x1a#proto/v1/geospatial_elevation.proto\"\x8d\x01\n" +
+	"$proto/v1/geospatial_coordinate.proto\x12\x17sixafter.types.proto.v1\x1a#proto/v1/geospatial_elevation.proto\"\x9c\x01\n" +
 	"\x14GeospatialCoordinate\x12\x1a\n" +
 	"\blatitude\x18\x01 \x01(\x01R\blatitude\x12\x1c\n" +
-	"\tlongitude\x18\x02 \x01(\x01R\tlongitude\x12;\n" +
-	"\televation\x18\x03 \x01(\v2\x1d.proto.v1.GeospatialElevationR\televationB\x8d\x01\n" +
+	"\tlongitude\x18\x02 \x01(\x01R\tlongitude\x12J\n" +
+	"\televation\x18\x03 \x01(\v2,.sixafter.types.proto.v1.GeospatialElevationR\televationB\x8d\x01\n" +
 	"\x15com.sixafter.types.v1B\x19GeospatialCoordinateProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
 var (
@@ -137,11 +137,11 @@ func file_proto_v1_geospatial_coordinate_proto_rawDescGZIP() []byte {
 
 var file_proto_v1_geospatial_coordinate_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proto_v1_geospatial_coordinate_proto_goTypes = []any{
-	(*GeospatialCoordinate)(nil), // 0: proto.v1.GeospatialCoordinate
-	(*GeospatialElevation)(nil),  // 1: proto.v1.GeospatialElevation
+	(*GeospatialCoordinate)(nil), // 0: sixafter.types.proto.v1.GeospatialCoordinate
+	(*GeospatialElevation)(nil),  // 1: sixafter.types.proto.v1.GeospatialElevation
 }
 var file_proto_v1_geospatial_coordinate_proto_depIdxs = []int32{
-	1, // 0: proto.v1.GeospatialCoordinate.elevation:type_name -> proto.v1.GeospatialElevation
+	1, // 0: sixafter.types.proto.v1.GeospatialCoordinate.elevation:type_name -> sixafter.types.proto.v1.GeospatialElevation
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

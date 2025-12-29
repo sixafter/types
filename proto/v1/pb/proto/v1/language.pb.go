@@ -182,12 +182,12 @@ var File_proto_v1_language_proto protoreflect.FileDescriptor
 
 const file_proto_v1_language_proto_rawDesc = "" +
 	"\n" +
-	"\x17proto/v1/language.proto\x12\bproto.v1\"\xf1\x01\n" +
+	"\x17proto/v1/language.proto\x12\x17sixafter.types.proto.v1\"\x80\x02\n" +
 	"\bLanguage\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12*\n" +
 	"\x11alphabetic_code_2\x18\x02 \x01(\tR\x0falphabeticCode2\x12*\n" +
-	"\x11alphabetic_code_3\x18\x03 \x01(\tR\x0falphabeticCode3\x128\n" +
-	"\tbcp47_tag\x18\x04 \x03(\v2\x1b.proto.v1.Language.Bcp47TagR\bbcp47Tag\x1a?\n" +
+	"\x11alphabetic_code_3\x18\x03 \x01(\tR\x0falphabeticCode3\x12G\n" +
+	"\tbcp47_tag\x18\x04 \x03(\v2*.sixafter.types.proto.v1.Language.Bcp47TagR\bbcp47Tag\x1a?\n" +
 	"\bBcp47Tag\x12\x10\n" +
 	"\x03tag\x18\x01 \x01(\tR\x03tag\x12!\n" +
 	"\fdisplay_name\x18\x02 \x01(\tR\vdisplayNameB\x81\x01\n" +
@@ -207,11 +207,11 @@ func file_proto_v1_language_proto_rawDescGZIP() []byte {
 
 var file_proto_v1_language_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_proto_v1_language_proto_goTypes = []any{
-	(*Language)(nil),          // 0: proto.v1.Language
-	(*Language_Bcp47Tag)(nil), // 1: proto.v1.Language.Bcp47Tag
+	(*Language)(nil),          // 0: sixafter.types.proto.v1.Language
+	(*Language_Bcp47Tag)(nil), // 1: sixafter.types.proto.v1.Language.Bcp47Tag
 }
 var file_proto_v1_language_proto_depIdxs = []int32{
-	1, // 0: proto.v1.Language.bcp47_tag:type_name -> proto.v1.Language.Bcp47Tag
+	1, // 0: sixafter.types.proto.v1.Language.bcp47_tag:type_name -> sixafter.types.proto.v1.Language.Bcp47Tag
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

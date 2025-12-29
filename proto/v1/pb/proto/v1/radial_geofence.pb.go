@@ -114,10 +114,10 @@ var File_proto_v1_radial_geofence_proto protoreflect.FileDescriptor
 
 const file_proto_v1_radial_geofence_proto_rawDesc = "" +
 	"\n" +
-	"\x1eproto/v1/radial_geofence.proto\x12\bproto.v1\x1a$proto/v1/geospatial_coordinate.proto\"t\n" +
+	"\x1eproto/v1/radial_geofence.proto\x12\x17sixafter.types.proto.v1\x1a$proto/v1/geospatial_coordinate.proto\"\x83\x01\n" +
 	"\x0eRadialGeofence\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x126\n" +
-	"\x06center\x18\x02 \x01(\v2\x1e.proto.v1.GeospatialCoordinateR\x06center\x12\x16\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12E\n" +
+	"\x06center\x18\x02 \x01(\v2-.sixafter.types.proto.v1.GeospatialCoordinateR\x06center\x12\x16\n" +
 	"\x06radius\x18\x03 \x01(\x01R\x06radiusB\x87\x01\n" +
 	"\x15com.sixafter.types.v1B\x13RadialGeofenceProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
@@ -135,11 +135,11 @@ func file_proto_v1_radial_geofence_proto_rawDescGZIP() []byte {
 
 var file_proto_v1_radial_geofence_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proto_v1_radial_geofence_proto_goTypes = []any{
-	(*RadialGeofence)(nil),       // 0: proto.v1.RadialGeofence
-	(*GeospatialCoordinate)(nil), // 1: proto.v1.GeospatialCoordinate
+	(*RadialGeofence)(nil),       // 0: sixafter.types.proto.v1.RadialGeofence
+	(*GeospatialCoordinate)(nil), // 1: sixafter.types.proto.v1.GeospatialCoordinate
 }
 var file_proto_v1_radial_geofence_proto_depIdxs = []int32{
-	1, // 0: proto.v1.RadialGeofence.center:type_name -> proto.v1.GeospatialCoordinate
+	1, // 0: sixafter.types.proto.v1.RadialGeofence.center:type_name -> sixafter.types.proto.v1.GeospatialCoordinate
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

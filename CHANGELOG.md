@@ -19,6 +19,19 @@ Date format: `YYYY-MM-DD`
 
 ---
 
+## [1.57.2] - 2025-12-29
+
+### Added
+### Changed
+- **defect:** Fix incorrect package names in .proto files.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
+
 ## [1.57.1] - 2025-12-29
 
 ### Added
@@ -30,6 +43,7 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
+package sixafter.types.proto.v1;
 ---
 
 ## [1.57.0] - 2025-12-29
@@ -461,7 +475,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.57.1...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.57.2...HEAD
+[1.57.1]: https://github.com/sixafter/types/compare/v1.57.1...v1.57.2
 [1.57.1]: https://github.com/sixafter/types/compare/v1.57.0...v1.57.1
 [1.57.0]: https://github.com/sixafter/types/compare/v1.56.0...v1.57.0
 [1.56.0]: https://github.com/sixafter/types/compare/v1.55.0...v1.56.0

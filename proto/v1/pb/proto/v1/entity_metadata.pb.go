@@ -193,7 +193,7 @@ var File_proto_v1_entity_metadata_proto protoreflect.FileDescriptor
 
 const file_proto_v1_entity_metadata_proto_rawDesc = "" +
 	"\n" +
-	"\x1eproto/v1/entity_metadata.proto\x12\bproto.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x16proto/v1/version.proto\"\xb7\x03\n" +
+	"\x1eproto/v1/entity_metadata.proto\x12\x17sixafter.types.proto.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x16proto/v1/version.proto\"\xc6\x03\n" +
 	"\x0eEntityMetadata\x129\n" +
 	"\n" +
 	"created_at\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12;\n" +
@@ -205,8 +205,8 @@ const file_proto_v1_entity_metadata_proto_rawDesc = "" +
 	"\n" +
 	"replicable\x18\x05 \x01(\bR\n" +
 	"replicable\x12\x1c\n" +
-	"\timmutable\x18\x06 \x01(\bR\timmutable\x12+\n" +
-	"\aversion\x18\a \x01(\v2\x11.proto.v1.VersionR\aversion\x12\x1c\n" +
+	"\timmutable\x18\x06 \x01(\bR\timmutable\x12:\n" +
+	"\aversion\x18\a \x01(\v2 .sixafter.types.proto.v1.VersionR\aversion\x12\x1c\n" +
 	"\tsynthetic\x18\b \x01(\bR\tsynthetic\x12\x12\n" +
 	"\x04tags\x18\t \x03(\tR\x04tags\x127\n" +
 	"\n" +
@@ -229,17 +229,17 @@ func file_proto_v1_entity_metadata_proto_rawDescGZIP() []byte {
 
 var file_proto_v1_entity_metadata_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proto_v1_entity_metadata_proto_goTypes = []any{
-	(*EntityMetadata)(nil),        // 0: proto.v1.EntityMetadata
+	(*EntityMetadata)(nil),        // 0: sixafter.types.proto.v1.EntityMetadata
 	(*timestamppb.Timestamp)(nil), // 1: google.protobuf.Timestamp
-	(*Version)(nil),               // 2: proto.v1.Version
+	(*Version)(nil),               // 2: sixafter.types.proto.v1.Version
 	(*structpb.Struct)(nil),       // 3: google.protobuf.Struct
 }
 var file_proto_v1_entity_metadata_proto_depIdxs = []int32{
-	1, // 0: proto.v1.EntityMetadata.created_at:type_name -> google.protobuf.Timestamp
-	1, // 1: proto.v1.EntityMetadata.modified_at:type_name -> google.protobuf.Timestamp
-	1, // 2: proto.v1.EntityMetadata.deleted_at:type_name -> google.protobuf.Timestamp
-	2, // 3: proto.v1.EntityMetadata.version:type_name -> proto.v1.Version
-	3, // 4: proto.v1.EntityMetadata.attributes:type_name -> google.protobuf.Struct
+	1, // 0: sixafter.types.proto.v1.EntityMetadata.created_at:type_name -> google.protobuf.Timestamp
+	1, // 1: sixafter.types.proto.v1.EntityMetadata.modified_at:type_name -> google.protobuf.Timestamp
+	1, // 2: sixafter.types.proto.v1.EntityMetadata.deleted_at:type_name -> google.protobuf.Timestamp
+	2, // 3: sixafter.types.proto.v1.EntityMetadata.version:type_name -> sixafter.types.proto.v1.Version
+	3, // 4: sixafter.types.proto.v1.EntityMetadata.attributes:type_name -> google.protobuf.Struct
 	5, // [5:5] is the sub-list for method output_type
 	5, // [5:5] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name

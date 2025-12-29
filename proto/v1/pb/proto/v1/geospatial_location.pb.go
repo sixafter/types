@@ -141,12 +141,12 @@ var File_proto_v1_geospatial_location_proto protoreflect.FileDescriptor
 
 const file_proto_v1_geospatial_location_proto_rawDesc = "" +
 	"\n" +
-	"\"proto/v1/geospatial_location.proto\x12\bproto.v1\x1a\x1eproto/v1/compass_heading.proto\x1a$proto/v1/geospatial_coordinate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf0\x01\n" +
-	"\x12GeospatialLocation\x12>\n" +
+	"\"proto/v1/geospatial_location.proto\x12\x17sixafter.types.proto.v1\x1a\x1eproto/v1/compass_heading.proto\x1a$proto/v1/geospatial_coordinate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8e\x02\n" +
+	"\x12GeospatialLocation\x12M\n" +
 	"\n" +
-	"coordinate\x18\x01 \x01(\v2\x1e.proto.v1.GeospatialCoordinateR\n" +
-	"coordinate\x122\n" +
-	"\aheading\x18\x02 \x01(\v2\x18.proto.v1.CompassHeadingR\aheading\x12\x16\n" +
+	"coordinate\x18\x01 \x01(\v2-.sixafter.types.proto.v1.GeospatialCoordinateR\n" +
+	"coordinate\x12A\n" +
+	"\aheading\x18\x02 \x01(\v2'.sixafter.types.proto.v1.CompassHeadingR\aheading\x12\x16\n" +
 	"\x06course\x18\x03 \x01(\x01R\x06course\x12\x14\n" +
 	"\x05speed\x18\x04 \x01(\x02R\x05speed\x128\n" +
 	"\ttimestamp\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestampB\x8b\x01\n" +
@@ -166,15 +166,15 @@ func file_proto_v1_geospatial_location_proto_rawDescGZIP() []byte {
 
 var file_proto_v1_geospatial_location_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proto_v1_geospatial_location_proto_goTypes = []any{
-	(*GeospatialLocation)(nil),    // 0: proto.v1.GeospatialLocation
-	(*GeospatialCoordinate)(nil),  // 1: proto.v1.GeospatialCoordinate
-	(*CompassHeading)(nil),        // 2: proto.v1.CompassHeading
+	(*GeospatialLocation)(nil),    // 0: sixafter.types.proto.v1.GeospatialLocation
+	(*GeospatialCoordinate)(nil),  // 1: sixafter.types.proto.v1.GeospatialCoordinate
+	(*CompassHeading)(nil),        // 2: sixafter.types.proto.v1.CompassHeading
 	(*timestamppb.Timestamp)(nil), // 3: google.protobuf.Timestamp
 }
 var file_proto_v1_geospatial_location_proto_depIdxs = []int32{
-	1, // 0: proto.v1.GeospatialLocation.coordinate:type_name -> proto.v1.GeospatialCoordinate
-	2, // 1: proto.v1.GeospatialLocation.heading:type_name -> proto.v1.CompassHeading
-	3, // 2: proto.v1.GeospatialLocation.timestamp:type_name -> google.protobuf.Timestamp
+	1, // 0: sixafter.types.proto.v1.GeospatialLocation.coordinate:type_name -> sixafter.types.proto.v1.GeospatialCoordinate
+	2, // 1: sixafter.types.proto.v1.GeospatialLocation.heading:type_name -> sixafter.types.proto.v1.CompassHeading
+	3, // 2: sixafter.types.proto.v1.GeospatialLocation.timestamp:type_name -> google.protobuf.Timestamp
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name

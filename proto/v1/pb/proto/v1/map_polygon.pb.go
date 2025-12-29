@@ -100,10 +100,10 @@ var File_proto_v1_map_polygon_proto protoreflect.FileDescriptor
 
 const file_proto_v1_map_polygon_proto_rawDesc = "" +
 	"\n" +
-	"\x1aproto/v1/map_polygon.proto\x12\bproto.v1\x1a\x18proto/v1/map_point.proto\"8\n" +
+	"\x1aproto/v1/map_polygon.proto\x12\x17sixafter.types.proto.v1\x1a\x18proto/v1/map_point.proto\"G\n" +
 	"\n" +
-	"MapPolygon\x12*\n" +
-	"\x06points\x18\x01 \x03(\v2\x12.proto.v1.MapPointR\x06pointsB\x83\x01\n" +
+	"MapPolygon\x129\n" +
+	"\x06points\x18\x01 \x03(\v2!.sixafter.types.proto.v1.MapPointR\x06pointsB\x83\x01\n" +
 	"\x15com.sixafter.types.v1B\x0fMapPolygonProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
 var (
@@ -120,11 +120,11 @@ func file_proto_v1_map_polygon_proto_rawDescGZIP() []byte {
 
 var file_proto_v1_map_polygon_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proto_v1_map_polygon_proto_goTypes = []any{
-	(*MapPolygon)(nil), // 0: proto.v1.MapPolygon
-	(*MapPoint)(nil),   // 1: proto.v1.MapPoint
+	(*MapPolygon)(nil), // 0: sixafter.types.proto.v1.MapPolygon
+	(*MapPoint)(nil),   // 1: sixafter.types.proto.v1.MapPoint
 }
 var file_proto_v1_map_polygon_proto_depIdxs = []int32{
-	1, // 0: proto.v1.MapPolygon.points:type_name -> proto.v1.MapPoint
+	1, // 0: sixafter.types.proto.v1.MapPolygon.points:type_name -> sixafter.types.proto.v1.MapPoint
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

@@ -100,7 +100,7 @@ var File_proto_v1_uuid_proto protoreflect.FileDescriptor
 
 const file_proto_v1_uuid_proto_rawDesc = "" +
 	"\n" +
-	"\x13proto/v1/uuid.proto\x12\bproto.v1\"\x1c\n" +
+	"\x13proto/v1/uuid.proto\x12\x17sixafter.types.proto.v1\"\x1c\n" +
 	"\x04UUID\x12\x14\n" +
 	"\x05value\x18\x01 \x01(\fR\x05valueB}\n" +
 	"\x15com.sixafter.types.v1B\tUuidProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
@@ -119,7 +119,7 @@ func file_proto_v1_uuid_proto_rawDescGZIP() []byte {
 
 var file_proto_v1_uuid_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proto_v1_uuid_proto_goTypes = []any{
-	(*UUID)(nil), // 0: proto.v1.UUID
+	(*UUID)(nil), // 0: sixafter.types.proto.v1.UUID
 }
 var file_proto_v1_uuid_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

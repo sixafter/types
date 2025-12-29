@@ -158,7 +158,7 @@ var File_proto_v1_compass_heading_proto protoreflect.FileDescriptor
 
 const file_proto_v1_compass_heading_proto_rawDesc = "" +
 	"\n" +
-	"\x1eproto/v1/compass_heading.proto\x12\bproto.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xed\x01\n" +
+	"\x1eproto/v1/compass_heading.proto\x12\x17sixafter.types.proto.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xed\x01\n" +
 	"\x0eCompassHeading\x12)\n" +
 	"\x10magnetic_heading\x18\x01 \x01(\x02R\x0fmagneticHeading\x12!\n" +
 	"\ftrue_heading\x18\x02 \x01(\x02R\vtrueHeading\x12)\n" +
@@ -183,11 +183,11 @@ func file_proto_v1_compass_heading_proto_rawDescGZIP() []byte {
 
 var file_proto_v1_compass_heading_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proto_v1_compass_heading_proto_goTypes = []any{
-	(*CompassHeading)(nil),        // 0: proto.v1.CompassHeading
+	(*CompassHeading)(nil),        // 0: sixafter.types.proto.v1.CompassHeading
 	(*timestamppb.Timestamp)(nil), // 1: google.protobuf.Timestamp
 }
 var file_proto_v1_compass_heading_proto_depIdxs = []int32{
-	1, // 0: proto.v1.CompassHeading.timestamp:type_name -> google.protobuf.Timestamp
+	1, // 0: sixafter.types.proto.v1.CompassHeading.timestamp:type_name -> google.protobuf.Timestamp
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

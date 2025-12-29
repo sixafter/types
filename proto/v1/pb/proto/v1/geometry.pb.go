@@ -465,38 +465,38 @@ var File_proto_v1_geometry_proto protoreflect.FileDescriptor
 
 const file_proto_v1_geometry_proto_rawDesc = "" +
 	"\n" +
-	"\x17proto/v1/geometry.proto\x12\bproto.v1\"E\n" +
+	"\x17proto/v1/geometry.proto\x12\x17sixafter.types.proto.v1\"E\n" +
 	"\x06Scalar\x12%\n" +
 	"\x0eunscaled_value\x18\x01 \x01(\x12R\runscaledValue\x12\x14\n" +
-	"\x05scale\x18\x02 \x01(\rR\x05scale\"\xb1\x01\n" +
+	"\x05scale\x18\x02 \x01(\rR\x05scale\"\xc0\x01\n" +
 	"\x10CoordinateSystem\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x12J\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12Y\n" +
 	"\n" +
-	"parameters\x18\x02 \x03(\v2*.proto.v1.CoordinateSystem.ParametersEntryR\n" +
+	"parameters\x18\x02 \x03(\v29.sixafter.types.proto.v1.CoordinateSystem.ParametersEntryR\n" +
 	"parameters\x1a=\n" +
 	"\x0fParametersEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xa9\x01\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xb8\x01\n" +
 	"\fGeometryType\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x12F\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12U\n" +
 	"\n" +
-	"parameters\x18\x02 \x03(\v2&.proto.v1.GeometryType.ParametersEntryR\n" +
+	"parameters\x18\x02 \x03(\v25.sixafter.types.proto.v1.GeometryType.ParametersEntryR\n" +
 	"parameters\x1a=\n" +
 	"\x0fParametersEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xbc\x01\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xe9\x01\n" +
 	"\n" +
-	"Coordinate\x12(\n" +
-	"\x06values\x18\x01 \x03(\v2\x10.proto.v1.ScalarR\x06values\x12;\n" +
-	"\rgeometry_type\x18\x02 \x01(\v2\x16.proto.v1.GeometryTypeR\fgeometryType\x12G\n" +
-	"\x11coordinate_system\x18\x03 \x01(\v2\x1a.proto.v1.CoordinateSystemR\x10coordinateSystem\"9\n" +
-	"\x05Point\x120\n" +
-	"\bposition\x18\x01 \x01(\v2\x14.proto.v1.CoordinateR\bposition\"P\n" +
-	"\x04Line\x12%\n" +
-	"\x05start\x18\x01 \x01(\v2\x0f.proto.v1.PointR\x05start\x12!\n" +
-	"\x03end\x18\x02 \x01(\v2\x0f.proto.v1.PointR\x03end\"S\n" +
-	"\aPolygon\x12+\n" +
-	"\bvertices\x18\x01 \x03(\v2\x0f.proto.v1.PointR\bvertices\x12\x1b\n" +
+	"Coordinate\x127\n" +
+	"\x06values\x18\x01 \x03(\v2\x1f.sixafter.types.proto.v1.ScalarR\x06values\x12J\n" +
+	"\rgeometry_type\x18\x02 \x01(\v2%.sixafter.types.proto.v1.GeometryTypeR\fgeometryType\x12V\n" +
+	"\x11coordinate_system\x18\x03 \x01(\v2).sixafter.types.proto.v1.CoordinateSystemR\x10coordinateSystem\"H\n" +
+	"\x05Point\x12?\n" +
+	"\bposition\x18\x01 \x01(\v2#.sixafter.types.proto.v1.CoordinateR\bposition\"n\n" +
+	"\x04Line\x124\n" +
+	"\x05start\x18\x01 \x01(\v2\x1e.sixafter.types.proto.v1.PointR\x05start\x120\n" +
+	"\x03end\x18\x02 \x01(\v2\x1e.sixafter.types.proto.v1.PointR\x03end\"b\n" +
+	"\aPolygon\x12:\n" +
+	"\bvertices\x18\x01 \x03(\v2\x1e.sixafter.types.proto.v1.PointR\bvertices\x12\x1b\n" +
 	"\tis_closed\x18\x02 \x01(\bR\bisClosedB\x81\x01\n" +
 	"\x15com.sixafter.types.v1B\rGeometryProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
@@ -514,26 +514,26 @@ func file_proto_v1_geometry_proto_rawDescGZIP() []byte {
 
 var file_proto_v1_geometry_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_proto_v1_geometry_proto_goTypes = []any{
-	(*Scalar)(nil),           // 0: proto.v1.Scalar
-	(*CoordinateSystem)(nil), // 1: proto.v1.CoordinateSystem
-	(*GeometryType)(nil),     // 2: proto.v1.GeometryType
-	(*Coordinate)(nil),       // 3: proto.v1.Coordinate
-	(*Point)(nil),            // 4: proto.v1.Point
-	(*Line)(nil),             // 5: proto.v1.Line
-	(*Polygon)(nil),          // 6: proto.v1.Polygon
-	nil,                      // 7: proto.v1.CoordinateSystem.ParametersEntry
-	nil,                      // 8: proto.v1.GeometryType.ParametersEntry
+	(*Scalar)(nil),           // 0: sixafter.types.proto.v1.Scalar
+	(*CoordinateSystem)(nil), // 1: sixafter.types.proto.v1.CoordinateSystem
+	(*GeometryType)(nil),     // 2: sixafter.types.proto.v1.GeometryType
+	(*Coordinate)(nil),       // 3: sixafter.types.proto.v1.Coordinate
+	(*Point)(nil),            // 4: sixafter.types.proto.v1.Point
+	(*Line)(nil),             // 5: sixafter.types.proto.v1.Line
+	(*Polygon)(nil),          // 6: sixafter.types.proto.v1.Polygon
+	nil,                      // 7: sixafter.types.proto.v1.CoordinateSystem.ParametersEntry
+	nil,                      // 8: sixafter.types.proto.v1.GeometryType.ParametersEntry
 }
 var file_proto_v1_geometry_proto_depIdxs = []int32{
-	7, // 0: proto.v1.CoordinateSystem.parameters:type_name -> proto.v1.CoordinateSystem.ParametersEntry
-	8, // 1: proto.v1.GeometryType.parameters:type_name -> proto.v1.GeometryType.ParametersEntry
-	0, // 2: proto.v1.Coordinate.values:type_name -> proto.v1.Scalar
-	2, // 3: proto.v1.Coordinate.geometry_type:type_name -> proto.v1.GeometryType
-	1, // 4: proto.v1.Coordinate.coordinate_system:type_name -> proto.v1.CoordinateSystem
-	3, // 5: proto.v1.Point.position:type_name -> proto.v1.Coordinate
-	4, // 6: proto.v1.Line.start:type_name -> proto.v1.Point
-	4, // 7: proto.v1.Line.end:type_name -> proto.v1.Point
-	4, // 8: proto.v1.Polygon.vertices:type_name -> proto.v1.Point
+	7, // 0: sixafter.types.proto.v1.CoordinateSystem.parameters:type_name -> sixafter.types.proto.v1.CoordinateSystem.ParametersEntry
+	8, // 1: sixafter.types.proto.v1.GeometryType.parameters:type_name -> sixafter.types.proto.v1.GeometryType.ParametersEntry
+	0, // 2: sixafter.types.proto.v1.Coordinate.values:type_name -> sixafter.types.proto.v1.Scalar
+	2, // 3: sixafter.types.proto.v1.Coordinate.geometry_type:type_name -> sixafter.types.proto.v1.GeometryType
+	1, // 4: sixafter.types.proto.v1.Coordinate.coordinate_system:type_name -> sixafter.types.proto.v1.CoordinateSystem
+	3, // 5: sixafter.types.proto.v1.Point.position:type_name -> sixafter.types.proto.v1.Coordinate
+	4, // 6: sixafter.types.proto.v1.Line.start:type_name -> sixafter.types.proto.v1.Point
+	4, // 7: sixafter.types.proto.v1.Line.end:type_name -> sixafter.types.proto.v1.Point
+	4, // 8: sixafter.types.proto.v1.Polygon.vertices:type_name -> sixafter.types.proto.v1.Point
 	9, // [9:9] is the sub-list for method output_type
 	9, // [9:9] is the sub-list for method input_type
 	9, // [9:9] is the sub-list for extension type_name

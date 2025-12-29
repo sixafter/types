@@ -161,7 +161,7 @@ var File_proto_v1_version_proto protoreflect.FileDescriptor
 
 const file_proto_v1_version_proto_rawDesc = "" +
 	"\n" +
-	"\x16proto/v1/version.proto\x12\bproto.v1\"\x92\x01\n" +
+	"\x16proto/v1/version.proto\x12\x17sixafter.types.proto.v1\"\x92\x01\n" +
 	"\aVersion\x12\x14\n" +
 	"\x05major\x18\x01 \x01(\rR\x05major\x12\x14\n" +
 	"\x05minor\x18\x02 \x01(\rR\x05minor\x12\x14\n" +
@@ -186,7 +186,7 @@ func file_proto_v1_version_proto_rawDescGZIP() []byte {
 
 var file_proto_v1_version_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proto_v1_version_proto_goTypes = []any{
-	(*Version)(nil), // 0: proto.v1.Version
+	(*Version)(nil), // 0: sixafter.types.proto.v1.Version
 }
 var file_proto_v1_version_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

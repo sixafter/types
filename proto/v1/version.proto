@@ -17,7 +17,7 @@
 
 syntax = "proto3";
 
-package proto.v1;
+package sixafter.types.proto.v1;
 
 option cc_enable_arenas = true;
 option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
