@@ -38,8 +38,8 @@ managed:
   enabled: false
 
 # Only generate code for your service's protos
-inputs:
-  - directory: proto/v1
+#inputs:
+#  - directory: proto/v1
 
 plugins:
   # Go models + gRPC

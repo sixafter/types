@@ -19,7 +19,7 @@ syntax = "proto3";
 
 package proto.v1;
 
-import "map_polygon.proto";
+import "proto/v1/map_polygon.proto";
 
 option cc_enable_arenas = true;
 option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";

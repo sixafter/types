@@ -19,8 +19,8 @@ syntax = "proto3";
 
 package proto.v1;
 
-import "compass_heading.proto";
-import "geospatial_coordinate.proto";
+import "proto/v1/compass_heading.proto";
+import "proto/v1/geospatial_coordinate.proto";
 import "google/protobuf/timestamp.proto";
 
 option cc_enable_arenas = true;

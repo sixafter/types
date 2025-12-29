@@ -21,7 +21,7 @@ package proto.v1;
 
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
-import "version.proto";
+import "proto/v1/version.proto";
 
 option cc_enable_arenas = true;
 option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";

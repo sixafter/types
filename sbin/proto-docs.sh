@@ -32,4 +32,4 @@ if [[ ! -f buf.gen.doc.yaml ]]; then
 fi
 
 echo "[INFO] Running: proto generate docs"
-buf generate --clean --template buf.gen.docs.yaml
+buf generate --template buf.gen.docs.yaml

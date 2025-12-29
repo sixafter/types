@@ -19,7 +19,7 @@ syntax = "proto3";
 
 package proto.v1;
 
-import "geospatial_coordinate.proto";
+import "proto/v1/geospatial_coordinate.proto";
 
 option cc_enable_arenas = true;
 option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";

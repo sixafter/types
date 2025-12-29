@@ -17,6 +17,18 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
+---
+
+## [1.57.1] - 2025-12-29
+
+### Added
+### Changed
+- **defect:** Corrected import paths in `.proto` files.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
 
 ---
 
@@ -449,7 +461,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.57.0...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.57.1...HEAD
+[1.57.1]: https://github.com/sixafter/types/compare/v1.57.0...v1.57.1
 [1.57.0]: https://github.com/sixafter/types/compare/v1.56.0...v1.57.0
 [1.56.0]: https://github.com/sixafter/types/compare/v1.55.0...v1.56.0
 [1.55.0]: https://github.com/sixafter/types/compare/v1.54.0...v1.55.0

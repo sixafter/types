@@ -17,7 +17,7 @@ version: v2
 
 # Define the module for this proto package
 modules:
-  - path: proto/v1
+  - path: .
     lint:
       use: [STANDARD]
       except:
