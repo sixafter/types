@@ -19,6 +19,19 @@ Date format: `YYYY-MM-DD`
 
 ---
 
+## [1.57.3] - 2025-12-29
+
+### Added
+### Changed
+- **defect:** Fix nested enum by moving `GeodeticDatum` outside of `GeospatialElevation`.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
+
 ## [1.57.2] - 2025-12-29
 
 ### Added
@@ -475,8 +488,9 @@ package sixafter.types.proto.v1;
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.57.2...HEAD
-[1.57.1]: https://github.com/sixafter/types/compare/v1.57.1...v1.57.2
+[Unreleased]: https://github.com/sixafter/types/compare/v1.57.3...HEAD
+[1.57.3]: https://github.com/sixafter/types/compare/v1.57.2...v1.57.3
+[1.57.2]: https://github.com/sixafter/types/compare/v1.57.1...v1.57.2
 [1.57.1]: https://github.com/sixafter/types/compare/v1.57.0...v1.57.1
 [1.57.0]: https://github.com/sixafter/types/compare/v1.56.0...v1.57.0
 [1.56.0]: https://github.com/sixafter/types/compare/v1.55.0...v1.56.0

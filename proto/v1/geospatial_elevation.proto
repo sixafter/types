@@ -27,27 +27,27 @@ option java_outer_classname = "GeospatialElevationProto";
 option java_package = "com.sixafter.types.v1";
 option objc_class_prefix = "TPB";
 
+// The `GeodeticDatum` enum defines the reference system or surface
+// against which the elevation is measured. These reference systems are
+// approximations of the Earth's surface.
+enum GeodeticDatum {
+  // Unspecified datum. This indicates that no specific reference system
+  // has been defined for the elevation measurement.
+  GEODETIC_DATUM_UNSPECIFIED = 0;
+
+  // The altitude above mean sea level (MSL), measured in meters.
+  // This is a commonly used datum for everyday elevation measurements.
+  GEODETIC_DATUM_SEA_LEVEL = 1;
+
+  // The altitude as a height above the World Geodetic System 1984 (WGS84)
+  // ellipsoid, measured in meters. This is commonly used in GPS systems.
+  GEODETIC_DATUM_WGS_84 = 2;
+}
+
 // The `GeospatialElevation` message represents the vertical direction
 // or height of a point relative to a specified reference datum. This
 // is commonly used in geolocation, mapping, and geographic information systems (GIS).
 message GeospatialElevation {
-  // The `GeodeticDatum` enum defines the reference system or surface
-  // against which the elevation is measured. These reference systems are
-  // approximations of the Earth's surface.
-  enum GeodeticDatum {
-    // Unspecified datum. This indicates that no specific reference system
-    // has been defined for the elevation measurement.
-    GEODETIC_DATUM_UNSPECIFIED = 0;
-
-    // The altitude above mean sea level (MSL), measured in meters.
-    // This is a commonly used datum for everyday elevation measurements.
-    GEODETIC_DATUM_SEA_LEVEL = 1;
-
-    // The altitude as a height above the World Geodetic System 1984 (WGS84)
-    // ellipsoid, measured in meters. This is commonly used in GPS systems.
-    GEODETIC_DATUM_WGS_84 = 2;
-  }
-
   // The geodetic datum used as the reference point for the elevation measurement.
   // Example: `SEA_LEVEL` for altitude above mean sea level.
   GeodeticDatum datum = 1;

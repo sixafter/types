@@ -41,59 +41,59 @@ const (
 // The `GeodeticDatum` enum defines the reference system or surface
 // against which the elevation is measured. These reference systems are
 // approximations of the Earth's surface.
-type GeospatialElevation_GeodeticDatum int32
+type GeodeticDatum int32
 
 const (
 	// Unspecified datum. This indicates that no specific reference system
 	// has been defined for the elevation measurement.
-	GeospatialElevation_GEODETIC_DATUM_UNSPECIFIED GeospatialElevation_GeodeticDatum = 0
+	GeodeticDatum_GEODETIC_DATUM_UNSPECIFIED GeodeticDatum = 0
 	// The altitude above mean sea level (MSL), measured in meters.
 	// This is a commonly used datum for everyday elevation measurements.
-	GeospatialElevation_GEODETIC_DATUM_SEA_LEVEL GeospatialElevation_GeodeticDatum = 1
+	GeodeticDatum_GEODETIC_DATUM_SEA_LEVEL GeodeticDatum = 1
 	// The altitude as a height above the World Geodetic System 1984 (WGS84)
 	// ellipsoid, measured in meters. This is commonly used in GPS systems.
-	GeospatialElevation_GEODETIC_DATUM_WGS_84 GeospatialElevation_GeodeticDatum = 2
+	GeodeticDatum_GEODETIC_DATUM_WGS_84 GeodeticDatum = 2
 )
 
-// Enum value maps for GeospatialElevation_GeodeticDatum.
+// Enum value maps for GeodeticDatum.
 var (
-	GeospatialElevation_GeodeticDatum_name = map[int32]string{
+	GeodeticDatum_name = map[int32]string{
 		0: "GEODETIC_DATUM_UNSPECIFIED",
 		1: "GEODETIC_DATUM_SEA_LEVEL",
 		2: "GEODETIC_DATUM_WGS_84",
 	}
-	GeospatialElevation_GeodeticDatum_value = map[string]int32{
+	GeodeticDatum_value = map[string]int32{
 		"GEODETIC_DATUM_UNSPECIFIED": 0,
 		"GEODETIC_DATUM_SEA_LEVEL":   1,
 		"GEODETIC_DATUM_WGS_84":      2,
 	}
 )
 
-func (x GeospatialElevation_GeodeticDatum) Enum() *GeospatialElevation_GeodeticDatum {
-	p := new(GeospatialElevation_GeodeticDatum)
+func (x GeodeticDatum) Enum() *GeodeticDatum {
+	p := new(GeodeticDatum)
 	*p = x
 	return p
 }
 
-func (x GeospatialElevation_GeodeticDatum) String() string {
+func (x GeodeticDatum) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (GeospatialElevation_GeodeticDatum) Descriptor() protoreflect.EnumDescriptor {
+func (GeodeticDatum) Descriptor() protoreflect.EnumDescriptor {
 	return file_proto_v1_geospatial_elevation_proto_enumTypes[0].Descriptor()
 }
 
-func (GeospatialElevation_GeodeticDatum) Type() protoreflect.EnumType {
+func (GeodeticDatum) Type() protoreflect.EnumType {
 	return &file_proto_v1_geospatial_elevation_proto_enumTypes[0]
 }
 
-func (x GeospatialElevation_GeodeticDatum) Number() protoreflect.EnumNumber {
+func (x GeodeticDatum) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use GeospatialElevation_GeodeticDatum.Descriptor instead.
-func (GeospatialElevation_GeodeticDatum) EnumDescriptor() ([]byte, []int) {
-	return file_proto_v1_geospatial_elevation_proto_rawDescGZIP(), []int{0, 0}
+// Deprecated: Use GeodeticDatum.Descriptor instead.
+func (GeodeticDatum) EnumDescriptor() ([]byte, []int) {
+	return file_proto_v1_geospatial_elevation_proto_rawDescGZIP(), []int{0}
 }
 
 // The `GeospatialElevation` message represents the vertical direction
@@ -103,7 +103,7 @@ type GeospatialElevation struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The geodetic datum used as the reference point for the elevation measurement.
 	// Example: `SEA_LEVEL` for altitude above mean sea level.
-	Datum GeospatialElevation_GeodeticDatum `protobuf:"varint,1,opt,name=datum,proto3,enum=sixafter.types.proto.v1.GeospatialElevation_GeodeticDatum" json:"datum,omitempty"`
+	Datum GeodeticDatum `protobuf:"varint,1,opt,name=datum,proto3,enum=sixafter.types.proto.v1.GeodeticDatum" json:"datum,omitempty"`
 	// The altitude or vertical elevation of the point, measured in meters.
 	// This value can be positive (above the datum) or negative (below the datum).
 	// Example: An altitude of 212 meters above sea level for Westlake, Texas.
@@ -142,11 +142,11 @@ func (*GeospatialElevation) Descriptor() ([]byte, []int) {
 	return file_proto_v1_geospatial_elevation_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *GeospatialElevation) GetDatum() GeospatialElevation_GeodeticDatum {
+func (x *GeospatialElevation) GetDatum() GeodeticDatum {
 	if x != nil {
 		return x.Datum
 	}
-	return GeospatialElevation_GEODETIC_DATUM_UNSPECIFIED
+	return GeodeticDatum_GEODETIC_DATUM_UNSPECIFIED
 }
 
 func (x *GeospatialElevation) GetAltitude() float64 {
@@ -160,10 +160,10 @@ var File_proto_v1_geospatial_elevation_proto protoreflect.FileDescriptor
 
 const file_proto_v1_geospatial_elevation_proto_rawDesc = "" +
 	"\n" +
-	"#proto/v1/geospatial_elevation.proto\x12\x17sixafter.types.proto.v1\"\xed\x01\n" +
-	"\x13GeospatialElevation\x12P\n" +
-	"\x05datum\x18\x01 \x01(\x0e2:.sixafter.types.proto.v1.GeospatialElevation.GeodeticDatumR\x05datum\x12\x1a\n" +
-	"\baltitude\x18\x02 \x01(\x01R\baltitude\"h\n" +
+	"#proto/v1/geospatial_elevation.proto\x12\x17sixafter.types.proto.v1\"o\n" +
+	"\x13GeospatialElevation\x12<\n" +
+	"\x05datum\x18\x01 \x01(\x0e2&.sixafter.types.proto.v1.GeodeticDatumR\x05datum\x12\x1a\n" +
+	"\baltitude\x18\x02 \x01(\x01R\baltitude*h\n" +
 	"\rGeodeticDatum\x12\x1e\n" +
 	"\x1aGEODETIC_DATUM_UNSPECIFIED\x10\x00\x12\x1c\n" +
 	"\x18GEODETIC_DATUM_SEA_LEVEL\x10\x01\x12\x19\n" +
@@ -185,11 +185,11 @@ func file_proto_v1_geospatial_elevation_proto_rawDescGZIP() []byte {
 var file_proto_v1_geospatial_elevation_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_proto_v1_geospatial_elevation_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proto_v1_geospatial_elevation_proto_goTypes = []any{
-	(GeospatialElevation_GeodeticDatum)(0), // 0: sixafter.types.proto.v1.GeospatialElevation.GeodeticDatum
-	(*GeospatialElevation)(nil),            // 1: sixafter.types.proto.v1.GeospatialElevation
+	(GeodeticDatum)(0),          // 0: sixafter.types.proto.v1.GeodeticDatum
+	(*GeospatialElevation)(nil), // 1: sixafter.types.proto.v1.GeospatialElevation
 }
 var file_proto_v1_geospatial_elevation_proto_depIdxs = []int32{
-	0, // 0: sixafter.types.proto.v1.GeospatialElevation.datum:type_name -> sixafter.types.proto.v1.GeospatialElevation.GeodeticDatum
+	0, // 0: sixafter.types.proto.v1.GeospatialElevation.datum:type_name -> sixafter.types.proto.v1.GeodeticDatum
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
