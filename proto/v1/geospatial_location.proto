@@ -1,0 +1,66 @@
+// Copyright 2020-2025 SIX AFTER, INC (SIX AFTER)
+//
+// SPDX-License-Identifier: Apache-2.0
+// SPDX-FileCopyrightText: SIX AFTER, INC (SIX AFTER)
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+package proto.v1;
+
+import "compass_heading.proto";
+import "geospatial_coordinate.proto";
+import "google/protobuf/timestamp.proto";
+
+option cc_enable_arenas = true;
+option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
+option go_package = "github.com/sixafter/types/proto/v1/pb;types";
+option java_multiple_files = true;
+option java_outer_classname = "GeospatialLocationProto";
+option java_package = "com.sixafter.types.v1";
+option objc_class_prefix = "TPB";
+
+// The `GeospatialLocation` message represents a spatial or temporal scale,
+// combining geographical coordinates, heading, movement, and timestamp.
+// It is commonly used in location-based services, navigation systems, and
+// applications requiring geospatial data.
+message GeospatialLocation {
+  // The geographical coordinate information of the location.
+  // Includes latitude, longitude, and elevation as defined in the `GeospatialCoordinate` message.
+  proto.v1.GeospatialCoordinate coordinate = 1;
+
+  // The azimuth (orientation) of the device relative to true or magnetic north.
+  // Defined using the `CompassHeading` message, it represents the heading
+  // of the device at the time of measurement.
+  proto.v1.CompassHeading heading = 2;
+
+  // The direction in which the device is traveling, measured in degrees
+  // relative to true north (0°). This reflects the course or trajectory
+  // of the device's movement.
+  //
+  // **Note:** Course direction is different from heading. Course measures
+  // the direction the device is moving (e.g., forward travel), independent
+  // of its physical orientation. Heading reflects the device's orientation.
+  // Example: 90° indicates the device is moving east.
+  double course = 3;
+
+  // The instantaneous speed of the device, measured in meters per second (m/s).
+  // Example: A speed of 3.5 m/s (12.6 km/h or 7.8 mph) indicates the device
+  // is moving at a walking pace.
+  float speed = 4;
+
+  // The time at which this geospatial location data was recorded.
+  // Example: Timestamp of "2024-11-17T15:00:00Z" represents 3:00 PM UTC on November 17, 2024.
+  google.protobuf.Timestamp timestamp = 5;
+}

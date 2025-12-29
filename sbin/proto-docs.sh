@@ -13,14 +13,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+set -euo pipefail
+
 __dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "${__dir}/os-type.sh"
 
-source "${__dir}"/os-type.sh
-
-# Windows
 if is_windows; then
-    echo "Windows is not currently supported."
-    exit 1
+  echo "[ERROR] Windows is not currently supported." >&2
+  exit 1
 fi
 
-go clean
+command -v buf >/dev/null 2>&1 || { echo "[ERROR] buf not found in PATH"; exit 1; }
+[[ -f buf.yaml ]] || { echo "[ERROR] Run 'deps' make target."; exit 1; }
+
+if [[ ! -f buf.gen.doc.yaml ]]; then
+  echo "[INFO] buf.gen.doc.yaml not found; skipping generation."
+  exit 0
+fi
+
+echo "[INFO] Running: proto generate docs"
+buf generate --clean --template buf.gen.docs.yaml

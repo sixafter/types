@@ -19,6 +19,20 @@ Date format: `YYYY-MM-DD`
 
 ---
 
+## [1.56.0] - 2025-12-29
+
+### Added
+### Changed
+- **risk:** Refactored structure to avoid naming collisions when vendored by consumers.
+- **debt:** Buf is now used for linting and code generation.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
+
 ## [1.55.0] - 2025-12-13
 
 ### Added
@@ -421,7 +435,8 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.55.0...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.56.0...HEAD
+[1.56.0]: https://github.com/sixafter/types/compare/v1.55.0...v1.56.0
 [1.55.0]: https://github.com/sixafter/types/compare/v1.54.0...v1.55.0
 [1.54.0]: https://github.com/sixafter/types/compare/v1.53.0...v1.54.0
 [1.53.0]: https://github.com/sixafter/types/compare/v1.52.0...v1.53.0

@@ -30,9 +30,8 @@ FUZZTIME ?= 20s
 
 export BINARY_NAME=main.out
 
-.PHONY: build
-build: ## Build the binary file
-	@sbin/go-build.sh
+.PHONY: all
+all: deps tidy vendor clean proto-generate test fmt ## Run all the targets
 
 .PHONY: test
 test: ## Execute unit tests
@@ -60,7 +59,7 @@ deps: ## Get the dependencies and vendor
 
 .PHONY: fmt
 fmt: ## Format the files
-	$(GO_FMT) ./..
+	$(GO_FMT) ./...
 
 .PHONY: vet
 vet: ## Vet the files
@@ -101,6 +100,29 @@ mod-verify: ## Verify Go module integrity
 .PHONY: signature-verify
 signature-verify: ## Verify latest release's digital signatures
 	@sbin/verify-sig.sh
+
+# ---------------------------------------------------------------------------
+# Protobuf Operations
+# ---------------------------------------------------------------------------
+.PHONY: proto-format
+proto-format: ## buf format -w (writes canonical formatting)
+	@sbin/proto-format.sh
+
+.PHONY: proto-lint
+proto-lint: ## buf lint (style & sanity checks)
+	@sbin/proto-lint.sh
+
+.PHONY: proto-breaking
+proto-breaking: ## buf breaking --against $(BUF_BREAK_AGAINST)
+	@sbin/proto-breaking.sh
+
+.PHONY: proto-generate
+proto-generate: ## buf generate (no-op if buf.gen.yaml absent)
+	@sbin/proto-generate.sh
+
+.PHONY: proto-docs
+proto-docs: ## Generate SDK documentation from protobuf files
+	@sbin/proto-docs.sh
 
 .PHONY: help
 help: ## Display this help screen

@@ -1,0 +1,55 @@
+# Copyright 2020-2025 SIX AFTER, INC (SIX AFTER)
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Ref: https://buf.build/docs/configuration/v2/buf-gen-yaml/
+version: v2
+
+# 'clean', when set to true, deletes the directories, zip files, and/or jar files specified in the
+# `out` field for all plugins before running code generation.
+clean: false
+
+# 'managed' contains the configuration for managed mode: https://buf.build/docs/generate/managed-mode
+# It has three top-level keys: 'enabled', 'disable', and 'override'.
+#
+# When managed mode is enabled, it uses default values for certain file and field options during code
+# generation. Options, accepted values, and defaults are documented here:
+# https://buf.build/docs/generate/managed-mode#default-behavior
+# The 'disable' key configures modules, paths, fields, and/or options that are excluded from managed
+# mode's behavior. The 'override' key configures field and file option values that override the
+# default values managed mode uses during code generation.
+#
+# In the case of options that combine with other options (for example java_package + java_package_prefix
+# + java_package_suffix), they're all applied if possible. If not (for example when all three are set)
+# then the last configuration rule wins.
+managed:
+  # 'enabled: true' turns managed mode on, 'enabled: false' ignores all managed mode options.
+  # default: false
+  enabled: false
+
+# Only generate code for your service's protos
+inputs:
+  - directory: proto/v1
+
+plugins:
+  # Go models + gRPC
+  - local: protoc-gen-go
+    out: proto/v1/pb
+    opt:
+      - paths=source_relative
+
+  - local: protoc-gen-go-grpc
+    out: proto/v1/pb
+    opt:
+      - paths=source_relative
+      - require_unimplemented_servers=false
