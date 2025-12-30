@@ -44,12 +44,12 @@ managed:
 plugins:
   # Go models + gRPC
   - local: protoc-gen-go
-    out: proto/v1/pb
+    out: .
     opt:
-      - paths=source_relative
+      - module=github.com/sixafter/types
 
   - local: protoc-gen-go-grpc
-    out: proto/v1/pb
+    out: .
     opt:
-      - paths=source_relative
+      - module=github.com/sixafter/types
       - require_unimplemented_servers=false

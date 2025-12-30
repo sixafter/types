@@ -19,7 +19,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: url.proto
+// source: proto/v1/url.proto
 
 package types
 
@@ -84,7 +84,7 @@ type Url struct {
 
 func (x *Url) Reset() {
 	*x = Url{}
-	mi := &file_url_proto_msgTypes[0]
+	mi := &file_proto_v1_url_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -96,7 +96,7 @@ func (x *Url) String() string {
 func (*Url) ProtoMessage() {}
 
 func (x *Url) ProtoReflect() protoreflect.Message {
-	mi := &file_url_proto_msgTypes[0]
+	mi := &file_proto_v1_url_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -109,7 +109,7 @@ func (x *Url) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Url.ProtoReflect.Descriptor instead.
 func (*Url) Descriptor() ([]byte, []int) {
-	return file_url_proto_rawDescGZIP(), []int{0}
+	return file_proto_v1_url_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Url) GetProtocol() string {
@@ -175,11 +175,11 @@ func (x *Url) GetRef() string {
 	return ""
 }
 
-var File_url_proto protoreflect.FileDescriptor
+var File_proto_v1_url_proto protoreflect.FileDescriptor
 
-const file_url_proto_rawDesc = "" +
+const file_proto_v1_url_proto_rawDesc = "" +
 	"\n" +
-	"\turl.proto\x12\bproto.v1\"\xd4\x01\n" +
+	"\x12proto/v1/url.proto\x12\x17sixafter.types.proto.v1\"\xd4\x01\n" +
 	"\x03Url\x12\x1a\n" +
 	"\bprotocol\x18\x01 \x01(\tR\bprotocol\x12\x12\n" +
 	"\x04host\x18\x02 \x01(\tR\x04host\x12\x12\n" +
@@ -193,22 +193,22 @@ const file_url_proto_rawDesc = "" +
 	"\x15com.sixafter.types.v1B\bUrlProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
 var (
-	file_url_proto_rawDescOnce sync.Once
-	file_url_proto_rawDescData []byte
+	file_proto_v1_url_proto_rawDescOnce sync.Once
+	file_proto_v1_url_proto_rawDescData []byte
 )
 
-func file_url_proto_rawDescGZIP() []byte {
-	file_url_proto_rawDescOnce.Do(func() {
-		file_url_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_url_proto_rawDesc), len(file_url_proto_rawDesc)))
+func file_proto_v1_url_proto_rawDescGZIP() []byte {
+	file_proto_v1_url_proto_rawDescOnce.Do(func() {
+		file_proto_v1_url_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_v1_url_proto_rawDesc), len(file_proto_v1_url_proto_rawDesc)))
 	})
-	return file_url_proto_rawDescData
+	return file_proto_v1_url_proto_rawDescData
 }
 
-var file_url_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_url_proto_goTypes = []any{
-	(*Url)(nil), // 0: proto.v1.Url
+var file_proto_v1_url_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_proto_v1_url_proto_goTypes = []any{
+	(*Url)(nil), // 0: sixafter.types.proto.v1.Url
 }
-var file_url_proto_depIdxs = []int32{
+var file_proto_v1_url_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -216,26 +216,26 @@ var file_url_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_url_proto_init() }
-func file_url_proto_init() {
-	if File_url_proto != nil {
+func init() { file_proto_v1_url_proto_init() }
+func file_proto_v1_url_proto_init() {
+	if File_proto_v1_url_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_url_proto_rawDesc), len(file_url_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_v1_url_proto_rawDesc), len(file_proto_v1_url_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_url_proto_goTypes,
-		DependencyIndexes: file_url_proto_depIdxs,
-		MessageInfos:      file_url_proto_msgTypes,
+		GoTypes:           file_proto_v1_url_proto_goTypes,
+		DependencyIndexes: file_proto_v1_url_proto_depIdxs,
+		MessageInfos:      file_proto_v1_url_proto_msgTypes,
 	}.Build()
-	File_url_proto = out.File
-	file_url_proto_goTypes = nil
-	file_url_proto_depIdxs = nil
+	File_proto_v1_url_proto = out.File
+	file_proto_v1_url_proto_goTypes = nil
+	file_proto_v1_url_proto_depIdxs = nil
 }

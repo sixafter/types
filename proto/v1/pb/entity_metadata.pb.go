@@ -19,7 +19,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: entity_metadata.proto
+// source: proto/v1/entity_metadata.proto
 
 package types
 
@@ -91,7 +91,7 @@ type EntityMetadata struct {
 
 func (x *EntityMetadata) Reset() {
 	*x = EntityMetadata{}
-	mi := &file_entity_metadata_proto_msgTypes[0]
+	mi := &file_proto_v1_entity_metadata_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -103,7 +103,7 @@ func (x *EntityMetadata) String() string {
 func (*EntityMetadata) ProtoMessage() {}
 
 func (x *EntityMetadata) ProtoReflect() protoreflect.Message {
-	mi := &file_entity_metadata_proto_msgTypes[0]
+	mi := &file_proto_v1_entity_metadata_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -116,7 +116,7 @@ func (x *EntityMetadata) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EntityMetadata.ProtoReflect.Descriptor instead.
 func (*EntityMetadata) Descriptor() ([]byte, []int) {
-	return file_entity_metadata_proto_rawDescGZIP(), []int{0}
+	return file_proto_v1_entity_metadata_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *EntityMetadata) GetCreatedAt() *timestamppb.Timestamp {
@@ -189,11 +189,11 @@ func (x *EntityMetadata) GetAttributes() *structpb.Struct {
 	return nil
 }
 
-var File_entity_metadata_proto protoreflect.FileDescriptor
+var File_proto_v1_entity_metadata_proto protoreflect.FileDescriptor
 
-const file_entity_metadata_proto_rawDesc = "" +
+const file_proto_v1_entity_metadata_proto_rawDesc = "" +
 	"\n" +
-	"\x15entity_metadata.proto\x12\bproto.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\rversion.proto\"\xb7\x03\n" +
+	"\x1eproto/v1/entity_metadata.proto\x12\x17sixafter.types.proto.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x16proto/v1/version.proto\"\xc6\x03\n" +
 	"\x0eEntityMetadata\x129\n" +
 	"\n" +
 	"created_at\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12;\n" +
@@ -205,8 +205,8 @@ const file_entity_metadata_proto_rawDesc = "" +
 	"\n" +
 	"replicable\x18\x05 \x01(\bR\n" +
 	"replicable\x12\x1c\n" +
-	"\timmutable\x18\x06 \x01(\bR\timmutable\x12+\n" +
-	"\aversion\x18\a \x01(\v2\x11.proto.v1.VersionR\aversion\x12\x1c\n" +
+	"\timmutable\x18\x06 \x01(\bR\timmutable\x12:\n" +
+	"\aversion\x18\a \x01(\v2 .sixafter.types.proto.v1.VersionR\aversion\x12\x1c\n" +
 	"\tsynthetic\x18\b \x01(\bR\tsynthetic\x12\x12\n" +
 	"\x04tags\x18\t \x03(\tR\x04tags\x127\n" +
 	"\n" +
@@ -216,30 +216,30 @@ const file_entity_metadata_proto_rawDesc = "" +
 	"\x15com.sixafter.types.v1B\x13EntityMetadataProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
 var (
-	file_entity_metadata_proto_rawDescOnce sync.Once
-	file_entity_metadata_proto_rawDescData []byte
+	file_proto_v1_entity_metadata_proto_rawDescOnce sync.Once
+	file_proto_v1_entity_metadata_proto_rawDescData []byte
 )
 
-func file_entity_metadata_proto_rawDescGZIP() []byte {
-	file_entity_metadata_proto_rawDescOnce.Do(func() {
-		file_entity_metadata_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_entity_metadata_proto_rawDesc), len(file_entity_metadata_proto_rawDesc)))
+func file_proto_v1_entity_metadata_proto_rawDescGZIP() []byte {
+	file_proto_v1_entity_metadata_proto_rawDescOnce.Do(func() {
+		file_proto_v1_entity_metadata_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_v1_entity_metadata_proto_rawDesc), len(file_proto_v1_entity_metadata_proto_rawDesc)))
 	})
-	return file_entity_metadata_proto_rawDescData
+	return file_proto_v1_entity_metadata_proto_rawDescData
 }
 
-var file_entity_metadata_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_entity_metadata_proto_goTypes = []any{
-	(*EntityMetadata)(nil),        // 0: proto.v1.EntityMetadata
+var file_proto_v1_entity_metadata_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_proto_v1_entity_metadata_proto_goTypes = []any{
+	(*EntityMetadata)(nil),        // 0: sixafter.types.proto.v1.EntityMetadata
 	(*timestamppb.Timestamp)(nil), // 1: google.protobuf.Timestamp
-	(*Version)(nil),               // 2: proto.v1.Version
+	(*Version)(nil),               // 2: sixafter.types.proto.v1.Version
 	(*structpb.Struct)(nil),       // 3: google.protobuf.Struct
 }
-var file_entity_metadata_proto_depIdxs = []int32{
-	1, // 0: proto.v1.EntityMetadata.created_at:type_name -> google.protobuf.Timestamp
-	1, // 1: proto.v1.EntityMetadata.modified_at:type_name -> google.protobuf.Timestamp
-	1, // 2: proto.v1.EntityMetadata.deleted_at:type_name -> google.protobuf.Timestamp
-	2, // 3: proto.v1.EntityMetadata.version:type_name -> proto.v1.Version
-	3, // 4: proto.v1.EntityMetadata.attributes:type_name -> google.protobuf.Struct
+var file_proto_v1_entity_metadata_proto_depIdxs = []int32{
+	1, // 0: sixafter.types.proto.v1.EntityMetadata.created_at:type_name -> google.protobuf.Timestamp
+	1, // 1: sixafter.types.proto.v1.EntityMetadata.modified_at:type_name -> google.protobuf.Timestamp
+	1, // 2: sixafter.types.proto.v1.EntityMetadata.deleted_at:type_name -> google.protobuf.Timestamp
+	2, // 3: sixafter.types.proto.v1.EntityMetadata.version:type_name -> sixafter.types.proto.v1.Version
+	3, // 4: sixafter.types.proto.v1.EntityMetadata.attributes:type_name -> google.protobuf.Struct
 	5, // [5:5] is the sub-list for method output_type
 	5, // [5:5] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name
@@ -247,27 +247,27 @@ var file_entity_metadata_proto_depIdxs = []int32{
 	0, // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_entity_metadata_proto_init() }
-func file_entity_metadata_proto_init() {
-	if File_entity_metadata_proto != nil {
+func init() { file_proto_v1_entity_metadata_proto_init() }
+func file_proto_v1_entity_metadata_proto_init() {
+	if File_proto_v1_entity_metadata_proto != nil {
 		return
 	}
-	file_version_proto_init()
+	file_proto_v1_version_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_entity_metadata_proto_rawDesc), len(file_entity_metadata_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_v1_entity_metadata_proto_rawDesc), len(file_proto_v1_entity_metadata_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_entity_metadata_proto_goTypes,
-		DependencyIndexes: file_entity_metadata_proto_depIdxs,
-		MessageInfos:      file_entity_metadata_proto_msgTypes,
+		GoTypes:           file_proto_v1_entity_metadata_proto_goTypes,
+		DependencyIndexes: file_proto_v1_entity_metadata_proto_depIdxs,
+		MessageInfos:      file_proto_v1_entity_metadata_proto_msgTypes,
 	}.Build()
-	File_entity_metadata_proto = out.File
-	file_entity_metadata_proto_goTypes = nil
-	file_entity_metadata_proto_depIdxs = nil
+	File_proto_v1_entity_metadata_proto = out.File
+	file_proto_v1_entity_metadata_proto_goTypes = nil
+	file_proto_v1_entity_metadata_proto_depIdxs = nil
 }

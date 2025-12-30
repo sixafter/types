@@ -19,7 +19,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: email_address.proto
+// source: proto/v1/email_address.proto
 
 package types
 
@@ -58,7 +58,7 @@ type EmailAddress struct {
 
 func (x *EmailAddress) Reset() {
 	*x = EmailAddress{}
-	mi := &file_email_address_proto_msgTypes[0]
+	mi := &file_proto_v1_email_address_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -70,7 +70,7 @@ func (x *EmailAddress) String() string {
 func (*EmailAddress) ProtoMessage() {}
 
 func (x *EmailAddress) ProtoReflect() protoreflect.Message {
-	mi := &file_email_address_proto_msgTypes[0]
+	mi := &file_proto_v1_email_address_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -83,7 +83,7 @@ func (x *EmailAddress) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EmailAddress.ProtoReflect.Descriptor instead.
 func (*EmailAddress) Descriptor() ([]byte, []int) {
-	return file_email_address_proto_rawDescGZIP(), []int{0}
+	return file_proto_v1_email_address_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *EmailAddress) GetLocalPart() string {
@@ -100,11 +100,11 @@ func (x *EmailAddress) GetDomainPart() string {
 	return ""
 }
 
-var File_email_address_proto protoreflect.FileDescriptor
+var File_proto_v1_email_address_proto protoreflect.FileDescriptor
 
-const file_email_address_proto_rawDesc = "" +
+const file_proto_v1_email_address_proto_rawDesc = "" +
 	"\n" +
-	"\x13email_address.proto\x12\bproto.v1\"N\n" +
+	"\x1cproto/v1/email_address.proto\x12\x17sixafter.types.proto.v1\"N\n" +
 	"\fEmailAddress\x12\x1d\n" +
 	"\n" +
 	"local_part\x18\x01 \x01(\tR\tlocalPart\x12\x1f\n" +
@@ -113,22 +113,22 @@ const file_email_address_proto_rawDesc = "" +
 	"\x15com.sixafter.types.v1B\x11EmailAddressProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
 var (
-	file_email_address_proto_rawDescOnce sync.Once
-	file_email_address_proto_rawDescData []byte
+	file_proto_v1_email_address_proto_rawDescOnce sync.Once
+	file_proto_v1_email_address_proto_rawDescData []byte
 )
 
-func file_email_address_proto_rawDescGZIP() []byte {
-	file_email_address_proto_rawDescOnce.Do(func() {
-		file_email_address_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_email_address_proto_rawDesc), len(file_email_address_proto_rawDesc)))
+func file_proto_v1_email_address_proto_rawDescGZIP() []byte {
+	file_proto_v1_email_address_proto_rawDescOnce.Do(func() {
+		file_proto_v1_email_address_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_v1_email_address_proto_rawDesc), len(file_proto_v1_email_address_proto_rawDesc)))
 	})
-	return file_email_address_proto_rawDescData
+	return file_proto_v1_email_address_proto_rawDescData
 }
 
-var file_email_address_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_email_address_proto_goTypes = []any{
-	(*EmailAddress)(nil), // 0: proto.v1.EmailAddress
+var file_proto_v1_email_address_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_proto_v1_email_address_proto_goTypes = []any{
+	(*EmailAddress)(nil), // 0: sixafter.types.proto.v1.EmailAddress
 }
-var file_email_address_proto_depIdxs = []int32{
+var file_proto_v1_email_address_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -136,26 +136,26 @@ var file_email_address_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_email_address_proto_init() }
-func file_email_address_proto_init() {
-	if File_email_address_proto != nil {
+func init() { file_proto_v1_email_address_proto_init() }
+func file_proto_v1_email_address_proto_init() {
+	if File_proto_v1_email_address_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_email_address_proto_rawDesc), len(file_email_address_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_v1_email_address_proto_rawDesc), len(file_proto_v1_email_address_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_email_address_proto_goTypes,
-		DependencyIndexes: file_email_address_proto_depIdxs,
-		MessageInfos:      file_email_address_proto_msgTypes,
+		GoTypes:           file_proto_v1_email_address_proto_goTypes,
+		DependencyIndexes: file_proto_v1_email_address_proto_depIdxs,
+		MessageInfos:      file_proto_v1_email_address_proto_msgTypes,
 	}.Build()
-	File_email_address_proto = out.File
-	file_email_address_proto_goTypes = nil
-	file_email_address_proto_depIdxs = nil
+	File_proto_v1_email_address_proto = out.File
+	file_proto_v1_email_address_proto_goTypes = nil
+	file_proto_v1_email_address_proto_depIdxs = nil
 }

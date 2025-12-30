@@ -19,7 +19,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: temporal_range.proto
+// source: proto/v1/temporal_range.proto
 
 package types
 
@@ -61,7 +61,7 @@ type TemporalRange struct {
 
 func (x *TemporalRange) Reset() {
 	*x = TemporalRange{}
-	mi := &file_temporal_range_proto_msgTypes[0]
+	mi := &file_proto_v1_temporal_range_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -73,7 +73,7 @@ func (x *TemporalRange) String() string {
 func (*TemporalRange) ProtoMessage() {}
 
 func (x *TemporalRange) ProtoReflect() protoreflect.Message {
-	mi := &file_temporal_range_proto_msgTypes[0]
+	mi := &file_proto_v1_temporal_range_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -86,7 +86,7 @@ func (x *TemporalRange) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TemporalRange.ProtoReflect.Descriptor instead.
 func (*TemporalRange) Descriptor() ([]byte, []int) {
-	return file_temporal_range_proto_rawDescGZIP(), []int{0}
+	return file_proto_v1_temporal_range_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *TemporalRange) GetEpoch() *timestamppb.Timestamp {
@@ -103,37 +103,37 @@ func (x *TemporalRange) GetDuration() *durationpb.Duration {
 	return nil
 }
 
-var File_temporal_range_proto protoreflect.FileDescriptor
+var File_proto_v1_temporal_range_proto protoreflect.FileDescriptor
 
-const file_temporal_range_proto_rawDesc = "" +
+const file_proto_v1_temporal_range_proto_rawDesc = "" +
 	"\n" +
-	"\x14temporal_range.proto\x12\bproto.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"x\n" +
+	"\x1dproto/v1/temporal_range.proto\x12\x17sixafter.types.proto.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"x\n" +
 	"\rTemporalRange\x120\n" +
 	"\x05epoch\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\x05epoch\x125\n" +
 	"\bduration\x18\x02 \x01(\v2\x19.google.protobuf.DurationR\bdurationB\x86\x01\n" +
 	"\x15com.sixafter.types.v1B\x12TemporalRangeProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
 var (
-	file_temporal_range_proto_rawDescOnce sync.Once
-	file_temporal_range_proto_rawDescData []byte
+	file_proto_v1_temporal_range_proto_rawDescOnce sync.Once
+	file_proto_v1_temporal_range_proto_rawDescData []byte
 )
 
-func file_temporal_range_proto_rawDescGZIP() []byte {
-	file_temporal_range_proto_rawDescOnce.Do(func() {
-		file_temporal_range_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_temporal_range_proto_rawDesc), len(file_temporal_range_proto_rawDesc)))
+func file_proto_v1_temporal_range_proto_rawDescGZIP() []byte {
+	file_proto_v1_temporal_range_proto_rawDescOnce.Do(func() {
+		file_proto_v1_temporal_range_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_v1_temporal_range_proto_rawDesc), len(file_proto_v1_temporal_range_proto_rawDesc)))
 	})
-	return file_temporal_range_proto_rawDescData
+	return file_proto_v1_temporal_range_proto_rawDescData
 }
 
-var file_temporal_range_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_temporal_range_proto_goTypes = []any{
-	(*TemporalRange)(nil),         // 0: proto.v1.TemporalRange
+var file_proto_v1_temporal_range_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_proto_v1_temporal_range_proto_goTypes = []any{
+	(*TemporalRange)(nil),         // 0: sixafter.types.proto.v1.TemporalRange
 	(*timestamppb.Timestamp)(nil), // 1: google.protobuf.Timestamp
 	(*durationpb.Duration)(nil),   // 2: google.protobuf.Duration
 }
-var file_temporal_range_proto_depIdxs = []int32{
-	1, // 0: proto.v1.TemporalRange.epoch:type_name -> google.protobuf.Timestamp
-	2, // 1: proto.v1.TemporalRange.duration:type_name -> google.protobuf.Duration
+var file_proto_v1_temporal_range_proto_depIdxs = []int32{
+	1, // 0: sixafter.types.proto.v1.TemporalRange.epoch:type_name -> google.protobuf.Timestamp
+	2, // 1: sixafter.types.proto.v1.TemporalRange.duration:type_name -> google.protobuf.Duration
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -141,26 +141,26 @@ var file_temporal_range_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_temporal_range_proto_init() }
-func file_temporal_range_proto_init() {
-	if File_temporal_range_proto != nil {
+func init() { file_proto_v1_temporal_range_proto_init() }
+func file_proto_v1_temporal_range_proto_init() {
+	if File_proto_v1_temporal_range_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_temporal_range_proto_rawDesc), len(file_temporal_range_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_v1_temporal_range_proto_rawDesc), len(file_proto_v1_temporal_range_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_temporal_range_proto_goTypes,
-		DependencyIndexes: file_temporal_range_proto_depIdxs,
-		MessageInfos:      file_temporal_range_proto_msgTypes,
+		GoTypes:           file_proto_v1_temporal_range_proto_goTypes,
+		DependencyIndexes: file_proto_v1_temporal_range_proto_depIdxs,
+		MessageInfos:      file_proto_v1_temporal_range_proto_msgTypes,
 	}.Build()
-	File_temporal_range_proto = out.File
-	file_temporal_range_proto_goTypes = nil
-	file_temporal_range_proto_depIdxs = nil
+	File_proto_v1_temporal_range_proto = out.File
+	file_proto_v1_temporal_range_proto_goTypes = nil
+	file_proto_v1_temporal_range_proto_depIdxs = nil
 }

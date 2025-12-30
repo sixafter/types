@@ -19,7 +19,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: time_zone.proto
+// source: proto/v1/time_zone.proto
 
 package types
 
@@ -65,7 +65,7 @@ type TimeZone struct {
 
 func (x *TimeZone) Reset() {
 	*x = TimeZone{}
-	mi := &file_time_zone_proto_msgTypes[0]
+	mi := &file_proto_v1_time_zone_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -77,7 +77,7 @@ func (x *TimeZone) String() string {
 func (*TimeZone) ProtoMessage() {}
 
 func (x *TimeZone) ProtoReflect() protoreflect.Message {
-	mi := &file_time_zone_proto_msgTypes[0]
+	mi := &file_proto_v1_time_zone_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -90,7 +90,7 @@ func (x *TimeZone) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TimeZone.ProtoReflect.Descriptor instead.
 func (*TimeZone) Descriptor() ([]byte, []int) {
-	return file_time_zone_proto_rawDescGZIP(), []int{0}
+	return file_proto_v1_time_zone_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *TimeZone) GetName() string {
@@ -144,7 +144,7 @@ type TimeZone_TimeOffset struct {
 
 func (x *TimeZone_TimeOffset) Reset() {
 	*x = TimeZone_TimeOffset{}
-	mi := &file_time_zone_proto_msgTypes[1]
+	mi := &file_proto_v1_time_zone_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -156,7 +156,7 @@ func (x *TimeZone_TimeOffset) String() string {
 func (*TimeZone_TimeOffset) ProtoMessage() {}
 
 func (x *TimeZone_TimeOffset) ProtoReflect() protoreflect.Message {
-	mi := &file_time_zone_proto_msgTypes[1]
+	mi := &file_proto_v1_time_zone_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +169,7 @@ func (x *TimeZone_TimeOffset) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TimeZone_TimeOffset.ProtoReflect.Descriptor instead.
 func (*TimeZone_TimeOffset) Descriptor() ([]byte, []int) {
-	return file_time_zone_proto_rawDescGZIP(), []int{0, 0}
+	return file_proto_v1_time_zone_proto_rawDescGZIP(), []int{0, 0}
 }
 
 func (x *TimeZone_TimeOffset) GetHours() int32 {
@@ -186,17 +186,17 @@ func (x *TimeZone_TimeOffset) GetMinutes() int32 {
 	return 0
 }
 
-var File_time_zone_proto protoreflect.FileDescriptor
+var File_proto_v1_time_zone_proto protoreflect.FileDescriptor
 
-const file_time_zone_proto_rawDesc = "" +
+const file_proto_v1_time_zone_proto_rawDesc = "" +
 	"\n" +
-	"\x0ftime_zone.proto\x12\bproto.v1\x1a\x1bgeospatial_coordinate.proto\"\xd9\x02\n" +
+	"\x18proto/v1/time_zone.proto\x12\x17sixafter.types.proto.v1\x1a$proto/v1/geospatial_coordinate.proto\"\x86\x03\n" +
 	"\bTimeZone\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\"\n" +
-	"\fabbreviation\x18\x02 \x01(\tR\fabbreviation\x12C\n" +
-	"\x0eutc_offset_std\x18\x03 \x01(\v2\x1d.proto.v1.TimeZone.TimeOffsetR\futcOffsetStd\x12C\n" +
-	"\x0eutc_offset_dst\x18\x04 \x01(\v2\x1d.proto.v1.TimeZone.TimeOffsetR\futcOffsetDst\x12M\n" +
-	"\x12central_coordinate\x18\x05 \x01(\v2\x1e.proto.v1.GeospatialCoordinateR\x11centralCoordinate\x1a<\n" +
+	"\fabbreviation\x18\x02 \x01(\tR\fabbreviation\x12R\n" +
+	"\x0eutc_offset_std\x18\x03 \x01(\v2,.sixafter.types.proto.v1.TimeZone.TimeOffsetR\futcOffsetStd\x12R\n" +
+	"\x0eutc_offset_dst\x18\x04 \x01(\v2,.sixafter.types.proto.v1.TimeZone.TimeOffsetR\futcOffsetDst\x12\\\n" +
+	"\x12central_coordinate\x18\x05 \x01(\v2-.sixafter.types.proto.v1.GeospatialCoordinateR\x11centralCoordinate\x1a<\n" +
 	"\n" +
 	"TimeOffset\x12\x14\n" +
 	"\x05hours\x18\x01 \x01(\x05R\x05hours\x12\x18\n" +
@@ -204,27 +204,27 @@ const file_time_zone_proto_rawDesc = "" +
 	"\x15com.sixafter.types.v1B\rTimeZoneProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
 var (
-	file_time_zone_proto_rawDescOnce sync.Once
-	file_time_zone_proto_rawDescData []byte
+	file_proto_v1_time_zone_proto_rawDescOnce sync.Once
+	file_proto_v1_time_zone_proto_rawDescData []byte
 )
 
-func file_time_zone_proto_rawDescGZIP() []byte {
-	file_time_zone_proto_rawDescOnce.Do(func() {
-		file_time_zone_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_time_zone_proto_rawDesc), len(file_time_zone_proto_rawDesc)))
+func file_proto_v1_time_zone_proto_rawDescGZIP() []byte {
+	file_proto_v1_time_zone_proto_rawDescOnce.Do(func() {
+		file_proto_v1_time_zone_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_v1_time_zone_proto_rawDesc), len(file_proto_v1_time_zone_proto_rawDesc)))
 	})
-	return file_time_zone_proto_rawDescData
+	return file_proto_v1_time_zone_proto_rawDescData
 }
 
-var file_time_zone_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_time_zone_proto_goTypes = []any{
-	(*TimeZone)(nil),             // 0: proto.v1.TimeZone
-	(*TimeZone_TimeOffset)(nil),  // 1: proto.v1.TimeZone.TimeOffset
-	(*GeospatialCoordinate)(nil), // 2: proto.v1.GeospatialCoordinate
+var file_proto_v1_time_zone_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_proto_v1_time_zone_proto_goTypes = []any{
+	(*TimeZone)(nil),             // 0: sixafter.types.proto.v1.TimeZone
+	(*TimeZone_TimeOffset)(nil),  // 1: sixafter.types.proto.v1.TimeZone.TimeOffset
+	(*GeospatialCoordinate)(nil), // 2: sixafter.types.proto.v1.GeospatialCoordinate
 }
-var file_time_zone_proto_depIdxs = []int32{
-	1, // 0: proto.v1.TimeZone.utc_offset_std:type_name -> proto.v1.TimeZone.TimeOffset
-	1, // 1: proto.v1.TimeZone.utc_offset_dst:type_name -> proto.v1.TimeZone.TimeOffset
-	2, // 2: proto.v1.TimeZone.central_coordinate:type_name -> proto.v1.GeospatialCoordinate
+var file_proto_v1_time_zone_proto_depIdxs = []int32{
+	1, // 0: sixafter.types.proto.v1.TimeZone.utc_offset_std:type_name -> sixafter.types.proto.v1.TimeZone.TimeOffset
+	1, // 1: sixafter.types.proto.v1.TimeZone.utc_offset_dst:type_name -> sixafter.types.proto.v1.TimeZone.TimeOffset
+	2, // 2: sixafter.types.proto.v1.TimeZone.central_coordinate:type_name -> sixafter.types.proto.v1.GeospatialCoordinate
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name
@@ -232,27 +232,27 @@ var file_time_zone_proto_depIdxs = []int32{
 	0, // [0:3] is the sub-list for field type_name
 }
 
-func init() { file_time_zone_proto_init() }
-func file_time_zone_proto_init() {
-	if File_time_zone_proto != nil {
+func init() { file_proto_v1_time_zone_proto_init() }
+func file_proto_v1_time_zone_proto_init() {
+	if File_proto_v1_time_zone_proto != nil {
 		return
 	}
-	file_geospatial_coordinate_proto_init()
+	file_proto_v1_geospatial_coordinate_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_time_zone_proto_rawDesc), len(file_time_zone_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_v1_time_zone_proto_rawDesc), len(file_proto_v1_time_zone_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_time_zone_proto_goTypes,
-		DependencyIndexes: file_time_zone_proto_depIdxs,
-		MessageInfos:      file_time_zone_proto_msgTypes,
+		GoTypes:           file_proto_v1_time_zone_proto_goTypes,
+		DependencyIndexes: file_proto_v1_time_zone_proto_depIdxs,
+		MessageInfos:      file_proto_v1_time_zone_proto_msgTypes,
 	}.Build()
-	File_time_zone_proto = out.File
-	file_time_zone_proto_goTypes = nil
-	file_time_zone_proto_depIdxs = nil
+	File_proto_v1_time_zone_proto = out.File
+	file_proto_v1_time_zone_proto_goTypes = nil
+	file_proto_v1_time_zone_proto_depIdxs = nil
 }

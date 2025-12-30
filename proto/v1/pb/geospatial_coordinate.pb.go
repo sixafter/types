@@ -19,7 +19,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: geospatial_coordinate.proto
+// source: proto/v1/geospatial_coordinate.proto
 
 package types
 
@@ -63,7 +63,7 @@ type GeospatialCoordinate struct {
 
 func (x *GeospatialCoordinate) Reset() {
 	*x = GeospatialCoordinate{}
-	mi := &file_geospatial_coordinate_proto_msgTypes[0]
+	mi := &file_proto_v1_geospatial_coordinate_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -75,7 +75,7 @@ func (x *GeospatialCoordinate) String() string {
 func (*GeospatialCoordinate) ProtoMessage() {}
 
 func (x *GeospatialCoordinate) ProtoReflect() protoreflect.Message {
-	mi := &file_geospatial_coordinate_proto_msgTypes[0]
+	mi := &file_proto_v1_geospatial_coordinate_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -88,7 +88,7 @@ func (x *GeospatialCoordinate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GeospatialCoordinate.ProtoReflect.Descriptor instead.
 func (*GeospatialCoordinate) Descriptor() ([]byte, []int) {
-	return file_geospatial_coordinate_proto_rawDescGZIP(), []int{0}
+	return file_proto_v1_geospatial_coordinate_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *GeospatialCoordinate) GetLatitude() float64 {
@@ -112,36 +112,36 @@ func (x *GeospatialCoordinate) GetElevation() *GeospatialElevation {
 	return nil
 }
 
-var File_geospatial_coordinate_proto protoreflect.FileDescriptor
+var File_proto_v1_geospatial_coordinate_proto protoreflect.FileDescriptor
 
-const file_geospatial_coordinate_proto_rawDesc = "" +
+const file_proto_v1_geospatial_coordinate_proto_rawDesc = "" +
 	"\n" +
-	"\x1bgeospatial_coordinate.proto\x12\bproto.v1\x1a\x1ageospatial_elevation.proto\"\x8d\x01\n" +
+	"$proto/v1/geospatial_coordinate.proto\x12\x17sixafter.types.proto.v1\x1a#proto/v1/geospatial_elevation.proto\"\x9c\x01\n" +
 	"\x14GeospatialCoordinate\x12\x1a\n" +
 	"\blatitude\x18\x01 \x01(\x01R\blatitude\x12\x1c\n" +
-	"\tlongitude\x18\x02 \x01(\x01R\tlongitude\x12;\n" +
-	"\televation\x18\x03 \x01(\v2\x1d.proto.v1.GeospatialElevationR\televationB\x8d\x01\n" +
+	"\tlongitude\x18\x02 \x01(\x01R\tlongitude\x12J\n" +
+	"\televation\x18\x03 \x01(\v2,.sixafter.types.proto.v1.GeospatialElevationR\televationB\x8d\x01\n" +
 	"\x15com.sixafter.types.v1B\x19GeospatialCoordinateProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
 var (
-	file_geospatial_coordinate_proto_rawDescOnce sync.Once
-	file_geospatial_coordinate_proto_rawDescData []byte
+	file_proto_v1_geospatial_coordinate_proto_rawDescOnce sync.Once
+	file_proto_v1_geospatial_coordinate_proto_rawDescData []byte
 )
 
-func file_geospatial_coordinate_proto_rawDescGZIP() []byte {
-	file_geospatial_coordinate_proto_rawDescOnce.Do(func() {
-		file_geospatial_coordinate_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_geospatial_coordinate_proto_rawDesc), len(file_geospatial_coordinate_proto_rawDesc)))
+func file_proto_v1_geospatial_coordinate_proto_rawDescGZIP() []byte {
+	file_proto_v1_geospatial_coordinate_proto_rawDescOnce.Do(func() {
+		file_proto_v1_geospatial_coordinate_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_v1_geospatial_coordinate_proto_rawDesc), len(file_proto_v1_geospatial_coordinate_proto_rawDesc)))
 	})
-	return file_geospatial_coordinate_proto_rawDescData
+	return file_proto_v1_geospatial_coordinate_proto_rawDescData
 }
 
-var file_geospatial_coordinate_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_geospatial_coordinate_proto_goTypes = []any{
-	(*GeospatialCoordinate)(nil), // 0: proto.v1.GeospatialCoordinate
-	(*GeospatialElevation)(nil),  // 1: proto.v1.GeospatialElevation
+var file_proto_v1_geospatial_coordinate_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_proto_v1_geospatial_coordinate_proto_goTypes = []any{
+	(*GeospatialCoordinate)(nil), // 0: sixafter.types.proto.v1.GeospatialCoordinate
+	(*GeospatialElevation)(nil),  // 1: sixafter.types.proto.v1.GeospatialElevation
 }
-var file_geospatial_coordinate_proto_depIdxs = []int32{
-	1, // 0: proto.v1.GeospatialCoordinate.elevation:type_name -> proto.v1.GeospatialElevation
+var file_proto_v1_geospatial_coordinate_proto_depIdxs = []int32{
+	1, // 0: sixafter.types.proto.v1.GeospatialCoordinate.elevation:type_name -> sixafter.types.proto.v1.GeospatialElevation
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -149,27 +149,27 @@ var file_geospatial_coordinate_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_geospatial_coordinate_proto_init() }
-func file_geospatial_coordinate_proto_init() {
-	if File_geospatial_coordinate_proto != nil {
+func init() { file_proto_v1_geospatial_coordinate_proto_init() }
+func file_proto_v1_geospatial_coordinate_proto_init() {
+	if File_proto_v1_geospatial_coordinate_proto != nil {
 		return
 	}
-	file_geospatial_elevation_proto_init()
+	file_proto_v1_geospatial_elevation_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_geospatial_coordinate_proto_rawDesc), len(file_geospatial_coordinate_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_v1_geospatial_coordinate_proto_rawDesc), len(file_proto_v1_geospatial_coordinate_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_geospatial_coordinate_proto_goTypes,
-		DependencyIndexes: file_geospatial_coordinate_proto_depIdxs,
-		MessageInfos:      file_geospatial_coordinate_proto_msgTypes,
+		GoTypes:           file_proto_v1_geospatial_coordinate_proto_goTypes,
+		DependencyIndexes: file_proto_v1_geospatial_coordinate_proto_depIdxs,
+		MessageInfos:      file_proto_v1_geospatial_coordinate_proto_msgTypes,
 	}.Build()
-	File_geospatial_coordinate_proto = out.File
-	file_geospatial_coordinate_proto_goTypes = nil
-	file_geospatial_coordinate_proto_depIdxs = nil
+	File_proto_v1_geospatial_coordinate_proto = out.File
+	file_proto_v1_geospatial_coordinate_proto_goTypes = nil
+	file_proto_v1_geospatial_coordinate_proto_depIdxs = nil
 }

@@ -19,7 +19,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: radial_geofence.proto
+// source: proto/v1/radial_geofence.proto
 
 package types
 
@@ -61,7 +61,7 @@ type RadialGeofence struct {
 
 func (x *RadialGeofence) Reset() {
 	*x = RadialGeofence{}
-	mi := &file_radial_geofence_proto_msgTypes[0]
+	mi := &file_proto_v1_radial_geofence_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -73,7 +73,7 @@ func (x *RadialGeofence) String() string {
 func (*RadialGeofence) ProtoMessage() {}
 
 func (x *RadialGeofence) ProtoReflect() protoreflect.Message {
-	mi := &file_radial_geofence_proto_msgTypes[0]
+	mi := &file_proto_v1_radial_geofence_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -86,7 +86,7 @@ func (x *RadialGeofence) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RadialGeofence.ProtoReflect.Descriptor instead.
 func (*RadialGeofence) Descriptor() ([]byte, []int) {
-	return file_radial_geofence_proto_rawDescGZIP(), []int{0}
+	return file_proto_v1_radial_geofence_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *RadialGeofence) GetName() string {
@@ -110,36 +110,36 @@ func (x *RadialGeofence) GetRadius() float64 {
 	return 0
 }
 
-var File_radial_geofence_proto protoreflect.FileDescriptor
+var File_proto_v1_radial_geofence_proto protoreflect.FileDescriptor
 
-const file_radial_geofence_proto_rawDesc = "" +
+const file_proto_v1_radial_geofence_proto_rawDesc = "" +
 	"\n" +
-	"\x15radial_geofence.proto\x12\bproto.v1\x1a\x1bgeospatial_coordinate.proto\"t\n" +
+	"\x1eproto/v1/radial_geofence.proto\x12\x17sixafter.types.proto.v1\x1a$proto/v1/geospatial_coordinate.proto\"\x83\x01\n" +
 	"\x0eRadialGeofence\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x126\n" +
-	"\x06center\x18\x02 \x01(\v2\x1e.proto.v1.GeospatialCoordinateR\x06center\x12\x16\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12E\n" +
+	"\x06center\x18\x02 \x01(\v2-.sixafter.types.proto.v1.GeospatialCoordinateR\x06center\x12\x16\n" +
 	"\x06radius\x18\x03 \x01(\x01R\x06radiusB\x87\x01\n" +
 	"\x15com.sixafter.types.v1B\x13RadialGeofenceProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
 var (
-	file_radial_geofence_proto_rawDescOnce sync.Once
-	file_radial_geofence_proto_rawDescData []byte
+	file_proto_v1_radial_geofence_proto_rawDescOnce sync.Once
+	file_proto_v1_radial_geofence_proto_rawDescData []byte
 )
 
-func file_radial_geofence_proto_rawDescGZIP() []byte {
-	file_radial_geofence_proto_rawDescOnce.Do(func() {
-		file_radial_geofence_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_radial_geofence_proto_rawDesc), len(file_radial_geofence_proto_rawDesc)))
+func file_proto_v1_radial_geofence_proto_rawDescGZIP() []byte {
+	file_proto_v1_radial_geofence_proto_rawDescOnce.Do(func() {
+		file_proto_v1_radial_geofence_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_v1_radial_geofence_proto_rawDesc), len(file_proto_v1_radial_geofence_proto_rawDesc)))
 	})
-	return file_radial_geofence_proto_rawDescData
+	return file_proto_v1_radial_geofence_proto_rawDescData
 }
 
-var file_radial_geofence_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_radial_geofence_proto_goTypes = []any{
-	(*RadialGeofence)(nil),       // 0: proto.v1.RadialGeofence
-	(*GeospatialCoordinate)(nil), // 1: proto.v1.GeospatialCoordinate
+var file_proto_v1_radial_geofence_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_proto_v1_radial_geofence_proto_goTypes = []any{
+	(*RadialGeofence)(nil),       // 0: sixafter.types.proto.v1.RadialGeofence
+	(*GeospatialCoordinate)(nil), // 1: sixafter.types.proto.v1.GeospatialCoordinate
 }
-var file_radial_geofence_proto_depIdxs = []int32{
-	1, // 0: proto.v1.RadialGeofence.center:type_name -> proto.v1.GeospatialCoordinate
+var file_proto_v1_radial_geofence_proto_depIdxs = []int32{
+	1, // 0: sixafter.types.proto.v1.RadialGeofence.center:type_name -> sixafter.types.proto.v1.GeospatialCoordinate
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -147,27 +147,27 @@ var file_radial_geofence_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_radial_geofence_proto_init() }
-func file_radial_geofence_proto_init() {
-	if File_radial_geofence_proto != nil {
+func init() { file_proto_v1_radial_geofence_proto_init() }
+func file_proto_v1_radial_geofence_proto_init() {
+	if File_proto_v1_radial_geofence_proto != nil {
 		return
 	}
-	file_geospatial_coordinate_proto_init()
+	file_proto_v1_geospatial_coordinate_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_radial_geofence_proto_rawDesc), len(file_radial_geofence_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_v1_radial_geofence_proto_rawDesc), len(file_proto_v1_radial_geofence_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_radial_geofence_proto_goTypes,
-		DependencyIndexes: file_radial_geofence_proto_depIdxs,
-		MessageInfos:      file_radial_geofence_proto_msgTypes,
+		GoTypes:           file_proto_v1_radial_geofence_proto_goTypes,
+		DependencyIndexes: file_proto_v1_radial_geofence_proto_depIdxs,
+		MessageInfos:      file_proto_v1_radial_geofence_proto_msgTypes,
 	}.Build()
-	File_radial_geofence_proto = out.File
-	file_radial_geofence_proto_goTypes = nil
-	file_radial_geofence_proto_depIdxs = nil
+	File_proto_v1_radial_geofence_proto = out.File
+	file_proto_v1_radial_geofence_proto_goTypes = nil
+	file_proto_v1_radial_geofence_proto_depIdxs = nil
 }

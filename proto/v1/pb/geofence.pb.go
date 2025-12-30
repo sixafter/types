@@ -19,7 +19,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: geofence.proto
+// source: proto/v1/geofence.proto
 
 package types
 
@@ -57,7 +57,7 @@ type Geofence struct {
 
 func (x *Geofence) Reset() {
 	*x = Geofence{}
-	mi := &file_geofence_proto_msgTypes[0]
+	mi := &file_proto_v1_geofence_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -69,7 +69,7 @@ func (x *Geofence) String() string {
 func (*Geofence) ProtoMessage() {}
 
 func (x *Geofence) ProtoReflect() protoreflect.Message {
-	mi := &file_geofence_proto_msgTypes[0]
+	mi := &file_proto_v1_geofence_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -82,7 +82,7 @@ func (x *Geofence) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Geofence.ProtoReflect.Descriptor instead.
 func (*Geofence) Descriptor() ([]byte, []int) {
-	return file_geofence_proto_rawDescGZIP(), []int{0}
+	return file_proto_v1_geofence_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Geofence) GetName() string {
@@ -99,35 +99,35 @@ func (x *Geofence) GetPolygon() []*MapPolygon {
 	return nil
 }
 
-var File_geofence_proto protoreflect.FileDescriptor
+var File_proto_v1_geofence_proto protoreflect.FileDescriptor
 
-const file_geofence_proto_rawDesc = "" +
+const file_proto_v1_geofence_proto_rawDesc = "" +
 	"\n" +
-	"\x0egeofence.proto\x12\bproto.v1\x1a\x11map_polygon.proto\"N\n" +
+	"\x17proto/v1/geofence.proto\x12\x17sixafter.types.proto.v1\x1a\x1aproto/v1/map_polygon.proto\"]\n" +
 	"\bGeofence\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x12.\n" +
-	"\apolygon\x18\x02 \x03(\v2\x14.proto.v1.MapPolygonR\apolygonB\x81\x01\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12=\n" +
+	"\apolygon\x18\x02 \x03(\v2#.sixafter.types.proto.v1.MapPolygonR\apolygonB\x81\x01\n" +
 	"\x15com.sixafter.types.v1B\rGeofenceProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
 var (
-	file_geofence_proto_rawDescOnce sync.Once
-	file_geofence_proto_rawDescData []byte
+	file_proto_v1_geofence_proto_rawDescOnce sync.Once
+	file_proto_v1_geofence_proto_rawDescData []byte
 )
 
-func file_geofence_proto_rawDescGZIP() []byte {
-	file_geofence_proto_rawDescOnce.Do(func() {
-		file_geofence_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_geofence_proto_rawDesc), len(file_geofence_proto_rawDesc)))
+func file_proto_v1_geofence_proto_rawDescGZIP() []byte {
+	file_proto_v1_geofence_proto_rawDescOnce.Do(func() {
+		file_proto_v1_geofence_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_v1_geofence_proto_rawDesc), len(file_proto_v1_geofence_proto_rawDesc)))
 	})
-	return file_geofence_proto_rawDescData
+	return file_proto_v1_geofence_proto_rawDescData
 }
 
-var file_geofence_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_geofence_proto_goTypes = []any{
-	(*Geofence)(nil),   // 0: proto.v1.Geofence
-	(*MapPolygon)(nil), // 1: proto.v1.MapPolygon
+var file_proto_v1_geofence_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_proto_v1_geofence_proto_goTypes = []any{
+	(*Geofence)(nil),   // 0: sixafter.types.proto.v1.Geofence
+	(*MapPolygon)(nil), // 1: sixafter.types.proto.v1.MapPolygon
 }
-var file_geofence_proto_depIdxs = []int32{
-	1, // 0: proto.v1.Geofence.polygon:type_name -> proto.v1.MapPolygon
+var file_proto_v1_geofence_proto_depIdxs = []int32{
+	1, // 0: sixafter.types.proto.v1.Geofence.polygon:type_name -> sixafter.types.proto.v1.MapPolygon
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -135,27 +135,27 @@ var file_geofence_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_geofence_proto_init() }
-func file_geofence_proto_init() {
-	if File_geofence_proto != nil {
+func init() { file_proto_v1_geofence_proto_init() }
+func file_proto_v1_geofence_proto_init() {
+	if File_proto_v1_geofence_proto != nil {
 		return
 	}
-	file_map_polygon_proto_init()
+	file_proto_v1_map_polygon_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_geofence_proto_rawDesc), len(file_geofence_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_v1_geofence_proto_rawDesc), len(file_proto_v1_geofence_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_geofence_proto_goTypes,
-		DependencyIndexes: file_geofence_proto_depIdxs,
-		MessageInfos:      file_geofence_proto_msgTypes,
+		GoTypes:           file_proto_v1_geofence_proto_goTypes,
+		DependencyIndexes: file_proto_v1_geofence_proto_depIdxs,
+		MessageInfos:      file_proto_v1_geofence_proto_msgTypes,
 	}.Build()
-	File_geofence_proto = out.File
-	file_geofence_proto_goTypes = nil
-	file_geofence_proto_depIdxs = nil
+	File_proto_v1_geofence_proto = out.File
+	file_proto_v1_geofence_proto_goTypes = nil
+	file_proto_v1_geofence_proto_depIdxs = nil
 }

@@ -19,7 +19,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: geometry.proto
+// source: proto/v1/geometry.proto
 
 package types
 
@@ -58,7 +58,7 @@ type Scalar struct {
 
 func (x *Scalar) Reset() {
 	*x = Scalar{}
-	mi := &file_geometry_proto_msgTypes[0]
+	mi := &file_proto_v1_geometry_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -70,7 +70,7 @@ func (x *Scalar) String() string {
 func (*Scalar) ProtoMessage() {}
 
 func (x *Scalar) ProtoReflect() protoreflect.Message {
-	mi := &file_geometry_proto_msgTypes[0]
+	mi := &file_proto_v1_geometry_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -83,7 +83,7 @@ func (x *Scalar) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Scalar.ProtoReflect.Descriptor instead.
 func (*Scalar) Descriptor() ([]byte, []int) {
-	return file_geometry_proto_rawDescGZIP(), []int{0}
+	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Scalar) GetUnscaledValue() int64 {
@@ -114,7 +114,7 @@ type CoordinateSystem struct {
 
 func (x *CoordinateSystem) Reset() {
 	*x = CoordinateSystem{}
-	mi := &file_geometry_proto_msgTypes[1]
+	mi := &file_proto_v1_geometry_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -126,7 +126,7 @@ func (x *CoordinateSystem) String() string {
 func (*CoordinateSystem) ProtoMessage() {}
 
 func (x *CoordinateSystem) ProtoReflect() protoreflect.Message {
-	mi := &file_geometry_proto_msgTypes[1]
+	mi := &file_proto_v1_geometry_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -139,7 +139,7 @@ func (x *CoordinateSystem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CoordinateSystem.ProtoReflect.Descriptor instead.
 func (*CoordinateSystem) Descriptor() ([]byte, []int) {
-	return file_geometry_proto_rawDescGZIP(), []int{1}
+	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CoordinateSystem) GetName() string {
@@ -170,7 +170,7 @@ type GeometryType struct {
 
 func (x *GeometryType) Reset() {
 	*x = GeometryType{}
-	mi := &file_geometry_proto_msgTypes[2]
+	mi := &file_proto_v1_geometry_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -182,7 +182,7 @@ func (x *GeometryType) String() string {
 func (*GeometryType) ProtoMessage() {}
 
 func (x *GeometryType) ProtoReflect() protoreflect.Message {
-	mi := &file_geometry_proto_msgTypes[2]
+	mi := &file_proto_v1_geometry_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -195,7 +195,7 @@ func (x *GeometryType) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GeometryType.ProtoReflect.Descriptor instead.
 func (*GeometryType) Descriptor() ([]byte, []int) {
-	return file_geometry_proto_rawDescGZIP(), []int{2}
+	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GeometryType) GetName() string {
@@ -235,7 +235,7 @@ type Coordinate struct {
 
 func (x *Coordinate) Reset() {
 	*x = Coordinate{}
-	mi := &file_geometry_proto_msgTypes[3]
+	mi := &file_proto_v1_geometry_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -247,7 +247,7 @@ func (x *Coordinate) String() string {
 func (*Coordinate) ProtoMessage() {}
 
 func (x *Coordinate) ProtoReflect() protoreflect.Message {
-	mi := &file_geometry_proto_msgTypes[3]
+	mi := &file_proto_v1_geometry_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -260,7 +260,7 @@ func (x *Coordinate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Coordinate.ProtoReflect.Descriptor instead.
 func (*Coordinate) Descriptor() ([]byte, []int) {
-	return file_geometry_proto_rawDescGZIP(), []int{3}
+	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Coordinate) GetValues() []*Scalar {
@@ -301,7 +301,7 @@ type Point struct {
 
 func (x *Point) Reset() {
 	*x = Point{}
-	mi := &file_geometry_proto_msgTypes[4]
+	mi := &file_proto_v1_geometry_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -313,7 +313,7 @@ func (x *Point) String() string {
 func (*Point) ProtoMessage() {}
 
 func (x *Point) ProtoReflect() protoreflect.Message {
-	mi := &file_geometry_proto_msgTypes[4]
+	mi := &file_proto_v1_geometry_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -326,7 +326,7 @@ func (x *Point) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Point.ProtoReflect.Descriptor instead.
 func (*Point) Descriptor() ([]byte, []int) {
-	return file_geometry_proto_rawDescGZIP(), []int{4}
+	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *Point) GetPosition() *Coordinate {
@@ -354,7 +354,7 @@ type Line struct {
 
 func (x *Line) Reset() {
 	*x = Line{}
-	mi := &file_geometry_proto_msgTypes[5]
+	mi := &file_proto_v1_geometry_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -366,7 +366,7 @@ func (x *Line) String() string {
 func (*Line) ProtoMessage() {}
 
 func (x *Line) ProtoReflect() protoreflect.Message {
-	mi := &file_geometry_proto_msgTypes[5]
+	mi := &file_proto_v1_geometry_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -379,7 +379,7 @@ func (x *Line) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Line.ProtoReflect.Descriptor instead.
 func (*Line) Descriptor() ([]byte, []int) {
-	return file_geometry_proto_rawDescGZIP(), []int{5}
+	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *Line) GetStart() *Point {
@@ -419,7 +419,7 @@ type Polygon struct {
 
 func (x *Polygon) Reset() {
 	*x = Polygon{}
-	mi := &file_geometry_proto_msgTypes[6]
+	mi := &file_proto_v1_geometry_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -431,7 +431,7 @@ func (x *Polygon) String() string {
 func (*Polygon) ProtoMessage() {}
 
 func (x *Polygon) ProtoReflect() protoreflect.Message {
-	mi := &file_geometry_proto_msgTypes[6]
+	mi := &file_proto_v1_geometry_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -444,7 +444,7 @@ func (x *Polygon) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Polygon.ProtoReflect.Descriptor instead.
 func (*Polygon) Descriptor() ([]byte, []int) {
-	return file_geometry_proto_rawDescGZIP(), []int{6}
+	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *Polygon) GetVertices() []*Point {
@@ -461,79 +461,79 @@ func (x *Polygon) GetIsClosed() bool {
 	return false
 }
 
-var File_geometry_proto protoreflect.FileDescriptor
+var File_proto_v1_geometry_proto protoreflect.FileDescriptor
 
-const file_geometry_proto_rawDesc = "" +
+const file_proto_v1_geometry_proto_rawDesc = "" +
 	"\n" +
-	"\x0egeometry.proto\x12\bproto.v1\"E\n" +
+	"\x17proto/v1/geometry.proto\x12\x17sixafter.types.proto.v1\"E\n" +
 	"\x06Scalar\x12%\n" +
 	"\x0eunscaled_value\x18\x01 \x01(\x12R\runscaledValue\x12\x14\n" +
-	"\x05scale\x18\x02 \x01(\rR\x05scale\"\xb1\x01\n" +
+	"\x05scale\x18\x02 \x01(\rR\x05scale\"\xc0\x01\n" +
 	"\x10CoordinateSystem\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x12J\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12Y\n" +
 	"\n" +
-	"parameters\x18\x02 \x03(\v2*.proto.v1.CoordinateSystem.ParametersEntryR\n" +
+	"parameters\x18\x02 \x03(\v29.sixafter.types.proto.v1.CoordinateSystem.ParametersEntryR\n" +
 	"parameters\x1a=\n" +
 	"\x0fParametersEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xa9\x01\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xb8\x01\n" +
 	"\fGeometryType\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x12F\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12U\n" +
 	"\n" +
-	"parameters\x18\x02 \x03(\v2&.proto.v1.GeometryType.ParametersEntryR\n" +
+	"parameters\x18\x02 \x03(\v25.sixafter.types.proto.v1.GeometryType.ParametersEntryR\n" +
 	"parameters\x1a=\n" +
 	"\x0fParametersEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xbc\x01\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xe9\x01\n" +
 	"\n" +
-	"Coordinate\x12(\n" +
-	"\x06values\x18\x01 \x03(\v2\x10.proto.v1.ScalarR\x06values\x12;\n" +
-	"\rgeometry_type\x18\x02 \x01(\v2\x16.proto.v1.GeometryTypeR\fgeometryType\x12G\n" +
-	"\x11coordinate_system\x18\x03 \x01(\v2\x1a.proto.v1.CoordinateSystemR\x10coordinateSystem\"9\n" +
-	"\x05Point\x120\n" +
-	"\bposition\x18\x01 \x01(\v2\x14.proto.v1.CoordinateR\bposition\"P\n" +
-	"\x04Line\x12%\n" +
-	"\x05start\x18\x01 \x01(\v2\x0f.proto.v1.PointR\x05start\x12!\n" +
-	"\x03end\x18\x02 \x01(\v2\x0f.proto.v1.PointR\x03end\"S\n" +
-	"\aPolygon\x12+\n" +
-	"\bvertices\x18\x01 \x03(\v2\x0f.proto.v1.PointR\bvertices\x12\x1b\n" +
+	"Coordinate\x127\n" +
+	"\x06values\x18\x01 \x03(\v2\x1f.sixafter.types.proto.v1.ScalarR\x06values\x12J\n" +
+	"\rgeometry_type\x18\x02 \x01(\v2%.sixafter.types.proto.v1.GeometryTypeR\fgeometryType\x12V\n" +
+	"\x11coordinate_system\x18\x03 \x01(\v2).sixafter.types.proto.v1.CoordinateSystemR\x10coordinateSystem\"H\n" +
+	"\x05Point\x12?\n" +
+	"\bposition\x18\x01 \x01(\v2#.sixafter.types.proto.v1.CoordinateR\bposition\"n\n" +
+	"\x04Line\x124\n" +
+	"\x05start\x18\x01 \x01(\v2\x1e.sixafter.types.proto.v1.PointR\x05start\x120\n" +
+	"\x03end\x18\x02 \x01(\v2\x1e.sixafter.types.proto.v1.PointR\x03end\"b\n" +
+	"\aPolygon\x12:\n" +
+	"\bvertices\x18\x01 \x03(\v2\x1e.sixafter.types.proto.v1.PointR\bvertices\x12\x1b\n" +
 	"\tis_closed\x18\x02 \x01(\bR\bisClosedB\x81\x01\n" +
 	"\x15com.sixafter.types.v1B\rGeometryProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
 var (
-	file_geometry_proto_rawDescOnce sync.Once
-	file_geometry_proto_rawDescData []byte
+	file_proto_v1_geometry_proto_rawDescOnce sync.Once
+	file_proto_v1_geometry_proto_rawDescData []byte
 )
 
-func file_geometry_proto_rawDescGZIP() []byte {
-	file_geometry_proto_rawDescOnce.Do(func() {
-		file_geometry_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_geometry_proto_rawDesc), len(file_geometry_proto_rawDesc)))
+func file_proto_v1_geometry_proto_rawDescGZIP() []byte {
+	file_proto_v1_geometry_proto_rawDescOnce.Do(func() {
+		file_proto_v1_geometry_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_v1_geometry_proto_rawDesc), len(file_proto_v1_geometry_proto_rawDesc)))
 	})
-	return file_geometry_proto_rawDescData
+	return file_proto_v1_geometry_proto_rawDescData
 }
 
-var file_geometry_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
-var file_geometry_proto_goTypes = []any{
-	(*Scalar)(nil),           // 0: proto.v1.Scalar
-	(*CoordinateSystem)(nil), // 1: proto.v1.CoordinateSystem
-	(*GeometryType)(nil),     // 2: proto.v1.GeometryType
-	(*Coordinate)(nil),       // 3: proto.v1.Coordinate
-	(*Point)(nil),            // 4: proto.v1.Point
-	(*Line)(nil),             // 5: proto.v1.Line
-	(*Polygon)(nil),          // 6: proto.v1.Polygon
-	nil,                      // 7: proto.v1.CoordinateSystem.ParametersEntry
-	nil,                      // 8: proto.v1.GeometryType.ParametersEntry
+var file_proto_v1_geometry_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_proto_v1_geometry_proto_goTypes = []any{
+	(*Scalar)(nil),           // 0: sixafter.types.proto.v1.Scalar
+	(*CoordinateSystem)(nil), // 1: sixafter.types.proto.v1.CoordinateSystem
+	(*GeometryType)(nil),     // 2: sixafter.types.proto.v1.GeometryType
+	(*Coordinate)(nil),       // 3: sixafter.types.proto.v1.Coordinate
+	(*Point)(nil),            // 4: sixafter.types.proto.v1.Point
+	(*Line)(nil),             // 5: sixafter.types.proto.v1.Line
+	(*Polygon)(nil),          // 6: sixafter.types.proto.v1.Polygon
+	nil,                      // 7: sixafter.types.proto.v1.CoordinateSystem.ParametersEntry
+	nil,                      // 8: sixafter.types.proto.v1.GeometryType.ParametersEntry
 }
-var file_geometry_proto_depIdxs = []int32{
-	7, // 0: proto.v1.CoordinateSystem.parameters:type_name -> proto.v1.CoordinateSystem.ParametersEntry
-	8, // 1: proto.v1.GeometryType.parameters:type_name -> proto.v1.GeometryType.ParametersEntry
-	0, // 2: proto.v1.Coordinate.values:type_name -> proto.v1.Scalar
-	2, // 3: proto.v1.Coordinate.geometry_type:type_name -> proto.v1.GeometryType
-	1, // 4: proto.v1.Coordinate.coordinate_system:type_name -> proto.v1.CoordinateSystem
-	3, // 5: proto.v1.Point.position:type_name -> proto.v1.Coordinate
-	4, // 6: proto.v1.Line.start:type_name -> proto.v1.Point
-	4, // 7: proto.v1.Line.end:type_name -> proto.v1.Point
-	4, // 8: proto.v1.Polygon.vertices:type_name -> proto.v1.Point
+var file_proto_v1_geometry_proto_depIdxs = []int32{
+	7, // 0: sixafter.types.proto.v1.CoordinateSystem.parameters:type_name -> sixafter.types.proto.v1.CoordinateSystem.ParametersEntry
+	8, // 1: sixafter.types.proto.v1.GeometryType.parameters:type_name -> sixafter.types.proto.v1.GeometryType.ParametersEntry
+	0, // 2: sixafter.types.proto.v1.Coordinate.values:type_name -> sixafter.types.proto.v1.Scalar
+	2, // 3: sixafter.types.proto.v1.Coordinate.geometry_type:type_name -> sixafter.types.proto.v1.GeometryType
+	1, // 4: sixafter.types.proto.v1.Coordinate.coordinate_system:type_name -> sixafter.types.proto.v1.CoordinateSystem
+	3, // 5: sixafter.types.proto.v1.Point.position:type_name -> sixafter.types.proto.v1.Coordinate
+	4, // 6: sixafter.types.proto.v1.Line.start:type_name -> sixafter.types.proto.v1.Point
+	4, // 7: sixafter.types.proto.v1.Line.end:type_name -> sixafter.types.proto.v1.Point
+	4, // 8: sixafter.types.proto.v1.Polygon.vertices:type_name -> sixafter.types.proto.v1.Point
 	9, // [9:9] is the sub-list for method output_type
 	9, // [9:9] is the sub-list for method input_type
 	9, // [9:9] is the sub-list for extension type_name
@@ -541,26 +541,26 @@ var file_geometry_proto_depIdxs = []int32{
 	0, // [0:9] is the sub-list for field type_name
 }
 
-func init() { file_geometry_proto_init() }
-func file_geometry_proto_init() {
-	if File_geometry_proto != nil {
+func init() { file_proto_v1_geometry_proto_init() }
+func file_proto_v1_geometry_proto_init() {
+	if File_proto_v1_geometry_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_geometry_proto_rawDesc), len(file_geometry_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_v1_geometry_proto_rawDesc), len(file_proto_v1_geometry_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_geometry_proto_goTypes,
-		DependencyIndexes: file_geometry_proto_depIdxs,
-		MessageInfos:      file_geometry_proto_msgTypes,
+		GoTypes:           file_proto_v1_geometry_proto_goTypes,
+		DependencyIndexes: file_proto_v1_geometry_proto_depIdxs,
+		MessageInfos:      file_proto_v1_geometry_proto_msgTypes,
 	}.Build()
-	File_geometry_proto = out.File
-	file_geometry_proto_goTypes = nil
-	file_geometry_proto_depIdxs = nil
+	File_proto_v1_geometry_proto = out.File
+	file_proto_v1_geometry_proto_goTypes = nil
+	file_proto_v1_geometry_proto_depIdxs = nil
 }

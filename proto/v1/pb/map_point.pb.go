@@ -19,7 +19,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: map_point.proto
+// source: proto/v1/map_point.proto
 
 package types
 
@@ -62,7 +62,7 @@ type MapPoint struct {
 
 func (x *MapPoint) Reset() {
 	*x = MapPoint{}
-	mi := &file_map_point_proto_msgTypes[0]
+	mi := &file_proto_v1_map_point_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -74,7 +74,7 @@ func (x *MapPoint) String() string {
 func (*MapPoint) ProtoMessage() {}
 
 func (x *MapPoint) ProtoReflect() protoreflect.Message {
-	mi := &file_map_point_proto_msgTypes[0]
+	mi := &file_proto_v1_map_point_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -87,7 +87,7 @@ func (x *MapPoint) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MapPoint.ProtoReflect.Descriptor instead.
 func (*MapPoint) Descriptor() ([]byte, []int) {
-	return file_map_point_proto_rawDescGZIP(), []int{0}
+	return file_proto_v1_map_point_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *MapPoint) GetX() float32 {
@@ -111,38 +111,38 @@ func (x *MapPoint) GetCoordinate() *GeospatialCoordinate {
 	return nil
 }
 
-var File_map_point_proto protoreflect.FileDescriptor
+var File_proto_v1_map_point_proto protoreflect.FileDescriptor
 
-const file_map_point_proto_rawDesc = "" +
+const file_proto_v1_map_point_proto_rawDesc = "" +
 	"\n" +
-	"\x0fmap_point.proto\x12\bproto.v1\x1a\x1bgeospatial_coordinate.proto\"f\n" +
+	"\x18proto/v1/map_point.proto\x12\x17sixafter.types.proto.v1\x1a$proto/v1/geospatial_coordinate.proto\"u\n" +
 	"\bMapPoint\x12\f\n" +
 	"\x01x\x18\x01 \x01(\x02R\x01x\x12\f\n" +
-	"\x01y\x18\x02 \x01(\x02R\x01y\x12>\n" +
+	"\x01y\x18\x02 \x01(\x02R\x01y\x12M\n" +
 	"\n" +
-	"coordinate\x18\x03 \x01(\v2\x1e.proto.v1.GeospatialCoordinateR\n" +
+	"coordinate\x18\x03 \x01(\v2-.sixafter.types.proto.v1.GeospatialCoordinateR\n" +
 	"coordinateB\x81\x01\n" +
 	"\x15com.sixafter.types.v1B\rMapPointProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
 var (
-	file_map_point_proto_rawDescOnce sync.Once
-	file_map_point_proto_rawDescData []byte
+	file_proto_v1_map_point_proto_rawDescOnce sync.Once
+	file_proto_v1_map_point_proto_rawDescData []byte
 )
 
-func file_map_point_proto_rawDescGZIP() []byte {
-	file_map_point_proto_rawDescOnce.Do(func() {
-		file_map_point_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_map_point_proto_rawDesc), len(file_map_point_proto_rawDesc)))
+func file_proto_v1_map_point_proto_rawDescGZIP() []byte {
+	file_proto_v1_map_point_proto_rawDescOnce.Do(func() {
+		file_proto_v1_map_point_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_v1_map_point_proto_rawDesc), len(file_proto_v1_map_point_proto_rawDesc)))
 	})
-	return file_map_point_proto_rawDescData
+	return file_proto_v1_map_point_proto_rawDescData
 }
 
-var file_map_point_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_map_point_proto_goTypes = []any{
-	(*MapPoint)(nil),             // 0: proto.v1.MapPoint
-	(*GeospatialCoordinate)(nil), // 1: proto.v1.GeospatialCoordinate
+var file_proto_v1_map_point_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_proto_v1_map_point_proto_goTypes = []any{
+	(*MapPoint)(nil),             // 0: sixafter.types.proto.v1.MapPoint
+	(*GeospatialCoordinate)(nil), // 1: sixafter.types.proto.v1.GeospatialCoordinate
 }
-var file_map_point_proto_depIdxs = []int32{
-	1, // 0: proto.v1.MapPoint.coordinate:type_name -> proto.v1.GeospatialCoordinate
+var file_proto_v1_map_point_proto_depIdxs = []int32{
+	1, // 0: sixafter.types.proto.v1.MapPoint.coordinate:type_name -> sixafter.types.proto.v1.GeospatialCoordinate
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -150,27 +150,27 @@ var file_map_point_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_map_point_proto_init() }
-func file_map_point_proto_init() {
-	if File_map_point_proto != nil {
+func init() { file_proto_v1_map_point_proto_init() }
+func file_proto_v1_map_point_proto_init() {
+	if File_proto_v1_map_point_proto != nil {
 		return
 	}
-	file_geospatial_coordinate_proto_init()
+	file_proto_v1_geospatial_coordinate_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_map_point_proto_rawDesc), len(file_map_point_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_v1_map_point_proto_rawDesc), len(file_proto_v1_map_point_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_map_point_proto_goTypes,
-		DependencyIndexes: file_map_point_proto_depIdxs,
-		MessageInfos:      file_map_point_proto_msgTypes,
+		GoTypes:           file_proto_v1_map_point_proto_goTypes,
+		DependencyIndexes: file_proto_v1_map_point_proto_depIdxs,
+		MessageInfos:      file_proto_v1_map_point_proto_msgTypes,
 	}.Build()
-	File_map_point_proto = out.File
-	file_map_point_proto_goTypes = nil
-	file_map_point_proto_depIdxs = nil
+	File_proto_v1_map_point_proto = out.File
+	file_proto_v1_map_point_proto_goTypes = nil
+	file_proto_v1_map_point_proto_depIdxs = nil
 }

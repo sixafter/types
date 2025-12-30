@@ -19,6 +19,21 @@ Date format: `YYYY-MM-DD`
 
 ---
 
+## [1.57.4] - 2025-12-29
+
+### Added
+### Changed
+- **defect:** Removed the duplicate (nested) proto directory.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
+
+---
+
 ## [1.57.3] - 2025-12-29
 
 ### Added
@@ -488,7 +503,8 @@ package sixafter.types.proto.v1;
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.57.3...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.57.4...HEAD
+[1.57.4]: https://github.com/sixafter/types/compare/v1.57.3...v1.57.4
 [1.57.3]: https://github.com/sixafter/types/compare/v1.57.2...v1.57.3
 [1.57.2]: https://github.com/sixafter/types/compare/v1.57.1...v1.57.2
 [1.57.1]: https://github.com/sixafter/types/compare/v1.57.0...v1.57.1

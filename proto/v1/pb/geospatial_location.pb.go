@@ -19,7 +19,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: geospatial_location.proto
+// source: proto/v1/geospatial_location.proto
 
 package types
 
@@ -74,7 +74,7 @@ type GeospatialLocation struct {
 
 func (x *GeospatialLocation) Reset() {
 	*x = GeospatialLocation{}
-	mi := &file_geospatial_location_proto_msgTypes[0]
+	mi := &file_proto_v1_geospatial_location_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -86,7 +86,7 @@ func (x *GeospatialLocation) String() string {
 func (*GeospatialLocation) ProtoMessage() {}
 
 func (x *GeospatialLocation) ProtoReflect() protoreflect.Message {
-	mi := &file_geospatial_location_proto_msgTypes[0]
+	mi := &file_proto_v1_geospatial_location_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -99,7 +99,7 @@ func (x *GeospatialLocation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GeospatialLocation.ProtoReflect.Descriptor instead.
 func (*GeospatialLocation) Descriptor() ([]byte, []int) {
-	return file_geospatial_location_proto_rawDescGZIP(), []int{0}
+	return file_proto_v1_geospatial_location_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *GeospatialLocation) GetCoordinate() *GeospatialCoordinate {
@@ -137,44 +137,44 @@ func (x *GeospatialLocation) GetTimestamp() *timestamppb.Timestamp {
 	return nil
 }
 
-var File_geospatial_location_proto protoreflect.FileDescriptor
+var File_proto_v1_geospatial_location_proto protoreflect.FileDescriptor
 
-const file_geospatial_location_proto_rawDesc = "" +
+const file_proto_v1_geospatial_location_proto_rawDesc = "" +
 	"\n" +
-	"\x19geospatial_location.proto\x12\bproto.v1\x1a\x15compass_heading.proto\x1a\x1bgeospatial_coordinate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf0\x01\n" +
-	"\x12GeospatialLocation\x12>\n" +
+	"\"proto/v1/geospatial_location.proto\x12\x17sixafter.types.proto.v1\x1a\x1eproto/v1/compass_heading.proto\x1a$proto/v1/geospatial_coordinate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8e\x02\n" +
+	"\x12GeospatialLocation\x12M\n" +
 	"\n" +
-	"coordinate\x18\x01 \x01(\v2\x1e.proto.v1.GeospatialCoordinateR\n" +
-	"coordinate\x122\n" +
-	"\aheading\x18\x02 \x01(\v2\x18.proto.v1.CompassHeadingR\aheading\x12\x16\n" +
+	"coordinate\x18\x01 \x01(\v2-.sixafter.types.proto.v1.GeospatialCoordinateR\n" +
+	"coordinate\x12A\n" +
+	"\aheading\x18\x02 \x01(\v2'.sixafter.types.proto.v1.CompassHeadingR\aheading\x12\x16\n" +
 	"\x06course\x18\x03 \x01(\x01R\x06course\x12\x14\n" +
 	"\x05speed\x18\x04 \x01(\x02R\x05speed\x128\n" +
 	"\ttimestamp\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestampB\x8b\x01\n" +
 	"\x15com.sixafter.types.v1B\x17GeospatialLocationProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
 var (
-	file_geospatial_location_proto_rawDescOnce sync.Once
-	file_geospatial_location_proto_rawDescData []byte
+	file_proto_v1_geospatial_location_proto_rawDescOnce sync.Once
+	file_proto_v1_geospatial_location_proto_rawDescData []byte
 )
 
-func file_geospatial_location_proto_rawDescGZIP() []byte {
-	file_geospatial_location_proto_rawDescOnce.Do(func() {
-		file_geospatial_location_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_geospatial_location_proto_rawDesc), len(file_geospatial_location_proto_rawDesc)))
+func file_proto_v1_geospatial_location_proto_rawDescGZIP() []byte {
+	file_proto_v1_geospatial_location_proto_rawDescOnce.Do(func() {
+		file_proto_v1_geospatial_location_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_v1_geospatial_location_proto_rawDesc), len(file_proto_v1_geospatial_location_proto_rawDesc)))
 	})
-	return file_geospatial_location_proto_rawDescData
+	return file_proto_v1_geospatial_location_proto_rawDescData
 }
 
-var file_geospatial_location_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_geospatial_location_proto_goTypes = []any{
-	(*GeospatialLocation)(nil),    // 0: proto.v1.GeospatialLocation
-	(*GeospatialCoordinate)(nil),  // 1: proto.v1.GeospatialCoordinate
-	(*CompassHeading)(nil),        // 2: proto.v1.CompassHeading
+var file_proto_v1_geospatial_location_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_proto_v1_geospatial_location_proto_goTypes = []any{
+	(*GeospatialLocation)(nil),    // 0: sixafter.types.proto.v1.GeospatialLocation
+	(*GeospatialCoordinate)(nil),  // 1: sixafter.types.proto.v1.GeospatialCoordinate
+	(*CompassHeading)(nil),        // 2: sixafter.types.proto.v1.CompassHeading
 	(*timestamppb.Timestamp)(nil), // 3: google.protobuf.Timestamp
 }
-var file_geospatial_location_proto_depIdxs = []int32{
-	1, // 0: proto.v1.GeospatialLocation.coordinate:type_name -> proto.v1.GeospatialCoordinate
-	2, // 1: proto.v1.GeospatialLocation.heading:type_name -> proto.v1.CompassHeading
-	3, // 2: proto.v1.GeospatialLocation.timestamp:type_name -> google.protobuf.Timestamp
+var file_proto_v1_geospatial_location_proto_depIdxs = []int32{
+	1, // 0: sixafter.types.proto.v1.GeospatialLocation.coordinate:type_name -> sixafter.types.proto.v1.GeospatialCoordinate
+	2, // 1: sixafter.types.proto.v1.GeospatialLocation.heading:type_name -> sixafter.types.proto.v1.CompassHeading
+	3, // 2: sixafter.types.proto.v1.GeospatialLocation.timestamp:type_name -> google.protobuf.Timestamp
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name
@@ -182,28 +182,28 @@ var file_geospatial_location_proto_depIdxs = []int32{
 	0, // [0:3] is the sub-list for field type_name
 }
 
-func init() { file_geospatial_location_proto_init() }
-func file_geospatial_location_proto_init() {
-	if File_geospatial_location_proto != nil {
+func init() { file_proto_v1_geospatial_location_proto_init() }
+func file_proto_v1_geospatial_location_proto_init() {
+	if File_proto_v1_geospatial_location_proto != nil {
 		return
 	}
-	file_compass_heading_proto_init()
-	file_geospatial_coordinate_proto_init()
+	file_proto_v1_compass_heading_proto_init()
+	file_proto_v1_geospatial_coordinate_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_geospatial_location_proto_rawDesc), len(file_geospatial_location_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_v1_geospatial_location_proto_rawDesc), len(file_proto_v1_geospatial_location_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_geospatial_location_proto_goTypes,
-		DependencyIndexes: file_geospatial_location_proto_depIdxs,
-		MessageInfos:      file_geospatial_location_proto_msgTypes,
+		GoTypes:           file_proto_v1_geospatial_location_proto_goTypes,
+		DependencyIndexes: file_proto_v1_geospatial_location_proto_depIdxs,
+		MessageInfos:      file_proto_v1_geospatial_location_proto_msgTypes,
 	}.Build()
-	File_geospatial_location_proto = out.File
-	file_geospatial_location_proto_goTypes = nil
-	file_geospatial_location_proto_depIdxs = nil
+	File_proto_v1_geospatial_location_proto = out.File
+	file_proto_v1_geospatial_location_proto_goTypes = nil
+	file_proto_v1_geospatial_location_proto_depIdxs = nil
 }

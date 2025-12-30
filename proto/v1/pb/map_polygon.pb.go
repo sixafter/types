@@ -19,7 +19,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: map_polygon.proto
+// source: proto/v1/map_polygon.proto
 
 package types
 
@@ -61,7 +61,7 @@ type MapPolygon struct {
 
 func (x *MapPolygon) Reset() {
 	*x = MapPolygon{}
-	mi := &file_map_polygon_proto_msgTypes[0]
+	mi := &file_proto_v1_map_polygon_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -73,7 +73,7 @@ func (x *MapPolygon) String() string {
 func (*MapPolygon) ProtoMessage() {}
 
 func (x *MapPolygon) ProtoReflect() protoreflect.Message {
-	mi := &file_map_polygon_proto_msgTypes[0]
+	mi := &file_proto_v1_map_polygon_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -86,7 +86,7 @@ func (x *MapPolygon) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MapPolygon.ProtoReflect.Descriptor instead.
 func (*MapPolygon) Descriptor() ([]byte, []int) {
-	return file_map_polygon_proto_rawDescGZIP(), []int{0}
+	return file_proto_v1_map_polygon_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *MapPolygon) GetPoints() []*MapPoint {
@@ -96,35 +96,35 @@ func (x *MapPolygon) GetPoints() []*MapPoint {
 	return nil
 }
 
-var File_map_polygon_proto protoreflect.FileDescriptor
+var File_proto_v1_map_polygon_proto protoreflect.FileDescriptor
 
-const file_map_polygon_proto_rawDesc = "" +
+const file_proto_v1_map_polygon_proto_rawDesc = "" +
 	"\n" +
-	"\x11map_polygon.proto\x12\bproto.v1\x1a\x0fmap_point.proto\"8\n" +
+	"\x1aproto/v1/map_polygon.proto\x12\x17sixafter.types.proto.v1\x1a\x18proto/v1/map_point.proto\"G\n" +
 	"\n" +
-	"MapPolygon\x12*\n" +
-	"\x06points\x18\x01 \x03(\v2\x12.proto.v1.MapPointR\x06pointsB\x83\x01\n" +
+	"MapPolygon\x129\n" +
+	"\x06points\x18\x01 \x03(\v2!.sixafter.types.proto.v1.MapPointR\x06pointsB\x83\x01\n" +
 	"\x15com.sixafter.types.v1B\x0fMapPolygonProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
 var (
-	file_map_polygon_proto_rawDescOnce sync.Once
-	file_map_polygon_proto_rawDescData []byte
+	file_proto_v1_map_polygon_proto_rawDescOnce sync.Once
+	file_proto_v1_map_polygon_proto_rawDescData []byte
 )
 
-func file_map_polygon_proto_rawDescGZIP() []byte {
-	file_map_polygon_proto_rawDescOnce.Do(func() {
-		file_map_polygon_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_map_polygon_proto_rawDesc), len(file_map_polygon_proto_rawDesc)))
+func file_proto_v1_map_polygon_proto_rawDescGZIP() []byte {
+	file_proto_v1_map_polygon_proto_rawDescOnce.Do(func() {
+		file_proto_v1_map_polygon_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_v1_map_polygon_proto_rawDesc), len(file_proto_v1_map_polygon_proto_rawDesc)))
 	})
-	return file_map_polygon_proto_rawDescData
+	return file_proto_v1_map_polygon_proto_rawDescData
 }
 
-var file_map_polygon_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_map_polygon_proto_goTypes = []any{
-	(*MapPolygon)(nil), // 0: proto.v1.MapPolygon
-	(*MapPoint)(nil),   // 1: proto.v1.MapPoint
+var file_proto_v1_map_polygon_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_proto_v1_map_polygon_proto_goTypes = []any{
+	(*MapPolygon)(nil), // 0: sixafter.types.proto.v1.MapPolygon
+	(*MapPoint)(nil),   // 1: sixafter.types.proto.v1.MapPoint
 }
-var file_map_polygon_proto_depIdxs = []int32{
-	1, // 0: proto.v1.MapPolygon.points:type_name -> proto.v1.MapPoint
+var file_proto_v1_map_polygon_proto_depIdxs = []int32{
+	1, // 0: sixafter.types.proto.v1.MapPolygon.points:type_name -> sixafter.types.proto.v1.MapPoint
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -132,27 +132,27 @@ var file_map_polygon_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_map_polygon_proto_init() }
-func file_map_polygon_proto_init() {
-	if File_map_polygon_proto != nil {
+func init() { file_proto_v1_map_polygon_proto_init() }
+func file_proto_v1_map_polygon_proto_init() {
+	if File_proto_v1_map_polygon_proto != nil {
 		return
 	}
-	file_map_point_proto_init()
+	file_proto_v1_map_point_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_map_polygon_proto_rawDesc), len(file_map_polygon_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_v1_map_polygon_proto_rawDesc), len(file_proto_v1_map_polygon_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_map_polygon_proto_goTypes,
-		DependencyIndexes: file_map_polygon_proto_depIdxs,
-		MessageInfos:      file_map_polygon_proto_msgTypes,
+		GoTypes:           file_proto_v1_map_polygon_proto_goTypes,
+		DependencyIndexes: file_proto_v1_map_polygon_proto_depIdxs,
+		MessageInfos:      file_proto_v1_map_polygon_proto_msgTypes,
 	}.Build()
-	File_map_polygon_proto = out.File
-	file_map_polygon_proto_goTypes = nil
-	file_map_polygon_proto_depIdxs = nil
+	File_proto_v1_map_polygon_proto = out.File
+	file_proto_v1_map_polygon_proto_goTypes = nil
+	file_proto_v1_map_polygon_proto_depIdxs = nil
 }
