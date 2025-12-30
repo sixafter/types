@@ -82,7 +82,7 @@ Verified OK
 To use this module, execute the following command:
 
 ```shell
-go get -u github.com/sixafter/types/sixafter/types
+go get -u github.com/sixafter/types
 ```
 
 In your Go code, you can import the module as follows.
