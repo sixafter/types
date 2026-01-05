@@ -19,6 +19,8 @@ syntax = "proto3";
 
 package sixafter.types.proto.v1;
 
+import "google/api/field_info.proto";
+
 option cc_enable_arenas = true;
 option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
 option go_package = "github.com/sixafter/types/proto/v1/pb;types";
@@ -42,5 +44,7 @@ message UUID {
   // MUST be exactly 16 bytes.
   // The value should follow the canonical RFC 4122 binary encoding.
   // If the value is not 16 bytes, the message is considered invalid.
-  bytes value = 1;
+  // See AIP-148 Standard Fields: https://google.aip.dev/148
+  // See AIP-202 Fields: https://google.aip.dev/202
+  bytes value = 1 [(google.api.field_info).format = UUID4];
 }

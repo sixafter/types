@@ -24,6 +24,7 @@
 package types
 
 import (
+	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -100,9 +101,9 @@ var File_proto_v1_uuid_proto protoreflect.FileDescriptor
 
 const file_proto_v1_uuid_proto_rawDesc = "" +
 	"\n" +
-	"\x13proto/v1/uuid.proto\x12\x17sixafter.types.proto.v1\"\x1c\n" +
-	"\x04UUID\x12\x14\n" +
-	"\x05value\x18\x01 \x01(\fR\x05valueB}\n" +
+	"\x13proto/v1/uuid.proto\x12\x17sixafter.types.proto.v1\x1a\x1bgoogle/api/field_info.proto\"&\n" +
+	"\x04UUID\x12\x1e\n" +
+	"\x05value\x18\x01 \x01(\fB\b\xe2\x8c\xcf\xd7\b\x02\b\x01R\x05valueB}\n" +
 	"\x15com.sixafter.types.v1B\tUuidProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
 
 var (
