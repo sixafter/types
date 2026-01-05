@@ -19,6 +19,19 @@ Date format: `YYYY-MM-DD`
 
 ---
 
+## [1.58.0] - 2026-01-05
+
+### Added
+- **feature:** Added `google.api.field_info` format annotation to UUID value field with UUID4 format specification per [AIP-202](https://google.aip.dev/202), enabling machine-readable format validation and enhancing API documentation. See [protocolbuffers/protobuf#2224](https://github.com/protocolbuffers/protobuf/issues/2224#issuecomment-3711636308) for more details.
+
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
+
 ## [1.57.4] - 2025-12-29
 
 ### Added
@@ -29,8 +42,6 @@ Date format: `YYYY-MM-DD`
 ### Removed
 ### Fixed
 ### Security
-
----
 
 ---
 
@@ -503,7 +514,8 @@ package sixafter.types.proto.v1;
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.57.4...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.58.0...HEAD
+[1.58.0]: https://github.com/sixafter/types/compare/v1.57.4...v1.58.0
 [1.57.4]: https://github.com/sixafter/types/compare/v1.57.3...v1.57.4
 [1.57.3]: https://github.com/sixafter/types/compare/v1.57.2...v1.57.3
 [1.57.2]: https://github.com/sixafter/types/compare/v1.57.1...v1.57.2

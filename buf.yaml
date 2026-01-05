@@ -15,6 +15,9 @@
 # ref: https://buf.build/docs/configuration/v2/buf-yaml/
 version: v2
 
+deps:
+  - buf.build/googleapis/googleapis
+
 # Define the module for this proto package
 modules:
   - path: .
