@@ -55,7 +55,7 @@ jobs:
       - name: Install Cosign
         uses: sigstore/cosign-installer@v4.0.0
         with:
-          cosign-release: 'v3.0.3'
+          cosign-release: 'v3.0.4'
 
       # See: https://github.com/anchore/sbom-action
       - name: Generate SBOM via Syft

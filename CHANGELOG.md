@@ -19,6 +19,19 @@ Date format: `YYYY-MM-DD`
 
 ---
 
+## [1.59.0] - 2026-02-12
+
+### Added
+### Changed
+- **debt:** Upgraded dependencies to their latest stable versions including module to Go 1.26.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
+
 ## [1.58.0] - 2026-01-05
 
 ### Added
