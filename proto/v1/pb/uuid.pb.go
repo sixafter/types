@@ -55,6 +55,8 @@ type UUID struct {
 	// MUST be exactly 16 bytes.
 	// The value should follow the canonical RFC 4122 binary encoding.
 	// If the value is not 16 bytes, the message is considered invalid.
+	// See AIP-148 Standard Fields: https://google.aip.dev/148
+	// See AIP-202 Fields: https://google.aip.dev/202
 	Value         []byte `protobuf:"bytes,1,opt,name=value,proto3" json:"value,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
