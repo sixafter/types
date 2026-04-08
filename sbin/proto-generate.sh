@@ -31,5 +31,8 @@ if [[ ! -f buf.gen.yaml ]]; then
   exit 0
 fi
 
+echo "[INFO] Cleaning pb.go files"
+rm proto/v1/pb/*.pb.go
+
 echo "[INFO] Running: proto generate"
 buf generate --template buf.gen.yaml
