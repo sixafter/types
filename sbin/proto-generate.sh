@@ -32,7 +32,7 @@ if [[ ! -f buf.gen.yaml ]]; then
 fi
 
 echo "[INFO] Cleaning pb.go files"
-rm proto/v1/pb/*.pb.go
+rm proto/v1/pb/*.pb.go || true
 
 echo "[INFO] Running: proto generate"
 buf generate --template buf.gen.yaml
