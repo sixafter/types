@@ -553,7 +553,8 @@ package sixafter.types.proto.v1;
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.59.1...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.59.2...HEAD
+[1.59.2]: https://github.com/sixafter/types/compare/v1.59.1...v1.59.2
 [1.59.1]: https://github.com/sixafter/types/compare/v1.59.0...v1.59.1
 [1.59.0]: https://github.com/sixafter/types/compare/v1.58.0...v1.59.0
 [1.58.0]: https://github.com/sixafter/types/compare/v1.57.4...v1.58.0
