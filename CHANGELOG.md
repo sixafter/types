@@ -19,6 +19,19 @@ Date format: `YYYY-MM-DD`
 
 ---
 
+## [1.59.3] - 2026-08-13
+
+### Added
+### Changed
+- **debt:** Upgraded dependencies to their latest stable versions.
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+---
+
 ## [1.59.2] - 2026-06-29
 
 ### Added
@@ -553,7 +566,8 @@ package sixafter.types.proto.v1;
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.59.2...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.59.3...HEAD
+[1.59.3]: https://github.com/sixafter/types/compare/v1.59.2...v1.59.3
 [1.59.2]: https://github.com/sixafter/types/compare/v1.59.1...v1.59.2
 [1.59.1]: https://github.com/sixafter/types/compare/v1.59.0...v1.59.1
 [1.59.0]: https://github.com/sixafter/types/compare/v1.58.0...v1.59.0
