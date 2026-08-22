@@ -28,7 +28,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/google/uuid"
+	"uuid"
 )
 
 // UUIDToProto converts a uuid.UUID to a sixafter.types.UUID Protobuf message.
@@ -71,10 +71,10 @@ func UUIDToProto(u uuid.UUID) *UUID {
 //	if err != nil { ... }
 func ProtoToUUID(msg *UUID) (uuid.UUID, error) {
 	if msg == nil {
-		return uuid.Nil, fmt.Errorf("UUID message is nil")
+		return uuid.Nil(), fmt.Errorf("UUID message is nil")
 	}
 	if len(msg.Value) != 16 {
-		return uuid.Nil, fmt.Errorf("invalid UUID length: got %d, want 16", len(msg.Value))
+		return uuid.Nil(), fmt.Errorf("invalid UUID length: got %d, want 16", len(msg.Value))
 	}
 	var arr [16]byte
 	copy(arr[:], msg.Value)
