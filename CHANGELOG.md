@@ -19,6 +19,19 @@ Date format: `YYYY-MM-DD`
 
 ---
 
+## [1.60.2] - 2026-09-28
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+- **risk:** Modified copyright to reflect current year.
+
+### Security
+
+---
+
 ## [1.60.1] - 2026-08-22
 
 ### Added
@@ -593,7 +606,8 @@ package sixafter.types.proto.v1;
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.60.1...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.60.2...HEAD
+[1.60.2]: https://github.com/sixafter/types/compare/v1.60.1...v1.60.2
 [1.60.1]: https://github.com/sixafter/types/compare/v1.60.0...v1.60.1
 [1.60.0]: https://github.com/sixafter/types/compare/v1.59.3...v1.60.0
 [1.59.3]: https://github.com/sixafter/types/compare/v1.59.2...v1.59.3
