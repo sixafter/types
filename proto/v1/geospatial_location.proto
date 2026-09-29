@@ -19,25 +19,25 @@ syntax = "proto3";
 
 package sixafter.types.proto.v1;
 
+import "google/protobuf/timestamp.proto";
 import "proto/v1/compass_heading.proto";
 import "proto/v1/geospatial_coordinate.proto";
-import "google/protobuf/timestamp.proto";
 
-option cc_enable_arenas = true;
-option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
+option csharp_namespace = "SixAfter.Types.V1";
 option go_package = "github.com/sixafter/types/proto/v1/pb;types";
 option java_multiple_files = true;
 option java_outer_classname = "GeospatialLocationProto";
 option java_package = "com.sixafter.types.v1";
 option objc_class_prefix = "TPB";
 
-// The `GeospatialLocation` message represents a spatial or temporal scale,
-// combining geographical coordinates, heading, movement, and timestamp.
+// The `GeospatialLocation` message represents a location fix: a position, heading,
+// course, and speed observed at a single instant.
 // It is commonly used in location-based services, navigation systems, and
 // applications requiring geospatial data.
 message GeospatialLocation {
   // The geographical coordinate information of the location.
   // Includes latitude, longitude, and elevation as defined in the `GeospatialCoordinate` message.
+  // Unset means the coordinate is unknown.
   proto.v1.GeospatialCoordinate coordinate = 1;
 
   // The azimuth (orientation) of the device relative to true or magnetic north.
@@ -53,11 +53,13 @@ message GeospatialLocation {
   // the direction the device is moving (e.g., forward travel), independent
   // of its physical orientation. Heading reflects the device's orientation.
   // Example: 90° indicates the device is moving east.
+  // A negative value means the course is invalid or unknown.
   double course = 3;
 
   // The instantaneous speed of the device, measured in meters per second (m/s).
   // Example: A speed of 3.5 m/s (12.6 km/h or 7.8 mph) indicates the device
   // is moving at a walking pace.
+  // A negative value means the speed is invalid or unknown.
   float speed = 4;
 
   // The time at which this geospatial location data was recorded.

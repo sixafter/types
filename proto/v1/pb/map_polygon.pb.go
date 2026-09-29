@@ -38,7 +38,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// The `MapPolygonPolygon` message represents a closed geometric shape on a map.
+// The `MapPolygon` message represents a closed geometric shape on a map.
 // The shape is defined by a series of points that are connected end-to-end,
 // with the first and last points also connected to form a closed shape.
 // This structure is commonly used in mapping applications, GIS, and geofencing.
@@ -103,8 +103,8 @@ const file_proto_v1_map_polygon_proto_rawDesc = "" +
 	"\x1aproto/v1/map_polygon.proto\x12\x17sixafter.types.proto.v1\x1a\x18proto/v1/map_point.proto\"G\n" +
 	"\n" +
 	"MapPolygon\x129\n" +
-	"\x06points\x18\x01 \x03(\v2!.sixafter.types.proto.v1.MapPointR\x06pointsB\x83\x01\n" +
-	"\x15com.sixafter.types.v1B\x0fMapPolygonProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"\x06points\x18\x01 \x03(\v2!.sixafter.types.proto.v1.MapPointR\x06pointsBq\n" +
+	"\x15com.sixafter.types.v1B\x0fMapPolygonProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_map_polygon_proto_rawDescOnce sync.Once

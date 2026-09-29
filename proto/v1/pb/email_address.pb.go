@@ -41,6 +41,8 @@ const (
 // The `EmailAddress` message represents an electronic mail (email) address
 // as defined by RFC 5322. It separates the email address into its two main
 // components: the local part and the domain part.
+// Split the address at the last "@": a quoted local part may itself contain "@"
+// (e.g., `"john@doe"@example.com`).
 type EmailAddress struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The local part of the email address.
@@ -109,8 +111,8 @@ const file_proto_v1_email_address_proto_rawDesc = "" +
 	"\n" +
 	"local_part\x18\x01 \x01(\tR\tlocalPart\x12\x1f\n" +
 	"\vdomain_part\x18\x02 \x01(\tR\n" +
-	"domainPartB\x85\x01\n" +
-	"\x15com.sixafter.types.v1B\x11EmailAddressProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"domainPartBs\n" +
+	"\x15com.sixafter.types.v1B\x11EmailAddressProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_email_address_proto_rawDescOnce sync.Once

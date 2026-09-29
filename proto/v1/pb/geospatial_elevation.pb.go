@@ -167,8 +167,8 @@ const file_proto_v1_geospatial_elevation_proto_rawDesc = "" +
 	"\rGeodeticDatum\x12\x1e\n" +
 	"\x1aGEODETIC_DATUM_UNSPECIFIED\x10\x00\x12\x1c\n" +
 	"\x18GEODETIC_DATUM_SEA_LEVEL\x10\x01\x12\x19\n" +
-	"\x15GEODETIC_DATUM_WGS_84\x10\x02B\x8c\x01\n" +
-	"\x15com.sixafter.types.v1B\x18GeospatialElevationProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"\x15GEODETIC_DATUM_WGS_84\x10\x02Bz\n" +
+	"\x15com.sixafter.types.v1B\x18GeospatialElevationProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_geospatial_elevation_proto_rawDescOnce sync.Once

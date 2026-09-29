@@ -39,8 +39,7 @@ const (
 )
 
 // The `Uri` message represents a Uniform Resource Identifier (URI) as defined by
-// [RFC 2396: Uniform Resource Identifiers (URI): Generic Syntax](http://www.ietf.org/rfc/rfc2396.txt),
-// amended by [RFC 2732: Format for Literal IPv6 Addresses in URLs](http://www.ietf.org/rfc/rfc2732.txt).
+// [RFC 3986: Uniform Resource Identifier (URI): Generic Syntax](https://www.rfc-editor.org/rfc/rfc3986).
 // A URI is a compact string used to identify a resource in a generic syntax.
 type Uri struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
@@ -58,20 +57,23 @@ type Uri struct {
 	Host string `protobuf:"bytes,3,opt,name=host,proto3" json:"host,omitempty"`
 	// The port number of the URI.
 	// This is the optional number that specifies the communication port.
+	// Valid values are 1 through 65535. A value of 0 means no port was given,
+	// and the default port for the scheme applies.
 	// Example: 443 for HTTPS.
-	Port int32 `protobuf:"varint,4,opt,name=port,proto3" json:"port,omitempty"`
+	Port uint32 `protobuf:"varint,4,opt,name=port,proto3" json:"port,omitempty"`
 	// The query component of the URI.
 	// This contains optional parameters appended to the URI, following a "?".
 	// Example: "id=123&name=test" in "https://example.com/page?id=123&name=test".
 	Query string `protobuf:"bytes,5,opt,name=query,proto3" json:"query,omitempty"`
-	// The authority component of the URI.
-	// This typically includes the host and port, and optionally the user-information.
-	// Example: "user@example.com:8080" in "https://user@example.com:8080/resource".
-	Authority string `protobuf:"bytes,6,opt,name=authority,proto3" json:"authority,omitempty"`
 	// The user-information component of the URI.
 	// This is the optional part before the host that provides user credentials.
 	// Example: "user:password" in "https://user:password@example.com".
-	UserInfo      string `protobuf:"bytes,7,opt,name=user_info,json=userInfo,proto3" json:"user_info,omitempty"`
+	UserInfo string `protobuf:"bytes,6,opt,name=user_info,json=userInfo,proto3" json:"user_info,omitempty"`
+	// The path component of the URI.
+	// This is the hierarchical part that follows the authority and precedes the
+	// optional query ("?") and fragment ("#") components. It may be empty.
+	// Example: "/a/b" in "https://example.com/a/b?x=1#f".
+	Path          string `protobuf:"bytes,7,opt,name=path,proto3" json:"path,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -127,7 +129,7 @@ func (x *Uri) GetHost() string {
 	return ""
 }
 
-func (x *Uri) GetPort() int32 {
+func (x *Uri) GetPort() uint32 {
 	if x != nil {
 		return x.Port
 	}
@@ -141,16 +143,16 @@ func (x *Uri) GetQuery() string {
 	return ""
 }
 
-func (x *Uri) GetAuthority() string {
+func (x *Uri) GetUserInfo() string {
 	if x != nil {
-		return x.Authority
+		return x.UserInfo
 	}
 	return ""
 }
 
-func (x *Uri) GetUserInfo() string {
+func (x *Uri) GetPath() string {
 	if x != nil {
-		return x.UserInfo
+		return x.Path
 	}
 	return ""
 }
@@ -159,16 +161,16 @@ var File_proto_v1_uri_proto protoreflect.FileDescriptor
 
 const file_proto_v1_uri_proto_rawDesc = "" +
 	"\n" +
-	"\x12proto/v1/uri.proto\x12\x17sixafter.types.proto.v1\"\xb2\x01\n" +
+	"\x12proto/v1/uri.proto\x12\x17sixafter.types.proto.v1\"\xa8\x01\n" +
 	"\x03Uri\x12\x16\n" +
 	"\x06scheme\x18\x01 \x01(\tR\x06scheme\x12\x1a\n" +
 	"\bfragment\x18\x02 \x01(\tR\bfragment\x12\x12\n" +
 	"\x04host\x18\x03 \x01(\tR\x04host\x12\x12\n" +
-	"\x04port\x18\x04 \x01(\x05R\x04port\x12\x14\n" +
-	"\x05query\x18\x05 \x01(\tR\x05query\x12\x1c\n" +
-	"\tauthority\x18\x06 \x01(\tR\tauthority\x12\x1b\n" +
-	"\tuser_info\x18\a \x01(\tR\buserInfoB|\n" +
-	"\x15com.sixafter.types.v1B\bUriProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"\x04port\x18\x04 \x01(\rR\x04port\x12\x14\n" +
+	"\x05query\x18\x05 \x01(\tR\x05query\x12\x1b\n" +
+	"\tuser_info\x18\x06 \x01(\tR\buserInfo\x12\x12\n" +
+	"\x04path\x18\a \x01(\tR\x04pathBj\n" +
+	"\x15com.sixafter.types.v1B\bUriProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_uri_proto_rawDescOnce sync.Once

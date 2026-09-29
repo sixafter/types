@@ -73,7 +73,7 @@ type Version struct {
 	// A pre-release version indicates that the version is unstable and might not satisfy
 	// the intended compatibility requirements as denoted by its associated normal version.
 	//
-	// Examples: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92, 1.0.0-x-y-z.–.
+	// Examples: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92, 1.0.0-x-y-z.--.
 	Prerelease string `protobuf:"bytes,4,opt,name=prerelease,proto3" json:"prerelease,omitempty"`
 	// The build metadata identifier.
 	//
@@ -86,7 +86,7 @@ type Version struct {
 	// versions that differ only in the build metadata, have the same precedence.
 	//
 	// Examples: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85,
-	// 1.0.0+21AF26D3—-117B344092BD.
+	// 1.0.0+21AF26D3----117B344092BD.
 	BuildMetadata string `protobuf:"bytes,5,opt,name=build_metadata,json=buildMetadata,proto3" json:"build_metadata,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -169,8 +169,8 @@ const file_proto_v1_version_proto_rawDesc = "" +
 	"\n" +
 	"prerelease\x18\x04 \x01(\tR\n" +
 	"prerelease\x12%\n" +
-	"\x0ebuild_metadata\x18\x05 \x01(\tR\rbuildMetadataB\x80\x01\n" +
-	"\x15com.sixafter.types.v1B\fVersionProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"\x0ebuild_metadata\x18\x05 \x01(\tR\rbuildMetadataBn\n" +
+	"\x15com.sixafter.types.v1B\fVersionProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_version_proto_rawDescOnce sync.Once

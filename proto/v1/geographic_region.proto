@@ -19,8 +19,7 @@ syntax = "proto3";
 
 package sixafter.types.proto.v1;
 
-option cc_enable_arenas = true;
-option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
+option csharp_namespace = "SixAfter.Types.V1";
 option go_package = "github.com/sixafter/types/proto/v1/pb;types";
 option java_multiple_files = true;
 option java_outer_classname = "GeographicRegionProto";
@@ -40,7 +39,7 @@ message GeographicRegion {
   // Example: "State of Texas".
   string formal_name = 2;
 
-  // The numeric code for the region as defined in the ISO 3166-2 standard.
+  // The numeric code for the region as defined in the ISO 3166 standard.
   // This code is often used in databases or systems where numeric identifiers
   // are preferred for regional classification.
   // Example: 48 (numeric code for Texas in the United States, if applicable).

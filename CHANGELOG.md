@@ -17,6 +17,54 @@ Date format: `YYYY-MM-DD`
 ### Fixed
 ### Security
 
+
+## [1.61.0] - 2026-09-29
+
+### Added
+- **feature:** Added `archived_at` field (11) to `EntityMetadata`.
+- **feature:** Added `ValidateTags` and `MaxTagLength` Go helpers for `EntityMetadata.tags`.
+- **feature:** Added `path` field (7) to `Uri`.
+- **feature:** Added `Space` message and `AngleUnit` enum to `geometry.proto`; every shape carries one `Space`.
+- **feature:** Added `LineSegment` and `Polyline` messages to `geometry.proto`.
+
+### Changed
+- **feature:** `ValidateUUID` now requires an RFC 9562-compliant value (Nil, Max, or the RFC 9562 variant with version 1–8), not just 16 bytes. Conversion helpers still check only length.
+- **debt:** Renumbered `Uri.user_info` from 7 to 6. **Breaking (wire):** `Uri` messages serialized by earlier versions decode incorrectly.
+- **debt:** Changed `Uri.port` from `int32` to `uint32`; 0 means no port was given. **Breaking (API).**
+- **debt:** Changed `GeometryType` and `CoordinateSystem` from free-form string messages to enums. **Breaking.**
+- **debt:** Changed `Coordinate` to carry only `values`; `Point` and `Polygon` now carry a `Space` and `Coordinate`s. `Polygon` is always closed, with counter-clockwise vertices in 2D. **Breaking.**
+- **defect:** Changed `MapPoint.x` and `MapPoint.y` from `float` to `double`; `float` limited Web Mercator positions to 0.5–2 m resolution. **Breaking (wire):** values serialized by earlier versions are dropped as unknown fields.
+- **defect:** Reshaped `TimeZone` to describe the zone in effect at an instant: `name` (1), `abbreviation` (2), `utc_offset` (3, `google.protobuf.Duration` with a single ISO 8601 sign), `daylight_saving` (4), and `central_coordinate` (5). Removed `utc_offset_std`, `utc_offset_dst`, and `TimeZone.TimeOffset`. **Breaking (wire):** an old `utc_offset_std` decodes as `utc_offset` with the wrong value (hours read as seconds, minutes as nanoseconds); an old `utc_offset_dst` is dropped as an unknown field.
+- **debt:** Renamed repeated fields to plural names: `Language.bcp47_tag` to `bcp47_tags` and `Geofence.polygon` to `polygons`. Field numbers are unchanged, so the binary wire format is compatible. **Breaking (JSON and API).**
+- **debt:** Changed `csharp_namespace` from `SixAfter.Types.V1.WellKnownTypes` to `SixAfter.Types.V1` in all `.proto` files; `WellKnownTypes` is Google's namespace for protobuf's built-in types. **Breaking (C# API).**
+
+### Deprecated
+### Removed
+- **debt:** Removed `option cc_enable_arenas = true` from all `.proto` files; arenas have been enabled by default since protobuf 3.14.
+- **debt:** Removed the `google.api.field_info` `UUID4` annotation from `UUID.value`; it applied only to version 4 and to string fields. Any RFC 9562 version is now permitted.
+- **debt:** Removed the `buf.build/googleapis/googleapis` and `google.golang.org/genproto/googleapis/api` dependencies.
+- **debt:** Removed `authority` field from `Uri`; it duplicated `user_info`, `host`, and `port`. **Breaking.**
+- **debt:** Removed `Url` message (`url.proto`); use `Uri`, which covers every URL component. **Breaking.**
+- **debt:** Removed `Line` (use `LineSegment`) and `Polygon.is_closed` (use `Polyline` for open shapes) from `geometry.proto`. **Breaking.**
+
+### Fixed
+- **defect:** Fixed `make proto-format`, which failed because it ran `buf format` from `proto/v1` instead of the module root. Added `make proto-format CHECK=true`, which reports formatting differences and fails instead of rewriting files.
+- **defect:** Fixed `sbin/proto-docs.sh`, which checked for `buf.gen.doc.yaml` instead of `buf.gen.docs.yaml` and so never generated documentation. Generated docs under `docs/sdk/_generated/` are now ignored by git.
+- **defect:** Corrected documentation for `CompassHeading`, `GeospatialLocation`, `Version` examples (replaced non-ASCII dashes with the SemVer spec's hyphens), `Country.numeric_code` (leading zeros), and `EmailAddress` (split at the last "@").
+- **defect:** Clarified that `EntityMetadata.version` versions released content under SemVer 2.0.0 and is not a revision counter for optimistic concurrency.
+- **defect:** Clarified `EntityMetadata.tags` constraints: tags MUST be unique and are case-sensitive.
+- **defect:** Corrected `EntityMetadata.attributes` documentation: values may be any JSON value, not only strings, as `google.protobuf.Struct` allows.
+- **defect:** Corrected `TimeZone.central_coordinate` documentation: it is the principal city from the IANA `zone1970.tab`, not a geometric center, and does not by itself determine a location's time zone.
+- **debt:** Applied `buf format` to `geospatial_location.proto` (import order).
+- **defect:** Documented that a negative `CompassHeading.true_heading`, `CompassHeading.heading_accuracy`, `GeospatialLocation.course`, or `GeospatialLocation.speed` means invalid or unknown, matching Core Location.
+- **defect:** Documented that an unset `GeospatialCoordinate.elevation`, `TimeZone.utc_offset`, `TimeZone.central_coordinate`, `GeospatialLocation.coordinate`, or `MapPoint.coordinate` means unknown.
+- **defect:** Updated UUID helper doc comments to cite RFC 9562, the Go standard library `uuid` package, and the full message name `sixafter.types.proto.v1.UUID`.
+- **defect:** `UUID.MarshalJSON` now returns an error for a non-empty `Value` that is not 16 bytes instead of silently emitting `""`; doc comments on `MarshalJSON`/`UnmarshalJSON` now state they apply to `encoding/json` only, not protojson.
+- **defect:** Updated `UUID` to cite RFC 9562, which obsoletes RFC 4122, and to require an RFC 9562-compliant value.
+- **defect:** Updated `Uri` to cite RFC 3986, which obsoletes RFC 2396 and RFC 2732.
+
+### Security
+
 ---
 
 ## [1.60.2] - 2026-09-28
@@ -606,7 +654,8 @@ package sixafter.types.proto.v1;
 ### Fixed
 ### Security
 
-[Unreleased]: https://github.com/sixafter/types/compare/v1.60.2...HEAD
+[Unreleased]: https://github.com/sixafter/types/compare/v1.61.0...HEAD
+[1.61.0]: https://github.com/sixafter/types/compare/v1.60.2...v1.61.0
 [1.60.2]: https://github.com/sixafter/types/compare/v1.60.1...v1.60.2
 [1.60.1]: https://github.com/sixafter/types/compare/v1.60.0...v1.60.1
 [1.60.0]: https://github.com/sixafter/types/compare/v1.59.3...v1.60.0

@@ -50,7 +50,7 @@ type Geofence struct {
 	// A geofence may consist of one or more polygons, where each polygon represents
 	// a distinct area. The polygons can define complex, multi-vertex boundaries.
 	// Example: A campus geofence with multiple disconnected zones.
-	Polygon       []*MapPolygon `protobuf:"bytes,2,rep,name=polygon,proto3" json:"polygon,omitempty"`
+	Polygons      []*MapPolygon `protobuf:"bytes,2,rep,name=polygons,proto3" json:"polygons,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -92,9 +92,9 @@ func (x *Geofence) GetName() string {
 	return ""
 }
 
-func (x *Geofence) GetPolygon() []*MapPolygon {
+func (x *Geofence) GetPolygons() []*MapPolygon {
 	if x != nil {
-		return x.Polygon
+		return x.Polygons
 	}
 	return nil
 }
@@ -103,11 +103,11 @@ var File_proto_v1_geofence_proto protoreflect.FileDescriptor
 
 const file_proto_v1_geofence_proto_rawDesc = "" +
 	"\n" +
-	"\x17proto/v1/geofence.proto\x12\x17sixafter.types.proto.v1\x1a\x1aproto/v1/map_polygon.proto\"]\n" +
+	"\x17proto/v1/geofence.proto\x12\x17sixafter.types.proto.v1\x1a\x1aproto/v1/map_polygon.proto\"_\n" +
 	"\bGeofence\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x12=\n" +
-	"\apolygon\x18\x02 \x03(\v2#.sixafter.types.proto.v1.MapPolygonR\apolygonB\x81\x01\n" +
-	"\x15com.sixafter.types.v1B\rGeofenceProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"\x04name\x18\x01 \x01(\tR\x04name\x12?\n" +
+	"\bpolygons\x18\x02 \x03(\v2#.sixafter.types.proto.v1.MapPolygonR\bpolygonsBo\n" +
+	"\x15com.sixafter.types.v1B\rGeofenceProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_geofence_proto_rawDescOnce sync.Once
@@ -127,7 +127,7 @@ var file_proto_v1_geofence_proto_goTypes = []any{
 	(*MapPolygon)(nil), // 1: sixafter.types.proto.v1.MapPolygon
 }
 var file_proto_v1_geofence_proto_depIdxs = []int32{
-	1, // 0: sixafter.types.proto.v1.Geofence.polygon:type_name -> sixafter.types.proto.v1.MapPolygon
+	1, // 0: sixafter.types.proto.v1.Geofence.polygons:type_name -> sixafter.types.proto.v1.MapPolygon
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

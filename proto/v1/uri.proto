@@ -19,8 +19,7 @@ syntax = "proto3";
 
 package sixafter.types.proto.v1;
 
-option cc_enable_arenas = true;
-option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
+option csharp_namespace = "SixAfter.Types.V1";
 option go_package = "github.com/sixafter/types/proto/v1/pb;types";
 option java_multiple_files = true;
 option java_outer_classname = "UriProto";
@@ -28,8 +27,7 @@ option java_package = "com.sixafter.types.v1";
 option objc_class_prefix = "TPB";
 
 // The `Uri` message represents a Uniform Resource Identifier (URI) as defined by
-// [RFC 2396: Uniform Resource Identifiers (URI): Generic Syntax](http://www.ietf.org/rfc/rfc2396.txt),
-// amended by [RFC 2732: Format for Literal IPv6 Addresses in URLs](http://www.ietf.org/rfc/rfc2732.txt).
+// [RFC 3986: Uniform Resource Identifier (URI): Generic Syntax](https://www.rfc-editor.org/rfc/rfc3986).
 // A URI is a compact string used to identify a resource in a generic syntax.
 message Uri {
   // The scheme component of the URI.
@@ -49,21 +47,24 @@ message Uri {
 
   // The port number of the URI.
   // This is the optional number that specifies the communication port.
+  // Valid values are 1 through 65535. A value of 0 means no port was given,
+  // and the default port for the scheme applies.
   // Example: 443 for HTTPS.
-  int32 port = 4;
+  uint32 port = 4;
 
   // The query component of the URI.
   // This contains optional parameters appended to the URI, following a "?".
   // Example: "id=123&name=test" in "https://example.com/page?id=123&name=test".
   string query = 5;
 
-  // The authority component of the URI.
-  // This typically includes the host and port, and optionally the user-information.
-  // Example: "user@example.com:8080" in "https://user@example.com:8080/resource".
-  string authority = 6;
-
   // The user-information component of the URI.
   // This is the optional part before the host that provides user credentials.
   // Example: "user:password" in "https://user:password@example.com".
-  string user_info = 7;
+  string user_info = 6;
+
+  // The path component of the URI.
+  // This is the hierarchical part that follows the authority and precedes the
+  // optional query ("?") and fragment ("#") components. It may be empty.
+  // Example: "/a/b" in "https://example.com/a/b?x=1#f".
+  string path = 7;
 }

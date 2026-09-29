@@ -24,7 +24,6 @@
 package types
 
 import (
-	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -39,24 +38,24 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// UUID represents a Universally Unique Identifier (UUID/GUID) according to RFC 4122.
-// The value field MUST be exactly 16 bytes in length (128 bits).
+// UUID represents a Universally Unique Identifier (UUID) as defined by
+// [RFC 9562: Universally Unique IDentifiers (UUIDs)](https://www.rfc-editor.org/rfc/rfc9562).
 //
 // This message provides an efficient and canonical binary representation for UUIDs
-// in Protobuf. The 16-byte value corresponds to the standard RFC 4122 byte layout
+// in Protobuf. The 16-byte value uses the RFC 9562 binary layout (network byte order)
 // and is directly compatible with native UUID/GUID types in most languages.
 //
-// Note: The Protobuf schema cannot enforce the 16-byte length constraint;
-// validation must be performed in application code or by a validation framework.
+// Note: The Protobuf schema cannot enforce these constraints; validation must be
+// performed in application code or by a validation framework.
 type UUID struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The 128-bit (16 byte) UUID value.
 	//
-	// MUST be exactly 16 bytes.
-	// The value should follow the canonical RFC 4122 binary encoding.
-	// If the value is not 16 bytes, the message is considered invalid.
-	// See AIP-148 Standard Fields: https://google.aip.dev/148
-	// See AIP-202 Fields: https://google.aip.dev/202
+	// MUST be exactly 16 bytes in the RFC 9562 binary layout.
+	// MUST be an RFC 9562-compliant UUID: either a UUID with the RFC 9562 variant
+	// and a version defined by RFC 9562 (1 through 8), or the Nil or Max UUID.
+	// Any RFC 9562 version is permitted; producers are not limited to version 4.
+	// If the value does not meet these requirements, the message is invalid.
 	Value         []byte `protobuf:"bytes,1,opt,name=value,proto3" json:"value,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -103,10 +102,10 @@ var File_proto_v1_uuid_proto protoreflect.FileDescriptor
 
 const file_proto_v1_uuid_proto_rawDesc = "" +
 	"\n" +
-	"\x13proto/v1/uuid.proto\x12\x17sixafter.types.proto.v1\x1a\x1bgoogle/api/field_info.proto\"&\n" +
-	"\x04UUID\x12\x1e\n" +
-	"\x05value\x18\x01 \x01(\fB\b\xe2\x8c\xcf\xd7\b\x02\b\x01R\x05valueB}\n" +
-	"\x15com.sixafter.types.v1B\tUuidProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"\x13proto/v1/uuid.proto\x12\x17sixafter.types.proto.v1\"\x1c\n" +
+	"\x04UUID\x12\x14\n" +
+	"\x05value\x18\x01 \x01(\fR\x05valueBk\n" +
+	"\x15com.sixafter.types.v1B\tUuidProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_uuid_proto_rawDescOnce sync.Once

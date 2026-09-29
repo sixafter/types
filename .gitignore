@@ -30,3 +30,6 @@ out/
 
 dist/
 tmp/
+
+# Generated SDK documentation (make proto-docs)
+docs/sdk/_generated/

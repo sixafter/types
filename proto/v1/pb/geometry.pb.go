@@ -38,6 +38,217 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// The geometry of a space.
+type GeometryType int32
+
+const (
+	// Not specified. A shape with this value is invalid.
+	GeometryType_GEOMETRY_TYPE_UNSPECIFIED GeometryType = 0
+	// Flat space with distance and angle.
+	GeometryType_GEOMETRY_TYPE_EUCLIDEAN GeometryType = 1
+	// Flat space that preserves parallelism and ratios along a line,
+	// but has no distance or angle.
+	GeometryType_GEOMETRY_TYPE_AFFINE GeometryType = 2
+	// Space that includes points at infinity. Uses homogeneous coordinates.
+	GeometryType_GEOMETRY_TYPE_PROJECTIVE GeometryType = 3
+	// Constant negative curvature. See `Space.radius`.
+	GeometryType_GEOMETRY_TYPE_HYPERBOLIC GeometryType = 4
+	// Constant positive curvature, e.g. the surface of a sphere. See `Space.radius`.
+	GeometryType_GEOMETRY_TYPE_ELLIPTIC GeometryType = 5
+	// Euclidean space whose shapes approximate self-similar sets,
+	// e.g. the sampled vertices of a Koch curve.
+	GeometryType_GEOMETRY_TYPE_FRACTAL GeometryType = 6
+	// Integer lattice. Every coordinate value is an integer multiple of
+	// `Space.grid_spacing`.
+	GeometryType_GEOMETRY_TYPE_DISCRETE GeometryType = 7
+)
+
+// Enum value maps for GeometryType.
+var (
+	GeometryType_name = map[int32]string{
+		0: "GEOMETRY_TYPE_UNSPECIFIED",
+		1: "GEOMETRY_TYPE_EUCLIDEAN",
+		2: "GEOMETRY_TYPE_AFFINE",
+		3: "GEOMETRY_TYPE_PROJECTIVE",
+		4: "GEOMETRY_TYPE_HYPERBOLIC",
+		5: "GEOMETRY_TYPE_ELLIPTIC",
+		6: "GEOMETRY_TYPE_FRACTAL",
+		7: "GEOMETRY_TYPE_DISCRETE",
+	}
+	GeometryType_value = map[string]int32{
+		"GEOMETRY_TYPE_UNSPECIFIED": 0,
+		"GEOMETRY_TYPE_EUCLIDEAN":   1,
+		"GEOMETRY_TYPE_AFFINE":      2,
+		"GEOMETRY_TYPE_PROJECTIVE":  3,
+		"GEOMETRY_TYPE_HYPERBOLIC":  4,
+		"GEOMETRY_TYPE_ELLIPTIC":    5,
+		"GEOMETRY_TYPE_FRACTAL":     6,
+		"GEOMETRY_TYPE_DISCRETE":    7,
+	}
+)
+
+func (x GeometryType) Enum() *GeometryType {
+	p := new(GeometryType)
+	*p = x
+	return p
+}
+
+func (x GeometryType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (GeometryType) Descriptor() protoreflect.EnumDescriptor {
+	return file_proto_v1_geometry_proto_enumTypes[0].Descriptor()
+}
+
+func (GeometryType) Type() protoreflect.EnumType {
+	return &file_proto_v1_geometry_proto_enumTypes[0]
+}
+
+func (x GeometryType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use GeometryType.Descriptor instead.
+func (GeometryType) EnumDescriptor() ([]byte, []int) {
+	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{0}
+}
+
+// How coordinate values map to positions in a space.
+type CoordinateSystem int32
+
+const (
+	// Not specified. A shape with this value is invalid.
+	CoordinateSystem_COORDINATE_SYSTEM_UNSPECIFIED CoordinateSystem = 0
+	// (x, y, ...).
+	CoordinateSystem_COORDINATE_SYSTEM_CARTESIAN CoordinateSystem = 1
+	// 2D (r, θ).
+	CoordinateSystem_COORDINATE_SYSTEM_POLAR CoordinateSystem = 2
+	// 3D (r, θ, z).
+	CoordinateSystem_COORDINATE_SYSTEM_CYLINDRICAL CoordinateSystem = 3
+	// 3D (r, θ, φ) per ISO 80000-2: θ is the polar angle from +z,
+	// φ is the azimuth.
+	CoordinateSystem_COORDINATE_SYSTEM_SPHERICAL CoordinateSystem = 4
+	// n + 1 values (x, y, ..., w). Finite points have w ≠ 0.
+	CoordinateSystem_COORDINATE_SYSTEM_HOMOGENEOUS CoordinateSystem = 5
+	// Hyperbolic model. Points lie inside the unit ball.
+	CoordinateSystem_COORDINATE_SYSTEM_POINCARE_DISK CoordinateSystem = 6
+	// Hyperbolic model. The last value is > 0.
+	CoordinateSystem_COORDINATE_SYSTEM_UPPER_HALF_PLANE CoordinateSystem = 7
+	// Hyperbolic model. Points lie inside the unit ball; geodesics are straight chords.
+	CoordinateSystem_COORDINATE_SYSTEM_KLEIN_DISK CoordinateSystem = 8
+	// Hyperbolic model. n + 1 values on the upper sheet x₀² − x₁² − ... − xₙ² = 1.
+	CoordinateSystem_COORDINATE_SYSTEM_HYPERBOLOID CoordinateSystem = 9
+)
+
+// Enum value maps for CoordinateSystem.
+var (
+	CoordinateSystem_name = map[int32]string{
+		0: "COORDINATE_SYSTEM_UNSPECIFIED",
+		1: "COORDINATE_SYSTEM_CARTESIAN",
+		2: "COORDINATE_SYSTEM_POLAR",
+		3: "COORDINATE_SYSTEM_CYLINDRICAL",
+		4: "COORDINATE_SYSTEM_SPHERICAL",
+		5: "COORDINATE_SYSTEM_HOMOGENEOUS",
+		6: "COORDINATE_SYSTEM_POINCARE_DISK",
+		7: "COORDINATE_SYSTEM_UPPER_HALF_PLANE",
+		8: "COORDINATE_SYSTEM_KLEIN_DISK",
+		9: "COORDINATE_SYSTEM_HYPERBOLOID",
+	}
+	CoordinateSystem_value = map[string]int32{
+		"COORDINATE_SYSTEM_UNSPECIFIED":      0,
+		"COORDINATE_SYSTEM_CARTESIAN":        1,
+		"COORDINATE_SYSTEM_POLAR":            2,
+		"COORDINATE_SYSTEM_CYLINDRICAL":      3,
+		"COORDINATE_SYSTEM_SPHERICAL":        4,
+		"COORDINATE_SYSTEM_HOMOGENEOUS":      5,
+		"COORDINATE_SYSTEM_POINCARE_DISK":    6,
+		"COORDINATE_SYSTEM_UPPER_HALF_PLANE": 7,
+		"COORDINATE_SYSTEM_KLEIN_DISK":       8,
+		"COORDINATE_SYSTEM_HYPERBOLOID":      9,
+	}
+)
+
+func (x CoordinateSystem) Enum() *CoordinateSystem {
+	p := new(CoordinateSystem)
+	*p = x
+	return p
+}
+
+func (x CoordinateSystem) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CoordinateSystem) Descriptor() protoreflect.EnumDescriptor {
+	return file_proto_v1_geometry_proto_enumTypes[1].Descriptor()
+}
+
+func (CoordinateSystem) Type() protoreflect.EnumType {
+	return &file_proto_v1_geometry_proto_enumTypes[1]
+}
+
+func (x CoordinateSystem) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use CoordinateSystem.Descriptor instead.
+func (CoordinateSystem) EnumDescriptor() ([]byte, []int) {
+	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{1}
+}
+
+// Unit for angular coordinate values.
+type AngleUnit int32
+
+const (
+	// Not specified. Treated as radians.
+	AngleUnit_ANGLE_UNIT_UNSPECIFIED AngleUnit = 0
+	// Radians.
+	AngleUnit_ANGLE_UNIT_RADIANS AngleUnit = 1
+	// Degrees.
+	AngleUnit_ANGLE_UNIT_DEGREES AngleUnit = 2
+)
+
+// Enum value maps for AngleUnit.
+var (
+	AngleUnit_name = map[int32]string{
+		0: "ANGLE_UNIT_UNSPECIFIED",
+		1: "ANGLE_UNIT_RADIANS",
+		2: "ANGLE_UNIT_DEGREES",
+	}
+	AngleUnit_value = map[string]int32{
+		"ANGLE_UNIT_UNSPECIFIED": 0,
+		"ANGLE_UNIT_RADIANS":     1,
+		"ANGLE_UNIT_DEGREES":     2,
+	}
+)
+
+func (x AngleUnit) Enum() *AngleUnit {
+	p := new(AngleUnit)
+	*p = x
+	return p
+}
+
+func (x AngleUnit) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (AngleUnit) Descriptor() protoreflect.EnumDescriptor {
+	return file_proto_v1_geometry_proto_enumTypes[2].Descriptor()
+}
+
+func (AngleUnit) Type() protoreflect.EnumType {
+	return &file_proto_v1_geometry_proto_enumTypes[2]
+}
+
+func (x AngleUnit) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use AngleUnit.Descriptor instead.
+func (AngleUnit) EnumDescriptor() ([]byte, []int) {
+	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{2}
+}
+
 // Represents a scalar number using an unscaled integer value and a scale.
 // The actual value is computed as:
 //
@@ -100,32 +311,52 @@ func (x *Scalar) GetScale() uint32 {
 	return 0
 }
 
-// Represents a coordinate system used to interpret geometric entities.
-// Example: Cartesian, Polar, Spherical, Homogeneous.
-type CoordinateSystem struct {
+// The space in which a shape's coordinates are expressed. Segments between
+// vertices follow the space's geodesics (straight lines in flat space,
+// great-circle arcs in elliptic space).
+//
+// Example: the surface of the Earth as a sphere, in degrees.
+//
+//	geometry_type = GEOMETRY_TYPE_ELLIPTIC
+//	coordinate_system = COORDINATE_SYSTEM_SPHERICAL
+//	dimension = 2
+//	angle_unit = ANGLE_UNIT_DEGREES
+//	radius = {unscaled_value: 6371, scale: 0}
+type Space struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// The name of the coordinate system (e.g., Cartesian, Polar).
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	// Optional parameters defining the coordinate system (e.g., dimensionality, radius for polar systems).
-	Parameters    map[string]string `protobuf:"bytes,2,rep,name=parameters,proto3" json:"parameters,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	// The geometry of the space.
+	GeometryType GeometryType `protobuf:"varint,1,opt,name=geometry_type,json=geometryType,proto3,enum=sixafter.types.proto.v1.GeometryType" json:"geometry_type,omitempty"`
+	// The coordinate system used to express positions in the space.
+	CoordinateSystem CoordinateSystem `protobuf:"varint,2,opt,name=coordinate_system,json=coordinateSystem,proto3,enum=sixafter.types.proto.v1.CoordinateSystem" json:"coordinate_system,omitempty"`
+	// Number of dimensions n. Each `Coordinate` has exactly n values, or n + 1 for
+	// `COORDINATE_SYSTEM_HOMOGENEOUS` and `COORDINATE_SYSTEM_HYPERBOLOID`.
+	Dimension uint32 `protobuf:"varint,3,opt,name=dimension,proto3" json:"dimension,omitempty"`
+	// Unit for angular values in POLAR, CYLINDRICAL, and SPHERICAL. Ignored otherwise.
+	AngleUnit AngleUnit `protobuf:"varint,4,opt,name=angle_unit,json=angleUnit,proto3,enum=sixafter.types.proto.v1.AngleUnit" json:"angle_unit,omitempty"`
+	// Radius of curvature R for HYPERBOLIC (K = −1/R²) and ELLIPTIC (K = 1/R²).
+	// Unset means R = 1. Ignored otherwise.
+	// Example: 6371 for the Earth in kilometers.
+	Radius *Scalar `protobuf:"bytes,5,opt,name=radius,proto3" json:"radius,omitempty"`
+	// Lattice spacing for DISCRETE. Unset means 1. Ignored otherwise.
+	GridSpacing   *Scalar `protobuf:"bytes,6,opt,name=grid_spacing,json=gridSpacing,proto3" json:"grid_spacing,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CoordinateSystem) Reset() {
-	*x = CoordinateSystem{}
+func (x *Space) Reset() {
+	*x = Space{}
 	mi := &file_proto_v1_geometry_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CoordinateSystem) String() string {
+func (x *Space) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CoordinateSystem) ProtoMessage() {}
+func (*Space) ProtoMessage() {}
 
-func (x *CoordinateSystem) ProtoReflect() protoreflect.Message {
+func (x *Space) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_v1_geometry_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -137,105 +368,65 @@ func (x *CoordinateSystem) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CoordinateSystem.ProtoReflect.Descriptor instead.
-func (*CoordinateSystem) Descriptor() ([]byte, []int) {
+// Deprecated: Use Space.ProtoReflect.Descriptor instead.
+func (*Space) Descriptor() ([]byte, []int) {
 	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CoordinateSystem) GetName() string {
+func (x *Space) GetGeometryType() GeometryType {
 	if x != nil {
-		return x.Name
+		return x.GeometryType
 	}
-	return ""
+	return GeometryType_GEOMETRY_TYPE_UNSPECIFIED
 }
 
-func (x *CoordinateSystem) GetParameters() map[string]string {
+func (x *Space) GetCoordinateSystem() CoordinateSystem {
 	if x != nil {
-		return x.Parameters
+		return x.CoordinateSystem
 	}
-	return nil
+	return CoordinateSystem_COORDINATE_SYSTEM_UNSPECIFIED
 }
 
-// Represents the geometry type, abstracting the mathematical space.
-// Example: Euclidean, Hyperbolic, Elliptic.
-type GeometryType struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// The name of the geometry type (e.g., Euclidean, Hyperbolic).
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	// Optional parameters for the geometry (e.g., curvature, dimensionality).
-	Parameters    map[string]string `protobuf:"bytes,2,rep,name=parameters,proto3" json:"parameters,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *GeometryType) Reset() {
-	*x = GeometryType{}
-	mi := &file_proto_v1_geometry_proto_msgTypes[2]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *GeometryType) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GeometryType) ProtoMessage() {}
-
-func (x *GeometryType) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_v1_geometry_proto_msgTypes[2]
+func (x *Space) GetDimension() uint32 {
 	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
+		return x.Dimension
 	}
-	return mi.MessageOf(x)
+	return 0
 }
 
-// Deprecated: Use GeometryType.ProtoReflect.Descriptor instead.
-func (*GeometryType) Descriptor() ([]byte, []int) {
-	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *GeometryType) GetName() string {
+func (x *Space) GetAngleUnit() AngleUnit {
 	if x != nil {
-		return x.Name
+		return x.AngleUnit
 	}
-	return ""
+	return AngleUnit_ANGLE_UNIT_UNSPECIFIED
 }
 
-func (x *GeometryType) GetParameters() map[string]string {
+func (x *Space) GetRadius() *Scalar {
 	if x != nil {
-		return x.Parameters
+		return x.Radius
 	}
 	return nil
 }
 
-// Represents a coordinate in an n-dimensional space.
-// The coordinate is defined within a specified geometry and coordinate system,
-// using fixed-point numbers for precision.
-//
-// Examples:
-//   - A 2D Cartesian coordinate (3.5, -2.1) in Euclidean geometry:
-//     geometry_type = EUCLIDEAN
-//     coordinate_system = EUCLIDEAN_CARTESIAN
-//     values = [{unscaled_value: 35, scale: 1}, {unscaled_value: -21, scale: 1}]
+func (x *Space) GetGridSpacing() *Scalar {
+	if x != nil {
+		return x.GridSpacing
+	}
+	return nil
+}
+
+// A position in a `Space`.
 type Coordinate struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// The n-dimensional coordinate values.
-	Values []*Scalar `protobuf:"bytes,1,rep,name=values,proto3" json:"values,omitempty"`
-	// The geometry type (e.g., Euclidean, Hyperbolic).
-	GeometryType *GeometryType `protobuf:"bytes,2,opt,name=geometry_type,json=geometryType,proto3" json:"geometry_type,omitempty"`
-	// The coordinate system (e.g., Cartesian, Polar).
-	CoordinateSystem *CoordinateSystem `protobuf:"bytes,3,opt,name=coordinate_system,json=coordinateSystem,proto3" json:"coordinate_system,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	// The coordinate values, in the order defined by the space's coordinate system.
+	Values        []*Scalar `protobuf:"bytes,1,rep,name=values,proto3" json:"values,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Coordinate) Reset() {
 	*x = Coordinate{}
-	mi := &file_proto_v1_geometry_proto_msgTypes[3]
+	mi := &file_proto_v1_geometry_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -247,7 +438,7 @@ func (x *Coordinate) String() string {
 func (*Coordinate) ProtoMessage() {}
 
 func (x *Coordinate) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_v1_geometry_proto_msgTypes[3]
+	mi := &file_proto_v1_geometry_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -260,7 +451,7 @@ func (x *Coordinate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Coordinate.ProtoReflect.Descriptor instead.
 func (*Coordinate) Descriptor() ([]byte, []int) {
-	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{3}
+	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Coordinate) GetValues() []*Scalar {
@@ -270,38 +461,25 @@ func (x *Coordinate) GetValues() []*Scalar {
 	return nil
 }
 
-func (x *Coordinate) GetGeometryType() *GeometryType {
-	if x != nil {
-		return x.GeometryType
-	}
-	return nil
-}
-
-func (x *Coordinate) GetCoordinateSystem() *CoordinateSystem {
-	if x != nil {
-		return x.CoordinateSystem
-	}
-	return nil
-}
-
-// Represents a point in a mathematical space.
+// A single position.
 //
-// Examples:
-//   - A point in 3D Euclidean space:
-//     position.geometry_type = EUCLIDEAN
-//     position.coordinate_system = EUCLIDEAN_CARTESIAN
-//     position.values = [{unscaled_value: 10, scale: 0}, {unscaled_value: 0, scale: 0}, {unscaled_value: -5, scale: 0}]
+// Example: (10, 20) in the 2D Euclidean plane.
+//
+//	space = {geometry_type: GEOMETRY_TYPE_EUCLIDEAN, coordinate_system: COORDINATE_SYSTEM_CARTESIAN, dimension: 2}
+//	position.values = [{unscaled_value: 10}, {unscaled_value: 20}]
 type Point struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// The coordinate defining the position of the point.
-	Position      *Coordinate `protobuf:"bytes,1,opt,name=position,proto3" json:"position,omitempty"`
+	// The space in which `position` is expressed.
+	Space *Space `protobuf:"bytes,1,opt,name=space,proto3" json:"space,omitempty"`
+	// The position of the point.
+	Position      *Coordinate `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Point) Reset() {
 	*x = Point{}
-	mi := &file_proto_v1_geometry_proto_msgTypes[4]
+	mi := &file_proto_v1_geometry_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -313,7 +491,7 @@ func (x *Point) String() string {
 func (*Point) ProtoMessage() {}
 
 func (x *Point) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_v1_geometry_proto_msgTypes[4]
+	mi := &file_proto_v1_geometry_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -326,7 +504,14 @@ func (x *Point) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Point.ProtoReflect.Descriptor instead.
 func (*Point) Descriptor() ([]byte, []int) {
-	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{4}
+	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *Point) GetSpace() *Space {
+	if x != nil {
+		return x.Space
+	}
+	return nil
 }
 
 func (x *Point) GetPosition() *Coordinate {
@@ -336,36 +521,110 @@ func (x *Point) GetPosition() *Coordinate {
 	return nil
 }
 
-// Represents a line or geodesic in a mathematical space.
+// The geodesic segment between two positions.
 //
-// Examples:
-//   - A line between two points in 2D Cartesian space:
-//     start.position.values = [{unscaled_value: 0, scale: 0}, {unscaled_value: 0, scale: 0}]
-//     end.position.values = [{unscaled_value: 10, scale: 0}, {unscaled_value: 10, scale: 0}]
-type Line struct {
+// Example: from (0, 0) to (10, 10) in the 2D Euclidean plane.
+//
+//	space = {geometry_type: GEOMETRY_TYPE_EUCLIDEAN, coordinate_system: COORDINATE_SYSTEM_CARTESIAN, dimension: 2}
+//	start.values = [{unscaled_value: 0}, {unscaled_value: 0}]
+//	end.values = [{unscaled_value: 10}, {unscaled_value: 10}]
+type LineSegment struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// The starting point of the line.
-	Start *Point `protobuf:"bytes,1,opt,name=start,proto3" json:"start,omitempty"`
-	// The ending point of the line.
-	End           *Point `protobuf:"bytes,2,opt,name=end,proto3" json:"end,omitempty"`
+	// The space in which `start` and `end` are expressed.
+	Space *Space `protobuf:"bytes,1,opt,name=space,proto3" json:"space,omitempty"`
+	// The starting position.
+	Start *Coordinate `protobuf:"bytes,2,opt,name=start,proto3" json:"start,omitempty"`
+	// The ending position.
+	End           *Coordinate `protobuf:"bytes,3,opt,name=end,proto3" json:"end,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *Line) Reset() {
-	*x = Line{}
+func (x *LineSegment) Reset() {
+	*x = LineSegment{}
+	mi := &file_proto_v1_geometry_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LineSegment) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LineSegment) ProtoMessage() {}
+
+func (x *LineSegment) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_v1_geometry_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LineSegment.ProtoReflect.Descriptor instead.
+func (*LineSegment) Descriptor() ([]byte, []int) {
+	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *LineSegment) GetSpace() *Space {
+	if x != nil {
+		return x.Space
+	}
+	return nil
+}
+
+func (x *LineSegment) GetStart() *Coordinate {
+	if x != nil {
+		return x.Start
+	}
+	return nil
+}
+
+func (x *LineSegment) GetEnd() *Coordinate {
+	if x != nil {
+		return x.End
+	}
+	return nil
+}
+
+// An open sequence of connected geodesic segments. At least 2 vertices.
+//
+// Example: a path in the Poincaré disk model of the hyperbolic plane.
+//
+//	space = {geometry_type: GEOMETRY_TYPE_HYPERBOLIC, coordinate_system: COORDINATE_SYSTEM_POINCARE_DISK, dimension: 2}
+//	vertices = [
+//	    {values: [{unscaled_value: 0}, {unscaled_value: 0}]},
+//	    {values: [{unscaled_value: 5, scale: 1}, {unscaled_value: 0}]},
+//	    {values: [{unscaled_value: 5, scale: 1}, {unscaled_value: 5, scale: 1}]}
+//	]
+type Polyline struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// The space in which `vertices` are expressed.
+	Space *Space `protobuf:"bytes,1,opt,name=space,proto3" json:"space,omitempty"`
+	// The vertices, in order of travel.
+	Vertices      []*Coordinate `protobuf:"bytes,2,rep,name=vertices,proto3" json:"vertices,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Polyline) Reset() {
+	*x = Polyline{}
 	mi := &file_proto_v1_geometry_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *Line) String() string {
+func (x *Polyline) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Line) ProtoMessage() {}
+func (*Polyline) ProtoMessage() {}
 
-func (x *Line) ProtoReflect() protoreflect.Message {
+func (x *Polyline) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_v1_geometry_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -377,42 +636,45 @@ func (x *Line) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Line.ProtoReflect.Descriptor instead.
-func (*Line) Descriptor() ([]byte, []int) {
+// Deprecated: Use Polyline.ProtoReflect.Descriptor instead.
+func (*Polyline) Descriptor() ([]byte, []int) {
 	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *Line) GetStart() *Point {
+func (x *Polyline) GetSpace() *Space {
 	if x != nil {
-		return x.Start
+		return x.Space
 	}
 	return nil
 }
 
-func (x *Line) GetEnd() *Point {
+func (x *Polyline) GetVertices() []*Coordinate {
 	if x != nil {
-		return x.End
+		return x.Vertices
 	}
 	return nil
 }
 
-// Represents a polygon in a mathematical space.
-// A polygon is defined by a series of vertices, and it may or may not be closed.
+// A closed region bounded by geodesic segments. At least 3 vertices.
+// The last vertex connects to the first; the first vertex MUST NOT be repeated.
+// In 2D spaces, vertices are ordered counter-clockwise, so the interior lies to
+// the left of the direction of travel. This also selects the interior on the
+// surface of an ELLIPTIC space.
 //
-// Examples:
-//   - A triangle in 2D Cartesian space:
-//     vertices = [
-//     {position.values = [{unscaled_value: 0, scale: 0}, {unscaled_value: 0, scale: 0}]},
-//     {position.values = [{unscaled_value: 10, scale: 0}, {unscaled_value: 0, scale: 0}]},
-//     {position.values = [{unscaled_value: 5, scale: 0}, {unscaled_value: 10, scale: 0}]}
-//     ]
-//     is_closed = true
+// Example: a triangle in the 2D Euclidean plane.
+//
+//	space = {geometry_type: GEOMETRY_TYPE_EUCLIDEAN, coordinate_system: COORDINATE_SYSTEM_CARTESIAN, dimension: 2}
+//	vertices = [
+//	    {values: [{unscaled_value: 0}, {unscaled_value: 0}]},
+//	    {values: [{unscaled_value: 10}, {unscaled_value: 0}]},
+//	    {values: [{unscaled_value: 5}, {unscaled_value: 10}]}
+//	]
 type Polygon struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// The vertices of the polygon.
-	Vertices []*Point `protobuf:"bytes,1,rep,name=vertices,proto3" json:"vertices,omitempty"`
-	// True if the polygon is explicitly closed.
-	IsClosed      bool `protobuf:"varint,2,opt,name=is_closed,json=isClosed,proto3" json:"is_closed,omitempty"`
+	// The space in which `vertices` are expressed.
+	Space *Space `protobuf:"bytes,1,opt,name=space,proto3" json:"space,omitempty"`
+	// The vertices, counter-clockwise in 2D spaces.
+	Vertices      []*Coordinate `protobuf:"bytes,2,rep,name=vertices,proto3" json:"vertices,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -447,18 +709,18 @@ func (*Polygon) Descriptor() ([]byte, []int) {
 	return file_proto_v1_geometry_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *Polygon) GetVertices() []*Point {
+func (x *Polygon) GetSpace() *Space {
 	if x != nil {
-		return x.Vertices
+		return x.Space
 	}
 	return nil
 }
 
-func (x *Polygon) GetIsClosed() bool {
+func (x *Polygon) GetVertices() []*Coordinate {
 	if x != nil {
-		return x.IsClosed
+		return x.Vertices
 	}
-	return false
+	return nil
 }
 
 var File_proto_v1_geometry_proto protoreflect.FileDescriptor
@@ -468,37 +730,56 @@ const file_proto_v1_geometry_proto_rawDesc = "" +
 	"\x17proto/v1/geometry.proto\x12\x17sixafter.types.proto.v1\"E\n" +
 	"\x06Scalar\x12%\n" +
 	"\x0eunscaled_value\x18\x01 \x01(\x12R\runscaledValue\x12\x14\n" +
-	"\x05scale\x18\x02 \x01(\rR\x05scale\"\xc0\x01\n" +
-	"\x10CoordinateSystem\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x12Y\n" +
+	"\x05scale\x18\x02 \x01(\rR\x05scale\"\x89\x03\n" +
+	"\x05Space\x12J\n" +
+	"\rgeometry_type\x18\x01 \x01(\x0e2%.sixafter.types.proto.v1.GeometryTypeR\fgeometryType\x12V\n" +
+	"\x11coordinate_system\x18\x02 \x01(\x0e2).sixafter.types.proto.v1.CoordinateSystemR\x10coordinateSystem\x12\x1c\n" +
+	"\tdimension\x18\x03 \x01(\rR\tdimension\x12A\n" +
 	"\n" +
-	"parameters\x18\x02 \x03(\v29.sixafter.types.proto.v1.CoordinateSystem.ParametersEntryR\n" +
-	"parameters\x1a=\n" +
-	"\x0fParametersEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xb8\x01\n" +
-	"\fGeometryType\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x12U\n" +
-	"\n" +
-	"parameters\x18\x02 \x03(\v25.sixafter.types.proto.v1.GeometryType.ParametersEntryR\n" +
-	"parameters\x1a=\n" +
-	"\x0fParametersEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xe9\x01\n" +
+	"angle_unit\x18\x04 \x01(\x0e2\".sixafter.types.proto.v1.AngleUnitR\tangleUnit\x127\n" +
+	"\x06radius\x18\x05 \x01(\v2\x1f.sixafter.types.proto.v1.ScalarR\x06radius\x12B\n" +
+	"\fgrid_spacing\x18\x06 \x01(\v2\x1f.sixafter.types.proto.v1.ScalarR\vgridSpacing\"E\n" +
 	"\n" +
 	"Coordinate\x127\n" +
-	"\x06values\x18\x01 \x03(\v2\x1f.sixafter.types.proto.v1.ScalarR\x06values\x12J\n" +
-	"\rgeometry_type\x18\x02 \x01(\v2%.sixafter.types.proto.v1.GeometryTypeR\fgeometryType\x12V\n" +
-	"\x11coordinate_system\x18\x03 \x01(\v2).sixafter.types.proto.v1.CoordinateSystemR\x10coordinateSystem\"H\n" +
-	"\x05Point\x12?\n" +
-	"\bposition\x18\x01 \x01(\v2#.sixafter.types.proto.v1.CoordinateR\bposition\"n\n" +
-	"\x04Line\x124\n" +
-	"\x05start\x18\x01 \x01(\v2\x1e.sixafter.types.proto.v1.PointR\x05start\x120\n" +
-	"\x03end\x18\x02 \x01(\v2\x1e.sixafter.types.proto.v1.PointR\x03end\"b\n" +
-	"\aPolygon\x12:\n" +
-	"\bvertices\x18\x01 \x03(\v2\x1e.sixafter.types.proto.v1.PointR\bvertices\x12\x1b\n" +
-	"\tis_closed\x18\x02 \x01(\bR\bisClosedB\x81\x01\n" +
-	"\x15com.sixafter.types.v1B\rGeometryProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"\x06values\x18\x01 \x03(\v2\x1f.sixafter.types.proto.v1.ScalarR\x06values\"~\n" +
+	"\x05Point\x124\n" +
+	"\x05space\x18\x01 \x01(\v2\x1e.sixafter.types.proto.v1.SpaceR\x05space\x12?\n" +
+	"\bposition\x18\x02 \x01(\v2#.sixafter.types.proto.v1.CoordinateR\bposition\"\xb5\x01\n" +
+	"\vLineSegment\x124\n" +
+	"\x05space\x18\x01 \x01(\v2\x1e.sixafter.types.proto.v1.SpaceR\x05space\x129\n" +
+	"\x05start\x18\x02 \x01(\v2#.sixafter.types.proto.v1.CoordinateR\x05start\x125\n" +
+	"\x03end\x18\x03 \x01(\v2#.sixafter.types.proto.v1.CoordinateR\x03end\"\x81\x01\n" +
+	"\bPolyline\x124\n" +
+	"\x05space\x18\x01 \x01(\v2\x1e.sixafter.types.proto.v1.SpaceR\x05space\x12?\n" +
+	"\bvertices\x18\x02 \x03(\v2#.sixafter.types.proto.v1.CoordinateR\bvertices\"\x80\x01\n" +
+	"\aPolygon\x124\n" +
+	"\x05space\x18\x01 \x01(\v2\x1e.sixafter.types.proto.v1.SpaceR\x05space\x12?\n" +
+	"\bvertices\x18\x02 \x03(\v2#.sixafter.types.proto.v1.CoordinateR\bvertices*\xf3\x01\n" +
+	"\fGeometryType\x12\x1d\n" +
+	"\x19GEOMETRY_TYPE_UNSPECIFIED\x10\x00\x12\x1b\n" +
+	"\x17GEOMETRY_TYPE_EUCLIDEAN\x10\x01\x12\x18\n" +
+	"\x14GEOMETRY_TYPE_AFFINE\x10\x02\x12\x1c\n" +
+	"\x18GEOMETRY_TYPE_PROJECTIVE\x10\x03\x12\x1c\n" +
+	"\x18GEOMETRY_TYPE_HYPERBOLIC\x10\x04\x12\x1a\n" +
+	"\x16GEOMETRY_TYPE_ELLIPTIC\x10\x05\x12\x19\n" +
+	"\x15GEOMETRY_TYPE_FRACTAL\x10\x06\x12\x1a\n" +
+	"\x16GEOMETRY_TYPE_DISCRETE\x10\a*\xec\x02\n" +
+	"\x10CoordinateSystem\x12!\n" +
+	"\x1dCOORDINATE_SYSTEM_UNSPECIFIED\x10\x00\x12\x1f\n" +
+	"\x1bCOORDINATE_SYSTEM_CARTESIAN\x10\x01\x12\x1b\n" +
+	"\x17COORDINATE_SYSTEM_POLAR\x10\x02\x12!\n" +
+	"\x1dCOORDINATE_SYSTEM_CYLINDRICAL\x10\x03\x12\x1f\n" +
+	"\x1bCOORDINATE_SYSTEM_SPHERICAL\x10\x04\x12!\n" +
+	"\x1dCOORDINATE_SYSTEM_HOMOGENEOUS\x10\x05\x12#\n" +
+	"\x1fCOORDINATE_SYSTEM_POINCARE_DISK\x10\x06\x12&\n" +
+	"\"COORDINATE_SYSTEM_UPPER_HALF_PLANE\x10\a\x12 \n" +
+	"\x1cCOORDINATE_SYSTEM_KLEIN_DISK\x10\b\x12!\n" +
+	"\x1dCOORDINATE_SYSTEM_HYPERBOLOID\x10\t*W\n" +
+	"\tAngleUnit\x12\x1a\n" +
+	"\x16ANGLE_UNIT_UNSPECIFIED\x10\x00\x12\x16\n" +
+	"\x12ANGLE_UNIT_RADIANS\x10\x01\x12\x16\n" +
+	"\x12ANGLE_UNIT_DEGREES\x10\x02Bo\n" +
+	"\x15com.sixafter.types.v1B\rGeometryProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_geometry_proto_rawDescOnce sync.Once
@@ -512,33 +793,41 @@ func file_proto_v1_geometry_proto_rawDescGZIP() []byte {
 	return file_proto_v1_geometry_proto_rawDescData
 }
 
-var file_proto_v1_geometry_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_proto_v1_geometry_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_proto_v1_geometry_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_proto_v1_geometry_proto_goTypes = []any{
-	(*Scalar)(nil),           // 0: sixafter.types.proto.v1.Scalar
-	(*CoordinateSystem)(nil), // 1: sixafter.types.proto.v1.CoordinateSystem
-	(*GeometryType)(nil),     // 2: sixafter.types.proto.v1.GeometryType
-	(*Coordinate)(nil),       // 3: sixafter.types.proto.v1.Coordinate
-	(*Point)(nil),            // 4: sixafter.types.proto.v1.Point
-	(*Line)(nil),             // 5: sixafter.types.proto.v1.Line
-	(*Polygon)(nil),          // 6: sixafter.types.proto.v1.Polygon
-	nil,                      // 7: sixafter.types.proto.v1.CoordinateSystem.ParametersEntry
-	nil,                      // 8: sixafter.types.proto.v1.GeometryType.ParametersEntry
+	(GeometryType)(0),     // 0: sixafter.types.proto.v1.GeometryType
+	(CoordinateSystem)(0), // 1: sixafter.types.proto.v1.CoordinateSystem
+	(AngleUnit)(0),        // 2: sixafter.types.proto.v1.AngleUnit
+	(*Scalar)(nil),        // 3: sixafter.types.proto.v1.Scalar
+	(*Space)(nil),         // 4: sixafter.types.proto.v1.Space
+	(*Coordinate)(nil),    // 5: sixafter.types.proto.v1.Coordinate
+	(*Point)(nil),         // 6: sixafter.types.proto.v1.Point
+	(*LineSegment)(nil),   // 7: sixafter.types.proto.v1.LineSegment
+	(*Polyline)(nil),      // 8: sixafter.types.proto.v1.Polyline
+	(*Polygon)(nil),       // 9: sixafter.types.proto.v1.Polygon
 }
 var file_proto_v1_geometry_proto_depIdxs = []int32{
-	7, // 0: sixafter.types.proto.v1.CoordinateSystem.parameters:type_name -> sixafter.types.proto.v1.CoordinateSystem.ParametersEntry
-	8, // 1: sixafter.types.proto.v1.GeometryType.parameters:type_name -> sixafter.types.proto.v1.GeometryType.ParametersEntry
-	0, // 2: sixafter.types.proto.v1.Coordinate.values:type_name -> sixafter.types.proto.v1.Scalar
-	2, // 3: sixafter.types.proto.v1.Coordinate.geometry_type:type_name -> sixafter.types.proto.v1.GeometryType
-	1, // 4: sixafter.types.proto.v1.Coordinate.coordinate_system:type_name -> sixafter.types.proto.v1.CoordinateSystem
-	3, // 5: sixafter.types.proto.v1.Point.position:type_name -> sixafter.types.proto.v1.Coordinate
-	4, // 6: sixafter.types.proto.v1.Line.start:type_name -> sixafter.types.proto.v1.Point
-	4, // 7: sixafter.types.proto.v1.Line.end:type_name -> sixafter.types.proto.v1.Point
-	4, // 8: sixafter.types.proto.v1.Polygon.vertices:type_name -> sixafter.types.proto.v1.Point
-	9, // [9:9] is the sub-list for method output_type
-	9, // [9:9] is the sub-list for method input_type
-	9, // [9:9] is the sub-list for extension type_name
-	9, // [9:9] is the sub-list for extension extendee
-	0, // [0:9] is the sub-list for field type_name
+	0,  // 0: sixafter.types.proto.v1.Space.geometry_type:type_name -> sixafter.types.proto.v1.GeometryType
+	1,  // 1: sixafter.types.proto.v1.Space.coordinate_system:type_name -> sixafter.types.proto.v1.CoordinateSystem
+	2,  // 2: sixafter.types.proto.v1.Space.angle_unit:type_name -> sixafter.types.proto.v1.AngleUnit
+	3,  // 3: sixafter.types.proto.v1.Space.radius:type_name -> sixafter.types.proto.v1.Scalar
+	3,  // 4: sixafter.types.proto.v1.Space.grid_spacing:type_name -> sixafter.types.proto.v1.Scalar
+	3,  // 5: sixafter.types.proto.v1.Coordinate.values:type_name -> sixafter.types.proto.v1.Scalar
+	4,  // 6: sixafter.types.proto.v1.Point.space:type_name -> sixafter.types.proto.v1.Space
+	5,  // 7: sixafter.types.proto.v1.Point.position:type_name -> sixafter.types.proto.v1.Coordinate
+	4,  // 8: sixafter.types.proto.v1.LineSegment.space:type_name -> sixafter.types.proto.v1.Space
+	5,  // 9: sixafter.types.proto.v1.LineSegment.start:type_name -> sixafter.types.proto.v1.Coordinate
+	5,  // 10: sixafter.types.proto.v1.LineSegment.end:type_name -> sixafter.types.proto.v1.Coordinate
+	4,  // 11: sixafter.types.proto.v1.Polyline.space:type_name -> sixafter.types.proto.v1.Space
+	5,  // 12: sixafter.types.proto.v1.Polyline.vertices:type_name -> sixafter.types.proto.v1.Coordinate
+	4,  // 13: sixafter.types.proto.v1.Polygon.space:type_name -> sixafter.types.proto.v1.Space
+	5,  // 14: sixafter.types.proto.v1.Polygon.vertices:type_name -> sixafter.types.proto.v1.Coordinate
+	15, // [15:15] is the sub-list for method output_type
+	15, // [15:15] is the sub-list for method input_type
+	15, // [15:15] is the sub-list for extension type_name
+	15, // [15:15] is the sub-list for extension extendee
+	0,  // [0:15] is the sub-list for field type_name
 }
 
 func init() { file_proto_v1_geometry_proto_init() }
@@ -551,13 +840,14 @@ func file_proto_v1_geometry_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_v1_geometry_proto_rawDesc), len(file_proto_v1_geometry_proto_rawDesc)),
-			NumEnums:      0,
-			NumMessages:   9,
+			NumEnums:      3,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_proto_v1_geometry_proto_goTypes,
 		DependencyIndexes: file_proto_v1_geometry_proto_depIdxs,
+		EnumInfos:         file_proto_v1_geometry_proto_enumTypes,
 		MessageInfos:      file_proto_v1_geometry_proto_msgTypes,
 	}.Build()
 	File_proto_v1_geometry_proto = out.File

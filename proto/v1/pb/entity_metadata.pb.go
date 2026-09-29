@@ -65,8 +65,14 @@ type EntityMetadata struct {
 	// An immutable entity cannot be modified after creation.
 	// Example: `true` for a cryptographic hash record.
 	Immutable bool `protobuf:"varint,6,opt,name=immutable,proto3" json:"immutable,omitempty"`
-	// The Semantic Version v2.0 compliant version of the entity.
-	// This provides versioning information for tracking changes and compatibility.
+	// The Semantic Version 2.0.0 version of the entity's content.
+	// Use this for entities that are released to consumers who depend on compatibility,
+	// such as schemas, models, documents, or configurations: increment MAJOR for
+	// incompatible changes, MINOR for compatible additions, and PATCH for compatible fixes.
+	// This is not a per-modification revision counter and is not suitable for
+	// optimistic concurrency control; use `modified_at` or an application-specific
+	// revision for that.
+	// Unset means the entity is not versioned.
 	// Example: Version `1.0.0` for the initial release of the entity.
 	Version *Version `protobuf:"bytes,7,opt,name=version,proto3" json:"version,omitempty"`
 	// Indicates whether the entity was synthesized (or is synthetic).
@@ -75,16 +81,26 @@ type EntityMetadata struct {
 	Synthetic bool `protobuf:"varint,8,opt,name=synthetic,proto3" json:"synthetic,omitempty"`
 	// A list of tags associated with the entity.
 	// Tags provide descriptive labels for categorization or search.
-	// Tags must have:
-	// - A minimum length of 1 character
-	// - A maximum length of 256 characters
-	// - A pattern matching "^[a-zA-Z0-9_-]+$" (alphanumeric, underscores, and hyphens).
+	// Each tag MUST:
+	// - Be at least 1 and at most 256 characters long.
+	// - Match the pattern "^[a-zA-Z0-9_-]+$" (ASCII letters, digits, underscores, and hyphens).
+	// Tags MUST be unique within the list. Tags are case-sensitive: "Finance" and
+	// "finance" are different tags.
+	// Note: The Protobuf schema cannot enforce these constraints; validation must be
+	// performed in application code or by a validation framework.
 	// Example: `["finance", "report2024"]` for an entity tagged as a 2024 finance report.
 	Tags []string `protobuf:"bytes,9,rep,name=tags,proto3" json:"tags,omitempty"`
 	// Custom attributes for additional metadata in key-value format.
-	// The keys and values are strings, allowing flexible metadata descriptions.
-	// Example: `{"source": "API", "priority": "high"}` for an entity from the API with high priority.
-	Attributes    *structpb.Struct `protobuf:"bytes,10,opt,name=attributes,proto3" json:"attributes,omitempty"`
+	// Keys are strings. Values may be any JSON value: a string, number, boolean,
+	// null, list, or nested object.
+	// Example: `{"source": "API", "priority": "high", "retries": 3, "flags": ["beta"]}`.
+	Attributes *structpb.Struct `protobuf:"bytes,10,opt,name=attributes,proto3" json:"attributes,omitempty"`
+	// The timestamp at which the entity was archived, if applicable.
+	// An archived entity is retained but no longer in active use; unlike a deleted
+	// entity, it remains available for reference.
+	// Unset means the entity is not archived.
+	// Example: "2024-12-01T09:00:00Z" for an entity archived on December 1, 2024.
+	ArchivedAt    *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=archived_at,json=archivedAt,proto3" json:"archived_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -189,11 +205,18 @@ func (x *EntityMetadata) GetAttributes() *structpb.Struct {
 	return nil
 }
 
+func (x *EntityMetadata) GetArchivedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ArchivedAt
+	}
+	return nil
+}
+
 var File_proto_v1_entity_metadata_proto protoreflect.FileDescriptor
 
 const file_proto_v1_entity_metadata_proto_rawDesc = "" +
 	"\n" +
-	"\x1eproto/v1/entity_metadata.proto\x12\x17sixafter.types.proto.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x16proto/v1/version.proto\"\xc6\x03\n" +
+	"\x1eproto/v1/entity_metadata.proto\x12\x17sixafter.types.proto.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x16proto/v1/version.proto\"\x83\x04\n" +
 	"\x0eEntityMetadata\x129\n" +
 	"\n" +
 	"created_at\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12;\n" +
@@ -212,8 +235,10 @@ const file_proto_v1_entity_metadata_proto_rawDesc = "" +
 	"\n" +
 	"attributes\x18\n" +
 	" \x01(\v2\x17.google.protobuf.StructR\n" +
-	"attributesB\x87\x01\n" +
-	"\x15com.sixafter.types.v1B\x13EntityMetadataProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"attributes\x12;\n" +
+	"\varchived_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\n" +
+	"archivedAtBu\n" +
+	"\x15com.sixafter.types.v1B\x13EntityMetadataProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_entity_metadata_proto_rawDescOnce sync.Once
@@ -240,11 +265,12 @@ var file_proto_v1_entity_metadata_proto_depIdxs = []int32{
 	1, // 2: sixafter.types.proto.v1.EntityMetadata.deleted_at:type_name -> google.protobuf.Timestamp
 	2, // 3: sixafter.types.proto.v1.EntityMetadata.version:type_name -> sixafter.types.proto.v1.Version
 	3, // 4: sixafter.types.proto.v1.EntityMetadata.attributes:type_name -> google.protobuf.Struct
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	1, // 5: sixafter.types.proto.v1.EntityMetadata.archived_at:type_name -> google.protobuf.Timestamp
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_proto_v1_entity_metadata_proto_init() }

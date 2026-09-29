@@ -15,12 +15,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Package types provide helper functions for working with the sixafter.types.UUID
-// Protobuf message. This message represents a canonical 128-bit UUID (RFC 4122)
+// Package types provide helper functions for working with the sixafter.types.proto.v1.UUID
+// Protobuf message. This message represents a canonical 128-bit UUID (RFC 9562)
 // using a 16-byte binary encoding.
 //
 // These helpers allow for conversion between the Protobuf UUID message and the
-// native github.com/google/uuid.UUID type, as well as conversion to and from the
+// native uuid.UUID type from the Go standard library, as well as conversion to and from the
 // canonical string representation of a UUID.
 package types
 
@@ -31,10 +31,10 @@ import (
 	"uuid"
 )
 
-// UUIDToProto converts a uuid.UUID to a sixafter.types.UUID Protobuf message.
+// UUIDToProto converts a uuid.UUID to a sixafter.types.proto.v1.UUID Protobuf message.
 //
 // The returned UUID message Value field will be exactly 16 bytes, as required by the
-// RFC 4122 standard and the sixafter.types.UUID message definition.
+// RFC 9562 standard and the sixafter.types.proto.v1.UUID message definition.
 //
 // Parameters:
 //
@@ -52,9 +52,10 @@ func UUIDToProto(u uuid.UUID) *UUID {
 	return &UUID{Value: u[:]}
 }
 
-// ProtoToUUID decodes a sixafter.types.UUID Protobuf message to a uuid.UUID.
+// ProtoToUUID decodes a sixafter.types.proto.v1.UUID Protobuf message to a uuid.UUID.
 //
-// Returns an error if the Value field is not exactly 16 bytes.
+// Returns an error if the Value field is not exactly 16 bytes. ProtoToUUID does
+// not check the RFC 9562 variant or version; use ValidateUUID for that.
 //
 // Parameters:
 //
@@ -81,10 +82,12 @@ func ProtoToUUID(msg *UUID) (uuid.UUID, error) {
 	return uuid.UUID(arr), nil
 }
 
-// StringToProto parses a canonical UUID string and returns a sixafter.types.UUID Protobuf message.
+// StringToProto parses a UUID string and returns a sixafter.types.proto.v1.UUID Protobuf message.
 //
-// The input string must be in the canonical RFC 4122 format (e.g., "2b7e1516-28ae-4c98-8c3d-9b1636b6033c").
-// Returns an error if the string is not a valid UUID.
+// The input may be in the canonical form (e.g., "2b7e1516-28ae-4c98-8c3d-9b1636b6033c"),
+// enclosed in braces, prefixed with "urn:uuid:", or 32 hexadecimal digits without
+// hyphens. Returns an error if the string cannot be parsed. StringToProto does not
+// check the RFC 9562 variant or version; use ValidateUUID for that.
 //
 // Parameters:
 //
@@ -106,9 +109,10 @@ func StringToProto(s string) (*UUID, error) {
 	return UUIDToProto(u), nil
 }
 
-// ProtoToString returns the canonical RFC 4122 string representation of a sixafter.types.UUID Protobuf message.
+// ProtoToString returns the canonical RFC 9562 string representation of a sixafter.types.proto.v1.UUID Protobuf message.
 //
-// Returns an error if the Value field is not exactly 16 bytes.
+// Returns an error if the Value field is not exactly 16 bytes. ProtoToString does
+// not check the RFC 9562 variant or version; use ValidateUUID for that.
 //
 // Parameters:
 //
@@ -130,7 +134,9 @@ func ProtoToString(msg *UUID) (string, error) {
 	return u.String(), nil
 }
 
-// ValidateUUID checks that the sixafter.types.UUID protobuf message Value field is exactly 16 bytes.
+// ValidateUUID checks that the sixafter.types.proto.v1.UUID protobuf message Value field is
+// an RFC 9562-compliant UUID: exactly 16 bytes, and either the Nil UUID, the Max
+// UUID, or a UUID with the RFC 9562 variant and a version from 1 through 8.
 //
 // Returns nil if valid, or an error otherwise.
 //
@@ -140,7 +146,7 @@ func ProtoToString(msg *UUID) (string, error) {
 //
 // Returns:
 //
-//	error if Value is nil or not exactly 16 bytes.
+//	error if Value is nil, not exactly 16 bytes, or not RFC 9562-compliant.
 //
 // Example:
 //
@@ -152,14 +158,32 @@ func ValidateUUID(msg *UUID) error {
 	if len(msg.Value) != 16 {
 		return fmt.Errorf("UUID must be exactly 16 bytes, got %d", len(msg.Value))
 	}
+	if u := uuid.UUID(msg.Value); !isRFC9562(u) {
+		return fmt.Errorf("UUID %s is not RFC 9562-compliant: variant bits %02b, version %d", u, u[8]>>6, u[6]>>4)
+	}
 	return nil
 }
 
-// MarshalJSON implements the json.Marshaler interface for UUID.
-// It outputs the UUID as a canonical RFC 4122 string (e.g. "550e8400-e29b-41d4-a716-446655440000")
-// instead of the default base64 encoding that protojson uses for bytes fields.
+// isRFC9562 reports whether u is the Nil UUID, the Max UUID, or a UUID with the
+// RFC 9562 variant (0b10) and a version defined by RFC 9562 (1 through 8).
+func isRFC9562(u uuid.UUID) bool {
+	if u == uuid.Nil() || u == uuid.Max() {
+		return true
+	}
+	version := u[6] >> 4
+	return u[8]>>6 == 0b10 && version >= 1 && version <= 8
+}
+
+// MarshalJSON implements [json.Marshaler] for use with encoding/json.
+// It encodes the UUID as its canonical string form, for example
+// "550e8400-e29b-41d4-a716-446655440000". A nil message or an empty Value
+// encodes as "".
+//
+// MarshalJSON does not affect protojson, which encodes the Value field as base64.
+//
+// Returns an error if Value is non-empty and not exactly 16 bytes.
 func (m *UUID) MarshalJSON() ([]byte, error) {
-	if m == nil || len(m.Value) != 16 {
+	if m == nil || len(m.Value) == 0 {
 		return []byte(`""`), nil
 	}
 	u, err := ProtoToUUID(m)
@@ -169,8 +193,13 @@ func (m *UUID) MarshalJSON() ([]byte, error) {
 	return json.Marshal(u.String())
 }
 
-// UnmarshalJSON implements the json.Unmarshaler interface for UUID.
-// It accepts a canonical RFC 4122 UUID string and converts it to binary form.
+// UnmarshalJSON implements [json.Unmarshaler] for use with encoding/json.
+// It decodes a UUID string, for example "550e8400-e29b-41d4-a716-446655440000".
+// An empty string decodes to a nil Value.
+//
+// UnmarshalJSON does not affect protojson.
+//
+// Returns an error if the input is not a JSON string or is not a valid UUID.
 func (m *UUID) UnmarshalJSON(data []byte) error {
 	var s string
 	if err := json.Unmarshal(data, &s); err != nil {

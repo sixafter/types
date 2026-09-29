@@ -39,9 +39,10 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// The `CompassHeading` message represents the orientation of an object
-// in the Compass Geodetic System (CGS). This can be used in geolocation
-// systems, navigation tools, or applications requiring orientation data.
+// The `CompassHeading` message represents the orientation of a device relative to
+// magnetic and true north, together with the raw geomagnetic field measurements.
+// The fields correspond to Apple Core Location's `CLHeading`. This can be used in
+// geolocation systems, navigation tools, or applications requiring orientation data.
 type CompassHeading struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The heading (measured in degrees) relative to magnetic north.
@@ -51,10 +52,12 @@ type CompassHeading struct {
 	// The heading (measured in degrees) relative to true north.
 	// This compensates for the local magnetic declination.
 	// Similar to `magnetic_heading`, values range from 0 to 360.
+	// A negative value means the true heading could not be determined.
 	TrueHeading float32 `protobuf:"fixed32,2,opt,name=true_heading,json=trueHeading,proto3" json:"true_heading,omitempty"`
-	// The maximum deviation (measured in degrees) between the reported heading
-	// and the true geomagnetic heading. A lower value indicates higher accuracy.
+	// The maximum deviation (measured in degrees) between the reported `magnetic_heading`
+	// and the actual direction of magnetic north. A lower value indicates higher accuracy.
 	// This property is essential for assessing the reliability of the heading data.
+	// A negative value means the heading is invalid.
 	HeadingAccuracy float32 `protobuf:"fixed32,3,opt,name=heading_accuracy,json=headingAccuracy,proto3" json:"heading_accuracy,omitempty"`
 	// The time at which this heading measurement was taken.
 	// This is useful for correlating heading data with other time-based
@@ -166,8 +169,8 @@ const file_proto_v1_compass_heading_proto_rawDesc = "" +
 	"\ttimestamp\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12\f\n" +
 	"\x01x\x18\x05 \x01(\x02R\x01x\x12\f\n" +
 	"\x01y\x18\x06 \x01(\x02R\x01y\x12\f\n" +
-	"\x01z\x18\a \x01(\x02R\x01zB\x87\x01\n" +
-	"\x15com.sixafter.types.v1B\x13CompassHeadingProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"\x01z\x18\a \x01(\x02R\x01zBu\n" +
+	"\x15com.sixafter.types.v1B\x13CompassHeadingProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_compass_heading_proto_rawDescOnce sync.Once

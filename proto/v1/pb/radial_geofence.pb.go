@@ -118,8 +118,8 @@ const file_proto_v1_radial_geofence_proto_rawDesc = "" +
 	"\x0eRadialGeofence\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12E\n" +
 	"\x06center\x18\x02 \x01(\v2-.sixafter.types.proto.v1.GeospatialCoordinateR\x06center\x12\x16\n" +
-	"\x06radius\x18\x03 \x01(\x01R\x06radiusB\x87\x01\n" +
-	"\x15com.sixafter.types.v1B\x13RadialGeofenceProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"\x06radius\x18\x03 \x01(\x01R\x06radiusBu\n" +
+	"\x15com.sixafter.types.v1B\x13RadialGeofenceProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_radial_geofence_proto_rawDescOnce sync.Once
