@@ -26,8 +26,10 @@ fi
 command -v buf >/dev/null 2>&1 || { echo "[ERROR] buf not found in PATH"; exit 1; }
 [[ -f buf.yaml ]] || { echo "[ERROR] buf.yaml not found in current directory: $(pwd)"; exit 1; }
 
-echo "[INFO] Running: proto format -w (scoped to proto/v1)"
-(
-  cd proto/v1
+if [[ "${CHECK:-}" == "true" ]]; then
+  echo "[INFO] Running: proto format check"
+  buf format -d --exit-code
+else
+  echo "[INFO] Running: proto format -w"
   buf format -w
-)
+fi

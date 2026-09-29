@@ -19,202 +19,17 @@ syntax = "proto3";
 
 package sixafter.types.proto.v1;
 
-option cc_enable_arenas = true;
-option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
+option csharp_namespace = "SixAfter.Types.V1";
 option go_package = "github.com/sixafter/types/proto/v1/pb;types";
 option java_multiple_files = true;
 option java_outer_classname = "GeometryProto";
 option java_package = "com.sixafter.types.v1";
 option objc_class_prefix = "TPB";
 
-// The following are example messages representing geometric entities in various mathematical spaces.
-// Geometry Types:
-// - Euclidean geometry.
-// - Hyperbolic geometry.
-// - Elliptic geometry.
-// - Projective geometry.
-// - Affine geometry.
-// - Fractal geometry.
-// - Discrete geometry.
-
-// Coordinate Systems:
-// - Cartesian coordinate system.
-// - Polar coordinate system.
-// - Cylindrical coordinate system.
-// - Spherical coordinate system.
-// - Poincaré disk model.
-// - Upper half-plane model.
-// - Hyperboloid model.
-// - Klein disk model.
-// - Homogeneous coordinate system.
-
-// Example 1: Euclidean Geometry with Cartesian Coordinates
-// A point at (10, 20) in a 2D Cartesian plane under Euclidean geometry.
-// {
-//   geometry_type: {
-//     name: "Euclidean"
-//   },
-//   coordinate_system: {
-//     name: "Cartesian",
-//     parameters: {
-//       dimensionality: "2"
-//     }
-//   },
-//   values: [
-//     { unscaled_value: 10, scale: 0 }, // x = 10
-//     { unscaled_value: 20, scale: 0 }  // y = 20
-//   ]
-// }
-
-// Example 2: Euclidean Geometry with Polar Coordinates
-// A point at radius 50.0 meters and angle 3.14 radians in a polar coordinate system under Euclidean geometry.
-// {
-//   geometry_type: {
-//     name: "Euclidean"
-//   },
-//   coordinate_system: {
-//     name: "Polar",
-//     parameters: {
-//       radius_unit: "meters"
-//     }
-//   },
-//   values: [
-//     { unscaled_value: 500, scale: 1 }, // Radius = 50.0
-//     { unscaled_value: 314, scale: 2 }  // Angle = 3.14 radians
-//   ]
-// }
-
-// Example 3: Hyperbolic Geometry with Poincaré Disk Model
-// A point in the Poincaré disk model at (0.707, 0.707) under Hyperbolic geometry.
-// {
-//   geometry_type: {
-//     name: "Hyperbolic"
-//   },
-//   coordinate_system: {
-//     name: "Poincaré Disk",
-//     parameters: {
-//       dimensionality: "2",
-//       disk_radius: "1.0"
-//     }
-//   },
-//   values: [
-//     { unscaled_value: 707, scale: 3 }, // x = 0.707
-//     { unscaled_value: 707, scale: 3 }  // y = 0.707
-//   ]
-// }
-
-// Example 4: Hyperbolic Geometry with Upper Half-Plane Model
-// A point at (10, 20) in the upper half-plane under Hyperbolic geometry.
-// {
-//   geometry_type: {
-//     name: "Hyperbolic"
-//   },
-//   coordinate_system: {
-//     name: "Upper Half-Plane",
-//     parameters: {
-//       dimensionality: "2"
-//     }
-//   },
-//   values: [
-//     { unscaled_value: 10, scale: 0 },  // x = 10
-//     { unscaled_value: 20, scale: 0 }   // y = 20
-//   ]
-// }
-
-// Example 5: Elliptic Geometry with Spherical Coordinates
-// A point at the North Pole (90° latitude, 0° longitude) under Elliptic geometry.
-// {
-//   geometry_type: {
-//     name: "Elliptic"
-//   },
-//   coordinate_system: {
-//     name: "Spherical",
-//     parameters: {
-//       radius: "6371", // Earth's radius in kilometers
-//       angle_unit: "degrees"
-//     }
-//   },
-//   values: [
-//     { unscaled_value: 90, scale: 0 },  // Latitude = 90 degrees
-//     { unscaled_value: 0, scale: 0 },   // Longitude = 0 degrees
-//     { unscaled_value: 6371000, scale: 3 } // Radius = 6371.000 km
-//   ]
-// }
-
-// Example 6: Projective Geometry with Homogeneous Coordinates
-// A point at (2, 4, 1) in a homogeneous coordinate system under Projective geometry.
-// {
-//   geometry_type: {
-//     name: "Projective"
-//   },
-//   coordinate_system: {
-//     name: "Homogeneous",
-//     parameters: {
-//       dimensionality: "3"
-//     }
-//   },
-//   values: [
-//     { unscaled_value: 2, scale: 0 },  // x = 2
-//     { unscaled_value: 4, scale: 0 },  // y = 4
-//     { unscaled_value: 1, scale: 0 }   // w = 1
-//   ]
-// }
-
-// Example 7: Affine Geometry with Cartesian Coordinates
-// A point at (5, 10, 15) in a 3D Cartesian coordinate system under Affine geometry.
-// {
-//   geometry_type: {
-//     name: "Affine"
-//   },
-//   coordinate_system: {
-//     name: "Cartesian",
-//     parameters: {
-//       dimensionality: "3"
-//     }
-//   },
-//   values: [
-//     { unscaled_value: 5, scale: 0 },  // x = 5
-//     { unscaled_value: 10, scale: 0 }, // y = 10
-//     { unscaled_value: 15, scale: 0 }  // z = 15
-//   ]
-// }
-
-// Example 8: Fractal Geometry with Cartesian Coordinates
-// A point in 2D Cartesian coordinates under Fractal geometry, potentially used for plotting Mandelbrot or Julia sets.
-// {
-//   geometry_type: {
-//     name: "Fractal"
-//   },
-//   coordinate_system: {
-//     name: "Cartesian",
-//     parameters: {
-//       dimensionality: "2"
-//     }
-//   },
-//   values: [
-//     { unscaled_value: 123, scale: 2 },  // x = 1.23
-//     { unscaled_value: 456, scale: 2 }   // y = 4.56
-//   ]
-// }
-
-// Example 9: Discrete Geometry with Cartesian Coordinates
-// A point at (10, 20) in a discrete Cartesian grid with unit step size.
-// {
-//   geometry_type: {
-//     name: "Discrete"
-//   },
-//   coordinate_system: {
-//     name: "Cartesian",
-//     parameters: {
-//       dimensionality: "2",
-//       grid_size: "1"
-//     }
-//   },
-//   values: [
-//     { unscaled_value: 10, scale: 0 },  // x = 10
-//     { unscaled_value: 20, scale: 0 }   // y = 20
-//   ]
-// }
+// Geometric shapes in Euclidean and non-Euclidean spaces.
+//
+// Every shape carries a `Space` that determines how its coordinate values are
+// interpreted. Coordinates within a shape carry only values.
 
 // Represents a scalar number using an unscaled integer value and a scale.
 // The actual value is computed as:
@@ -231,87 +46,185 @@ message Scalar {
   uint32 scale = 2;
 }
 
-// Represents a coordinate system used to interpret geometric entities.
-// Example: Cartesian, Polar, Spherical, Homogeneous.
-message CoordinateSystem {
-  // The name of the coordinate system (e.g., Cartesian, Polar).
-  string name = 1;
+// The geometry of a space.
+enum GeometryType {
+  // Not specified. A shape with this value is invalid.
+  GEOMETRY_TYPE_UNSPECIFIED = 0;
 
-  // Optional parameters defining the coordinate system (e.g., dimensionality, radius for polar systems).
-  map<string, string> parameters = 2;
+  // Flat space with distance and angle.
+  GEOMETRY_TYPE_EUCLIDEAN = 1;
+
+  // Flat space that preserves parallelism and ratios along a line,
+  // but has no distance or angle.
+  GEOMETRY_TYPE_AFFINE = 2;
+
+  // Space that includes points at infinity. Uses homogeneous coordinates.
+  GEOMETRY_TYPE_PROJECTIVE = 3;
+
+  // Constant negative curvature. See `Space.radius`.
+  GEOMETRY_TYPE_HYPERBOLIC = 4;
+
+  // Constant positive curvature, e.g. the surface of a sphere. See `Space.radius`.
+  GEOMETRY_TYPE_ELLIPTIC = 5;
+
+  // Euclidean space whose shapes approximate self-similar sets,
+  // e.g. the sampled vertices of a Koch curve.
+  GEOMETRY_TYPE_FRACTAL = 6;
+
+  // Integer lattice. Every coordinate value is an integer multiple of
+  // `Space.grid_spacing`.
+  GEOMETRY_TYPE_DISCRETE = 7;
 }
 
-// Represents the geometry type, abstracting the mathematical space.
-// Example: Euclidean, Hyperbolic, Elliptic.
-message GeometryType {
-  // The name of the geometry type (e.g., Euclidean, Hyperbolic).
-  string name = 1;
+// How coordinate values map to positions in a space.
+enum CoordinateSystem {
+  // Not specified. A shape with this value is invalid.
+  COORDINATE_SYSTEM_UNSPECIFIED = 0;
 
-  // Optional parameters for the geometry (e.g., curvature, dimensionality).
-  map<string, string> parameters = 2;
+  // (x, y, ...).
+  COORDINATE_SYSTEM_CARTESIAN = 1;
+
+  // 2D (r, θ).
+  COORDINATE_SYSTEM_POLAR = 2;
+
+  // 3D (r, θ, z).
+  COORDINATE_SYSTEM_CYLINDRICAL = 3;
+
+  // 3D (r, θ, φ) per ISO 80000-2: θ is the polar angle from +z,
+  // φ is the azimuth.
+  COORDINATE_SYSTEM_SPHERICAL = 4;
+
+  // n + 1 values (x, y, ..., w). Finite points have w ≠ 0.
+  COORDINATE_SYSTEM_HOMOGENEOUS = 5;
+
+  // Hyperbolic model. Points lie inside the unit ball.
+  COORDINATE_SYSTEM_POINCARE_DISK = 6;
+
+  // Hyperbolic model. The last value is > 0.
+  COORDINATE_SYSTEM_UPPER_HALF_PLANE = 7;
+
+  // Hyperbolic model. Points lie inside the unit ball; geodesics are straight chords.
+  COORDINATE_SYSTEM_KLEIN_DISK = 8;
+
+  // Hyperbolic model. n + 1 values on the upper sheet x₀² − x₁² − ... − xₙ² = 1.
+  COORDINATE_SYSTEM_HYPERBOLOID = 9;
 }
 
-// Represents a coordinate in an n-dimensional space.
-// The coordinate is defined within a specified geometry and coordinate system,
-// using fixed-point numbers for precision.
+// Unit for angular coordinate values.
+enum AngleUnit {
+  // Not specified. Treated as radians.
+  ANGLE_UNIT_UNSPECIFIED = 0;
+
+  // Radians.
+  ANGLE_UNIT_RADIANS = 1;
+
+  // Degrees.
+  ANGLE_UNIT_DEGREES = 2;
+}
+
+// The space in which a shape's coordinates are expressed. Segments between
+// vertices follow the space's geodesics (straight lines in flat space,
+// great-circle arcs in elliptic space).
 //
-// Examples:
-// - A 2D Cartesian coordinate (3.5, -2.1) in Euclidean geometry:
-//     geometry_type = EUCLIDEAN
-//     coordinate_system = EUCLIDEAN_CARTESIAN
-//     values = [{unscaled_value: 35, scale: 1}, {unscaled_value: -21, scale: 1}]
+// Example: the surface of the Earth as a sphere, in degrees.
+//     geometry_type = GEOMETRY_TYPE_ELLIPTIC
+//     coordinate_system = COORDINATE_SYSTEM_SPHERICAL
+//     dimension = 2
+//     angle_unit = ANGLE_UNIT_DEGREES
+//     radius = {unscaled_value: 6371, scale: 0}
+message Space {
+  // The geometry of the space.
+  GeometryType geometry_type = 1;
+
+  // The coordinate system used to express positions in the space.
+  CoordinateSystem coordinate_system = 2;
+
+  // Number of dimensions n. Each `Coordinate` has exactly n values, or n + 1 for
+  // `COORDINATE_SYSTEM_HOMOGENEOUS` and `COORDINATE_SYSTEM_HYPERBOLOID`.
+  uint32 dimension = 3;
+
+  // Unit for angular values in POLAR, CYLINDRICAL, and SPHERICAL. Ignored otherwise.
+  AngleUnit angle_unit = 4;
+
+  // Radius of curvature R for HYPERBOLIC (K = −1/R²) and ELLIPTIC (K = 1/R²).
+  // Unset means R = 1. Ignored otherwise.
+  // Example: 6371 for the Earth in kilometers.
+  Scalar radius = 5;
+
+  // Lattice spacing for DISCRETE. Unset means 1. Ignored otherwise.
+  Scalar grid_spacing = 6;
+}
+
+// A position in a `Space`.
 message Coordinate {
-  // The n-dimensional coordinate values.
+  // The coordinate values, in the order defined by the space's coordinate system.
   repeated Scalar values = 1;
-
-  // The geometry type (e.g., Euclidean, Hyperbolic).
-  GeometryType geometry_type = 2;
-
-  // The coordinate system (e.g., Cartesian, Polar).
-  CoordinateSystem coordinate_system = 3;
 }
 
-// Represents a point in a mathematical space.
+// A single position.
 //
-// Examples:
-// - A point in 3D Euclidean space:
-//     position.geometry_type = EUCLIDEAN
-//     position.coordinate_system = EUCLIDEAN_CARTESIAN
-//     position.values = [{unscaled_value: 10, scale: 0}, {unscaled_value: 0, scale: 0}, {unscaled_value: -5, scale: 0}]
+// Example: (10, 20) in the 2D Euclidean plane.
+//     space = {geometry_type: GEOMETRY_TYPE_EUCLIDEAN, coordinate_system: COORDINATE_SYSTEM_CARTESIAN, dimension: 2}
+//     position.values = [{unscaled_value: 10}, {unscaled_value: 20}]
 message Point {
-  // The coordinate defining the position of the point.
-  Coordinate position = 1;
+  // The space in which `position` is expressed.
+  Space space = 1;
+
+  // The position of the point.
+  Coordinate position = 2;
 }
 
-// Represents a line or geodesic in a mathematical space.
+// The geodesic segment between two positions.
 //
-// Examples:
-// - A line between two points in 2D Cartesian space:
-//     start.position.values = [{unscaled_value: 0, scale: 0}, {unscaled_value: 0, scale: 0}]
-//     end.position.values = [{unscaled_value: 10, scale: 0}, {unscaled_value: 10, scale: 0}]
-message Line {
-  // The starting point of the line.
-  Point start = 1;
+// Example: from (0, 0) to (10, 10) in the 2D Euclidean plane.
+//     space = {geometry_type: GEOMETRY_TYPE_EUCLIDEAN, coordinate_system: COORDINATE_SYSTEM_CARTESIAN, dimension: 2}
+//     start.values = [{unscaled_value: 0}, {unscaled_value: 0}]
+//     end.values = [{unscaled_value: 10}, {unscaled_value: 10}]
+message LineSegment {
+  // The space in which `start` and `end` are expressed.
+  Space space = 1;
 
-  // The ending point of the line.
-  Point end = 2;
+  // The starting position.
+  Coordinate start = 2;
+
+  // The ending position.
+  Coordinate end = 3;
 }
 
-// Represents a polygon in a mathematical space.
-// A polygon is defined by a series of vertices, and it may or may not be closed.
+// An open sequence of connected geodesic segments. At least 2 vertices.
 //
-// Examples:
-// - A triangle in 2D Cartesian space:
+// Example: a path in the Poincaré disk model of the hyperbolic plane.
+//     space = {geometry_type: GEOMETRY_TYPE_HYPERBOLIC, coordinate_system: COORDINATE_SYSTEM_POINCARE_DISK, dimension: 2}
 //     vertices = [
-//         {position.values = [{unscaled_value: 0, scale: 0}, {unscaled_value: 0, scale: 0}]},
-//         {position.values = [{unscaled_value: 10, scale: 0}, {unscaled_value: 0, scale: 0}]},
-//         {position.values = [{unscaled_value: 5, scale: 0}, {unscaled_value: 10, scale: 0}]}
+//         {values: [{unscaled_value: 0}, {unscaled_value: 0}]},
+//         {values: [{unscaled_value: 5, scale: 1}, {unscaled_value: 0}]},
+//         {values: [{unscaled_value: 5, scale: 1}, {unscaled_value: 5, scale: 1}]}
 //     ]
-//     is_closed = true
-message Polygon {
-  // The vertices of the polygon.
-  repeated Point vertices = 1;
+message Polyline {
+  // The space in which `vertices` are expressed.
+  Space space = 1;
 
-  // True if the polygon is explicitly closed.
-  bool is_closed = 2;
+  // The vertices, in order of travel.
+  repeated Coordinate vertices = 2;
+}
+
+// A closed region bounded by geodesic segments. At least 3 vertices.
+// The last vertex connects to the first; the first vertex MUST NOT be repeated.
+// In 2D spaces, vertices are ordered counter-clockwise, so the interior lies to
+// the left of the direction of travel. This also selects the interior on the
+// surface of an ELLIPTIC space.
+//
+// Example: a triangle in the 2D Euclidean plane.
+//     space = {geometry_type: GEOMETRY_TYPE_EUCLIDEAN, coordinate_system: COORDINATE_SYSTEM_CARTESIAN, dimension: 2}
+//     vertices = [
+//         {values: [{unscaled_value: 0}, {unscaled_value: 0}]},
+//         {values: [{unscaled_value: 10}, {unscaled_value: 0}]},
+//         {values: [{unscaled_value: 5}, {unscaled_value: 10}]}
+//     ]
+message Polygon {
+  // The space in which `vertices` are expressed.
+  Space space = 1;
+
+  // The vertices, counter-clockwise in 2D spaces.
+  repeated Coordinate vertices = 2;
 }

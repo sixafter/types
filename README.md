@@ -29,10 +29,10 @@ This module is a set of common types expressed as [Google Protocol Buffers](http
 To verify the integrity of the `types` source, run the following commands:
 
 ```sh
-# Fetch the latest release tag from GitHub API (e.g., "v1.60.2")
+# Fetch the latest release tag from GitHub API (e.g., "v1.61.0")
 TAG=$(curl -s https://api.github.com/repos/sixafter/types/releases/latest | jq -r .tag_name)
 
-# Remove the leading "v" for filenames (e.g., "v1.60.2" -> "1.60.2")
+# Remove the leading "v" for filenames (e.g., "v1.61.0" -> "1.61.0")
 VERSION=${TAG#v}
 
 # ---------------------------------------------------------------------
@@ -66,7 +66,7 @@ cosign verify-blob \
 # Confirm local artifact integrity
 # ---------------------------------------------------------------------
 
-shasum -a 256 -c checksups.txt
+shasum -a 256 -c checksums.txt
 
 ```
 

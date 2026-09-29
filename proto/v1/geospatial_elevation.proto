@@ -19,8 +19,7 @@ syntax = "proto3";
 
 package sixafter.types.proto.v1;
 
-option cc_enable_arenas = true;
-option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
+option csharp_namespace = "SixAfter.Types.V1";
 option go_package = "github.com/sixafter/types/proto/v1/pb;types";
 option java_multiple_files = true;
 option java_outer_classname = "GeospatialElevationProto";

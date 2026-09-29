@@ -19,8 +19,7 @@ syntax = "proto3";
 
 package sixafter.types.proto.v1;
 
-option cc_enable_arenas = true;
-option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
+option csharp_namespace = "SixAfter.Types.V1";
 option go_package = "github.com/sixafter/types/proto/v1/pb;types";
 option java_multiple_files = true;
 option java_outer_classname = "CountryProto";
@@ -51,6 +50,8 @@ message Country {
   // The ISO 3166-1 numeric code for the country.
   // This is a three-digit code that is language-neutral and often used in databases or systems
   // where numeric identifiers are preferred.
+  // Codes below 100 have leading zeros that this integer field does not keep;
+  // format the value as three digits when displaying it.
   // Example: 840 for the United States.
   uint32 numeric_code = 5;
 }

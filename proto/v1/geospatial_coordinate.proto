@@ -21,8 +21,7 @@ package sixafter.types.proto.v1;
 
 import "proto/v1/geospatial_elevation.proto";
 
-option cc_enable_arenas = true;
-option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
+option csharp_namespace = "SixAfter.Types.V1";
 option go_package = "github.com/sixafter/types/proto/v1/pb;types";
 option java_multiple_files = true;
 option java_outer_classname = "GeospatialCoordinateProto";
@@ -48,5 +47,6 @@ message GeospatialCoordinate {
   // The elevation of the geospatial coordinate relative to sea level.
   // This includes additional geospatial information such as altitude or height.
   // Example: Elevation of 212 meters for Westlake, Texas.
+  // Unset means the elevation is unknown; a set elevation with an altitude of 0 is at the datum.
   proto.v1.GeospatialElevation elevation = 3;
 }

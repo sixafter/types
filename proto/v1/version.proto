@@ -19,8 +19,7 @@ syntax = "proto3";
 
 package sixafter.types.proto.v1;
 
-option cc_enable_arenas = true;
-option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
+option csharp_namespace = "SixAfter.Types.V1";
 option go_package = "github.com/sixafter/types/proto/v1/pb;types";
 option java_multiple_files = true;
 option java_outer_classname = "VersionProto";
@@ -64,7 +63,7 @@ message Version {
   // A pre-release version indicates that the version is unstable and might not satisfy
   // the intended compatibility requirements as denoted by its associated normal version.
   //
-  // Examples: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92, 1.0.0-x-y-z.–.
+  // Examples: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92, 1.0.0-x-y-z.--.
   string prerelease = 4;
 
   // The build metadata identifier.
@@ -78,6 +77,6 @@ message Version {
   // versions that differ only in the build metadata, have the same precedence.
   //
   // Examples: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85,
-  // 1.0.0+21AF26D3—-117B344092BD.
+  // 1.0.0+21AF26D3----117B344092BD.
   string build_metadata = 5;
 }

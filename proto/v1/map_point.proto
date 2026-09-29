@@ -21,8 +21,7 @@ package sixafter.types.proto.v1;
 
 import "proto/v1/geospatial_coordinate.proto";
 
-option cc_enable_arenas = true;
-option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
+option csharp_namespace = "SixAfter.Types.V1";
 option go_package = "github.com/sixafter/types/proto/v1/pb;types";
 option java_multiple_files = true;
 option java_outer_classname = "MapPointProto";
@@ -36,16 +35,17 @@ message MapPoint {
   // The x-coordinate of the map point.
   // Represents the horizontal position on the two-dimensional map.
   // Example: A value of 200.5 could represent a position on a Mercator projection.
-  float x = 1;
+  double x = 1;
 
   // The y-coordinate of the map point.
   // Represents the vertical position on the two-dimensional map.
   // Example: A value of 150.2 could represent a position on a Mercator projection.
-  float y = 2;
+  double y = 2;
 
   // The geospatial coordinate that corresponds to the map point.
   // Provides the latitude, longitude, and elevation information for the point.
   // Example: A map point with `x=200.5` and `y=150.2` could correspond to
   // `latitude=32.9829` and `longitude=-97.1876` for Westlake, Texas.
+  // Unset means the corresponding geospatial coordinate is unknown.
   proto.v1.GeospatialCoordinate coordinate = 3;
 }

@@ -105,7 +105,7 @@ signature-verify: ## Verify latest release's digital signatures
 # Protobuf Operations
 # ---------------------------------------------------------------------------
 .PHONY: proto-format
-proto-format: ## buf format -w (writes canonical formatting)
+proto-format: ## buf format -w (writes canonical formatting); CHECK=true reports diffs and fails instead
 	@sbin/proto-format.sh
 
 .PHONY: proto-lint

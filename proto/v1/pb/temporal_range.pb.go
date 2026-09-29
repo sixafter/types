@@ -110,8 +110,8 @@ const file_proto_v1_temporal_range_proto_rawDesc = "" +
 	"\x1dproto/v1/temporal_range.proto\x12\x17sixafter.types.proto.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"x\n" +
 	"\rTemporalRange\x120\n" +
 	"\x05epoch\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\x05epoch\x125\n" +
-	"\bduration\x18\x02 \x01(\v2\x19.google.protobuf.DurationR\bdurationB\x86\x01\n" +
-	"\x15com.sixafter.types.v1B\x12TemporalRangeProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"\bduration\x18\x02 \x01(\v2\x19.google.protobuf.DurationR\bdurationBt\n" +
+	"\x15com.sixafter.types.v1B\x12TemporalRangeProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_temporal_range_proto_rawDescOnce sync.Once

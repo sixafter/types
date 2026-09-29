@@ -19,32 +19,29 @@ syntax = "proto3";
 
 package sixafter.types.proto.v1;
 
-import "google/api/field_info.proto";
-
-option cc_enable_arenas = true;
-option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
+option csharp_namespace = "SixAfter.Types.V1";
 option go_package = "github.com/sixafter/types/proto/v1/pb;types";
 option java_multiple_files = true;
 option java_outer_classname = "UuidProto";
 option java_package = "com.sixafter.types.v1";
 option objc_class_prefix = "TPB";
 
-// UUID represents a Universally Unique Identifier (UUID/GUID) according to RFC 4122.
-// The value field MUST be exactly 16 bytes in length (128 bits).
+// UUID represents a Universally Unique Identifier (UUID) as defined by
+// [RFC 9562: Universally Unique IDentifiers (UUIDs)](https://www.rfc-editor.org/rfc/rfc9562).
 //
 // This message provides an efficient and canonical binary representation for UUIDs
-// in Protobuf. The 16-byte value corresponds to the standard RFC 4122 byte layout
+// in Protobuf. The 16-byte value uses the RFC 9562 binary layout (network byte order)
 // and is directly compatible with native UUID/GUID types in most languages.
 //
-// Note: The Protobuf schema cannot enforce the 16-byte length constraint;
-// validation must be performed in application code or by a validation framework.
+// Note: The Protobuf schema cannot enforce these constraints; validation must be
+// performed in application code or by a validation framework.
 message UUID {
   // The 128-bit (16 byte) UUID value.
   //
-  // MUST be exactly 16 bytes.
-  // The value should follow the canonical RFC 4122 binary encoding.
-  // If the value is not 16 bytes, the message is considered invalid.
-  // See AIP-148 Standard Fields: https://google.aip.dev/148
-  // See AIP-202 Fields: https://google.aip.dev/202
-  bytes value = 1 [(google.api.field_info).format = UUID4];
+  // MUST be exactly 16 bytes in the RFC 9562 binary layout.
+  // MUST be an RFC 9562-compliant UUID: either a UUID with the RFC 9562 variant
+  // and a version defined by RFC 9562 (1 through 8), or the Nil or Max UUID.
+  // Any RFC 9562 version is permitted; producers are not limited to version 4.
+  // If the value does not meet these requirements, the message is invalid.
+  bytes value = 1;
 }

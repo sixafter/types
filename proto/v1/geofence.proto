@@ -21,8 +21,7 @@ package sixafter.types.proto.v1;
 
 import "proto/v1/map_polygon.proto";
 
-option cc_enable_arenas = true;
-option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
+option csharp_namespace = "SixAfter.Types.V1";
 option go_package = "github.com/sixafter/types/proto/v1/pb;types";
 option java_multiple_files = true;
 option java_outer_classname = "GeofenceProto";
@@ -41,5 +40,5 @@ message Geofence {
   // A geofence may consist of one or more polygons, where each polygon represents
   // a distinct area. The polygons can define complex, multi-vertex boundaries.
   // Example: A campus geofence with multiple disconnected zones.
-  repeated proto.v1.MapPolygon polygon = 2;
+  repeated proto.v1.MapPolygon polygons = 2;
 }

@@ -39,14 +39,15 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// The `GeospatialLocation` message represents a spatial or temporal scale,
-// combining geographical coordinates, heading, movement, and timestamp.
+// The `GeospatialLocation` message represents a location fix: a position, heading,
+// course, and speed observed at a single instant.
 // It is commonly used in location-based services, navigation systems, and
 // applications requiring geospatial data.
 type GeospatialLocation struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The geographical coordinate information of the location.
 	// Includes latitude, longitude, and elevation as defined in the `GeospatialCoordinate` message.
+	// Unset means the coordinate is unknown.
 	Coordinate *GeospatialCoordinate `protobuf:"bytes,1,opt,name=coordinate,proto3" json:"coordinate,omitempty"`
 	// The azimuth (orientation) of the device relative to true or magnetic north.
 	// Defined using the `CompassHeading` message, it represents the heading
@@ -60,10 +61,12 @@ type GeospatialLocation struct {
 	// the direction the device is moving (e.g., forward travel), independent
 	// of its physical orientation. Heading reflects the device's orientation.
 	// Example: 90° indicates the device is moving east.
+	// A negative value means the course is invalid or unknown.
 	Course float64 `protobuf:"fixed64,3,opt,name=course,proto3" json:"course,omitempty"`
 	// The instantaneous speed of the device, measured in meters per second (m/s).
 	// Example: A speed of 3.5 m/s (12.6 km/h or 7.8 mph) indicates the device
 	// is moving at a walking pace.
+	// A negative value means the speed is invalid or unknown.
 	Speed float32 `protobuf:"fixed32,4,opt,name=speed,proto3" json:"speed,omitempty"`
 	// The time at which this geospatial location data was recorded.
 	// Example: Timestamp of "2024-11-17T15:00:00Z" represents 3:00 PM UTC on November 17, 2024.
@@ -141,7 +144,7 @@ var File_proto_v1_geospatial_location_proto protoreflect.FileDescriptor
 
 const file_proto_v1_geospatial_location_proto_rawDesc = "" +
 	"\n" +
-	"\"proto/v1/geospatial_location.proto\x12\x17sixafter.types.proto.v1\x1a\x1eproto/v1/compass_heading.proto\x1a$proto/v1/geospatial_coordinate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8e\x02\n" +
+	"\"proto/v1/geospatial_location.proto\x12\x17sixafter.types.proto.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1eproto/v1/compass_heading.proto\x1a$proto/v1/geospatial_coordinate.proto\"\x8e\x02\n" +
 	"\x12GeospatialLocation\x12M\n" +
 	"\n" +
 	"coordinate\x18\x01 \x01(\v2-.sixafter.types.proto.v1.GeospatialCoordinateR\n" +
@@ -149,8 +152,8 @@ const file_proto_v1_geospatial_location_proto_rawDesc = "" +
 	"\aheading\x18\x02 \x01(\v2'.sixafter.types.proto.v1.CompassHeadingR\aheading\x12\x16\n" +
 	"\x06course\x18\x03 \x01(\x01R\x06course\x12\x14\n" +
 	"\x05speed\x18\x04 \x01(\x02R\x05speed\x128\n" +
-	"\ttimestamp\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestampB\x8b\x01\n" +
-	"\x15com.sixafter.types.v1B\x17GeospatialLocationProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"\ttimestamp\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestampBy\n" +
+	"\x15com.sixafter.types.v1B\x17GeospatialLocationProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_geospatial_location_proto_rawDescOnce sync.Once

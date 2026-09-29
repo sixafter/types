@@ -19,8 +19,7 @@ syntax = "proto3";
 
 package sixafter.types.proto.v1;
 
-option cc_enable_arenas = true;
-option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
+option csharp_namespace = "SixAfter.Types.V1";
 option go_package = "github.com/sixafter/types/proto/v1/pb;types";
 option java_multiple_files = true;
 option java_outer_classname = "EmailAddressProto";
@@ -30,6 +29,8 @@ option objc_class_prefix = "TPB";
 // The `EmailAddress` message represents an electronic mail (email) address
 // as defined by RFC 5322. It separates the email address into its two main
 // components: the local part and the domain part.
+// Split the address at the last "@": a quoted local part may itself contain "@"
+// (e.g., `"john@doe"@example.com`).
 message EmailAddress {
   // The local part of the email address.
   // This is the portion of the address before the "@" symbol.

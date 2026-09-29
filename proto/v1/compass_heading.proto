@@ -21,17 +21,17 @@ package sixafter.types.proto.v1;
 
 import "google/protobuf/timestamp.proto";
 
-option cc_enable_arenas = true;
-option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
+option csharp_namespace = "SixAfter.Types.V1";
 option go_package = "github.com/sixafter/types/proto/v1/pb;types";
 option java_multiple_files = true;
 option java_outer_classname = "CompassHeadingProto";
 option java_package = "com.sixafter.types.v1";
 option objc_class_prefix = "TPB";
 
-// The `CompassHeading` message represents the orientation of an object
-// in the Compass Geodetic System (CGS). This can be used in geolocation
-// systems, navigation tools, or applications requiring orientation data.
+// The `CompassHeading` message represents the orientation of a device relative to
+// magnetic and true north, together with the raw geomagnetic field measurements.
+// The fields correspond to Apple Core Location's `CLHeading`. This can be used in
+// geolocation systems, navigation tools, or applications requiring orientation data.
 message CompassHeading {
   // The heading (measured in degrees) relative to magnetic north.
   // Values range from 0 to 360, where 0 indicates north, 90 indicates east,
@@ -41,11 +41,13 @@ message CompassHeading {
   // The heading (measured in degrees) relative to true north.
   // This compensates for the local magnetic declination.
   // Similar to `magnetic_heading`, values range from 0 to 360.
+  // A negative value means the true heading could not be determined.
   float true_heading = 2;
 
-  // The maximum deviation (measured in degrees) between the reported heading
-  // and the true geomagnetic heading. A lower value indicates higher accuracy.
+  // The maximum deviation (measured in degrees) between the reported `magnetic_heading`
+  // and the actual direction of magnetic north. A lower value indicates higher accuracy.
   // This property is essential for assessing the reliability of the heading data.
+  // A negative value means the heading is invalid.
   float heading_accuracy = 3;
 
   // The time at which this heading measurement was taken.

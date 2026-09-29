@@ -26,8 +26,8 @@ fi
 command -v buf >/dev/null 2>&1 || { echo "[ERROR] buf not found in PATH"; exit 1; }
 [[ -f buf.yaml ]] || { echo "[ERROR] Run 'deps' make target."; exit 1; }
 
-if [[ ! -f buf.gen.doc.yaml ]]; then
-  echo "[INFO] buf.gen.doc.yaml not found; skipping generation."
+if [[ ! -f buf.gen.docs.yaml ]]; then
+  echo "[INFO] buf.gen.docs.yaml not found; skipping generation."
   exit 0
 fi
 

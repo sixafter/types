@@ -59,6 +59,8 @@ type Country struct {
 	// The ISO 3166-1 numeric code for the country.
 	// This is a three-digit code that is language-neutral and often used in databases or systems
 	// where numeric identifiers are preferred.
+	// Codes below 100 have leading zeros that this integer field does not keep;
+	// format the value as three digits when displaying it.
 	// Example: 840 for the United States.
 	NumericCode   uint32 `protobuf:"varint,5,opt,name=numeric_code,json=numericCode,proto3" json:"numeric_code,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -141,8 +143,8 @@ const file_proto_v1_country_proto_rawDesc = "" +
 	"formalName\x12*\n" +
 	"\x11alphabetic_code_2\x18\x03 \x01(\tR\x0falphabeticCode2\x12*\n" +
 	"\x11alphabetic_code_3\x18\x04 \x01(\tR\x0falphabeticCode3\x12!\n" +
-	"\fnumeric_code\x18\x05 \x01(\rR\vnumericCodeB\x80\x01\n" +
-	"\x15com.sixafter.types.v1B\fCountryProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"\fnumeric_code\x18\x05 \x01(\rR\vnumericCodeBn\n" +
+	"\x15com.sixafter.types.v1B\fCountryProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_country_proto_rawDescOnce sync.Once

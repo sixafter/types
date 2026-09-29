@@ -56,6 +56,7 @@ type GeospatialCoordinate struct {
 	// The elevation of the geospatial coordinate relative to sea level.
 	// This includes additional geospatial information such as altitude or height.
 	// Example: Elevation of 212 meters for Westlake, Texas.
+	// Unset means the elevation is unknown; a set elevation with an altitude of 0 is at the datum.
 	Elevation     *GeospatialElevation `protobuf:"bytes,3,opt,name=elevation,proto3" json:"elevation,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -120,8 +121,8 @@ const file_proto_v1_geospatial_coordinate_proto_rawDesc = "" +
 	"\x14GeospatialCoordinate\x12\x1a\n" +
 	"\blatitude\x18\x01 \x01(\x01R\blatitude\x12\x1c\n" +
 	"\tlongitude\x18\x02 \x01(\x01R\tlongitude\x12J\n" +
-	"\televation\x18\x03 \x01(\v2,.sixafter.types.proto.v1.GeospatialElevationR\televationB\x8d\x01\n" +
-	"\x15com.sixafter.types.v1B\x19GeospatialCoordinateProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"\televation\x18\x03 \x01(\v2,.sixafter.types.proto.v1.GeospatialElevationR\televationB{\n" +
+	"\x15com.sixafter.types.v1B\x19GeospatialCoordinateProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_geospatial_coordinate_proto_rawDescOnce sync.Once

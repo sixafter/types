@@ -112,6 +112,47 @@ func TestUUIDHelpers_ValidateUUID(t *testing.T) {
 	is.Error(ValidateUUID(long))
 }
 
+func TestUUIDHelpers_ValidateUUID_RFC9562(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name  string
+		value string
+		valid bool
+	}{
+		{"nil", "00000000-0000-0000-0000-000000000000", true},
+		{"max", "ffffffff-ffff-ffff-ffff-ffffffffffff", true},
+		{"v1", "f81d4fae-7dec-11d0-a765-00a0c91e6bf6", true},
+		{"v4", "2b7e1516-28ae-4c98-8c3d-9b1636b6033c", true},
+		{"v7", "017f22e2-79b0-7cc3-98c4-dc0c0c07398f", true},
+		{"v8", "2489e9ad-2ee2-8e00-8ec9-32d5f69181c0", true},
+		{"version 0", "2b7e1516-28ae-0c98-8c3d-9b1636b6033c", false},
+		{"version 9", "2b7e1516-28ae-9c98-8c3d-9b1636b6033c", false},
+		{"version 15", "12345678-1234-f234-c234-123456789abc", false},
+		{"variant NCS", "2b7e1516-28ae-4c98-0c3d-9b1636b6033c", false},
+		{"variant Microsoft", "2b7e1516-28ae-4c98-cc3d-9b1636b6033c", false},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+			is := assert.New(t)
+
+			msg, err := StringToProto(tt.value)
+			is.NoError(err, "conversion helpers do not check variant or version")
+
+			_, err = ProtoToString(msg)
+			is.NoError(err, "conversion helpers do not check variant or version")
+
+			if tt.valid {
+				is.NoError(ValidateUUID(msg))
+			} else {
+				is.Error(ValidateUUID(msg))
+			}
+		})
+	}
+}
+
 // --- JSON Tests ---
 
 func TestUUID_JSON_MarshalUnmarshal(t *testing.T) {
@@ -147,6 +188,24 @@ func TestUUID_JSON_EmptyAndInvalid(t *testing.T) {
 
 	// Invalid UUID string
 	err = json.Unmarshal([]byte(`"not-a-uuid"`), &m)
+	is.Error(err)
+}
+
+func TestUUID_JSON_MarshalEmptyAndInvalid(t *testing.T) {
+	is := assert.New(t)
+
+	// Empty Value round-trips as ""
+	b, err := json.Marshal(&UUID{})
+	is.NoError(err)
+	is.Equal(`""`, string(b))
+
+	var decoded UUID
+	err = json.Unmarshal(b, &decoded)
+	is.NoError(err)
+	is.Nil(decoded.Value)
+
+	// Non-empty Value of the wrong length
+	_, err = json.Marshal(&UUID{Value: []byte{1, 2, 3}})
 	is.Error(err)
 }
 

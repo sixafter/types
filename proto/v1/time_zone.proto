@@ -19,10 +19,10 @@ syntax = "proto3";
 
 package sixafter.types.proto.v1;
 
+import "google/protobuf/duration.proto";
 import "proto/v1/geospatial_coordinate.proto";
 
-option cc_enable_arenas = true;
-option csharp_namespace = "SixAfter.Types.V1.WellKnownTypes";
+option csharp_namespace = "SixAfter.Types.V1";
 option go_package = "github.com/sixafter/types/proto/v1/pb;types";
 option java_multiple_files = true;
 option java_outer_classname = "TimeZoneProto";
@@ -31,38 +31,39 @@ option objc_class_prefix = "TPB";
 
 // The `TimeZone` message represents a time zone, which is an area
 // observing a uniform standard time for legal, commercial, and social purposes.
+//
+// `name` identifies the zone. `utc_offset`, `abbreviation`, and `daylight_saving`
+// describe the zone as it was in effect at a specific instant, normally the
+// timestamp of the record that contains this message. To compute the offset for
+// any other instant, look up `name` in the IANA Time Zone Database.
 message TimeZone {
-  // The `TimeOffset` message represents a time offset from Coordinated
-  // Universal Time (UTC) in terms of hours and minutes.
-  message TimeOffset {
-    // The offset from UTC in whole hours.
-    // Example: -5 for UTC-5 (Eastern Standard Time).
-    int32 hours = 1;
-
-    // The additional offset from UTC in minutes.
-    // Example: 30 for UTC+5:30 (India Standard Time).
-    int32 minutes = 2;
-  }
-
-  // The name of the time zone.
+  // The IANA Time Zone Database identifier of the time zone.
   // Example: "America/New_York".
   string name = 1;
 
-  // The common abbreviation for the time zone.
-  // Example: "EST" for Eastern Standard Time or "EDT" for Eastern Daylight Time.
+  // The abbreviation in effect.
+  // Abbreviations are for display only: they are not unique ("CST" is used in the
+  // United States, China, and Cuba) and may be numeric (e.g., "-03").
+  // Example: "EDT" for "America/New_York" during daylight saving time.
   string abbreviation = 2;
 
-  // The Standard Time (STD) offset from UTC, in hours and minutes.
-  // This represents the time zone's offset when daylight saving time is not in effect.
-  // Example: For "America/New_York", the standard time offset is UTC-5.
-  TimeOffset utc_offset_std = 3;
+  // The offset from UTC in effect.
+  // The offset is positive east of UTC and negative west of UTC, and its sign applies
+  // to the whole value, as in ISO 8601.
+  // Example: -14400s (UTC-04:00) for "America/New_York" during daylight saving time;
+  // -12600s (UTC-03:30) for "America/St_Johns" during standard time; 19800s
+  // (UTC+05:30) for "Asia/Kolkata".
+  // Unset means the offset is unknown; a set offset of 0 is UTC.
+  google.protobuf.Duration utc_offset = 3;
 
-  // The Daylight Saving Time (DST) offset from UTC, in hours and minutes.
-  // This represents the time zone's offset when daylight saving time is in effect.
-  // Example: For "America/New_York", the daylight saving time offset is UTC-4.
-  TimeOffset utc_offset_dst = 4;
+  // True if daylight saving time is in effect.
+  bool daylight_saving = 4;
 
-  // The geographic coordinates of the time zone's central point.
-  // This is commonly used to determine the time zone based on location.
+  // The location of the time zone's principal city, as listed in the IANA Time Zone
+  // Database file zone1970.tab.
+  // Example: Manhattan (40.7142, -74.0064) for "America/New_York".
+  // This is a representative location, not a geometric center, and it is not
+  // sufficient to determine a location's time zone; that requires zone boundaries.
+  // Unset means the central coordinate is unknown.
   proto.v1.GeospatialCoordinate central_coordinate = 5;
 }

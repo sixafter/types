@@ -58,7 +58,7 @@ type Language struct {
 	// Examples: "eng" (English), "srp" (Serbian), "zho" (Chinese), "yue" (Cantonese).
 	AlphabeticCode_3 string `protobuf:"bytes,3,opt,name=alphabetic_code_3,json=alphabeticCode3,proto3" json:"alphabetic_code_3,omitempty"`
 	// BCP 47 tags for locale-specific variants of the language.
-	Bcp47Tag      []*Language_Bcp47Tag `protobuf:"bytes,4,rep,name=bcp47_tag,json=bcp47Tag,proto3" json:"bcp47_tag,omitempty"`
+	Bcp47Tags     []*Language_Bcp47Tag `protobuf:"bytes,4,rep,name=bcp47_tags,json=bcp47Tags,proto3" json:"bcp47_tags,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -114,9 +114,9 @@ func (x *Language) GetAlphabeticCode_3() string {
 	return ""
 }
 
-func (x *Language) GetBcp47Tag() []*Language_Bcp47Tag {
+func (x *Language) GetBcp47Tags() []*Language_Bcp47Tag {
 	if x != nil {
-		return x.Bcp47Tag
+		return x.Bcp47Tags
 	}
 	return nil
 }
@@ -182,16 +182,17 @@ var File_proto_v1_language_proto protoreflect.FileDescriptor
 
 const file_proto_v1_language_proto_rawDesc = "" +
 	"\n" +
-	"\x17proto/v1/language.proto\x12\x17sixafter.types.proto.v1\"\x80\x02\n" +
+	"\x17proto/v1/language.proto\x12\x17sixafter.types.proto.v1\"\x82\x02\n" +
 	"\bLanguage\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12*\n" +
 	"\x11alphabetic_code_2\x18\x02 \x01(\tR\x0falphabeticCode2\x12*\n" +
-	"\x11alphabetic_code_3\x18\x03 \x01(\tR\x0falphabeticCode3\x12G\n" +
-	"\tbcp47_tag\x18\x04 \x03(\v2*.sixafter.types.proto.v1.Language.Bcp47TagR\bbcp47Tag\x1a?\n" +
+	"\x11alphabetic_code_3\x18\x03 \x01(\tR\x0falphabeticCode3\x12I\n" +
+	"\n" +
+	"bcp47_tags\x18\x04 \x03(\v2*.sixafter.types.proto.v1.Language.Bcp47TagR\tbcp47Tags\x1a?\n" +
 	"\bBcp47Tag\x12\x10\n" +
 	"\x03tag\x18\x01 \x01(\tR\x03tag\x12!\n" +
-	"\fdisplay_name\x18\x02 \x01(\tR\vdisplayNameB\x81\x01\n" +
-	"\x15com.sixafter.types.v1B\rLanguageProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"\fdisplay_name\x18\x02 \x01(\tR\vdisplayNameBo\n" +
+	"\x15com.sixafter.types.v1B\rLanguageProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_language_proto_rawDescOnce sync.Once
@@ -211,7 +212,7 @@ var file_proto_v1_language_proto_goTypes = []any{
 	(*Language_Bcp47Tag)(nil), // 1: sixafter.types.proto.v1.Language.Bcp47Tag
 }
 var file_proto_v1_language_proto_depIdxs = []int32{
-	1, // 0: sixafter.types.proto.v1.Language.bcp47_tag:type_name -> sixafter.types.proto.v1.Language.Bcp47Tag
+	1, // 0: sixafter.types.proto.v1.Language.bcp47_tags:type_name -> sixafter.types.proto.v1.Language.Bcp47Tag
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

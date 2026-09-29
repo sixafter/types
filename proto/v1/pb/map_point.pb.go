@@ -46,15 +46,16 @@ type MapPoint struct {
 	// The x-coordinate of the map point.
 	// Represents the horizontal position on the two-dimensional map.
 	// Example: A value of 200.5 could represent a position on a Mercator projection.
-	X float32 `protobuf:"fixed32,1,opt,name=x,proto3" json:"x,omitempty"`
+	X float64 `protobuf:"fixed64,1,opt,name=x,proto3" json:"x,omitempty"`
 	// The y-coordinate of the map point.
 	// Represents the vertical position on the two-dimensional map.
 	// Example: A value of 150.2 could represent a position on a Mercator projection.
-	Y float32 `protobuf:"fixed32,2,opt,name=y,proto3" json:"y,omitempty"`
+	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty"`
 	// The geospatial coordinate that corresponds to the map point.
 	// Provides the latitude, longitude, and elevation information for the point.
 	// Example: A map point with `x=200.5` and `y=150.2` could correspond to
 	// `latitude=32.9829` and `longitude=-97.1876` for Westlake, Texas.
+	// Unset means the corresponding geospatial coordinate is unknown.
 	Coordinate    *GeospatialCoordinate `protobuf:"bytes,3,opt,name=coordinate,proto3" json:"coordinate,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -90,14 +91,14 @@ func (*MapPoint) Descriptor() ([]byte, []int) {
 	return file_proto_v1_map_point_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *MapPoint) GetX() float32 {
+func (x *MapPoint) GetX() float64 {
 	if x != nil {
 		return x.X
 	}
 	return 0
 }
 
-func (x *MapPoint) GetY() float32 {
+func (x *MapPoint) GetY() float64 {
 	if x != nil {
 		return x.Y
 	}
@@ -117,12 +118,12 @@ const file_proto_v1_map_point_proto_rawDesc = "" +
 	"\n" +
 	"\x18proto/v1/map_point.proto\x12\x17sixafter.types.proto.v1\x1a$proto/v1/geospatial_coordinate.proto\"u\n" +
 	"\bMapPoint\x12\f\n" +
-	"\x01x\x18\x01 \x01(\x02R\x01x\x12\f\n" +
-	"\x01y\x18\x02 \x01(\x02R\x01y\x12M\n" +
+	"\x01x\x18\x01 \x01(\x01R\x01x\x12\f\n" +
+	"\x01y\x18\x02 \x01(\x01R\x01y\x12M\n" +
 	"\n" +
 	"coordinate\x18\x03 \x01(\v2-.sixafter.types.proto.v1.GeospatialCoordinateR\n" +
-	"coordinateB\x81\x01\n" +
-	"\x15com.sixafter.types.v1B\rMapPointProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"coordinateBo\n" +
+	"\x15com.sixafter.types.v1B\rMapPointProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_map_point_proto_rawDescOnce sync.Once

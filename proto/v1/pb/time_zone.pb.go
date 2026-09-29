@@ -26,6 +26,7 @@ package types
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	durationpb "google.golang.org/protobuf/types/known/durationpb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -40,24 +41,37 @@ const (
 
 // The `TimeZone` message represents a time zone, which is an area
 // observing a uniform standard time for legal, commercial, and social purposes.
+//
+// `name` identifies the zone. `utc_offset`, `abbreviation`, and `daylight_saving`
+// describe the zone as it was in effect at a specific instant, normally the
+// timestamp of the record that contains this message. To compute the offset for
+// any other instant, look up `name` in the IANA Time Zone Database.
 type TimeZone struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// The name of the time zone.
+	// The IANA Time Zone Database identifier of the time zone.
 	// Example: "America/New_York".
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	// The common abbreviation for the time zone.
-	// Example: "EST" for Eastern Standard Time or "EDT" for Eastern Daylight Time.
+	// The abbreviation in effect.
+	// Abbreviations are for display only: they are not unique ("CST" is used in the
+	// United States, China, and Cuba) and may be numeric (e.g., "-03").
+	// Example: "EDT" for "America/New_York" during daylight saving time.
 	Abbreviation string `protobuf:"bytes,2,opt,name=abbreviation,proto3" json:"abbreviation,omitempty"`
-	// The Standard Time (STD) offset from UTC, in hours and minutes.
-	// This represents the time zone's offset when daylight saving time is not in effect.
-	// Example: For "America/New_York", the standard time offset is UTC-5.
-	UtcOffsetStd *TimeZone_TimeOffset `protobuf:"bytes,3,opt,name=utc_offset_std,json=utcOffsetStd,proto3" json:"utc_offset_std,omitempty"`
-	// The Daylight Saving Time (DST) offset from UTC, in hours and minutes.
-	// This represents the time zone's offset when daylight saving time is in effect.
-	// Example: For "America/New_York", the daylight saving time offset is UTC-4.
-	UtcOffsetDst *TimeZone_TimeOffset `protobuf:"bytes,4,opt,name=utc_offset_dst,json=utcOffsetDst,proto3" json:"utc_offset_dst,omitempty"`
-	// The geographic coordinates of the time zone's central point.
-	// This is commonly used to determine the time zone based on location.
+	// The offset from UTC in effect.
+	// The offset is positive east of UTC and negative west of UTC, and its sign applies
+	// to the whole value, as in ISO 8601.
+	// Example: -14400s (UTC-04:00) for "America/New_York" during daylight saving time;
+	// -12600s (UTC-03:30) for "America/St_Johns" during standard time; 19800s
+	// (UTC+05:30) for "Asia/Kolkata".
+	// Unset means the offset is unknown; a set offset of 0 is UTC.
+	UtcOffset *durationpb.Duration `protobuf:"bytes,3,opt,name=utc_offset,json=utcOffset,proto3" json:"utc_offset,omitempty"`
+	// True if daylight saving time is in effect.
+	DaylightSaving bool `protobuf:"varint,4,opt,name=daylight_saving,json=daylightSaving,proto3" json:"daylight_saving,omitempty"`
+	// The location of the time zone's principal city, as listed in the IANA Time Zone
+	// Database file zone1970.tab.
+	// Example: Manhattan (40.7142, -74.0064) for "America/New_York".
+	// This is a representative location, not a geometric center, and it is not
+	// sufficient to determine a location's time zone; that requires zone boundaries.
+	// Unset means the central coordinate is unknown.
 	CentralCoordinate *GeospatialCoordinate `protobuf:"bytes,5,opt,name=central_coordinate,json=centralCoordinate,proto3" json:"central_coordinate,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
@@ -107,18 +121,18 @@ func (x *TimeZone) GetAbbreviation() string {
 	return ""
 }
 
-func (x *TimeZone) GetUtcOffsetStd() *TimeZone_TimeOffset {
+func (x *TimeZone) GetUtcOffset() *durationpb.Duration {
 	if x != nil {
-		return x.UtcOffsetStd
+		return x.UtcOffset
 	}
 	return nil
 }
 
-func (x *TimeZone) GetUtcOffsetDst() *TimeZone_TimeOffset {
+func (x *TimeZone) GetDaylightSaving() bool {
 	if x != nil {
-		return x.UtcOffsetDst
+		return x.DaylightSaving
 	}
-	return nil
+	return false
 }
 
 func (x *TimeZone) GetCentralCoordinate() *GeospatialCoordinate {
@@ -128,80 +142,19 @@ func (x *TimeZone) GetCentralCoordinate() *GeospatialCoordinate {
 	return nil
 }
 
-// The `TimeOffset` message represents a time offset from Coordinated
-// Universal Time (UTC) in terms of hours and minutes.
-type TimeZone_TimeOffset struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// The offset from UTC in whole hours.
-	// Example: -5 for UTC-5 (Eastern Standard Time).
-	Hours int32 `protobuf:"varint,1,opt,name=hours,proto3" json:"hours,omitempty"`
-	// The additional offset from UTC in minutes.
-	// Example: 30 for UTC+5:30 (India Standard Time).
-	Minutes       int32 `protobuf:"varint,2,opt,name=minutes,proto3" json:"minutes,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TimeZone_TimeOffset) Reset() {
-	*x = TimeZone_TimeOffset{}
-	mi := &file_proto_v1_time_zone_proto_msgTypes[1]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TimeZone_TimeOffset) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TimeZone_TimeOffset) ProtoMessage() {}
-
-func (x *TimeZone_TimeOffset) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_v1_time_zone_proto_msgTypes[1]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TimeZone_TimeOffset.ProtoReflect.Descriptor instead.
-func (*TimeZone_TimeOffset) Descriptor() ([]byte, []int) {
-	return file_proto_v1_time_zone_proto_rawDescGZIP(), []int{0, 0}
-}
-
-func (x *TimeZone_TimeOffset) GetHours() int32 {
-	if x != nil {
-		return x.Hours
-	}
-	return 0
-}
-
-func (x *TimeZone_TimeOffset) GetMinutes() int32 {
-	if x != nil {
-		return x.Minutes
-	}
-	return 0
-}
-
 var File_proto_v1_time_zone_proto protoreflect.FileDescriptor
 
 const file_proto_v1_time_zone_proto_rawDesc = "" +
 	"\n" +
-	"\x18proto/v1/time_zone.proto\x12\x17sixafter.types.proto.v1\x1a$proto/v1/geospatial_coordinate.proto\"\x86\x03\n" +
+	"\x18proto/v1/time_zone.proto\x12\x17sixafter.types.proto.v1\x1a\x1egoogle/protobuf/duration.proto\x1a$proto/v1/geospatial_coordinate.proto\"\x83\x02\n" +
 	"\bTimeZone\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\"\n" +
-	"\fabbreviation\x18\x02 \x01(\tR\fabbreviation\x12R\n" +
-	"\x0eutc_offset_std\x18\x03 \x01(\v2,.sixafter.types.proto.v1.TimeZone.TimeOffsetR\futcOffsetStd\x12R\n" +
-	"\x0eutc_offset_dst\x18\x04 \x01(\v2,.sixafter.types.proto.v1.TimeZone.TimeOffsetR\futcOffsetDst\x12\\\n" +
-	"\x12central_coordinate\x18\x05 \x01(\v2-.sixafter.types.proto.v1.GeospatialCoordinateR\x11centralCoordinate\x1a<\n" +
+	"\fabbreviation\x18\x02 \x01(\tR\fabbreviation\x128\n" +
 	"\n" +
-	"TimeOffset\x12\x14\n" +
-	"\x05hours\x18\x01 \x01(\x05R\x05hours\x12\x18\n" +
-	"\aminutes\x18\x02 \x01(\x05R\aminutesB\x81\x01\n" +
-	"\x15com.sixafter.types.v1B\rTimeZoneProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xf8\x01\x01\xa2\x02\x03TPB\xaa\x02 SixAfter.Types.V1.WellKnownTypesb\x06proto3"
+	"utc_offset\x18\x03 \x01(\v2\x19.google.protobuf.DurationR\tutcOffset\x12'\n" +
+	"\x0fdaylight_saving\x18\x04 \x01(\bR\x0edaylightSaving\x12\\\n" +
+	"\x12central_coordinate\x18\x05 \x01(\v2-.sixafter.types.proto.v1.GeospatialCoordinateR\x11centralCoordinateBo\n" +
+	"\x15com.sixafter.types.v1B\rTimeZoneProtoP\x01Z+github.com/sixafter/types/proto/v1/pb;types\xa2\x02\x03TPB\xaa\x02\x11SixAfter.Types.V1b\x06proto3"
 
 var (
 	file_proto_v1_time_zone_proto_rawDescOnce sync.Once
@@ -215,21 +168,20 @@ func file_proto_v1_time_zone_proto_rawDescGZIP() []byte {
 	return file_proto_v1_time_zone_proto_rawDescData
 }
 
-var file_proto_v1_time_zone_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_proto_v1_time_zone_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_proto_v1_time_zone_proto_goTypes = []any{
 	(*TimeZone)(nil),             // 0: sixafter.types.proto.v1.TimeZone
-	(*TimeZone_TimeOffset)(nil),  // 1: sixafter.types.proto.v1.TimeZone.TimeOffset
+	(*durationpb.Duration)(nil),  // 1: google.protobuf.Duration
 	(*GeospatialCoordinate)(nil), // 2: sixafter.types.proto.v1.GeospatialCoordinate
 }
 var file_proto_v1_time_zone_proto_depIdxs = []int32{
-	1, // 0: sixafter.types.proto.v1.TimeZone.utc_offset_std:type_name -> sixafter.types.proto.v1.TimeZone.TimeOffset
-	1, // 1: sixafter.types.proto.v1.TimeZone.utc_offset_dst:type_name -> sixafter.types.proto.v1.TimeZone.TimeOffset
-	2, // 2: sixafter.types.proto.v1.TimeZone.central_coordinate:type_name -> sixafter.types.proto.v1.GeospatialCoordinate
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	1, // 0: sixafter.types.proto.v1.TimeZone.utc_offset:type_name -> google.protobuf.Duration
+	2, // 1: sixafter.types.proto.v1.TimeZone.central_coordinate:type_name -> sixafter.types.proto.v1.GeospatialCoordinate
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_proto_v1_time_zone_proto_init() }
@@ -244,7 +196,7 @@ func file_proto_v1_time_zone_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_v1_time_zone_proto_rawDesc), len(file_proto_v1_time_zone_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
