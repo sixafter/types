@@ -2,7 +2,6 @@
 
 This module is a set of common types expressed as [Google Protocol Buffers](https://developers.google.com/protocol-buffers/).
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/sixafter/types)](https://goreportcard.com/report/github.com/sixafter/types)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](LICENSE)
 [![Go](https://img.shields.io/github/go-mod/go-version/sixafter/types)](https://img.shields.io/github/go-mod/go-version/sixafter/types)
 [![Go Reference](https://pkg.go.dev/badge/github.com/sixafter/types.svg)](https://pkg.go.dev/github.com/sixafter/types)
