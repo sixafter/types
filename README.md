@@ -2,9 +2,12 @@
 
 This module is a set of common types expressed as [Google Protocol Buffers](https://developers.google.com/protocol-buffers/).
 
+Please see the [godoc](https://pkg.go.dev/github.com/sixafter/types) for detailed documentation. The documentation is also indexed on [Context7](https://context7.com/sixafter/types) for use with AI coding assistants. Use the library ID `/sixafter/types` with the Context7 MCP server or any Context7-aware tool.
+
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](LICENSE)
 [![Go](https://img.shields.io/github/go-mod/go-version/sixafter/types)](https://img.shields.io/github/go-mod/go-version/sixafter/types)
 [![Go Reference](https://pkg.go.dev/badge/github.com/sixafter/types.svg)](https://pkg.go.dev/github.com/sixafter/types)
+[![Context7](https://img.shields.io/badge/Context7-docs-blue?style=flat-square)](https://context7.com/sixafter/types)
 
 ---
 ## Status
